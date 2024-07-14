@@ -1,7 +1,6 @@
-import { Button } from "@mui/material";
 import React from "react";
 import Link from "next/link";
-import SimpleLoader from "@/app/components/SimpleLoader";
+import SimpleLoader from "@/app/components/Global/SimpleLoader";
 
 const SubjectItem = ({
   item,
