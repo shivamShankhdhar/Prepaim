@@ -9,7 +9,7 @@ const QuestionItems = ({ index, item }: any) => {
   const questionNo = Number(question) - 1;
   return (
     <Link href={`/mcq/v1/${subject}/${chapter}/${index + 1}`}>
-      <div
+      <p
         key={`${index}-${item.question}`}
         className={`flex justify-center items-center h-9 w-9 cursor-pointer rounded-full ${
           item.level === "a"
@@ -40,7 +40,7 @@ const QuestionItems = ({ index, item }: any) => {
         }`}
       >
         {index + 1}
-      </div>
+      </p>
     </Link>
   );
 };

@@ -51,12 +51,14 @@ const QuestionBoard = ({
                   return (
                     <>
                       <LevelHeading
+                        key={`${item.question}-${index}`}
                         index={index}
                         item={item}
                         medium={medium}
                         advance={advance}
                       />
                       <QuestionItems
+                        key={`${item.question}-${Date.now()}`}
                         index={index}
                         item={item}
                         questionNo={questionNo}

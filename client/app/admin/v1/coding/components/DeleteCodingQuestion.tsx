@@ -42,9 +42,9 @@ const DeleteCodingQuestion = () => {
 
         <div className="w-full flex justify-center gap-5 mt-3 items-center">
           <Link href={`/admin/v1/coding/dashboard`}>
-            <div className="bg-gray-200 hover:bg-gray-300 cursor-pointer flex justify-center items-center py-1 px-3 rounded-md w-[fit-content]">
+            <p className="bg-gray-200 hover:bg-gray-300 cursor-pointer flex justify-center items-center py-1 px-3 rounded-md w-[fit-content]">
               cancel
-            </div>
+            </p>
           </Link>
           <div
             onClick={handleDelete}

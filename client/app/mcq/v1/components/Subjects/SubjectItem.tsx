@@ -35,12 +35,12 @@ const SubjectItem = ({
                 : "Quizz"}
             </div>
             <Link href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}>
-              <div
+              <p
                 className="cursor-pointer py-1 bg-gray-200 text-black px-5 border border-gray-400 hover:bg-gray-300"
                 title={`Explore all Chapters of ${item.name}`}
               >
                 Chapters
-              </div>
+              </p>
             </Link>
           </div>
         </div>

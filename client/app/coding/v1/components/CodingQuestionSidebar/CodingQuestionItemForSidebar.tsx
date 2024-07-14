@@ -18,7 +18,7 @@ const CodingQuestionItemForSidebar = ({
       )}`}
       key={`${index}${question}`}
     >
-      <div
+      <p
         key={index}
         className={`${
           question === questionFromParams
@@ -26,15 +26,15 @@ const CodingQuestionItemForSidebar = ({
             : "text-gray-500 hover:bg-gray-100"
         } flex flex-row gap-2 justify-start items-center px-2 py-2 `}
       >
-        <div className="w-full flex justify-start gap-2 items-center">
+        <span className="w-full flex justify-start gap-2 items-center">
           {question === questionFromParams ? (
             <IoMdCheckmarkCircleOutline size={18} />
           ) : (
             <GoPlusCircle size={18} />
           )}
           {`${question?.charAt(0).toUpperCase()}${question?.slice(1)}`}
-        </div>
-      </div>
+        </span>
+      </p>
     </Link>
   );
 };

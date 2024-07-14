@@ -1,6 +1,9 @@
 import "../../../globals.css";
 import { Inter as FontSans } from "next/font/google";
 // import Footer from "./components/Footer"
+
+import { CookiesProvider } from "next-client-cookies/server";
+
 import { cn } from "@/lib/utils";
 import { Toaster } from "react-hot-toast";
 import Header from "@/app/components/Global/Header";
@@ -29,7 +32,7 @@ export default function RootLayout({
 
         <main className="flex">
           <CodingQuestionAdminSidebar />
-          {children}
+          <CookiesProvider>{children}</CookiesProvider>
         </main>
         <Toaster position="top-right" reverseOrder={false} />
       </body>

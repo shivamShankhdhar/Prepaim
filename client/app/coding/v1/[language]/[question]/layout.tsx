@@ -1,5 +1,7 @@
 import "../../../../globals.css";
 import Header from "@/app/components/Global/Header";
+
+import { CookiesProvider } from "next-client-cookies/server";
 export const metadata = {
   title: "Prepaim.com | Coding",
   description:
@@ -14,9 +16,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Header />
         <div className="flex flex-row w-full h-[92vh] overflow-hidden">
-          {children}
+          <Header />
+          <CookiesProvider>{children}</CookiesProvider>
         </div>
       </body>
     </html>

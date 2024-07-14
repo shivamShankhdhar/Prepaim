@@ -3,7 +3,7 @@
 import AddCodingQuestion from "../components/AddCodingQuestion";
 
 const page = () => {
-  <AddCodingQuestion />;
+  return <AddCodingQuestion />;
 };
 
 export default page;

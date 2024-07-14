@@ -3,7 +3,7 @@
 import AddSubject from "../components/Add-subject/AddSubject";
 
 const page = () => {
-  <AddSubject />;
+  return <AddSubject />;
 };
 
 export default page;

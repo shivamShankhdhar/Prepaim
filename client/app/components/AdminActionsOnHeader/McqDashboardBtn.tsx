@@ -11,15 +11,13 @@ const McqDashboardBtn = () => {
   // }
 
   return (
-    <>
-      <Link
-        className="flex justify-center items-center gap-1"
-        href="/admin/v1/mcq/dashboard"
-      >
-        <LuLayoutDashboard />
-        MCQ DASHBOARD
-      </Link>
-    </>
+    <Link
+      className="flex justify-center items-center gap-1"
+      href="/admin/v1/mcq/dashboard"
+    >
+      <LuLayoutDashboard />
+      MCQ DASHBOARD
+    </Link>
   );
 };
 

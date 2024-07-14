@@ -3,7 +3,7 @@
 import CodingQuestionPage from "../../components/CodingQuestionPage";
 
 const page = () => {
-  <CodingQuestionPage />;
+  return <CodingQuestionPage />;
 };
 
 export default page;

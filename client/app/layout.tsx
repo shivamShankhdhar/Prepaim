@@ -1,5 +1,6 @@
 import "./globals.css";
 // import
+import { CookiesProvider } from "next-client-cookies/server";
 
 export const metadata = {
   title: "PrepAim | Home",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <div className="flex flex-col w-full">{children}</div>
+        <div className="flex flex-col w-full">
+          <CookiesProvider>{children}</CookiesProvider>
+        </div>
       </body>
     </html>
   );

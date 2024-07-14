@@ -30,7 +30,7 @@ const Sidebar = () => {
               }
               key={items.name}
             >
-              <div
+              <p
                 key={items.name}
                 className={`flex justify-start items-center gap-1 text-gray-500 ${
                   pathname.includes(
@@ -40,16 +40,16 @@ const Sidebar = () => {
                     : ""
                 } px-2 py-2  hover:bg-gray-100`}
               >
-                <div>
+                <span>
                   {items.name === "Dashboard" && <LuLayoutDashboard />}{" "}
                   {items.name === "Add Question" && <MdOutlinePlaylistAdd />}{" "}
                   {items.name === "Add Subject" && <TiDocumentAdd />}{" "}
                   {items.name === "Add Chapter" && <MdAssignmentAdd />}
                   {items.name === "Add Branch" && <FaCodeBranch />}
-                </div>
+                </span>
 
-                <div className="w-[130px]">{items.name.toUpperCase()}</div>
-              </div>
+                <span className="w-[130px]">{items.name.toUpperCase()}</span>
+              </p>
             </Link>
           );
         })}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const PrivacyPolicy = () => {
@@ -94,13 +95,13 @@ const PrivacyPolicy = () => {
         <li>
           <p>
             <strong>Website</strong> refers to prepaim, accessible from
-            <a
+            <Link
               href="www.prepaim.com"
               rel="external nofollow noopener"
               target="_blank"
             >
               www.prepaim.com
-            </a>
+            </Link>
           </p>
         </li>
         <li>

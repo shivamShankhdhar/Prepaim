@@ -55,7 +55,7 @@ const Sidebar = ({ error }: Props) => {
               .filter((i) => i.name !== "")
               .map((item, index) => (
                 <SidebarItem
-                  key={index}
+                  key={item.name}
                   item={item}
                   index={index}
                   subject={subject}

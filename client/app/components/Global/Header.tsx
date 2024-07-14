@@ -9,8 +9,10 @@ import { Menu, MenuItem } from "@mui/material";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useCookies } from "next-client-cookies";
+
 const Header = () => {
   const cookies = useCookies();
+  console.log(cookies);
   const usernameFromCookies = cookies.get("username");
 
   // const isAdminFromCookie = document.cookie;
@@ -40,7 +42,7 @@ const Header = () => {
           />
         </Link>
       </div>
-      {usernameFromCookies !== undefined && (
+      {cookies !== null && usernameFromCookies !== undefined && (
         <div className="flex justify-between gap-1 items-center">
           <button
             id="basic-button"

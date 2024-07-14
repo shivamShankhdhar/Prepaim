@@ -3,7 +3,7 @@
 import CodingDashboard from "../components/CodingDashboard";
 
 const page = () => {
-  <CodingDashboard />;
+  return <CodingDashboard />;
 };
 
 export default page;
