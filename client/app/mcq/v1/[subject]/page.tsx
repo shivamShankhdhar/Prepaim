@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useParams, usePathname, useRouter } from "next/navigation";
-import Breadcrum from "@/app/components/Breadcrum";
+import Breadcrum from "@/app/components/Global/Breadcrum";
 import SubjectList from "../components/Subjects/SubjectList";
 import Footer from "@/app/components/Footer/Footer";
 
