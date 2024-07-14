@@ -13,41 +13,41 @@ import useFetch from "@/app/hooks/fetch.hook";
 const page = () => {
   const cookies = document.cookie;
   const token = cookies.split(";")[1].split("=")[1];
-  const [subjectName, setSubjectName] = useState("");
-  const [isPosting, setIsPosting] = useState(false);
-  const [error, setError] = useState("");
+  const [SubjectName, setSubjectName] = useState("");
+  const [IsPosting, SetIsPosting] = useState(false);
+  const [Error, setError] = useState("");
 
-  const [isSubjectAvailableAsyncCheck, setIsSubjectAvailableAsyncCheck] =
+  const [IsSubjectAvailableAsyncCheck, SetIsSubjectAvailableAsyncCheck] =
     useState(false);
 
-  const [branchesFromServer, setBranchsFromServer] = useState(
+  const [BranchesFromServer, setBranchsFromServer] = useState(
     [{ name: "" }].filter((item) => item.name !== "")
   );
 
-  const [loadingBranchesFromServer, setLoadingBranchesFromServer] =
+  const [LoadingBranchesFromServer, setLoadingBranchesFromServer] =
     useState(true);
 
-  const [errorFetchingBranchesFromServer, setErrorFetchingBranchesFromServer] =
+  const [ErrorFetchingBranchesFromServer, setErrorFetchingBranchesFromServer] =
     useState("");
 
-  const [selectedBranch, setSelectedBranch] = useState("");
+  const [SelectedBranch, setSelectedBranch] = useState("");
 
-  const [selectedSubjectType, setSelectedType] = useState("");
+  const [SelectedSubjectType, setSelectedType] = useState("");
 
-  const [subjectObj, setSubjectObj] = useState({
+  const [SubjectObj, setSubjectObj] = useState({
     name: "",
     type: "",
     branch: "",
     image: "",
   });
 
-  const [imageURL, setImageURL] = useState("");
+  const [ImageURL, setImageURL] = useState("");
 
-  const [branchesOption, setBranchesOptions] = useState([
+  const [BranchesOption, setBranchesOptions] = useState([
     { value: "", label: "" },
   ]);
 
-  const [subjectTypeOptions, setSubjectTypeOptions] = useState([
+  const [SubjectTypeOptions, setSubjectTypeOptions] = useState([
     { value: "language", label: "Language" },
     { value: "framework", label: "Framework" },
     { value: "theory", label: "theory" },
@@ -63,8 +63,8 @@ const page = () => {
   }, [data.apiData, data.isLoading, data.serverError]);
 
   useEffect(() => {
-    branchesFromServer.map((item) => {
-      if (branchesOption.find((i) => i.value === item.name)) {
+    BranchesFromServer.map((item) => {
+      if (BranchesOption.find((i) => i.value === item.name)) {
       } else {
         setBranchesOptions((prev) => [
           ...prev,
@@ -72,42 +72,42 @@ const page = () => {
         ]);
       }
     });
-  }, [branchesFromServer]);
+  }, [BranchesFromServer]);
 
   useEffect(() => {
     setSubjectObj({
-      name: subjectName,
-      branch: selectedBranch,
-      type: selectedSubjectType,
-      image: imageURL,
+      name: SubjectName,
+      branch: SelectedBranch,
+      type: SelectedSubjectType,
+      image: ImageURL,
     });
-  }, [selectedBranch, subjectName, selectedSubjectType, imageURL]);
+  }, [SelectedBranch, SubjectName, SelectedSubjectType, ImageURL]);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      if (subjectName === "") return toast.error("Subject name required...!");
-      if (selectedBranch === "") return toast.error("Branch name required...!");
-      if (selectedSubjectType === "")
+      if (SubjectName === "") return toast.error("Subject name required...!");
+      if (SelectedBranch === "") return toast.error("Branch name required...!");
+      if (SelectedSubjectType === "")
         return toast.error("Subject type required...!");
-      if (imageURL === "") return toast.error("Subject image required...!");
-      setIsPosting(true);
+      if (ImageURL === "") return toast.error("Subject image required...!");
+      SetIsPosting(true);
       await axios
         .post("http://localhost:4000/admin/postsubject", {
-          subjectObj,
+          SubjectObj,
           token,
         })
         .then((response) => {
-          setIsPosting(false);
+          SetIsPosting(false);
           return toast.success(response.data.msg);
         })
         .catch((err) => {
-          setIsPosting(false);
-          setError(err.response.data.error);
+          SetIsPosting(false);
+          setError(err.response.data.Error);
           console.log(err.response);
         });
-    } catch (error) {
-      setIsPosting(false);
+    } catch (Error) {
+      SetIsPosting(false);
       setError("Something went wrong...!");
       return toast.error("Something went wrong...!");
     }
@@ -116,16 +116,16 @@ const page = () => {
     try {
       axios
         .get(
-          `http://localhost:4000/admin/checkSubjectAvailability/${subjectName}`
+          `http://localhost:4000/admin/checkSubjectAvailability/${SubjectName}`
         )
         .then((response) => {
-          setIsSubjectAvailableAsyncCheck(response.data.isSubjectAvailable);
+          SetIsSubjectAvailableAsyncCheck(response.data.isSubjectAvailable);
         })
-        .catch((error) => {
-          setIsSubjectAvailableAsyncCheck(false);
+        .catch((Error) => {
+          SetIsSubjectAvailableAsyncCheck(false);
         });
-    } catch (error) {}
-  }, [subjectName]);
+    } catch (Error) {}
+  }, [SubjectName]);
 
   return (
     <div className="w-full flex justify-center py-[50px] h-[92vh]">
@@ -143,8 +143,8 @@ const page = () => {
           />
 
           <div className="flex justify-center items-center w-10">
-            {subjectName !== "" ? (
-              isSubjectAvailableAsyncCheck ? (
+            {SubjectName !== "" ? (
+              IsSubjectAvailableAsyncCheck ? (
                 <span className="text-red-500" title="it's available.">
                   <IoCloseOutline size={15} />
                 </span>
@@ -165,14 +165,14 @@ const page = () => {
         </div>
 
         <SelectDropdown
-          options={branchesOption.filter((item) => item.value !== "")}
+          options={BranchesOption.filter((item) => item.value !== "")}
           text={"Select Branch"}
           setProperty={setSelectedBranch}
-          loading={loadingBranchesFromServer}
+          loading={LoadingBranchesFromServer}
         />
 
         <SelectDropdown
-          options={subjectTypeOptions}
+          options={SubjectTypeOptions}
           text={"Select Type"}
           setProperty={setSelectedType}
         />
@@ -182,8 +182,8 @@ const page = () => {
           type="submit"
           className="w-full py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md"
         >
-          {isPosting ? "Posting..." : "Add Subject"}
-          {isPosting && <SimpleLoader size={15} clr={"white"} />}
+          {IsPosting ? "Posting..." : "Add Subject"}
+          {IsPosting && <SimpleLoader size={15} clr={"white"} />}
         </button>
       </form>
     </div>
