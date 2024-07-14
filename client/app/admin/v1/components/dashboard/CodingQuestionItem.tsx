@@ -1,5 +1,5 @@
 import FormatedDate from "@/app/components/Global/FormatedDate";
-import QuestionLevel from "@/app/components/Global/QuestionLevel/QuestionLevel";
+import QuestionLevel from "@/app/components/QuestionLevel/QuestionLevel";
 import Link from "next/link";
 import React from "react";
 import { CiEdit } from "react-icons/ci";
