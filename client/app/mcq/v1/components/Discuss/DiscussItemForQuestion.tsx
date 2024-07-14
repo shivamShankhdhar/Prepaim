@@ -2,6 +2,7 @@ import React from "react";
 
 import ApprovedBy from "./ApprovedBy";
 import FormatedDate from "@/app/components/Global/FormatedDate";
+import Image from "next/image";
 
 const DiscussItemForQuestion = ({
   user,
@@ -12,8 +13,11 @@ const DiscussItemForQuestion = ({
   return (
     <div className="flex flex-col gap-1 py-2 px-3 rounded-[3px] border-purple-400 border bg-purple-50">
       <div className="w-full flex items-center gap-2 px-3 ">
-        <img
+        <Image
           src={"/assets/user_profile_fake.png"}
+          height={40}
+          width={40}
+          alt="image"
           className="w-8 h-8 rounded-full"
         />
         <p className=" text-gray-500 font-semibold">{user}</p>

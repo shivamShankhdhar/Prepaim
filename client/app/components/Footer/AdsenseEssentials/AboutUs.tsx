@@ -24,7 +24,7 @@ const AboutUs = () => {
       </p>
       <br />
       <p>
-        Whether you're here for test prep resources, exam strategies, or
+        Whether you&apos;re here for test prep resources, exam strategies, or
         educational insights, we are here to support you. At PrepAim, we pride
         ourselves on our commitment to providing high-quality study materials
         and expert guidance. Our team of educators and professionals brings

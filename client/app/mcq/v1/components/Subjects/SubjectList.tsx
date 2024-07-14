@@ -57,7 +57,7 @@ const SubjectList = () => {
       setLoading(data.isLoading);
       setAllSubjectsError(data.serverError);
     }
-  }, [reloadSubjects]);
+  }, [reloadSubjects, data.apiData, data.isLoading, data.serverError]);
 
   useEffect(() => {
     setSubjectsAfterFilter(
@@ -145,6 +145,7 @@ const SubjectList = () => {
               >
                 {subjectsAfterFilter.sort().map((item, index) => (
                   <SubjectItem
+                    key={index}
                     item={item}
                     index={index}
                     selectedSubject={selectedSubject}

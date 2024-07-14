@@ -24,7 +24,6 @@ const AnswerItem = ({ questions, questionNo, answer, index, isTrue }: any) => {
           `${questions[questionNo].question.replaceAll(" ", "-")}-${answer}`
         )
       }
-      key={`${questions[questionNo].question}-${answer}`}
       id={`${questions[questionNo].question.replaceAll(" ", "-")}-${answer}`}
     >
       <div className="w-2 font-bold">{index + 1}.</div>

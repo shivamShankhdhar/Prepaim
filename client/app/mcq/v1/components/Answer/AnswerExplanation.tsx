@@ -32,7 +32,10 @@ const AnswerExplanation = ({ question, loading }: any) => {
         ) : (
           question?.explanation.map((explanation: any, index: number) => {
             return (
-              <div className="border flex border-dotted gap-1 py-1 text-[13px] border-purple-200 border-t-1 border-b-0 border-r-0 border-l-0 text-gray-600">
+              <div
+                key={`${explanation}-${index}`}
+                className="border flex border-dotted gap-1 py-1 text-[13px] border-purple-200 border-t-1 border-b-0 border-r-0 border-l-0 text-gray-600"
+              >
                 <div className="text-black">EXPLANATION :</div>
                 <div className="flex-1">{explanation.explanation}</div>
               </div>

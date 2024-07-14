@@ -44,6 +44,7 @@ const LanguagePanel = ({ layoutType }: any) => {
             .filter((i) => i.type === "language")
             .map((subject: any) => (
               <LanguagePanelItem
+                key={subject}
                 layoutType={layoutType}
                 item={subject}
                 question={question}

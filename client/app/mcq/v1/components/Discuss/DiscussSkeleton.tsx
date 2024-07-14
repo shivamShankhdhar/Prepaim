@@ -1,8 +1,13 @@
+import Image from "next/image";
+
 const DiscussSkeleton = () => {
   return (
     <div className="flex flex-col gap-2 py-2 px-3 rounded-[3px] border-purple-400 border bg-purple-50">
       <div className="w-full flex items-center gap-2 px-3 ">
-        <img
+        <Image
+          height={40}
+          width={40}
+          alt=""
           src={"/assets/user_profile_fake.png"}
           className="w-8 h-8 rounded-full animate-pulse"
         />

@@ -64,6 +64,7 @@ const CodingQuestionSidebar = () => {
           questionObjectFromServer.map((item: any, index: any) => {
             return (
               <CodingQuestionItemForSidebar
+                key={`${item}-${index}`}
                 language={language}
                 item={item.question}
                 question={item.question}

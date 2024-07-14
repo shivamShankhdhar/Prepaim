@@ -9,7 +9,10 @@ const QuestionBoardSkeleton = () => {
         <div className="flex flex-row gap-2 justify-center flex-wrap items-center">
           {items.map((item: any) => {
             return (
-              <div className="py-4 px-4 rounded-full justify-center bg-gray-200 animate-pulse"></div>
+              <div
+                key={item}
+                className="py-4 px-4 rounded-full justify-center bg-gray-200 animate-pulse"
+              ></div>
             );
           })}
         </div>
@@ -18,7 +21,7 @@ const QuestionBoardSkeleton = () => {
         <div className="flex flex-row gap-2 justify-center flex-wrap items-center">
           {items.map((item: any) => {
             return (
-              <div className="py-4 px-4 rounded-full bg-gray-200 animate-pulse"></div>
+              <div key={item} className="py-4 px-4 rounded-full bg-gray-200 animate-pulse"></div>
             );
           })}
         </div>
@@ -27,7 +30,10 @@ const QuestionBoardSkeleton = () => {
         <div className="flex flex-row gap-2 justify-center flex-wrap items-center">
           {items.map((item: any) => {
             return (
-              <div className="py-4 px-4 rounded-full bg-gray-200 animate-pulse"></div>
+              <div
+                key={item}
+                className="py-4 px-4 rounded-full bg-gray-200 animate-pulse"
+              ></div>
             );
           })}
         </div>

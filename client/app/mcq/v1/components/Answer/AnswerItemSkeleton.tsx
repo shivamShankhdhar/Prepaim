@@ -6,7 +6,10 @@ const AnswerItemSkeleton = () => {
     <>
       {items.map((item) => {
         return (
-          <div className="bg-gray-100 w-[49%] animate-pulse py-4 h-10 rounded-md"></div>
+          <div
+            key={`${item}`}
+            className="bg-gray-100 w-[49%] animate-pulse py-4 h-10 rounded-md"
+          ></div>
         );
       })}
     </>

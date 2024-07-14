@@ -5,7 +5,12 @@ const LanguagePanelSkeleton = () => {
   return (
     <div className="flex gap-1">
       {items.map((item) => {
-        return <div className="h-11 w-full bg-gray-200 animate-pulse"></div>;
+        return (
+          <div
+            key={item}
+            className="h-11 w-full bg-gray-200 animate-pulse"
+          ></div>
+        );
       })}
     </div>
   );

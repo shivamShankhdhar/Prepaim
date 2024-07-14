@@ -6,7 +6,7 @@ const Disclaimer = () => {
       <h1 className="text-2xl font-semibold">Disclaimer for PrepAim</h1>
       <p>
         If you require any more information or have any questions about our
-        site's disclaimer, please feel free to contact us by email at
+        site&apos;s disclaimer, please feel free to contact us by email at
         contact-prepaim@gmail.com
       </p>
       <h2>Disclaimers for prepaim</h2>
@@ -26,7 +26,7 @@ const Disclaimer = () => {
         nature of these sites. These links to other websites do not imply a
         recommendation for all the content found on these sites. Site owners and
         content may change without notice and may occur before we have the
-        opportunity to remove a link which may have gone 'bad'.
+        opportunity to remove a link which may have gone &apos;bad&apos;.
       </p>
       <p>
         Please be also aware that when you leave our website, other sites may

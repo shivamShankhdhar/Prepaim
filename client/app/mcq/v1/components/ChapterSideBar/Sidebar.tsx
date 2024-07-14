@@ -34,7 +34,7 @@ const Sidebar = ({ error }: Props) => {
     } catch (error: any) {
       console.log(error.message);
     }
-  }, []);
+  }, [subject]);
 
   const length = chapters.length;
 

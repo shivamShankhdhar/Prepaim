@@ -31,7 +31,7 @@ const QuestionBoard = ({
         break;
       }
     }
-  }, [questions]);
+  }, [questions, medium, advance]);
 
   return (
     <div
@@ -79,7 +79,7 @@ const QuestionBoard = ({
             )
           ) : (
             <div className="text-rose-600 w-full text-center">
-              Error ! Can't Load questions...!
+              Error ! Can not Load questions...!
             </div>
           )}
         </div>

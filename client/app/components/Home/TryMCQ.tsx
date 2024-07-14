@@ -43,7 +43,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
     <div id="trymcq" className="w-full px-11 gap-5">
       <Toaster />
       <div className="w-[fit-content] text-center text-gray-700 py-1 font-semibold text-2xl">
-        Try MCQ's
+        Try MCQ&apos;s
       </div>
       {loading ? (
         <SimpleLoader size={15} clr={"purple"} />
@@ -51,6 +51,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
         <div className="w-full flex justify-center gap-5 flex-wrap">
           {subjects.map((language: any) => (
             <div
+              key={language.name}
               onClick={() => {
                 setSelectedSubject(language.name);
               }}

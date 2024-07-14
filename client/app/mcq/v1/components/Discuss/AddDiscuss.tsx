@@ -14,7 +14,7 @@ const AddDiscuss = ({
       {/* comment text area  */}
       <div className="w-full flex flex-col gap-2 ">
         <div className="flex items-center gap-2 py-3 font-semibold w-full ">
-          Let's Discuss
+          Let&apos;s Discuss
         </div>
         <input
           type="text"

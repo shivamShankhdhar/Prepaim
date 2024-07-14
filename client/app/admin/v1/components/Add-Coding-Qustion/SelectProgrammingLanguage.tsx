@@ -11,7 +11,11 @@ const SelectProgrammingLanguage = ({ setLanguage, SelectLanguageNo }: any) => {
     >
       <option>{`Select ${SelectLanguageNo} Programming Langugae`}</option>
       {languages.map((item) => {
-        return <option value={item}>{item}</option>;
+        return (
+          <option key={item} value={item}>
+            {item}
+          </option>
+        );
       })}
     </select>
   );

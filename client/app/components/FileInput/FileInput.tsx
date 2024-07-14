@@ -16,7 +16,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
   const [imageURL, setImageURL] = useState("");
   useEffect(() => {
     setImageURLFromServer(imageURL);
-  }, [imageURL]);
+  }, [imageURL, setImageURLFromServer]);
 
   const handleUpload = (e: any) => {
     e.preventDefault();
