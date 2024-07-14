@@ -137,7 +137,7 @@ const CodingQuestionPage = () => {
                       )
                       .map((data: any) => {
                         return (
-                          <div className="h-[100vh]">
+                          <div key={data} className="h-[100vh]">
                             {data.solution !== "" ? (
                               <CopyBlock
                                 text={data.solution}

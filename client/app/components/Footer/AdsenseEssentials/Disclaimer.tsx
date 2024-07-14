@@ -32,8 +32,8 @@ const Disclaimer = () => {
         Please be also aware that when you leave our website, other sites may
         have different privacy policies and terms which are beyond our control.
         Please be sure to check the Privacy Policies of these sites as well as
-        their "Terms of Service" before engaging in any business or uploading
-        any information.
+        their &apos;&apos;Terms of Service&apos;&apos; before engaging in any
+        business or uploading any information.
       </p>
       <h2>Consent</h2>
       <p>
