@@ -20,7 +20,7 @@ const Question = ({ isDeleted }: any) => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/getallquestions")
+        .get("http://www.prepaim.com:4000/api/getallquestions")
         .then((response) => {
           setQuestions(response.data);
           setLoadingQuestions(false);

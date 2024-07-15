@@ -4,7 +4,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: "localhost",
+        hostname: "www.prepaim.com",
         port: "4000",
         pathname: "/**",
       },
