@@ -38,9 +38,9 @@ app.use(
   )
 );
 
-app.get("*", (req, res) => {
-  res.sendFile(req.path.join(__dirname, "..", "client", "build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(req.path.join(__dirname, "..", "client", "build", "index.html"));
+// });
 // api routes
 
 app.use("/admin", adminRouter);
