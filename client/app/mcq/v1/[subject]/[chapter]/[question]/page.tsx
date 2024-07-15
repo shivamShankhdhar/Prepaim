@@ -125,7 +125,7 @@ const QuestionPage = () => {
 
   return (
     <>
-      <div className="flex justify-between overflow-hidden h-auto">
+      <div className="flex justify-between overflow-hidden ">
         <SidebarSlider
           open={openSidebarSlider}
           items={chapters}
@@ -152,7 +152,7 @@ const QuestionPage = () => {
           <Sidebar error={error} />
         </div>
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <div className="w-full h-[100vh]">
+          <div className="w-full">
             {/* breadcrumb  */}
             <Actions
               setProperty1={setOpenSidebarSlider}

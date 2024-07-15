@@ -158,7 +158,7 @@ const Navigation = ({
             />
           )}
           {isCommentSection === true && (
-            <div className=" flex w-full  justify-center flex-col items-center px-5 py-5 max-h-auto min-h-[50px] rounded-md bg-white ">
+            <div className=" flex w-full  justify-center flex-col items-center px-5 py-5 rounded-md bg-white ">
               {/* add comment  */}
               <AddDiscuss
                 setComment={setComment}

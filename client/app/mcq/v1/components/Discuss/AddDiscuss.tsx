@@ -10,7 +10,7 @@ const AddDiscuss = ({
   handleCommentSubmit,
 }: any) => {
   return (
-    <div className="flex justify-center items-center gap-2 w-full ">
+    <div className="flex justify-center items-center gap-2 py-3 w-full ">
       {/* comment text area  */}
       <div className="w-full flex flex-col gap-2 ">
         <div className="flex items-center gap-2 py-3 font-semibold w-full ">
