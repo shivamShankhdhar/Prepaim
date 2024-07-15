@@ -37,7 +37,7 @@ const Header = () => {
             src={"/assets/Brandlogo/logo.png"}
             height={10}
             width={150}
-            alt="localhost"
+            alt="www.prepaim.com"
             style={{ objectFit: "contain", height: "30px" }}
           />
         </Link>

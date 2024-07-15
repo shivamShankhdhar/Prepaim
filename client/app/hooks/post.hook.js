@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "http://www.prepaim.com:4000";
 //custom hook
 const usePost = (query) => {
   const [data, setData] = useState({

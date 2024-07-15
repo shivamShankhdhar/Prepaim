@@ -96,11 +96,11 @@ const PrivacyPolicy = () => {
           <p>
             <strong>Website</strong> refers to prepaim, accessible from
             <Link
-              href="localhost"
+              href="www.prepaim.com"
               rel="external nofollow noopener"
               target="_blank"
             >
-              localhost
+              www.prepaim.com
             </Link>
           </p>
         </li>

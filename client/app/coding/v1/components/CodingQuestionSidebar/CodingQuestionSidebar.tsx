@@ -43,7 +43,9 @@ const CodingQuestionSidebar = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/admin/coding/getAllQuestionsFromCoding")
+        .get(
+          "http://www.prepaim.com:4000/admin/coding/getAllQuestionsFromCoding"
+        )
         .then((response) => {
           console.log(response.data);
           setQuestionObjectFromServer(response.data);
