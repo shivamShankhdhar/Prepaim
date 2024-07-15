@@ -12,7 +12,7 @@ const Subjects = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:10001/api/getallsubjects")
+        .get("http://localhost:100001/api/getallsubjects")
         .then((response) => {
           setSubjects(response.data);
           setLoadingSubjects(false);

@@ -16,7 +16,7 @@ const DeleteCodingQuestion = () => {
       setDeletingQuestion(true);
       axios
         .delete(
-          `http://localhost:10001/admin/coding/deleteCodingQuestionById/${id}`
+          `http://localhost:100001/admin/coding/deleteCodingQuestionById/${id}`
         )
         .then((res) => {
           setDeletingQuestion(false);

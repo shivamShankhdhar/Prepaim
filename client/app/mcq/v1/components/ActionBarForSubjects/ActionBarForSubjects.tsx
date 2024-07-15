@@ -11,7 +11,7 @@ const ActionBarForSubjects = ({ setBranch, Branch }: any) => {
   const [error, setError] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:10001/admin/mcq/getallbranches")
+      .get("http://localhost:100001/admin/mcq/getallbranches")
       .then((response) => {
         setBranchesFromServer(response.data);
         setLoadingBranches(false);

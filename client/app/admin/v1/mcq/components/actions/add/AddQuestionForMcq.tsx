@@ -191,7 +191,7 @@ const AddQuestionForMcq = () => {
       try {
         // post question to db
         axios
-          .post("http://localhost:10001/admin/mcq/postquestion", {
+          .post("http://localhost:100001/admin/mcq/postquestion", {
             question,
             token,
           })
@@ -245,7 +245,7 @@ const AddQuestionForMcq = () => {
     try {
       axios
         .get(
-          `http://localhost:10001/mcq/getallchaptersbysubject/${selectedSubject}`
+          `http://localhost:100001/mcq/getallchaptersbysubject/${selectedSubject}`
         )
         .then((response) => {
           setChapters(response.data);
