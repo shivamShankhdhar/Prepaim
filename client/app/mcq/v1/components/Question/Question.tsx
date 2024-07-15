@@ -49,14 +49,14 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 </div>
                 {/* question guide  */}
                 {isQuestionGuideOpen && (
-                  <div className="bg-green-100 border border-green-300 text-green-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] animate-pulse">
+                  <div className="bg-purple-100 border border-purple-300 text-purple-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
                     <div className="flex-1 ">
                       Try clicking on answer to check whether it is right or
                       wrong
                     </div>
                     <div
                       title="Close"
-                      className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-green-700 text-white"
+                      className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-700 text-white"
                       onClick={() => setIsQuestionGuideOpen(false)}
                     >
                       <IoIosClose size={20} />
