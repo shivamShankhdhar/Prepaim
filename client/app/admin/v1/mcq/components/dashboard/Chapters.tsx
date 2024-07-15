@@ -13,7 +13,7 @@ const Chapters = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:4000/api/getallchapters")
+        .get("http://localhost:10001/api/getallchapters")
         .then((response) => {
           setChapters(response.data);
           setLoadingChapters(false);

@@ -20,7 +20,7 @@ const McqDashboardPage = () => {
     try {
       axios
         .delete(
-          `http://localhost:4000/admin/mcq/delete-question/${questionIdForDelete}`
+          `http://localhost:10001/admin/mcq/delete-question/${questionIdForDelete}`
         )
         .then((response) => {
           toast.success("Question deleted successfully");

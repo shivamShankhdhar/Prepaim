@@ -21,7 +21,7 @@ const AddBranch = () => {
     }
     try {
       await axios
-        .post("http://localhost:4000/admin/mcq/postbranch", {
+        .post("http://localhost:10001/admin/mcq/postbranch", {
           name: branch,
           token,
         })
