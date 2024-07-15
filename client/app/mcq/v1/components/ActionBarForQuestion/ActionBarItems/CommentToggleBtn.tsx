@@ -14,7 +14,7 @@ const CommentToggleBtn = ({
   return (
     <div
       title={`Total Comments : ${comments.length}`}
-      className="px-2 flex flex-row h-9 border  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
+      className="px-2 flex flex-row h-9 border cursor-pointer  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
       onClick={handleCommentToggle}
     >
       {isCommentSection ? (
@@ -22,7 +22,7 @@ const CommentToggleBtn = ({
       ) : (
         <LiaCommentSolid size={25} />
       )}
-      <div className="flex flex-row text-[15px] cursor-pointer justify-start items-center gap-1">
+      <div className="flex flex-row text-[15px] justify-start items-center gap-1">
         {!loadingComment ? (
           error === "" ? (
             <>

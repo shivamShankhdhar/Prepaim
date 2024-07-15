@@ -32,33 +32,35 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
 
   return (
     <div className="flex-1 px-1 flex flex-col">
-      {loading === true ? (
-        <SimpleLoader size={15} clr="purple" />
-      ) : (
-        <>
-          <div className="w-full text-2xl font-semibold text-purple-900 border-2 border-dotted pb-1 border-purple-900 border-t-0 border-r-0 border-l-0 border-b-1">
-            Try Coding
-          </div>
-          <ul className="w-full px-5 py-2">
-            {allCodingQuestions.slice(0, 10).map((item, index) => (
-              <li
-                key={item._id}
-                className="hover:text-purple-900 flex items-satrt gap-1"
-              >
-                <Link
-                  className="flex items-satrt gap-1"
-                  href={`${`/coding/v1/${
-                    allSubjects[0].name
-                  }/${item.question?.replaceAll(" ", "-")}`}`}
+      <>
+        <div className="w-full text-2xl font-semibold text-purple-900 border-2 border-dotted pb-1 border-purple-900 border-t-0 border-r-0 border-l-0 border-b-1">
+          Try Coding
+        </div>
+        <div className="py-3">
+          {loading === true ? (
+            <SimpleLoader size={15} clr="purple" />
+          ) : (
+            <ul className="w-full px-5 py-2">
+              {allCodingQuestions.slice(0, 10).map((item, index) => (
+                <li
+                  key={item._id}
+                  className="hover:text-purple-900 flex items-satrt gap-1"
                 >
-                  <MdKeyboardDoubleArrowRight size={15} />
-                  {item.question}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </>
-      )}
+                  <Link
+                    className="flex items-satrt gap-1"
+                    href={`${`/coding/v1/${
+                      allSubjects[0].name
+                    }/${item.question?.replaceAll(" ", "-")}`}`}
+                  >
+                    <MdKeyboardDoubleArrowRight size={15} />
+                    {item.question}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      </>
     </div>
   );
 };
