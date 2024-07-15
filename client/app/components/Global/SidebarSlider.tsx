@@ -31,7 +31,7 @@ const SidebarSlider = ({
           <div className="w-[250px] px-3">
             <div className="w-full flex justify-end items-center"></div>
             <div
-              className={`w-full h-11 gap-2 font-semibold flex ${
+              className={`w-full h-11 pt-2 px-2 gap-2 font-semibold flex ${
                 itemType === "chapters"
                   ? "justify-between"
                   : "justify-between-reverse"
@@ -54,12 +54,10 @@ const SidebarSlider = ({
           </div>
         ) : (
           <>
-            <div className="w-[fit-content] bg-purple-100 m-2 border-purple-300 cursor-pointer text-gray-500 hover:bg-purple-100 p-1 border rounded-md">
-              <IoIosClose size={20} onClick={handleClose} />
-            </div>
             <QuestionBoard
               {...{
                 questions,
+                handleClose,
                 questionNo,
                 setQuestionNo,
                 loading,

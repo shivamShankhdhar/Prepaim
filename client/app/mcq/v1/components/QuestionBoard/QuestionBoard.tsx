@@ -4,6 +4,7 @@ import LevelHeading from "./LevelHeading";
 import QuestionItems from "./QuestionItems";
 import QuestionBoardSkeleton from "./QuestionBoardSkeleton";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
+import { IoIosClose } from "react-icons/io";
 // import { green } from '@mui/material/colors'
 
 const QuestionBoard = ({
@@ -12,6 +13,7 @@ const QuestionBoard = ({
   setQuestionNo,
   loading,
   error,
+  handleClose,
   setIsCommentSection,
   setIsAnswerExplanationOpen,
 }: any) => {
@@ -35,14 +37,19 @@ const QuestionBoard = ({
 
   return (
     <div
-      className={`bg-white sticky gap-0 top-[0px]  border-r-0 border-t-0 border-b-0 border border-gray-200 flex-col flex-grow-1  w-[350px]`}
+      className={`bg-white gap-0   border-r-0 border-t-0 border-b-0 border border-gray-200 flex-col flex-grow-1  w-[350px]`}
       id="question_board"
     >
-      <div className="w-full text-gray-500 text-center px-2 py-[10px] border border-t-0 border-l-0 border-r-0 flex items-center justify-center font-bold">
-        <IoClipboardOutline size={20} />
-        &nbsp; Question Board
+      <div className="w-full text-gray-500 text-center px-2 py-[10px] border border-t-0 border-l-0 border-r-0 flex items-center font-bold">
+        <div className="w-[fit-content] bg-purple-100 border-purple-300 cursor-pointer text-gray-500 hover:bg-purple-100 p-1 border rounded-md sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
+          <IoIosClose size={20} onClick={handleClose} />
+        </div>
+        <div className="flex-1 justify-center items-center flex">
+          <IoClipboardOutline size={20} />
+          &nbsp; Question Board
+        </div>
       </div>
-      <div className="pb-5 mt-2  overflow-y-auto px-2">
+      <div className="pb-5 mt-2 sm:h-[90vh] max-sm:h-[90vh] md:h-[90vh] max-md:h-[90vh] lg:h-[86vh] xl:h-[86vh] 2xl:h-[86vh] overflow-y-auto px-2">
         <div className="w-full flex flex-row gap-2 sans-serif bg-purple-50 rounded-md border border-purple-300 px-5 flex-wrap py-5">
           {Object.values(error).toString().replaceAll(",", "") === "" ? (
             !loading ? (
