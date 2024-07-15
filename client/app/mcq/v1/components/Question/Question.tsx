@@ -90,7 +90,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     >
                       <Link
                         href={`/mcq/v1/${subject}/${chapter}/${questionNo - 1}`}
-                        className="flex"
+                        className="flex justify-center items-center"
                       >
                         <IoIosArrowDropleft size={20} />
                         &nbsp; Prev
@@ -104,7 +104,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     >
                       <Link
                         href={`/mcq/v1/${subject}/${chapter}/${questionNo + 1}`}
-                        className="flex"
+                        className="flex justify-center items-center"
                       >
                         Next &nbsp; <IoIosArrowDropright size={20} />
                       </Link>
