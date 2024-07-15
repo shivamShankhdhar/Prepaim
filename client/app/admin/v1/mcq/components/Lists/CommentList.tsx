@@ -153,7 +153,7 @@ const CommentList = () => {
               <div className="flex w-full justify-end">
                 <div className="w-[200px]">
                   <Button
-                    className="bg-purple-800 text-white hover:bg-purple-700 py-0 gap-10"
+                    className="bg-indigo-800 text-white hover:bg-indigo-700 py-0 gap-10"
                     onClick={handleReloadComment}
                   >
                     Reload Comment
@@ -209,8 +209,8 @@ const CommentList = () => {
                         {data.isApproved === false ? (
                           <td className="px-6 py-4 ">
                             <Button
-                              sx={{ border: "1px solid green " }}
-                              className="bg-green-100 hover:bg-green-300 border border-1 border-green-800 py-1 text-green-800"
+                              sx={{ border: "1px solid indigo " }}
+                              className="bg-indigo-100 hover:bg-indigo-300 border border-1 border-indigo-800 py-1 text-indigo-800"
                               onClick={() =>
                                 handleApprovalCommentClick(data._id)
                               }
@@ -219,7 +219,7 @@ const CommentList = () => {
                             </Button>
                           </td>
                         ) : (
-                          <td className="px-6 py-4 flex justify-center items-center text-right  text-green-600">
+                          <td className="px-6 py-4 flex justify-center items-center text-right  text-indigo-600">
                             <div>
                               <IoCheckmarkDoneSharp />
                             </div>

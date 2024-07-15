@@ -58,13 +58,13 @@ const CodingDashboard = () => {
   return (
     <div className="w-full py-0 flex flex-col gap-1">
       <div className="w-full flex gap-1 flex-wrap justify-center bg-white py-5 rounded-md mt-1">
-        <div className="flex w-[450px] py-2 px-5 rounded-md bg-green-500">
+        <div className="flex w-[450px] py-2 px-5 rounded-md bg-indigo-500">
           <div className="flex justify-start items-center flex-1 text-white">
             Total questions
           </div>
           <div className="flex justify-center h-6 text-sm w-6 items-center bg-white rounded-full">
             {loading ? (
-              <SimpleLoader size={10} clr={"purple"} />
+              <SimpleLoader size={10} clr={"indigo"} />
             ) : (
               totalCodingQuestions.length
             )}
@@ -87,7 +87,7 @@ const CodingDashboard = () => {
           </div>
           <div
             onClick={handleReloadQuestion}
-            className="px-2 flex gap-2 py-1 bg-purple-800 text-white rounded-sm items-center cursor-pointer"
+            className="px-2 flex gap-2 py-1 bg-indigo-800 text-white rounded-sm items-center cursor-pointer"
           >
             <SlReload size={15} /> {loading ? "Loading..." : "reload"}
           </div>
@@ -95,7 +95,7 @@ const CodingDashboard = () => {
         <CodingQuestionTableHead />
 
         {/* {loading ? (
-          <SimpleLoader size={15} clr={"purple"} />
+          <SimpleLoader size={15} clr={"indigo"} />
         ) : (
           totalCodingQuestions.map((item, index) => {
             return (

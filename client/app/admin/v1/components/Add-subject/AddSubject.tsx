@@ -149,7 +149,7 @@ const AddSubject = () => {
                 </span>
               ) : (
                 <span
-                  className="text-green-500"
+                  className="text-indigo-500"
                   title="it's not available yet."
                 >
                   <SiTicktick size={15} />

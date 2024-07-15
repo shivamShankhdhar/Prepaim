@@ -516,7 +516,7 @@ const UpdateQuestionForMcq = () => {
                 ></textarea>
                 <div className="flex justify-center w-full">
                   <button
-                    className="w-[fit-content] py-2 px-3 bg-purple-800 text-white rounded-md focus:outline-indigo-100 hover:bg-purple-900 disabled:bg-purple-100"
+                    className="w-[fit-content] py-2 px-3 bg-indigo-800 text-white rounded-md focus:outline-indigo-100 hover:bg-indigo-900 disabled:bg-indigo-100"
                     disabled={dataChanged ? false : true}
                   >
                     {isPosting ? "Updating Question..." : "Update Question"}

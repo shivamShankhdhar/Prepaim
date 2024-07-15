@@ -50,14 +50,14 @@ const AddBranch = () => {
         <h1 className="text-2xl">Add Branch</h1>
         <input
           type="text"
-          className="px-2 w-full py-2 border  rounded-md focus:outline-purple-100"
+          className="px-2 w-full py-2 border  rounded-md focus:outline-indigo-100"
           placeholder="Enter Branch Name"
           onChange={(e: any) => setBranch(e.target.value)}
         />
         <div className="w-full flex justify-center items-center">
           <button
             type="submit"
-            className="py-1 px-3 justify-center items-center flex gap-2 w-[fit-content] bg-purple-700 hover:bg-purple-800 text-white rounded-sm"
+            className="py-1 px-3 justify-center items-center flex gap-2 w-[fit-content] bg-indigo-700 hover:bg-indigo-800 text-white rounded-sm"
           >
             {loading && <SimpleLoader size={15} clr={"white"} />} Add Branch
           </button>

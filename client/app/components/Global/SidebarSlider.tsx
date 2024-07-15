@@ -43,7 +43,7 @@ const SidebarSlider = ({
                 </div>
               )}
 
-              <div className="bg-purple-100 m-2 border-purple-300 cursor-pointer text-gray-500 hover:bg-purple-100 p-1 border rounded-md">
+              <div className="bg-indigo-100 m-2 border-indigo-300 cursor-pointer text-gray-500 hover:bg-indigo-100 p-1 border rounded-md">
                 <IoIosClose size={20} onClick={handleClose} />
               </div>
             </div>

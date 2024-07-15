@@ -36,7 +36,7 @@ const Sidebar = () => {
                   pathname.includes(
                     items.name.replaceAll(" ", "-").toLowerCase()
                   )
-                    ? "border-r-2  border-purple-500 bg-gray-100"
+                    ? "border-r-2  border-indigo-500 bg-gray-100"
                     : ""
                 } px-2 py-2  hover:bg-gray-100`}
               >

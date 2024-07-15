@@ -29,7 +29,7 @@ const Chapters = () => {
     }
   }, []);
   return (
-    <div className="border flex justify-between w-[400px] h-[150px] rounded-lg p-3 bg-gradient-to-r from-green-400 to-green-600 text-white text-2xl font-semibold">
+    <div className="border flex justify-between w-[400px] h-[150px] rounded-lg p-3 bg-gradient-to-r from-indigo-400 to-indigo-600 text-white text-2xl font-semibold">
       <h1>Total Chapters</h1>
       <p className="underline">
         {loadingChapters ? (

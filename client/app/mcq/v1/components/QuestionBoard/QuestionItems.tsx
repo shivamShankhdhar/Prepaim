@@ -21,8 +21,8 @@ const QuestionItems = ({ index, item }: any) => {
             : item.level === "b"
             ? `${
                 questionNo === index
-                  ? "bg-purple-600 text-white hover:bg-purple-900 "
-                  : "bg-purple-200 text-purple-900  hover:bg-purple-600 hover:text-white"
+                  ? "bg-indigo-600 text-white hover:bg-indigo-900 "
+                  : "bg-indigo-200 text-indigo-900  hover:bg-indigo-600 hover:text-white"
               }`
             : `${
                 questionNo === index
@@ -31,7 +31,7 @@ const QuestionItems = ({ index, item }: any) => {
               }`
         } ${
           questionNo === index &&
-          "  bg-purple-600  rounded-full text-white hover:text-white hover:bg-purple-700"
+          "  bg-indigo-600  rounded-full text-white hover:text-white hover:bg-indigo-700"
         }`}
         title={`${
           questionNo === index

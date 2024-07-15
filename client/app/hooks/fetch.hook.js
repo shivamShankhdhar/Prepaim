@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 axios.defaults.baseURL = "http://localhost:4000";
 //custom hook
 const useFetch = (query) => {
-  console.log(query);
+  // console.log(query);
   const [data, setData] = useState({
     isLoading: false,
     apiData: undefined,

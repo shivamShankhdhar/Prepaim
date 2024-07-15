@@ -80,7 +80,7 @@ const SubjectsList = () => {
                       <td className="px-6 py-4">{data.name}</td>
                       <td className="px-6 py-4">{data.branch}</td>
 
-                      <td className="px-6 py-4 text-right text-green-700">
+                      <td className="px-6 py-4 text-right text-indigo-700">
                         <Link href={""}>
                           <CiEdit size={20} />
                         </Link>

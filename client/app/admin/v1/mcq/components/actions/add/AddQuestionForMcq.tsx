@@ -266,7 +266,7 @@ const AddQuestionForMcq = () => {
   return (
     <div className="w-full flex flex-col px-10 items-center">
       <form
-        className="px-[50px] w-full mt-5 py-5 flex flex-col text-gray-700 h-[fit-content] rounded-md bg-white border border-purple-300"
+        className="px-[50px] w-full mt-5 py-5 flex flex-col text-gray-700 h-[fit-content] rounded-md bg-white border border-indigo-300"
         onSubmit={handleSubmit}
       >
         <h1 className="text-3xl font-semibold mb-3">Add Question</h1>
@@ -280,7 +280,7 @@ const AddQuestionForMcq = () => {
             <div className="flex w-full justify-between gap-2 border border-gray-300  rounded-md items-center overflow-hidden">
               <input
                 type="text"
-                className="px-2 flex-1 py-2 border-purple-300 border-r-1 border-l-0 border-t-0 border-b-0 border  focus:outline-none"
+                className="px-2 flex-1 py-2 border-indigo-300 border-r-1 border-l-0 border-t-0 border-b-0 border  focus:outline-none"
                 placeholder="Answer 1"
                 onChange={handleAnswer1}
               />
@@ -294,7 +294,7 @@ const AddQuestionForMcq = () => {
             <div className="flex w-full justify-between gap-2 border rounded-md border-gray-300 items-center overflow-hidden">
               <input
                 type="text"
-                className="px-2 flex-1 py-2 border-purple-300 border-r-1 border-l-0 border-t-0 border-b-0 border  focus:outline-none"
+                className="px-2 flex-1 py-2 border-indigo-300 border-r-1 border-l-0 border-t-0 border-b-0 border  focus:outline-none"
                 placeholder="Answer 2"
                 onChange={handleAnswer2}
               />
@@ -311,7 +311,7 @@ const AddQuestionForMcq = () => {
             <div className="flex w-full justify-between gap-2 rounded-md border border-gray-300 items-center overflow-hidden">
               <input
                 type="text"
-                className="px-2 flex-1 py-2 border-purple-300 border-r-1 border-l-0 border-t-0 border-b-0 border  focus:outline-none"
+                className="px-2 flex-1 py-2 border-indigo-300 border-r-1 border-l-0 border-t-0 border-b-0 border  focus:outline-none"
                 placeholder="Answer 3"
                 onChange={handleAnswer3}
               />
@@ -326,7 +326,7 @@ const AddQuestionForMcq = () => {
             <div className="flex w-full justify-between gap-2 items-center border border-gray-300 rounded-md overflow-hidden">
               <input
                 type="text"
-                className="px-2 flex-1 py-2 border-purple-300 border-r-1 border-l-0 border-t-0 border-b-0 border focus:outline-none"
+                className="px-2 flex-1 py-2 border-indigo-300 border-r-1 border-l-0 border-t-0 border-b-0 border focus:outline-none"
                 placeholder="Answer 4"
                 onChange={handleAnswer4}
               />
@@ -377,7 +377,7 @@ const AddQuestionForMcq = () => {
           <div className="flex justify-center w-full">
             <button
               type="submit"
-              className="w-[fit-content] flex gap-2 justify-center items-center py-1 px-3 bg-purple-700 text-white rounded-sm focus:outline-indigo-100 hover:bg-purple-900"
+              className="w-[fit-content] flex gap-2 justify-center items-center py-1 px-3 bg-indigo-700 text-white rounded-sm focus:outline-indigo-100 hover:bg-indigo-900"
             >
               {isPosting && <SimpleLoader size={15} clr={"white"} />}
               Add Question

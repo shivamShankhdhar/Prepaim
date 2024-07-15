@@ -24,7 +24,7 @@ const CodingQuestionItem = ({ item, index, id }: any) => {
       </div>
       {/* <div className="w-[50px] justify-center items-center flex">
         <Link href={`/admin/v1/coding/edit-coding-question/${id}`}>
-          <CiEdit size={20} className="text-green-700 hover:text-green-800" />
+          <CiEdit size={20} className="text-indigo-700 hover:text-indigo-800" />
         </Link>
       </div> */}
       <div className="w-[50px] justify-center items-center flex">

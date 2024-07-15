@@ -19,14 +19,14 @@ const AddDiscuss = ({
         <input
           type="text"
           placeholder="Enter your name (optional)"
-          className="w-full px-3 py-1 rounded-md outline-0 border border-purple-200 text-gray-600 "
+          className="w-full px-3 py-1 rounded-md outline-0 border border-indigo-200 text-gray-600 "
           onChange={(e: any) => setUserName(e.target.value)}
         />
         <div className="w-full">
           <textarea
             rows={3}
             id="comment-box"
-            className="w-full px-3 py-1 rounded-md outline-0 border text-gray-600 border-purple-200 max-h-auto min-h-[50px]"
+            className="w-full px-3 py-1 rounded-md outline-0 border text-gray-600 border-indigo-200 max-h-auto min-h-[50px]"
             placeholder="write a comment (required)"
             onChange={(e: any) => {
               setComment(e.target.value);
@@ -35,7 +35,7 @@ const AddDiscuss = ({
         </div>
         <div className="w-full flex flex-row justify-center items-center ">
           <div
-            className="bg-purple-800 text-white flex rounded-md justify-center items-center py-1 w-[fit-content] cursor-pointer hover:bg-purple-900 px-3"
+            className="bg-indigo-800 text-white flex rounded-md justify-center items-center py-1 w-[fit-content] cursor-pointer hover:bg-indigo-900 px-3"
             onClick={handleCommentSubmit}
           >
             {postingComment ? "Posting..." : "Post"}&nbsp;

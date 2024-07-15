@@ -65,7 +65,7 @@ const LoginPage = () => {
           placeholder="Enter your password"
         />
         <button
-          className="justify-center outline-none gap-2 w-[fit-content] flex items-center bg-purple-800 text-white px-3 py-1 hover:bg-purple-900 rounded-sm"
+          className="justify-center outline-none gap-2 w-[fit-content] flex items-center bg-indigo-800 text-white px-3 py-1 hover:bg-indigo-900 rounded-sm"
           type="submit"
         >
           {isLogging && <SimpleLoader size={15} clr={"white"} />}

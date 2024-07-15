@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div className="flex flex-col gap-2 text-purple-900">
+    <div className="flex flex-col gap-2 text-indigo-900">
       <div className="w-full text-3xl font-semibold">About Us</div>
       <h1 className="text-2xl font-semibold">
         Discover PrepAim: Your Ultimate Destination for Preparation Excellence

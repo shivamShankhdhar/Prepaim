@@ -49,14 +49,14 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 </div>
                 {/* question guide  */}
                 {isQuestionGuideOpen && (
-                  <div className="bg-purple-100 border border-purple-300 text-purple-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
+                  <div className="bg-indigo-100 border border-indigo-300 text-indigo-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
                     <div className="flex-1 ">
                       Try clicking an answer to check whether it is right or
                       wrong
                     </div>
                     <div
                       title="Close"
-                      className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-700 text-white"
+                      className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-indigo-700 text-white"
                       onClick={() => setIsQuestionGuideOpen(false)}
                     >
                       <IoIosClose size={20} />
@@ -98,7 +98,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     </button>
 
                     <button
-                      className=" bg-purple-600 px-3 rounded-sm flex justify-center items-center hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-200 disabled:cursor-not-allowed py-1"
+                      className=" bg-indigo-600 px-3 rounded-sm flex justify-center items-center hover:bg-indigo-700 text-white disabled:text-white disabled:bg-indigo-200 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === questions.length}
                       // onClick={handleNextQuestion}
                     >

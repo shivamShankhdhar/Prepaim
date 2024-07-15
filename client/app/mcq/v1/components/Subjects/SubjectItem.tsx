@@ -22,7 +22,7 @@ const SubjectItem = ({
           <div className="flex justify-between items-center gap-3 ">
             <div
               onClick={() => handleNavigateToQuestion(item.name)}
-              className="py-1 flex justify-center items-center gap-1 cursor-pointer px-5 bg-purple-800 text-white  hover:bg-purple-900"
+              className="py-1 flex justify-center items-center gap-1 cursor-pointer px-5 bg-indigo-800 text-white  hover:bg-indigo-900"
               title="Start Quizz"
             >
               {selectedSubject === item.name && searchingChapters && (

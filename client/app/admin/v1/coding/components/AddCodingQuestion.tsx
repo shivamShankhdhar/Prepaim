@@ -188,7 +188,7 @@ const AddCodingQuestion = () => {
               cls={
                 question !== ""
                   ? isQuestionAvailable === false
-                    ? "border-green-600"
+                    ? "border-indigo-600"
                     : "border-rose-500"
                   : ""
               }
@@ -272,7 +272,7 @@ const AddCodingQuestion = () => {
             <div className="flex w-full justify-center mt-2">
               <button
                 type="submit"
-                className="px-3 flex gap-2 rounded-sm justify-center items-center py-1 bg-purple-800 text-white hover:bg-purple-900 "
+                className="px-3 flex gap-2 rounded-sm justify-center items-center py-1 bg-indigo-800 text-white hover:bg-indigo-900 "
               >
                 {postingQuestion ? "Posting Question" : "Add Question"}
                 {postingQuestion && <SimpleLoader size={15} clr={"white"} />}
