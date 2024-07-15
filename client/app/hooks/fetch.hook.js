@@ -2,7 +2,9 @@ import axios from "axios";
 import dotenv from "dotenv";
 dotenv.config();
 import { useEffect, useState } from "react";
-axios.defaults.baseURL = process.env.AXIOS_BASE_URL;
+axios.defaults.baseURL =
+  process.env.AXIOS_BASE_URL || "http://prepaim.com:4000";
+console.log(axios.defaults.baseURL);
 //custom hook
 const useFetch = (query) => {
   // console.log(query);

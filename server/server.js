@@ -31,7 +31,7 @@ app.post("/upload", multerUpload().single("file"), uploadController);
 
 // routes
 // static files routes
-app.use("/static", express.static("uploads/images"));
+app.use("/static", express.static("public/static"));
 
 // api routes
 

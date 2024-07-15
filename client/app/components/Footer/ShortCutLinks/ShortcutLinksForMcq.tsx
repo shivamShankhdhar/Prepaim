@@ -21,18 +21,20 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
       if (data.serverError !== null) setLoadingError(data.serverError);
     }
   }, [data]);
-
-  return (
-    <div className="flex-1 px-1 flex flex-col">
-      <div className="w-full text-2xl font-semibold text-purple-900 border-2 border-dotted pb-1 border-purple-900 border-t-0 border-r-0 border-l-0 border-b-1">
-        Try MCQ
-      </div>
-      <div className="py-3">
-        {loading === true ? (
-          <SimpleLoader size={15} clr="purple" />
-        ) : (
-          <ul className="w-full px-5 py-2">
-            {allMcqQuestions.slice(0, 10).map((item, index) => (
+console.log(allMcqQuestions);
+return (
+  <div className="flex-1 px-1 flex flex-col">
+    <div className="w-full text-2xl font-semibold text-purple-900 border-2 border-dotted pb-1 border-purple-900 border-t-0 border-r-0 border-l-0 border-b-1">
+      Try MCQ
+    </div>
+    <div className="py-3">
+      {loading === true ? (
+        <SimpleLoader size={15} clr="purple" />
+      ) : (
+        <ul className="w-full px-5 py-2">
+          {allMcqQuestions.length > 0 &&
+            allMcqQuestions.length > 0 &&
+            allMcqQuestions?.map((item, index) => (
               <li
                 key={item._id}
                 className="hover:text-purple-900 flex items-satrt gap-1"
@@ -49,11 +51,11 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
                 </Link>
               </li>
             ))}
-          </ul>
-        )}
-      </div>
+        </ul>
+      )}
     </div>
-  );
+  </div>
+);
 };
 
 export default ShortcutLinksForMcq;
