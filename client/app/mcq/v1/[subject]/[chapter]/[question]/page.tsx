@@ -151,7 +151,7 @@ const QuestionPage = () => {
         >
           <Sidebar error={error} />
         </div>
-        <div className="grow flex flex-col  overflow-y-auto mb-12">
+        <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           <div className="w-full h-[100vh]">
             {/* breadcrumb  */}
             <Actions
