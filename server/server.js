@@ -30,17 +30,8 @@ app.post("/upload", multerUpload().single("file"), uploadController);
 
 // routes
 // static files routes
-app.use(
-  "/static",
-  express.static(
-    path.join(__dirname, "..", "client", "build"),
-    "uploads/images"
-  )
-);
+app.use("/static", express.static("uploads/images"));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(req.path.join(__dirname, "..", "client", "build", "index.html"));
-// });
 // api routes
 
 app.use("/admin", adminRouter);
