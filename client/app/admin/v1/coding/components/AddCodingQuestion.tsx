@@ -28,7 +28,7 @@ const AddCodingQuestion = () => {
       if (question !== "") {
         axios
           .get(
-            `http://www.prepaim.com:4000/admin/coding/checkCodingQuestionAvailability/${question}`
+            `http://localhost:4000/admin/coding/checkCodingQuestionAvailability/${question}`
           )
           .then((res) => {
             // console.log(`this is from success ${res.data.isAvailable}`);
@@ -148,13 +148,10 @@ const AddCodingQuestion = () => {
       // return alert({ questionObj });
       try {
         axios
-          .post(
-            "http://www.prepaim.com:4000/admin/coding/postquestionforcoding",
-            {
-              questionObj,
-              token,
-            }
-          )
+          .post("http://localhost:4000/admin/coding/postquestionforcoding", {
+            questionObj,
+            token,
+          })
           .then((response) => {
             setPostingQuestion(false);
             toast.success("Question added successfully");

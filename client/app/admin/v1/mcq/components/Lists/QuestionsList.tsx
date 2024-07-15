@@ -28,7 +28,7 @@ const QuestionsList = ({
   useEffect(() => {
     try {
       axios
-        .get("http://www.prepaim.com:4000/admin/mcq/getallquestions")
+        .get("http://localhost:4000/admin/mcq/getallquestions")
         .then((response) => {
           setQuestions(response.data);
           setLoadingQuestions(false);

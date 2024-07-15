@@ -63,7 +63,7 @@ const QuestionPage = () => {
     try {
       axios
         .get(
-          `http://www.prepaim.com:4000/mcq/getallquestionsbysubjectandchapter/${subject}/${chapter
+          `http://localhost:4000/mcq/getallquestionsbysubjectandchapter/${subject}/${chapter
             .toString()
             .replaceAll("-", " ")}`
         )
@@ -111,9 +111,7 @@ const QuestionPage = () => {
   useEffect(() => {
     try {
       axios
-        .get(
-          `http://www.prepaim.com:4000/mcq/getallchaptersbysubject/${subject}`
-        )
+        .get(`http://localhost:4000/mcq/getallchaptersbysubject/${subject}`)
         .then((response) => {
           setChapters(response.data);
         })

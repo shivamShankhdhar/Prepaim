@@ -12,7 +12,7 @@ const Subjects = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://www.prepaim.com:4000/api/getallsubjects")
+        .get("http://localhost:4000/api/getallsubjects")
         .then((response) => {
           setSubjects(response.data);
           setLoadingSubjects(false);
