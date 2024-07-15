@@ -30,7 +30,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
         return { ...prev, started: true };
       });
       axios
-        .post("http://localhost:100001/upload", formData, {
+        .post("http://localhost:10002/upload", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
