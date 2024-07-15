@@ -89,7 +89,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                       // onClick={handlePrevQuestion}
                     >
                       <Link
-                        href={`/mcq/${subject}/${chapter}/${questionNo - 1}`}
+                        href={`/mcq/v1/${subject}/${chapter}/${questionNo - 1}`}
                         className="flex"
                       >
                         <IoIosArrowDropleft size={20} />
@@ -103,7 +103,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                       // onClick={handleNextQuestion}
                     >
                       <Link
-                        href={`/mcq/${subject}/${chapter}/${questionNo + 1}`}
+                        href={`/mcq/v1/${subject}/${chapter}/${questionNo + 1}`}
                         className="flex"
                       >
                         Next &nbsp; <IoIosArrowDropright size={20} />
