@@ -24,7 +24,7 @@ const Sidebar = ({ error }: Props) => {
   useEffect(() => {
     try {
       axios
-        .get(`http://localhost:100001/mcq/getallchaptersbysubject/${subject}`)
+        .get(`http://localhost:10002/mcq/getallchaptersbysubject/${subject}`)
         .then((response) => {
           setChapters(response.data);
         })

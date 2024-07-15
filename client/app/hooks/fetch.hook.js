@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-axios.defaults.baseURL = "https://localhost:100001";
+axios.defaults.baseURL = "https://localhost:10002";
 //custom hook
 const useFetch = (query) => {
   console.log(query);

@@ -19,7 +19,7 @@ app.use(cors());
 
 app.use(express.json());
 
-const port = 100001;
+const port = 10002;
 
 app.get("/", (req, res) => {
   res.status(201).json("Home Get request");
