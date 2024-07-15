@@ -33,8 +33,7 @@ return (
       ) : (
         <ul className="w-full px-5 py-2">
           {allMcqQuestions.length > 0 &&
-            allMcqQuestions.length > 0 &&
-            allMcqQuestions?.map((item, index) => (
+            allMcqQuestions?.slice(0, 10)?.map((item, index) => (
               <li
                 key={item._id}
                 className="hover:text-purple-900 flex items-satrt gap-1"
