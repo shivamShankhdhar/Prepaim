@@ -5,10 +5,10 @@ const AnswerItem = ({ questions, questionNo, answer, index, isTrue }: any) => {
   const handleAnserClicked = (id: any) => {
     const questionById = document.getElementById(id);
     if (isTrue) {
-      questionById?.classList.add("bg-indigo-100");
-      questionById?.classList.add("hover:bg-indigo-100");
-      questionById?.classList.add("border-indigo-800");
-      questionById?.classList.add("hober:border-indigo-800");
+      questionById?.classList.add("bg-purple-100");
+      questionById?.classList.add("hover:bg-purple-100");
+      questionById?.classList.add("border-purple-800");
+      questionById?.classList.add("hober:border-purple-800");
     } else {
       questionById?.classList.add("bg-rose-100");
       questionById?.classList.add("hover:bg-rose-100");
@@ -18,7 +18,7 @@ const AnswerItem = ({ questions, questionNo, answer, index, isTrue }: any) => {
   };
   return (
     <div
-      className={`border gap-5 rounded-md cursor-pointer  hover:bg-indigo-50 py-2 px-5 sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] flex`}
+      className={`border gap-5 rounded-md cursor-pointer  hover:bg-purple-50 py-2 px-5 sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] flex`}
       onClick={() =>
         handleAnserClicked(
           `${questions[questionNo].question.replaceAll(" ", "-")}-${answer}`

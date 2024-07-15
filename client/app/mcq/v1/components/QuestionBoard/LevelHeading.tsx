@@ -9,7 +9,7 @@ const LevelHeading = ({ index, item, medium, advance }: any) => {
         </div>
       )}
       {index === medium && item.level === "b" && (
-        <div className="flex w-full px-2 rounded-[5px]  font-[13px] justify-center items-center bg-indigo-400 border border-indigo-700 text-indigo-50 mb-2 mt-2">
+        <div className="flex w-full px-2 rounded-[5px]  font-[13px] justify-center items-center bg-purple-400 border border-purple-700 text-purple-50 mb-2 mt-2">
           MEDIUM
         </div>
       )}

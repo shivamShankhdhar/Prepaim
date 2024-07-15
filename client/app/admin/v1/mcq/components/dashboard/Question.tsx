@@ -36,11 +36,11 @@ const Question = ({ isDeleted }: any) => {
   }, [isDeleted]);
 
   return (
-    <div className="border flex justify-between items-center w-[400px] h-[50px] rounded-md p-3 bg-gradient-to-r from-cyan-500 to-indigo-600 text-white text-2xl font-semibold">
+    <div className="border flex justify-between items-center w-[400px] h-[50px] rounded-md p-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-2xl font-semibold">
       <h1>Total Questions</h1>
-      <p className="bg-white text-indigo-700 rounded-full px-2">
+      <p className="bg-white text-purple-700 rounded-full px-2">
         {loadingQuestions ? (
-          <CircularProgress size={15} sx={{ color: "indigo" }} />
+          <CircularProgress size={15} sx={{ color: "purple" }} />
         ) : questionError === "" ? (
           `${questions.length}`
         ) : (

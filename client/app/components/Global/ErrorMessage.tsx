@@ -23,7 +23,7 @@ const ErrorMessage = ({ text, isButton, isBg }: Props) => {
       {isButton && (
         <div className="w-[fit-content]">
           <div
-            className="bg-indigo-800 flex px-3 justify-center cursor-pointer items-center rounded-md text-white hover:bg-indigo-700 py-1"
+            className="bg-purple-800 flex px-3 justify-center cursor-pointer items-center rounded-md text-white hover:bg-purple-700 py-1"
             onClick={() => window.location.reload()}
           >
             <SlReload size={18} />

@@ -149,7 +149,7 @@ const AddSubject = () => {
                 </span>
               ) : (
                 <span
-                  className="text-indigo-500"
+                  className="text-purple-500"
                   title="it's not available yet."
                 >
                   <SiTicktick size={15} />
@@ -179,7 +179,7 @@ const AddSubject = () => {
         <FileInput setImageURLFromServer={setImageURL} />
         <button
           type="submit"
-          className="w-full py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-md"
+          className="w-full py-2 bg-purple-500 hover:bg-purple-600 text-white rounded-md"
         >
           {isPosting ? "Posting..." : "Add Subject"}
           {isPosting && <SimpleLoader size={15} clr={"white"} />}

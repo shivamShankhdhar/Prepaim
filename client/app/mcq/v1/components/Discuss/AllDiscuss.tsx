@@ -13,7 +13,7 @@ const AllDiscuss = ({
   handleReloadComment,
 }: any) => {
   return (
-    <div className="flex flex-col px-0 py-1 gap-1 w-full mt-2 text-gray-700 border border-indigo-400 border-t-1 border-b-0 border-l-0 border-r-0">
+    <div className="flex flex-col px-0 py-1 gap-1 w-full mt-2 text-gray-700 border border-purple-400 border-t-1 border-b-0 border-l-0 border-r-0">
       <div className="flex items-center gap-2 py-3 px-0 font-semibold w-full ">
         All Discuss
       </div>
@@ -23,7 +23,7 @@ const AllDiscuss = ({
         <div className="flex justify-center items-center flex-col gap-3">
           <ErrorMessage text={error} isButton={false} isBg={false} />{" "}
           <Button
-            className="bg-indigo-800 text-white hover:bg-indigo-700 py-1"
+            className="bg-purple-800 text-white hover:bg-purple-700 py-1"
             onClick={handleReloadComment}
           >
             <SlReload size={18} />

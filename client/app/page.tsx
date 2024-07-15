@@ -58,7 +58,7 @@ export default function Home() {
               />
             )
           ) : (
-            <SimpleLoader size={40} clr={"indigo"} />
+            <SimpleLoader size={40} clr={"purple"} />
           )}
         </div>
         <div className="w-full flex flex-col gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
@@ -78,7 +78,7 @@ export default function Home() {
               />
             )
           ) : (
-            <SimpleLoader size={40} clr={"indigo"} />
+            <SimpleLoader size={40} clr={"purple"} />
           )}
         </div>
       </div>

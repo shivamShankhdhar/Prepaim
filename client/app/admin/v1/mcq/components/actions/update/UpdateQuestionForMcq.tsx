@@ -365,7 +365,7 @@ const UpdateQuestionForMcq = () => {
               <h1 className="text-3xl font-semibold mb-3">Update Question</h1>
               <div className="flex flex-col gap-2">
                 <textarea
-                  className="px-2 w-full py-2 border border-gray-300  rounded-md focus:outline-indigo-100"
+                  className="px-2 w-full py-2 border border-gray-300  rounded-md focus:outline-purple-100"
                   placeholder="Question"
                   defaultValue={data.question && data.question}
                   onChange={handleQuestion}
@@ -447,7 +447,7 @@ const UpdateQuestionForMcq = () => {
                 <div className="flex gap-2">
                   {/* question level */}
                   <select
-                    className="px-2 w-full py-3 border border-gray-300 cursor-pointer rounded-md focus:outline-indigo-100"
+                    className="px-2 w-full py-3 border border-gray-300 cursor-pointer rounded-md focus:outline-purple-100"
                     defaultValue={data.level}
                     onChange={(e: any) => handleLevel(e.target.value)}
                   >
@@ -470,7 +470,7 @@ const UpdateQuestionForMcq = () => {
                   </select>
                   {/* subjects */}
                   <select
-                    className="px-2 w-full py-3 border border-gray-300 cursor-pointer rounded-md focus:outline-indigo-100 capitalize"
+                    className="px-2 w-full py-3 border border-gray-300 cursor-pointer rounded-md focus:outline-purple-100 capitalize"
                     defaultValue={data.subject}
                     onChange={(e: any) => handleSelectedSubject(e.target.value)}
                   >
@@ -489,7 +489,7 @@ const UpdateQuestionForMcq = () => {
                   </select>
                   {/* chapters  */}
                   <select
-                    className="px-2 w-full py-3 border border-gray-300 cursor-pointer rounded-md focus:outline-indigo-100 capitalize"
+                    className="px-2 w-full py-3 border border-gray-300 cursor-pointer rounded-md focus:outline-purple-100 capitalize"
                     defaultValue={data.chapter}
                     onChange={(e: any) => handleSelectedChapter(e.target.value)}
                   >
@@ -510,13 +510,13 @@ const UpdateQuestionForMcq = () => {
                 </div>
                 <textarea
                   defaultValue={data.explanation[0].explanation.toString()}
-                  className="px-2 w-full py-3 border border-gray-300 rounded-md focus:outline-indigo-100"
+                  className="px-2 w-full py-3 border border-gray-300 rounded-md focus:outline-purple-100"
                   onChange={handleAnswerExplanation}
                   placeholder="Answer explanation"
                 ></textarea>
                 <div className="flex justify-center w-full">
                   <button
-                    className="w-[fit-content] py-2 px-3 bg-indigo-800 text-white rounded-md focus:outline-indigo-100 hover:bg-indigo-900 disabled:bg-indigo-100"
+                    className="w-[fit-content] py-2 px-3 bg-purple-800 text-white rounded-md focus:outline-purple-100 hover:bg-purple-900 disabled:bg-purple-100"
                     disabled={dataChanged ? false : true}
                   >
                     {isPosting ? "Updating Question..." : "Update Question"}

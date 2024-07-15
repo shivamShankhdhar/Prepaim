@@ -14,7 +14,7 @@ const CommentToggleBtn = ({
   return (
     <div
       title={`Total Comments : ${comments.length}`}
-      className="px-2 flex flex-row h-9 border cursor-pointer  rounded-md bg-indigo-100 justify-center gap-2 hover:bg-indigo-200 border-indigo-300 text-indigo-900 py-1"
+      className="px-2 flex flex-row h-9 border cursor-pointer  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
       onClick={handleCommentToggle}
     >
       {isCommentSection ? (
@@ -44,7 +44,7 @@ const CommentToggleBtn = ({
             <MdOutlineErrorOutline size={15} className="px-0" />
           )
         ) : (
-          <SimpleLoader size={15} cls={"text-indigo-800 "} />
+          <SimpleLoader size={15} cls={"text-purple-800 "} />
         )}
       </div>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Disclaimer = () => {
   return (
-    <div className="text-indigo-900">
+    <div className="text-purple-900">
       <h1 className="text-2xl font-semibold">Disclaimer for PrepAim</h1>
       <p>
         If you require any more information or have any questions about our

@@ -166,7 +166,7 @@ const SubjectList = () => {
                   isButton={false}
                 />
                 <div
-                  className="flex clex-row items-center justify-center gap-1 bg-indigo-700 cursor-pointer rounded-sm text-white py-1 px-2"
+                  className="flex clex-row items-center justify-center gap-1 bg-purple-700 cursor-pointer rounded-sm text-white py-1 px-2"
                   onClick={handleReloadSubjects}
                 >
                   <SlReload size={15} /> Reload

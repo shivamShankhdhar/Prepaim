@@ -106,13 +106,13 @@ const QuestionsList = ({
                       <td className="py-4 flex justify-center">
                         <div className=" px-5 mb-0">
                           {data.level === "a" && (
-                            <div className="bg-indigo-100 text-indigo-800 px-3  text-sm border border-indigo-800 rounded-full">
+                            <div className="bg-purple-100 text-purple-800 px-3  text-sm border border-purple-800 rounded-full">
                               basic
                             </div>
                           )}
 
                           {data.level === "b" && (
-                            <div className="bg-indigo-100 text-indigo-800 px-3 py-1/2 text-sm border border-indigo-800 rounded-full">
+                            <div className="bg-purple-100 text-purple-800 px-3 py-1/2 text-sm border border-purple-800 rounded-full">
                               medium
                             </div>
                           )}
@@ -125,7 +125,7 @@ const QuestionsList = ({
                         </div>
                       </td>
 
-                      <td className="px-6 py-4 text-right text-indigo-700">
+                      <td className="px-6 py-4 text-right text-purple-700">
                         <Link href={`/admin/update-question/${data._id}`}>
                           <CiEdit size={20} />
                         </Link>

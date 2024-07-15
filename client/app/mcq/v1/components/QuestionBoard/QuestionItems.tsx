@@ -12,17 +12,18 @@ const QuestionItems = ({ index, item }: any) => {
       <p
         key={`${index}-${item.question}`}
         className={`flex justify-center items-center h-9 w-9 cursor-pointer rounded-full ${
+          // on item level
           item.level === "a"
             ? `${
                 questionNo === index
-                  ? "bg-indigo-600 text-white hover:bg-indigo-700 "
-                  : "bg-indigo-200 text-indigo-600 hover:bg-indigo-700 hover:text-white"
+                  ? "bg-indigo-600 text-white hover:bg-indigo-700"
+                  : "bg-indigo-100 text-indigo-800 hover:bg-indigo-700 hover:text-white"
               }`
             : item.level === "b"
             ? `${
                 questionNo === index
-                  ? "bg-indigo-600 text-white hover:bg-indigo-900 "
-                  : "bg-indigo-200 text-indigo-900  hover:bg-indigo-600 hover:text-white"
+                  ? "bg-purple-600 text-white hover:bg-purple-900 "
+                  : "bg-purple-200 text-purple-900  hover:bg-purple-600 hover:text-white"
               }`
             : `${
                 questionNo === index
@@ -30,8 +31,16 @@ const QuestionItems = ({ index, item }: any) => {
                   : "bg-rose-200 text-rose-900  hover:bg-rose-600 hover:text-white"
               }`
         } ${
-          questionNo === index &&
-          "  bg-indigo-600  rounded-full text-white hover:text-white hover:bg-indigo-700"
+          // on active item
+          (questionNo === index &&
+            item.level === "a" &&
+            "bg-indigo-600  rounded-full text-white hover:text-white hover:bg-indigo-700") ||
+          (questionNo === index &&
+            item.level === "b" &&
+            "  bg-purple-600  rounded-full text-white hover:text-white hover:bg-purple-700") ||
+          (questionNo === index &&
+            item.level === "c" &&
+            "bg-rose-600 rounded-full text-white hover:text-white hover:bg-rose-700")
         }`}
         title={`${
           questionNo === index

@@ -2,7 +2,7 @@ import React from "react";
 
 const NoDiscussAvailable = () => {
   return (
-    <div className="bg-indigo-200 px-5 text-sm py-2 rounded-md">
+    <div className="bg-purple-200 px-5 text-sm py-2 rounded-md">
       No discuss query available for this question, be the first to query.
     </div>
   );

@@ -20,7 +20,7 @@ const CodingQuestionAdminSidebar = () => {
             key={index}
             className={`px-2 py-2 flex justify-start items-center gap-1 ${
               linkAddress.toString().split("/")[4] === item.link
-                ? "bg-indigo-800 text-white hover:bg-indigo-900"
+                ? "bg-purple-800 text-white hover:bg-purple-900"
                 : "text-gray-500  hover:bg-gray-100"
             }`}
           >

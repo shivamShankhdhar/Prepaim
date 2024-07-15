@@ -22,7 +22,7 @@ const CodingQuestionItemForSidebar = ({
         key={index}
         className={`${
           question === questionFromParams
-            ? "bg-indigo-800 text-white hover:bg-indigo-900"
+            ? "bg-purple-800 text-white hover:bg-purple-900"
             : "text-gray-500 hover:bg-gray-100"
         } flex flex-row gap-2 justify-start items-center px-2 py-2 `}
       >

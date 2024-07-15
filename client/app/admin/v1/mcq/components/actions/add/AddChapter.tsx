@@ -120,14 +120,14 @@ const AddChapter = () => {
         />
         <input
           type="text"
-          className="px-2 w-full py-2 border  rounded-md focus:outline-indigo-100"
+          className="px-2 w-full py-2 border  rounded-md focus:outline-purple-100"
           placeholder="Enter Chapter"
           onChange={(e: any) => setChapter(e.target.value)}
         />
         <div className="w-full flex justify-center items-center">
           <button
             type="submit"
-            className="w-[fit-content] px-3 flex justify-center items-center gap-2 py-1 bg-indigo-700 hover:bg-indigo-800 text-white rounded-sm"
+            className="w-[fit-content] px-3 flex justify-center items-center gap-2 py-1 bg-purple-700 hover:bg-purple-800 text-white rounded-sm"
           >
             {isPostingChapter === true && (
               <SimpleLoader size={15} clr={"white"} />

@@ -7,7 +7,7 @@ const PreviewImage = ({ imageFile }: any) => {
     <div className="w-full flex flex-col justify-center items-center">
       <div className="w-full flex justify-end items-center border py-3 border-b-1 border-t-0 border-l-0 border-r-0">
         <div
-          className="px-3 py-1 flex justify-center items-center bg-indigo-700 rounded-md hover:bg-indigo-600 text-white cursor-pointer"
+          className="px-3 py-1 flex justify-center items-center bg-purple-700 rounded-md hover:bg-purple-600 text-white cursor-pointer"
           onClick={() => setIsPreviewImage((prev) => !prev)}
         >
           {isPreviewImage ? "Hide Image" : "Show Image"}

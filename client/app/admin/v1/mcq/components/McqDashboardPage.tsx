@@ -98,7 +98,7 @@ const McqDashboardPage = () => {
               </span>
               <div className="flex justify-between items-center gap-1 mt-3 w-[200px]">
                 <Button
-                  className="bg-indigo-700 hover:bg-indigo-600 text-white"
+                  className="bg-purple-700 hover:bg-purple-600 text-white"
                   onClick={() => {
                     setIsSheetOpen(false);
                   }}

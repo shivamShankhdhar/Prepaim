@@ -32,12 +32,12 @@ const FooterLinks = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className="w-full flex flex-col gap-1 py-2 bg-indigo-50 h-[100vh] overflow-y-auto">
+        <div className="w-full flex flex-col gap-1 py-2 bg-purple-50 h-[100vh] overflow-y-auto">
           <div className="w-full flex justify-end items-center cursor-pointer px-11">
             <div
               onClick={handleClose}
               title="Close this page"
-              className="p-2 bg-indigo-100 hover:bg-indigo-200 border-indigo-300 text-indigo-800 border rounded-md"
+              className="p-2 bg-purple-100 hover:bg-purple-200 border-purple-300 text-purple-800 border rounded-md"
             >
               <IoClose size={20} />
             </div>
@@ -73,7 +73,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("about");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-indigo-100"
+          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-purple-100"
         >
           About us
         </li>
@@ -82,7 +82,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("Privacy");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-indigo-100"
+          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-purple-100"
         >
           Privacy
         </li>
@@ -91,7 +91,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("Disclaimer");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-indigo-100"
+          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-purple-100"
         >
           Disclaimer
         </li>
@@ -100,7 +100,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("contact");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-indigo-100"
+          className="flex cursor-pointer justify-center items-center px-3 py-2 rounded-md hover:bg-purple-100"
         >
           Contact
         </li>

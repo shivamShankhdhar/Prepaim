@@ -14,7 +14,7 @@ const SidebarItem = ({ item, index }: any) => {
       <p
         className={`flex border border-t-0 border-l-1 border-b-0 border-r-0 items-center gap-2 w-full px-2 py-2  ${
           String(item.name.replaceAll(" ", "-")) === chapter
-            ? " border-indigo-800 bg-indigo-100 hover:bg-indigo-200 text-indigo-800"
+            ? " border-purple-800 bg-purple-100 hover:bg-purple-200 text-purple-800"
             : "  border-gray-300 bg-gray-100 hover:bg-gray-200 text-gray-800"
         }`}
       >

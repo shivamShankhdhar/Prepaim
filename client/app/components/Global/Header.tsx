@@ -30,7 +30,7 @@ const Header = () => {
   // open modal
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <div className="flex  sticky top-0 justify-between border-indigo-300 border-[2px] border-l-0 border-t-0 border-r-0 bg-white  h-[50px] items-center px-10 py-3 border-b z-50">
+    <div className="flex  sticky top-0 justify-between border-purple-300 border-[2px] border-l-0 border-t-0 border-r-0 bg-white  h-[50px] items-center px-10 py-3 border-b z-50">
       <div className="flex-1">
         <Link href={"/"}>
           <Image

@@ -26,14 +26,14 @@ const ShareBtn = () => {
     <div
       className={`rounded-md px-2 flex gap-2 py-0 justify-center cursor-pointer items-center border  ${
         linkCopied
-          ? "text-indigo-800 bg-indigo-100 border-indigo-800 hover:bg-indigo-200"
-          : "bg-indigo-100 text-indigo-800  border-indigo-300 hover:bg-indigo-200"
+          ? "text-purple-800 bg-purple-100 border-purple-800 hover:bg-purple-200"
+          : "bg-purple-100 text-purple-800  border-purple-300 hover:bg-purple-200"
       }`}
       title={`Share with your friends on ${link}`}
       onClick={() => handleShare()}
     >
       {linkCopied ? (
-        <LuCopyCheck size={20} className="text-indigo-800" />
+        <LuCopyCheck size={20} className="text-purple-800" />
       ) : (
         <IoShareSocialOutline size={20} />
       )}

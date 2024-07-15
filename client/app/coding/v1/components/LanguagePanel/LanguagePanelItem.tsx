@@ -9,7 +9,7 @@ const LanguagePanelItem = ({ item, question, layoutType }: any) => {
     <div
       className={`border rounded p-2 h-[fit-content] object-cover ${
         item.name === language
-          ? "bg-indigo-200 hover:bg-indigo-100"
+          ? "bg-purple-200 hover:bg-purple-100"
           : "hover:bg-gray-100"
       }`}
     >

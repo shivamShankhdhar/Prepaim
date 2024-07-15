@@ -8,7 +8,7 @@ const ToggleAnswerExplanationBtn = ({
 }: any) => {
   return (
     <div
-      className="bg-indigo-100 h-9 border rounded-md hover:bg-indigo-200 flex items-center justify-center gap-2 px-2 py-0 cursor-pointer text-indigo-900 border-indigo-300 "
+      className="bg-purple-100 h-9 border rounded-md hover:bg-purple-200 flex items-center justify-center gap-2 px-2 py-0 cursor-pointer text-purple-900 border-purple-300 "
       onClick={handleAnswerExplanationToggle}
     >
       {isAnswerExplanationOpen && <IoEyeOffOutline />}
