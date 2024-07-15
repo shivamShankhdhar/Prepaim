@@ -51,7 +51,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 {isQuestionGuideOpen && (
                   <div className="bg-purple-100 border border-purple-300 text-purple-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
                     <div className="flex-1 ">
-                      Try clicking on answer to check whether it is right or
+                      Try clicking an answer to check whether it is right or
                       wrong
                     </div>
                     <div
