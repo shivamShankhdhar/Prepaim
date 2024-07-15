@@ -83,7 +83,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 </div>
                 <div className="flex flex-col justify-between py-2">
                   <div className="flex w-full justify-between py-1 ">
-                    <Button
+                    <button
                       className="bg-gray-200 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === 1}
                       // onClick={handlePrevQuestion}
@@ -95,9 +95,9 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                         <IoIosArrowDropleft size={20} />
                         &nbsp; Prev
                       </Link>
-                    </Button>
+                    </button>
 
-                    <Button
+                    <button
                       className=" bg-purple-600 hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-200 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === questions.length}
                       // onClick={handleNextQuestion}
@@ -108,7 +108,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                       >
                         Next &nbsp; <IoIosArrowDropright size={20} />
                       </Link>
-                    </Button>
+                    </button>
                   </div>
                 </div>
               </div>
