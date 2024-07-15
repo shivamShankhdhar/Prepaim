@@ -1,6 +1,8 @@
 import axios from "axios";
+import dotenv from "dotenv";
+dotenv.config();
 import { useEffect, useState } from "react";
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = process.env.AXIOS_BASE_URL;
 //custom hook
 const useFetch = (query) => {
   // console.log(query);
