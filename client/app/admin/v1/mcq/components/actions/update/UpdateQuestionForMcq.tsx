@@ -280,7 +280,7 @@ const UpdateQuestionForMcq = () => {
       try {
         // post question to db
         axios
-          .put(`http://localhost:10002/api/update-question/${id}`, {
+          .put(`http://localhost:4000/api/update-question/${id}`, {
             updatedQuestion,
             token,
           })
@@ -303,7 +303,7 @@ const UpdateQuestionForMcq = () => {
     try {
       setLoading(true);
       axios
-        .get("http://localhost:10002/api/getallsubjects")
+        .get("http://localhost:4000/api/getallsubjects")
         .then((response) => {
           if (response.data.length > 0) {
             setsubjects(response.data);
@@ -329,7 +329,7 @@ const UpdateQuestionForMcq = () => {
       try {
         axios
           .get(
-            `http://localhost:10002/api/getallchaptersbysubject/${selectedSubject}`
+            `http://localhost:4000/api/getallchaptersbysubject/${selectedSubject}`
           )
           .then((response) => {
             if (response.data.length > 0) setChapters(response.data);

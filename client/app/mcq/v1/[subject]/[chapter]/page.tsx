@@ -19,7 +19,7 @@ const ChapterPage = () => {
   useEffect(() => {
     try {
       axios
-        .get(`http://localhost:10002/mcq/getallchaptersbysubject/${subject}`)
+        .get(`http://localhost:4000/mcq/getallchaptersbysubject/${subject}`)
         .then((response) => {
           setChapters(response.data);
           setIsLoading(false);

@@ -86,7 +86,7 @@ const AddChapter = () => {
       try {
         setIsPostingChapter(true);
         axios
-          .post("http://localhost:10002/admin/mcq/postchapter", {
+          .post("http://localhost:4000/admin/mcq/postchapter", {
             chapterObj,
             token,
           })

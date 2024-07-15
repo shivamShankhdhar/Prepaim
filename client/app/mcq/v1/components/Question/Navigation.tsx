@@ -80,7 +80,7 @@ const Navigation = ({
     }
     try {
       await axios
-        .post("http://localhost:10002/mcq/postcomment", commentObj)
+        .post("http://localhost:4000/mcq/postcomment", commentObj)
         .then((data) => {
           setPostingComment(false);
           setIsCommentAdded((prev) => !prev);
@@ -110,7 +110,7 @@ const Navigation = ({
       setLoadingComment(true);
       setError("");
       axios
-        .get(`http://localhost:10002/mcq/getcommentbyquestion/${question}`)
+        .get(`http://localhost:4000/mcq/getcommentbyquestion/${question}`)
         .then((response) => {
           const commentsFromServer = response.data;
           setComments(commentsFromServer);

@@ -24,7 +24,7 @@ const SubjectsList = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://localhost:10002/admin/mcq/getallsubjects")
+        .get("http://localhost:4000/admin/mcq/getallsubjects")
         .then((response) => {
           setSubjects(response.data);
           setloadingSubjects(false);
