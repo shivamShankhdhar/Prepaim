@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 
 import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 import QuestionSkeleton from "./QuestionSkeleton";
@@ -10,7 +10,7 @@ import WrongQuestionSelectedInURL from "./WrongQuestionSelectedInURL";
 import { Button } from "@mui/material";
 import QuestionLevel from "@/app/components/QuestionLevel/QuestionLevel";
 import AnswerItem from "../Answer/AnswerItem";
-
+import { IoIosClose } from "react-icons/io";
 interface Props {
   questions: any;
   chapter: any;
@@ -22,6 +22,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
   const { subject } = useParams();
   const { question } = useParams();
   const questionNo = Number(question);
+  const [isQuestionGuideOpen, setIsQuestionGuideOpen] = useState(true);
   return (
     <>
       {Object.values(error).toString() === "" ? (
@@ -46,6 +47,23 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     ?
                   </div>
                 </div>
+                {/* question guide  */}
+                {isQuestionGuideOpen && (
+                  <div className="bg-green-100 border border-green-300 text-green-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] animate-pulse">
+                    <div className="flex-1 ">
+                      Try clicking on answer to check whether it is right or
+                      wrong
+                    </div>
+                    <div
+                      title="Close"
+                      className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-green-700 text-white"
+                      onClick={() => setIsQuestionGuideOpen(false)}
+                    >
+                      <IoIosClose size={20} />
+                    </div>
+                  </div>
+                )}
+
                 {/* answers */}
                 <div className=" flex justify-center items-center py-5 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap">
                   {questions[questionNo - 1]?.answer.map(
