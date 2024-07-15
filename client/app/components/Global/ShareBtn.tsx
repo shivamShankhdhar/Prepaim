@@ -10,7 +10,7 @@ const ShareBtn = () => {
   const hostName = window.location.host;
   const pathname = usePathname();
 
-  const link = `${hostName}${pathname}`;
+  const link = `https://www.${hostName}${pathname}`;
 
   const handleShare = () => {
     navigator.clipboard;
