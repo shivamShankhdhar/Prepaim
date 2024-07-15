@@ -84,7 +84,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 <div className="flex flex-col justify-between py-2">
                   <div className="flex w-full justify-between py-1 ">
                     <button
-                      className="bg-gray-200 px-3 rounded-sm text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
+                      className="bg-gray-200 px-3 rounded-sm flex justify-center items-center text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === 1}
                       // onClick={handlePrevQuestion}
                     >
@@ -98,7 +98,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     </button>
 
                     <button
-                      className=" bg-purple-600 px-3 rounded-sm hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-200 disabled:cursor-not-allowed py-1"
+                      className=" bg-purple-600 px-3 rounded-sm flex justify-center items-center hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-200 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === questions.length}
                       // onClick={handleNextQuestion}
                     >
