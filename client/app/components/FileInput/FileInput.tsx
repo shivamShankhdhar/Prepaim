@@ -30,7 +30,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
         return { ...prev, started: true };
       });
       axios
-        .post("https://www.api.data.prepaim.com/upload", formData, {
+        .post("https://api.data.prepaim.com/upload", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
