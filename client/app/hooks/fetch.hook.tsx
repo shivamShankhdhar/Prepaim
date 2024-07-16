@@ -1,14 +1,13 @@
 import axios from "axios";
-import dotenv from "dotenv";
-dotenv.config();
 import { useEffect, useState } from "react";
-axios.defaults.baseURL =
+const default_backend_url =
   process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
-console.log(axios.defaults.baseURL);
+axios.defaults.baseURL = default_backend_url;
+// console.log(default_backend_url);
 //custom hook
-const useFetch = (query) => {
+const useFetch = (query: any) => {
   // console.log(query);
-  const [data, setData] = useState({
+  const [data, setData] = useState<any>({
     isLoading: false,
     apiData: undefined,
     status: null,
@@ -19,12 +18,12 @@ const useFetch = (query) => {
     if (!query) return;
     const fetchData = async () => {
       try {
-        setData((prev) => ({ ...prev, isLoading: true }));
+        setData((prev: any) => ({ ...prev, isLoading: true }));
         axios
           .get(`${query}`)
           .then((response) => {
             // console.log(response.data);
-            setData((prev) => ({
+            setData((prev: any) => ({
               ...prev,
               isLoading: false,
               apiData: response.data,
@@ -32,14 +31,18 @@ const useFetch = (query) => {
             }));
           })
           .catch((err) => {
-            setData((prev) => ({
+            setData((prev: any) => ({
               ...prev,
               isLoading: false,
               serverError: err,
             }));
           });
       } catch (error) {
-        setData((prev) => ({ ...prev, isLoading: false, serverError: error }));
+        setData((prev: any) => ({
+          ...prev,
+          isLoading: false,
+          serverError: error,
+        }));
       }
     };
     fetchData();

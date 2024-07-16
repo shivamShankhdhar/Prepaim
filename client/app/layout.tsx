@@ -15,9 +15,9 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <div className="flex flex-col w-full">
+        <main className="flex flex-col w-full">
           <CookiesProvider>{children}</CookiesProvider>
-        </div>
+        </main>
       </body>
     </html>
   );

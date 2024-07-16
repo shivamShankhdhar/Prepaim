@@ -28,9 +28,8 @@ export default function RootLayout({
   return (
     <html>
       <body className={cn("min-h-screen bg-background", fontSans.variable)}>
-        <Header />
-
         <main className="flex">
+          <Header />
           <CodingQuestionAdminSidebar />
           <CookiesProvider>{children}</CookiesProvider>
         </main>

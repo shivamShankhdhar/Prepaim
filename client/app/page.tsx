@@ -7,8 +7,8 @@ import ErrorMessage from "./components/Global/ErrorMessage";
 import SimpleLoader from "./components/Global/SimpleLoader";
 import TryProgrammingQustions from "./components/Home/TryProgrammingQustions";
 import TryMCQ from "./components/Home/TryMCQ";
-import useFetch from "./hooks/fetch.hook";
 import Header from "./components/Global/Header";
+import useFetch from "./hooks/fetch.hook";
 
 export default function Home() {
   const [subjectsFromServer, setSubjectsFromServer] = useState(
@@ -31,7 +31,7 @@ export default function Home() {
   const [errorLoadingSubjects, setErrorLoadingSubjects] = useState("");
 
   return (
-    <main className="flex w-full items-center flex-col h-[fit-content] mb-3">
+    <div className="flex w-full items-center flex-col h-[fit-content] mb-3">
       <div className="w-full">
         <Header />
       </div>
@@ -83,6 +83,6 @@ export default function Home() {
         </div>
       </div>
       <Footer />
-    </main>
+    </div>
   );
 }

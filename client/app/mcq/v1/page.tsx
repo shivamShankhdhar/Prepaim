@@ -3,10 +3,10 @@ import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   return (
-    <main className="flex justify-center flex-col ">
+    <div className="flex justify-center flex-col ">
       <Toaster position="top-center" reverseOrder={false} />
       {/* hero section  */}
       <HeroSection />
-    </main>
+    </div>
   );
 }

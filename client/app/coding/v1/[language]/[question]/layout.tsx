@@ -16,10 +16,10 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <div className="flex flex-row w-full h-[92vh] overflow-hidden">
+        <main className="flex flex-row w-full h-[92vh] overflow-hidden">
           <Header />
           <CookiesProvider>{children}</CookiesProvider>
-        </div>
+        </main>
       </body>
     </html>
   );

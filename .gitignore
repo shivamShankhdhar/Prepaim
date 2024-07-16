@@ -1,4 +1,5 @@
 client/node_modules
 client/.next
 server/.env
-client/app/.env
+# client/.env
+client/.env.local
