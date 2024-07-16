@@ -26,7 +26,7 @@ const AddBranch = () => {
           token,
         })
         .then((response) => {
-          console.log(response.data);
+          response.data;
           setLoading(false);
           return toast.success("Branch added...!");
         })

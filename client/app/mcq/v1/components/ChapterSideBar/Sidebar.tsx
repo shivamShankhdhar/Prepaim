@@ -31,10 +31,10 @@ const Sidebar = ({ error }: Props) => {
           setChapters(response.data);
         })
         .catch((error) => {
-          console.log(error);
+          (error);
         });
     } catch (error: any) {
-      console.log(error.message);
+      (error.message);
     }
   }, [subject]);
 

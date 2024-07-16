@@ -7,7 +7,7 @@ export const Login = async (req, res) => {
     const { password } = req.params;
     const isAdmin = true;
     const isExists = await User.findOne({ username, password, isAdmin });
-    // console.log(isExists);
+    // (isExists);
     if (isExists !== null) {
       // if password, create jwt token
       const token = jsonwebtoken.sign(

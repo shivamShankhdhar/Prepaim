@@ -47,7 +47,7 @@ const CodingQuestionSidebar = () => {
           "https://api.data.prepaim.com/admin/coding/getAllQuestionsFromCoding"
         )
         .then((response) => {
-          console.log(response.data);
+          response.data;
           setQuestionObjectFromServer(response.data);
           setLoadingQuestionFromServer(false);
         })

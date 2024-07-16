@@ -23,7 +23,7 @@ const Subjects = () => {
         });
     } catch (error) {
       setLoadingSubjects(false);
-      console.log(error);
+      error;
     } finally {
     }
   }, []);

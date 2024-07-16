@@ -46,7 +46,7 @@ const TryProgrammingQustions = ({ subjects }: any) => {
   //   }
   // }, [data]);
 
-  // console.log(firstQuestionFromCodingBySubject);
+  // (firstQuestionFromCodingBySubject);
   // useEffect(() => {
   //   if (selectedSubject !== "") {
   //     if (

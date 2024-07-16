@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 
 export default async function Auth(req, res, next) {
   const token = req.body.token;
-  console.log(token);
+  token;
   try {
     const user = await jwt.verify(token, "secret");
     req.user = user;

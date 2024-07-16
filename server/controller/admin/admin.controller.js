@@ -1,7 +1,7 @@
 import Subject from "../../models/admin/subject.model.js";
 
 export const postSubject = async (req, res) => {
-  // console.log(req.body);
+  // (req.body);
   try {
     if (req.body) {
       const { name } = req.body.subjectObj;
@@ -33,11 +33,11 @@ export const getSubjects = async (req, res) => {
         return res.status(200).send(data);
       })
       .catch((error) => {
-        console.log(error.message);
+        error.message;
         return res.status(404).send({ error });
       });
   } catch (error) {
-    console.log(error.message);
+    error.message;
     return res.status(501).send("Something went wrong...!");
   }
 };

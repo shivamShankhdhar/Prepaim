@@ -7,10 +7,10 @@ import {
 
 const FooterSocialMedia = () => {
   return (
-    <div className="flex justify-center items-center flex-col  text-purple-900">
-      <div className="flex w-[fit-content] items-center text-2xl font-semibold">
+    <div className="flex  justify-center items-center ">
+      {/* <div className="flex w-[fit-content] items-center text-xl font-semibold">
         Follow Us on Social Media
-      </div>
+      </div> */}
       <ul className="flex gap-2">
         <li className="flex justify-center hover:text-purple-950 items-center cursor-pointer">
           <FaFacebookSquare size={30} />

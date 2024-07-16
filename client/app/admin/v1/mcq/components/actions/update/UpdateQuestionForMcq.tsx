@@ -139,7 +139,7 @@ const UpdateQuestionForMcq = () => {
       setQuestionFromServer(obj);
     });
 
-    // console.log(newQuestion)
+    // (newQuestion)
   }, [question]);
 
   const handleClickCheckbox = (e: any) => {
@@ -213,7 +213,7 @@ const UpdateQuestionForMcq = () => {
     setAnserExplanation(e.target.value);
   };
   const handleLevel = (value: any) => {
-    console.log(value);
+    value;
     setDataChanged(true);
     setSelectedLevel(value);
   };
@@ -242,7 +242,7 @@ const UpdateQuestionForMcq = () => {
       explanation: [{ explanation: answerExplanation }],
       level: selectedLevel,
     };
-    console.log(obj);
+    obj;
     setUpdatedQuestion(obj);
   }, [
     que,
@@ -259,7 +259,7 @@ const UpdateQuestionForMcq = () => {
     answerExplanation,
     selectedLevel,
   ]);
-  console.log(`${updatedQuestion}`);
+  `${updatedQuestion}`;
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setIsPosting(true);
@@ -276,7 +276,7 @@ const UpdateQuestionForMcq = () => {
     else if (answerExplanation === "")
       return toast.error("Answer Explanation is Required");
     else {
-      // console.log(updatedQuestion)
+      // (updatedQuestion)
       try {
         // post question to db
         axios

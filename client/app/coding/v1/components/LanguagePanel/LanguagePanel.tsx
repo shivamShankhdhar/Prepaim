@@ -17,7 +17,7 @@ const LanguagePanel = ({ layoutType }: any) => {
 
   const { data } = useFetch("/admin/getAllSubjects");
   // if (data.apiData !== undefined) {
-  //   console.log(data.apiData.filter((i: any) => i.type === "language"));
+  //   (data.apiData.filter((i: any) => i.type === "language"));
   // }
   useEffect(() => {
     if (data.apiData !== undefined) {

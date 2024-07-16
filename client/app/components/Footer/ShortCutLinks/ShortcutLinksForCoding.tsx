@@ -26,7 +26,7 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
     }
   }, [CodingQuestion]);
 
-  // console.log(allCodingQuestions);
+  // (allCodingQuestions);
 
   // first extract subject that has type language
 
@@ -53,7 +53,7 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
                         allSubjects[0].name
                       }/${item.question?.replaceAll(" ", "-")}`}`}
                     >
-                      <MdKeyboardDoubleArrowRight size={15} />
+                      <MdKeyboardDoubleArrowRight size={20} />
                       {item.question}
                     </Link>
                   </li>

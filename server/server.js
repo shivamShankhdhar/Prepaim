@@ -43,10 +43,10 @@ app.use("/mcq", mcqRouter);
 app.use("/user", userRouter);
 
 connectDB().then((data) => {
-  console.log("Database Connected")
+  ("Database Connected")
   app.listen(port, () => {
-    console.log(`Server is running on port ${port}`)
+    (`Server is running on port ${port}`)
   })
 }).catch((error) => {
-  console.log(error)
+  (error)
 })

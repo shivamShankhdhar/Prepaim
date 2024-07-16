@@ -35,7 +35,7 @@ const SubjectsList = () => {
         });
     } catch (error) {
       setloadingSubjects(false);
-      console.log(error);
+      error;
     }
   }, []);
   return (

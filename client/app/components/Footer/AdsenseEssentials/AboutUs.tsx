@@ -10,17 +10,7 @@ const AboutUs = () => {
       <br />
       <p>
         Welcome to PrepAim, where we are dedicated to helping you excel in your
-        preparations. Founded in 2024 by
-        <span className="font-semibold"> Er. Shivam Shankhdhar </span>and
-        <span className="font-semibold"> Shraddha Varshney</span>, our passion
-        for educational success drives everything we do.
-      </p>
-      <br />
-      <p>
-        Er. Shivam Shankhdhar holds a B.Tech degree in Computer Science and
-        Engineering and a Post Graduation Diploma in Advanced Computing from
-        CDAC, Noida. Shraddha Varshney is currently pursuing an MCA degree from
-        AKTU after completing her B.Sc. in Mathematics.
+        preparations.
       </p>
       <br />
       <p>
@@ -41,6 +31,19 @@ const AboutUs = () => {
         academic goals.
       </p>
       <br />
+      <p>
+        Founded in 2024 by
+        <span className="font-semibold"> Er. Shivam Shankhdhar </span>and
+        <span className="font-semibold"> Shraddha Varshney</span>, our passion
+        for educational success drives everything we do.
+      </p>
+      <br />
+      <p>
+        Er. Shivam Shankhdhar holds a B.Tech degree in Computer Science and
+        Engineering and a Post Graduation Diploma in Advanced Computing from
+        CDAC, Noida. Shraddha Varshney is currently pursuing an MCA degree from
+        AKTU after completing her B.Sc. in Mathematics.
+      </p>
       <h1 className="text-2xl font-semibold">
         PrepAim - Your trusted partner in preparation excellence.
       </h1>

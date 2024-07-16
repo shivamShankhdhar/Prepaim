@@ -7,7 +7,7 @@ import { TbLogout2 } from "react-icons/tb";
 const Logout = () => {
   const router = useRouter();
   const cookies = useCookies();
-  // console.log(c)ookies;
+  // (c)ookies;
   const handleLogout = () => {
     cookies.remove("username");
     cookies.remove("token");

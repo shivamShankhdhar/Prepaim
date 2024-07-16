@@ -13,11 +13,11 @@ export const postQuestions = async (req, res) => {
       const Que = new Question(req.body.question);
       await Que.save()
         .then((response) => {
-          // console.log(response)
+          // (response)
           return res.status(201).send({ msg: "Question Saved...!" });
         })
         .catch((error) => {
-          console.log(error.message);
+          error.message;
           return res.status(501).send({ msg: "Question Already Exists...!" });
         });
     } else {
@@ -26,18 +26,18 @@ export const postQuestions = async (req, res) => {
       });
     }
   } catch (error) {
-    console.log(error.message);
+    error.message;
     return res.status(500).send({ msg: "Something went wrong...!" });
   }
 };
 
 export const postChapter = async (req, res) => {
-  // console.log(req.body);
+  // (req.body);
   try {
     const { name } = req.body.chapterObj;
-    // console.log(name);
+    // (name);
     const isExists = await Chapter.findOne({ name });
-    // console.log(isExists);
+    // (isExists);
     if (isExists === null) {
       const chap = new Chapter(req.body.chapterObj);
       await chap
@@ -69,11 +69,11 @@ export const postBranch = async (req, res) => {
             return res.status(201).send({ message: "Branch added...!" });
           })
           .catch((e) => {
-            console.log(e.message);
+            e.message;
             return res.status(501).send({ error: e.message });
           });
       } catch (error) {
-        console.log(error);
+        error;
         return res.status(501).send({ error: error.message });
       }
     } else {
@@ -120,7 +120,7 @@ export const getChapters = async (req, res) => {
 
 export const updateQuestion = async (req, res) => {
   const { id } = req.params;
-  console.log(req.body);
+  req.body;
 
   await Question.findByIdAndUpdate(
     { _id: id },
@@ -134,11 +134,11 @@ export const updateQuestion = async (req, res) => {
     }
   )
     .then((response) => {
-      console.log(response);
+      response;
       return res.status(201).send(response);
     })
     .catch((err) => {
-      console.log(err);
+      err;
       return res.status(400).send(err);
     });
 };
@@ -158,11 +158,11 @@ export const deleteQuestion = async (req, res) => {
   const { id } = req.params;
   await Question.findByIdAndDelete({ _id: id })
     .then((response) => {
-      console.log(response);
+      response;
       return res.status(201).send(response);
     })
     .catch((err) => {
-      console.log(err);
+      err;
       return res.status(400).send(err);
     });
 };

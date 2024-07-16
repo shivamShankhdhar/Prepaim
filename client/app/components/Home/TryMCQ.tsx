@@ -30,13 +30,13 @@ const TryMCQ = ({ subjects, loading }: any) => {
               setLoadingChapters(false);
               return toast.error("No chapters found for this subject");
             }
-            // console.log(res.data);
+            // (res.data);
           })
-          .catch((err) => console.log(err));
+          .catch((err) => err);
       } catch (error) {}
     }
   }, [selectedSubject]);
-  // console.log(selectedSubject);
+  // (selectedSubject);
   return (
     <div id="trymcq" className="w-full px-11 gap-5">
       <Toaster />

@@ -92,18 +92,18 @@ const SubjectList = () => {
                     );
                   } else {
                     setSearchingChapters(false);
-                    console.log("Something went wrong...!");
+                    ("Something went wrong...!");
                     // toast.error("Something went wrong...!")
                   }
                 } catch (error: any) {
                   setSearchingChapters(false);
-                  console.log(error.messgae);
+                  error.messgae;
                   // toast.error("Something went wrong...!")
                 }
               })
               .catch((err) => {
                 setSearchingChapters(false);
-                console.log(err.messgae);
+                err.messgae;
                 // toast.error("Something went wrong...!")
               });
           } else {
@@ -111,7 +111,7 @@ const SubjectList = () => {
             toast.error("No chapters found...!");
           }
         })
-        .catch((e) => console.log(e));
+        .catch((e) => e);
     }
   }, [selectedSubjectForQuiz]);
 

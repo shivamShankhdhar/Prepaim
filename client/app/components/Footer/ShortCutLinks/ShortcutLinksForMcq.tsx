@@ -15,13 +15,13 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   const [loadingError, setLoadingError] = useState(null);
   useEffect(() => {
     if (data.apiData !== undefined && data.isLoading === false) {
-      // console.log(data.apiData);
+      // (data.apiData);
       setAllMcqQuestions(data.apiData);
       setLoading(data.isLoading);
       if (data.serverError !== null) setLoadingError(data.serverError);
     }
   }, [data]);
-  // console.log(allMcqQuestions);
+  // (allMcqQuestions);
   return (
     <div className="flex-1 px-1 flex flex-col">
       <div className="w-full text-2xl font-semibold text-purple-900 border-2 border-dotted pb-1 border-purple-900 border-t-0 border-r-0 border-l-0 border-b-1">
@@ -45,7 +45,7 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
                       "-"
                     )}/${item.chapter?.replaceAll(" ", "-")}/${index}`}
                   >
-                    <MdKeyboardDoubleArrowRight />
+                    <MdKeyboardDoubleArrowRight size={20} />
                     {item.question}
                   </Link>
                 </li>

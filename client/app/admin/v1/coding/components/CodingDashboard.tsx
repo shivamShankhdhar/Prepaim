@@ -50,7 +50,7 @@ const CodingDashboard = () => {
     }
   }, [data.apiData, data.isLoading]);
 
-  console.log(data.apiData);
+  data.apiData;
   const handleReloadQuestion = () => {
     setReloadQuestions((prev) => !prev);
   };

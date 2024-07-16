@@ -5,7 +5,7 @@ export const getAllLanguages = async (req, res) => {
   try {
     const data = await Language.find({})
       .then((response) => {
-        console.log(response);
+        response;
         return res.status(201).send(response);
       })
       .catch((error) => {
@@ -20,7 +20,7 @@ export const getQuestionsFromCodingByQuestionName = async (req, res) => {
     const { questionName } = req.params;
     await QuestionForCoding.find({ question: questionName })
       .then((data) => {
-        console.log(data);
+        data;
         return res.status(200).send(data);
       })
       .catch((error) => {

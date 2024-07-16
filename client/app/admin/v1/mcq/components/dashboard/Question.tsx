@@ -31,7 +31,7 @@ const Question = ({ isDeleted }: any) => {
         });
     } catch (error) {
       setLoadingQuestions(false);
-      console.log(error);
+      error;
     }
   }, [isDeleted]);
 

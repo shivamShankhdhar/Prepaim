@@ -184,9 +184,9 @@ const AddQuestionForMcq = () => {
     else if (answerExplanation === "")
       return toast.error("Answer Explanation is Required");
     else {
-      // console.log(isPosting)
+      // (isPosting)
       setIsPosting(true);
-      // console.log(isPosting)
+      // (isPosting)
 
       try {
         // post question to db

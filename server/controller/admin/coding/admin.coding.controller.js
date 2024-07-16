@@ -12,7 +12,7 @@ export const checkCodingQuestionAvailability = async (req, res) => {
   }
 };
 export const postQuestionForCoding = async (req, res) => {
-  console.log(req.body);
+  req.body;
   if (req.body) {
     try {
       const { question } = req.body.questionObj;
@@ -42,7 +42,7 @@ export const addLanguage = async (req, res) => {
   try {
     const { name } = req.body;
     const isExists = await Language.findOne({ name });
-    console.log(isExists);
+    isExists;
     if (isExists === null) {
       const obj = new Language(req.body);
       await obj
@@ -51,14 +51,14 @@ export const addLanguage = async (req, res) => {
           return res.status(201).send({ msg: "Language added...!" });
         })
         .catch((error) => {
-          console.log(error);
+          error;
           return res.status(401).send({ error: error.message });
         });
     } else {
       return res.status(401).send({ error: "Language already exists...!" });
     }
   } catch (error) {
-    console.log(error.message);
+    error.message;
     return res.status(501).send({ error: error.message });
   }
 };

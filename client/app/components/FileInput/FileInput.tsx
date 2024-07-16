@@ -35,7 +35,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
             "Content-Type": "multipart/form-data",
           },
           onUploadProgress: (progressEvent) => {
-            console.log(progressEvent);
+            (progressEvent);
             setProgress((prev) => {
               if (progressEvent.progress === undefined) return prev;
               return { ...prev, progress: progressEvent.progress };
@@ -44,21 +44,21 @@ const FileInput = ({ setImageURLFromServer }: any) => {
             if (total === undefined) return;
             let percent = Math.floor((loaded * 100) / total);
             setMessage(`${loaded}kb of ${total}kb | ${percent}%`);
-            console.log(`${loaded}kb of ${total}kb | ${percent}%`);
+            (`${loaded}kb of ${total}kb | ${percent}%`);
           },
         })
         .then((response) => {
-          console.log(response.data);
+          (response.data);
           setImageURL(response.data.image_url);
 
           setIsUploading(false);
         })
         .catch((error) => {
-          console.log(error);
+          (error);
           setIsUploading(false);
         });
     } catch (error) {
-      console.log(error);
+      (error);
       setIsUploading(false);
     }
   };

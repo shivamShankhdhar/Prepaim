@@ -8,8 +8,8 @@ const ContactUsForm = () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(userEmail);
-    console.log(userContactQuery);
+    userEmail;
+    userContactQuery;
 
     setIsPosting(true);
     setTimeout(() => {

@@ -13,7 +13,7 @@ const ShortCutLinks = () => {
         .then((response) => {
           setAllSubjects(response.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => error);
     } catch (error) {}
   }, []);
   return (

@@ -30,7 +30,7 @@ export const postComment = async (req, res) => {
 export const getQuestionsBySubjectAndChapter = async (req, res) => {
   let { subject } = req.params;
   let { chapter } = req.params;
-console.log("hitting api");
+("hitting api");
   subject = subject.replace("-", " ");
   chapter = chapter.replace("-", " ");
 

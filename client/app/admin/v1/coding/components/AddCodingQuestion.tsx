@@ -31,11 +31,11 @@ const AddCodingQuestion = () => {
             `https://www.api.data.prepaim.com/admin/coding/checkCodingQuestionAvailability/${question}`
           )
           .then((res) => {
-            // console.log(`this is from success ${res.data.isAvailable}`);
+            // (`this is from success ${res.data.isAvailable}`);
             setIsQuestionAvailable(res.data.isAvailable);
           })
           .catch((error) => {
-            // console.log(`this is from error ${error.data.isAvailable}`);
+            // (`this is from error ${error.data.isAvailable}`);
             setIsQuestionAvailable(error.data.isAvailable);
           });
       }
@@ -73,7 +73,7 @@ const AddCodingQuestion = () => {
     useState(true);
 
   const { data } = useFetch("admin/getAllSubjects");
-  // console.log(data);
+  // (data);
   useEffect(() => {
     if (data.apiData !== undefined) {
       setProgrammingLanguagesFromServer(data.apiData);
@@ -160,13 +160,13 @@ const AddCodingQuestion = () => {
             toast.success("Question added successfully");
           })
           .catch((error) => {
-            // console.log(error.response.data.error);
+            // (error.response.data.error);
             toast.error(error.response.data.error);
             setError(error.response.data.error);
             setPostingQuestion(false);
           });
       } catch (error: any) {
-        // console.log(error.messgae);
+        // (error.messgae);
         setError(error.messgae);
         setPostingQuestion(false);
       }

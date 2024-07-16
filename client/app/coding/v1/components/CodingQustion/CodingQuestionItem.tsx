@@ -1,7 +1,7 @@
 import React from "react";
 
 const CodingQuestionItem = ({ questionObjectFromServer, error }: any) => {
-  console.log(questionObjectFromServer);
+  questionObjectFromServer;
   return (
     <div className="text-2xl font-semibold ">
       {error === "" && `Q. ${questionObjectFromServer}`}

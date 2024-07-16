@@ -79,7 +79,7 @@ const QuestionPage = () => {
           setLoading(true);
         });
     } catch (error) {
-      console.log(error);
+      error;
     } finally {
     }
   }, []);
@@ -116,10 +116,10 @@ const QuestionPage = () => {
           setChapters(response.data);
         })
         .catch((error) => {
-          console.log(error);
+          error;
         });
     } catch (error: any) {
-      console.log(error.message);
+      error.message;
     }
   }, []);
 

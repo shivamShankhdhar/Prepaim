@@ -105,7 +105,7 @@ const AddSubject = () => {
         .catch((err) => {
           setIsPosting(false);
           setError(err.response.data.error);
-          console.log(err.response);
+          err.response;
         });
     } catch (error) {
       setIsPosting(false);

@@ -23,7 +23,7 @@ const CodingQuestionPage = () => {
   const [errorLoadingQuestion, setErrorLoadingQuestion] = useState("");
   const [questionForQuestionheading, setQustionForQuestionHeading] =
     useState("");
-  console.log(language);
+  language;
   const [questionObjectFromServer, setQuestionObjectFromServer] = useState(
     [
       {
@@ -57,7 +57,7 @@ const CodingQuestionPage = () => {
       .toString()
       .replaceAll("-", " ")}`
   );
-  console.log(data);
+  data;
   useEffect(() => {
     if (data.apiData !== undefined) {
       setQuestionObjectFromServer(data.apiData);
@@ -71,7 +71,7 @@ const CodingQuestionPage = () => {
     });
   }, [questionObjectFromServer]);
 
-  console.log(questionObjectFromServer);
+  questionObjectFromServer;
   return (
     <div className="flex justify-around h-[100vh] w-full">
       <div className="w-[250px] max-sm:h-[85vh] max-md:h-[85vh] md:h-[85vh] sm:h-[85vh] sticky top-[-40px] z-10  lg:h-[100vh] max-lg:h-[100vh] xl:h-[100vh] 2xl:h-[100vh] border border-l-0  border-t-0  border-b-0 md: border-gray-200 mt-0 bg-white sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">

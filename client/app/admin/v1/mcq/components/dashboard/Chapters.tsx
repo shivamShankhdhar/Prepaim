@@ -17,14 +17,14 @@ const Chapters = () => {
         .then((response) => {
           setChapters(response.data);
           setLoadingChapters(false);
-          console.log(response);
+          (response);
         })
         .catch((e) => {
           setChaptersError("error");
           setLoadingChapters(false);
         });
     } catch (error) {
-      console.log(error);
+      (error);
       setLoadingChapters(false);
     }
   }, []);

@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 const default_backend_url =
   process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
 axios.defaults.baseURL = default_backend_url;
-// console.log(default_backend_url);
+// (default_backend_url);
 //custom hook
 const useFetch = (query: any) => {
-  // console.log(query);
+  // (query);
   const [data, setData] = useState<any>({
     isLoading: false,
     apiData: undefined,
@@ -22,7 +22,7 @@ const useFetch = (query: any) => {
         axios
           .get(`${query}`)
           .then((response) => {
-            // console.log(response.data);
+            // (response.data);
             setData((prev: any) => ({
               ...prev,
               isLoading: false,
@@ -47,7 +47,7 @@ const useFetch = (query: any) => {
     };
     fetchData();
   }, [query]);
-  // console.log(data);
+  // (data);
   return { data, setData };
 };
 
