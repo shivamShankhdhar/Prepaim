@@ -16,9 +16,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <main className="flex flex-row w-full h-[92vh] overflow-hidden">
+        <main className="flex flex-col w-full h-[100vh] overflow-hidden">
           <Header />
-          <CookiesProvider>{children}</CookiesProvider>
+          <div className="w-full flex flex-row">
+            <CookiesProvider>{children}</CookiesProvider>
+          </div>
         </main>
       </body>
     </html>

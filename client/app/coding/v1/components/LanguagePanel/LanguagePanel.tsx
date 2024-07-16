@@ -29,7 +29,7 @@ const LanguagePanel = ({ layoutType }: any) => {
   return (
     <div className="sticky top-0">
       <div
-        className={`flex ${
+        className={`flex flex-wrap ${
           layoutType === "vertical"
             ? "flex-col h-[92vh] w-[120px] gap-2 bg-white"
             : "h-[fit-content] flex-row gap-2"

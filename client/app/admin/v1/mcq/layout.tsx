@@ -24,11 +24,15 @@ export default function RootLayout({
   return (
     <html>
       <body className={cn("min-h-screen bg-background", fontSans.variable)}>
-        <Header />
-        <main className="flex">
-          <Sidebar />
-          {children}
-        </main>
+        <div className="flex flex-col">
+          <Header />
+          <div className="w-full flex flex-row">
+            <div className="flex">
+              <Sidebar />
+            </div>
+            <div className="flex-1">{children}</div>
+          </div>
+        </div>
         {/* <Toaster position="top-right" reverseOrder={false} /> */}
       </body>
     </html>

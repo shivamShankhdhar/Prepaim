@@ -3,7 +3,7 @@
 import McqDashboardPage from "../components/McqDashboardPage";
 
 const page = () => {
-  <McqDashboardPage />;
+  return <McqDashboardPage />;
 };
 
 export default page;

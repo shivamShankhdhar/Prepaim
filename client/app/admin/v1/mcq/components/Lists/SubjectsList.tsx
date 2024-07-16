@@ -24,7 +24,7 @@ const SubjectsList = () => {
   useEffect(() => {
     try {
       axios
-        .get("https://www.api.data.prepaim.com/admin/mcq/getallsubjects")
+        .get("https://api.data.prepaim.com/admin/mcq/getallsubjects")
         .then((response) => {
           setSubjects(response.data);
           setloadingSubjects(false);

@@ -5,7 +5,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "api.data.prepaim.com",
-        port: "4000",
+        port: "",
         pathname: "/**",
       },
     ],

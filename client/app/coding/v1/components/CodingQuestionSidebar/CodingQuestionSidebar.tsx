@@ -44,7 +44,7 @@ const CodingQuestionSidebar = () => {
     try {
       axios
         .get(
-          "https://www.api.data.prepaim.com/admin/coding/getAllQuestionsFromCoding"
+          "https://api.data.prepaim.com/admin/coding/getAllQuestionsFromCoding"
         )
         .then((response) => {
           console.log(response.data);

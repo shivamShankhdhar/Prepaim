@@ -13,6 +13,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import Loader from "@/app/components/Global/Loader";
 import FormatedDate from "@/app/components/Global/FormatedDate";
+import { MdOutlineDeleteOutline } from "react-icons/md";
 const CommentList = () => {
   const [comments, setComments] = useState(
     [
@@ -66,7 +67,7 @@ const CommentList = () => {
       try {
         axios
           .delete(
-            `https://www.api.data.prepaim.com/api/delete-comment/${commentIdForDelete}`
+            `https://api.data.prepaim.com/api/delete-comment/${commentIdForDelete}`
           )
           .then((response) => {
             toast.success("Comment Deleted...!");
@@ -105,7 +106,7 @@ const CommentList = () => {
     try {
       setloadingComments(true);
       axios
-        .get("https://www.api.data.prepaim.com/admin/mcq/getallcomments")
+        .get("https://api.data.prepaim.com/admin/mcq/getallcomments")
         .then((response) => {
           setComments(response.data);
           setloadingComments(false);
@@ -124,7 +125,7 @@ const CommentList = () => {
       try {
         axios
           .put(
-            `https://www.api.data.prepaim.com/admin/mcq/update-comment-approval/${commentIdForApproval}`
+            `https://api.data.prepaim.com/admin/mcq/update-comment-approval/${commentIdForApproval}`
           )
           .then((response) => {
             setCommentApproved((prev) => !prev);
@@ -145,12 +146,12 @@ const CommentList = () => {
     }
   }, [commentIdForApproval]);
   return (
-    <div className="w-full overflow-x-auto shadow-md sm:rounded-lg bg-white">
+    <div className="w-full shadow-md sm:rounded-lg bg-white">
       {loadingComments === false ? (
         commentsError === "" ? (
           comments.length > 0 ? (
             <>
-              <div className="flex w-full justify-end">
+              {/* <div className="flex w-full justify-end">
                 <div className="w-[200px]">
                   <Button
                     className="bg-purple-800 text-white hover:bg-purple-700 py-0 gap-10"
@@ -159,30 +160,30 @@ const CommentList = () => {
                     Reload Comment
                   </Button>
                 </div>
-              </div>
+              </div> */}
               <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-2 py-3">
                       #
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-2 py-3">
                       user
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-2 py-3">
                       question
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-2 py-3">
                       comment
                     </th>
-                    <th scope="col" className="px-6 py-3 w-[250px]">
+                    <th scope="col" className="px-2 py-3">
                       date
                     </th>
 
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-2 py-3">
                       <span className="sr-only">Approve</span>
                     </th>
-                    <th scope="col" className="px-6 py-3">
+                    <th scope="col" className="px-2 py-3">
                       <span className="sr-only">Delete</span>
                     </th>
                   </tr>
@@ -196,18 +197,18 @@ const CommentList = () => {
                       >
                         <th
                           scope="row"
-                          className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                          className="px-2 py-4 font-medium text-gray-900 dark:text-white"
                         >
                           {index + 1}.
                         </th>
-                        <td className="px-6 py-4">{data.user}</td>
-                        <td className="px-6 py-4">{data.question}</td>
-                        <td className="px-6 py-4">{data.comment}</td>
-                        <td className="px-6 py-4 w-[250px]">
+                        <td className="px-2 py-4">{data.user}</td>
+                        <td className="px-2 py-4">{data.question}</td>
+                        <td className="px-2 py-4">{data.comment}</td>
+                        <td className="px-2 py-4">
                           <FormatedDate date={data.date_added} />
                         </td>
                         {data.isApproved === false ? (
-                          <td className="px-6 py-4 ">
+                          <td className="px-2 py-4 ">
                             <Button
                               sx={{ border: "1px solid purple " }}
                               className="bg-purple-100 hover:bg-purple-300 border border-1 border-purple-800 py-1 text-purple-800"
@@ -219,20 +220,17 @@ const CommentList = () => {
                             </Button>
                           </td>
                         ) : (
-                          <td className="px-6 py-4 flex justify-center items-center text-right  text-purple-600">
+                          <td className="px-2 py-4 flex justify-center items-center text-right  text-purple-600">
                             <div>
                               <IoCheckmarkDoneSharp />
                             </div>
                           </td>
                         )}
-                        <td className="px-6 py-4 text-right ">
-                          <Button
+                        <td className=" py-4 text-right ">
+                          <MdOutlineDeleteOutline
                             onClick={() => handleClick(data._id)}
-                            sx={{ border: "1px solid red " }}
-                            className="bg-red-100 hover:bg-red-300 text-red-500 py-1 "
-                          >
-                            delete
-                          </Button>
+                            size={20}
+                          />
                         </td>
                       </tr>
                     );

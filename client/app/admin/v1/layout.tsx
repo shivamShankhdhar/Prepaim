@@ -23,11 +23,10 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <main className="flex">
-          <Header />
-          {children}
+        <div className="flex w-full flex-col">
+          <div className="w-full flex-flex-row">{children}</div>
           <Toaster position="top-right" reverseOrder={false} />
-        </main>
+        </div>
       </body>
     </html>
   );

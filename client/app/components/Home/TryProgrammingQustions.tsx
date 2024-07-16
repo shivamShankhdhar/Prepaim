@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import SimpleLoader from "../Global/SimpleLoader";
 import toast from "react-hot-toast";
 import axios from "axios";
+import useFetch from "@/app/hooks/fetch.hook";
 
 const TryProgrammingQustions = ({ subjects }: any) => {
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -13,30 +14,30 @@ const TryProgrammingQustions = ({ subjects }: any) => {
   const router = useRouter();
 
   const [
-    firstQuestionFromCodingBySubject,
-    setFirstQuestionFromCodingBySubject,
-  ] = useState({ question: "" });
-
-  useEffect(() => {
-    if (selectedSubject !== "") {
-      try {
-        axios
-          .get(`coding/getQuestionsFromCodingByQuestionName/${selectedSubject}`)
-          .then((res) => {
-            setFirstQuestionFromCodingBySubject(res.data[0]);
-            setIsLoadingQuestionFromServer(false);
-          })
-          .then((err) => {
-            setIsLoadingQuestionFromServer(false);
-          });
-      } catch (error) {}
-    }
-  }, [selectedSubject]);
-
-  const [
     loadingQuestionForSelectedSubject,
     setloadingQuestionForSelectedSubject,
   ] = useState(false);
+  // get all questions and navigate it to the selected language
+  const {
+    data: apiData,
+    data: isLoading,
+    data: serverError,
+  } = useFetch("/admin/coding/getAllQuestionsFromCoding");
+
+  useEffect(() => {
+    if (selectedSubject !== "") {
+      if (apiData !== undefined) {
+        router.push(
+          `/coding/v1/${selectedSubject}/${apiData.apiData[0].question.replaceAll(
+            " ",
+            "-"
+          )}`
+        );
+      } else {
+        toast.error("No question available for this subject");
+      }
+    }
+  }, [selectedSubject]);
 
   // useEffect(() => {
   //   if (data.apiData !== undefined) {
@@ -45,17 +46,21 @@ const TryProgrammingQustions = ({ subjects }: any) => {
   //   }
   // }, [data]);
 
-  useEffect(() => {
-    if (selectedSubject !== "") {
-      if (firstQuestionFromCodingBySubject.question !== "") {
-        router.push(
-          `/coding/v1/${selectedSubject}/${firstQuestionFromCodingBySubject.question}`
-        );
-      } else {
-        toast.error("No question found for this subject");
-      }
-    }
-  }, [selectedSubject, firstQuestionFromCodingBySubject]);
+  // console.log(firstQuestionFromCodingBySubject);
+  // useEffect(() => {
+  //   if (selectedSubject !== "") {
+  //     if (
+  //       firstQuestionFromCodingBySubject !== undefined &&
+  //       firstQuestionFromCodingBySubject.question !== ""
+  //     ) {
+  //       router.push(
+  //         `/coding/v1/${selectedSubject}/${firstQuestionFromCodingBySubject.question}`
+  //       );
+  //     } else {
+  //       toast.error("No question found for this subject");
+  //     }
+  //   }
+  // }, [selectedSubject, firstQuestionFromCodingBySubject]);
 
   return (
     <div id="trycoding" className="w-full px-11 gap-5">

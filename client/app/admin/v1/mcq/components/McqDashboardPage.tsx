@@ -20,7 +20,7 @@ const McqDashboardPage = () => {
     try {
       axios
         .delete(
-          `https://www.api.data.prepaim.com/admin/mcq/delete-question/${questionIdForDelete}`
+          `https://api.data.prepaim.com/admin/mcq/delete-question/${questionIdForDelete}`
         )
         .then((response) => {
           toast.success("Question deleted successfully");
@@ -38,7 +38,7 @@ const McqDashboardPage = () => {
   const [isDeleted, setIsDeleted] = useState(false);
 
   return (
-    <div className="flex px-5 mt-2 flex-col gap-1 w-full mb-5">
+    <div className="flex px-5 mt-2 flex-col gap-1 w-full mb-5 h-[92vh] ">
       <MainSection isDeleted={isDeleted} />
 
       <div id="question-list-admin-panel">

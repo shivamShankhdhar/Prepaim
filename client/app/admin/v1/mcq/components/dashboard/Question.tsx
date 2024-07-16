@@ -20,7 +20,7 @@ const Question = ({ isDeleted }: any) => {
   useEffect(() => {
     try {
       axios
-        .get("https://www.api.data.prepaim.com/api/getallquestions")
+        .get("https://api.data.prepaim.com/admin/mcq/getallquestions")
         .then((response) => {
           setQuestions(response.data);
           setLoadingQuestions(false);

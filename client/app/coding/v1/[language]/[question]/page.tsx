@@ -90,7 +90,7 @@ const CodingQuestionPage = () => {
           >
             <RxHamburgerMenu size={18} />
           </div>
-          <div className="flex-1 ">
+          <div className="flex-1 flex flex-wrap ">
             <LanguagePanel layoutType={"horizontal"} />
           </div>
         </div>
