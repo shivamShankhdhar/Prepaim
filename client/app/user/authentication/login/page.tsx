@@ -3,7 +3,7 @@
 import LoginPage from "../../components/LoginPage";
 
 const page = () => {
-  <LoginPage />;
+  return <LoginPage />;
 };
 
 export default page;
