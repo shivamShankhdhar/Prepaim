@@ -80,7 +80,7 @@ const Navigation = ({
     }
     try {
       await axios
-        .post("https://www.api.data.prepaim.com/mcq/postcomment", commentObj)
+        .post("https://api.data.prepaim.com/mcq/postcomment", commentObj)
         .then((data) => {
           setPostingComment(false);
           setIsCommentAdded((prev) => !prev);
@@ -111,7 +111,7 @@ const Navigation = ({
       setError("");
       axios
         .get(
-          `https://www.api.data.prepaim.com/mcq/getcommentbyquestion/${question}`
+          `https://api.data.prepaim.com/mcq/getcommentbyquestion/${question}`
         )
         .then((response) => {
           const commentsFromServer = response.data;

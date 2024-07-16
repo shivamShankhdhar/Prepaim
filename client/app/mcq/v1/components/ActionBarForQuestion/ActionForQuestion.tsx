@@ -1,6 +1,5 @@
 import React from "react";
 import ActionBarSkeleton from "./ActionBarSkeleton";
-import toast from "react-hot-toast";
 import ToggleAnswerExplanationBtn from "./ActionBarItems/ToggleAnswerExplanationBtn";
 import CommentToggleBtn from "./ActionBarItems/CommentToggleBtn";
 import ShareBtn from "@/app/components/Global/ShareBtn";
