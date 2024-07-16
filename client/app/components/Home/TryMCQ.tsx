@@ -16,9 +16,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
       try {
         setLoadingChapters(true);
         axios
-          .get(
-            `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${selectedSubject}`
-          )
+          .get(`/mcq/getallchaptersbysubject/${selectedSubject}`)
           .then((res) => {
             if (res.data.length > 0) {
               router.push(
@@ -38,7 +36,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
       } catch (error) {}
     }
   }, [selectedSubject]);
-  console.log(selectedSubject);
+  // console.log(selectedSubject);
   return (
     <div id="trymcq" className="w-full px-11 gap-5">
       <Toaster />

@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import { useEffect, useState } from "react";
 axios.defaults.baseURL =
-  process.env.AXIOS_BASE_URL || "https://www.api.data.prepaim.com";
+  process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
 console.log(axios.defaults.baseURL);
 //custom hook
 const useFetch = (query) => {

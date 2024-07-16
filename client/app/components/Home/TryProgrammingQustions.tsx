@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
-import useFetch from "@/app/hooks/fetch.hook";
 import { useRouter } from "next/navigation";
 import SimpleLoader from "../Global/SimpleLoader";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 const TryProgrammingQustions = ({ subjects }: any) => {
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -12,36 +12,50 @@ const TryProgrammingQustions = ({ subjects }: any) => {
     useState(false);
   const router = useRouter();
 
-  const { data } = useFetch(
-    `/coding/getQuestionsFromCodingByQuestionName/${selectedSubject}`
-  );
-
   const [
     firstQuestionFromCodingBySubject,
     setFirstQuestionFromCodingBySubject,
-  ] = useState([{ question: "" }].filter((i) => i.question !== ""));
+  ] = useState({ question: "" });
+
+  useEffect(() => {
+    if (selectedSubject !== "") {
+      try {
+        axios
+          .get(`coding/getQuestionsFromCodingByQuestionName/${selectedSubject}`)
+          .then((res) => {
+            setFirstQuestionFromCodingBySubject(res.data[0]);
+            setIsLoadingQuestionFromServer(false);
+          })
+          .then((err) => {
+            setIsLoadingQuestionFromServer(false);
+          });
+      } catch (error) {}
+    }
+  }, [selectedSubject]);
 
   const [
     loadingQuestionForSelectedSubject,
     setloadingQuestionForSelectedSubject,
   ] = useState(false);
 
-  useEffect(() => {
-    if (data.apiData !== undefined) {
-      setFirstQuestionFromCodingBySubject(data.apiData);
-      setIsLoadingQuestionFromServer(data.isLoading);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (data.apiData !== undefined) {
+  //     setFirstQuestionFromCodingBySubject(data.apiData);
+  //     setIsLoadingQuestionFromServer(data.isLoading);
+  //   }
+  // }, [data]);
 
   useEffect(() => {
-    if (firstQuestionFromCodingBySubject.length > 0) {
-      router.push(
-        `/coding/v1/${selectedSubject}/${firstQuestionFromCodingBySubject[0].question}`
-      );
-    } else {
-      toast.error("No question found for this subject");
+    if (selectedSubject !== "") {
+      if (firstQuestionFromCodingBySubject.question !== "") {
+        router.push(
+          `/coding/v1/${selectedSubject}/${firstQuestionFromCodingBySubject.question}`
+        );
+      } else {
+        toast.error("No question found for this subject");
+      }
     }
-  }, [firstQuestionFromCodingBySubject]);
+  }, [selectedSubject, firstQuestionFromCodingBySubject]);
 
   return (
     <div id="trycoding" className="w-full px-11 gap-5">

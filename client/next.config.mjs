@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "www.prepaim.com",
+        protocol: "https",
+        hostname: "api.data.prepaim.com",
         port: "4000",
         pathname: "/**",
       },
