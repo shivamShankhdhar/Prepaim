@@ -280,7 +280,7 @@ const UpdateQuestionForMcq = () => {
       try {
         // post question to db
         axios
-          .put(`http://www.prepaim.com:4000/api/update-question/${id}`, {
+          .put(`https://www.api.data.prepaim.com/api/update-question/${id}`, {
             updatedQuestion,
             token,
           })
@@ -303,7 +303,7 @@ const UpdateQuestionForMcq = () => {
     try {
       setLoading(true);
       axios
-        .get("http://www.prepaim.com:4000/api/getallsubjects")
+        .get("https://www.api.data.prepaim.com/api/getallsubjects")
         .then((response) => {
           if (response.data.length > 0) {
             setsubjects(response.data);
@@ -329,7 +329,7 @@ const UpdateQuestionForMcq = () => {
       try {
         axios
           .get(
-            `http://www.prepaim.com:4000/api/getallchaptersbysubject/${selectedSubject}`
+            `https://www.api.data.prepaim.com/api/getallchaptersbysubject/${selectedSubject}`
           )
           .then((response) => {
             if (response.data.length > 0) setChapters(response.data);

@@ -21,7 +21,7 @@ const AddBranch = () => {
     }
     try {
       await axios
-        .post("http://www.prepaim.com:4000/admin/mcq/postbranch", {
+        .post("https://www.api.data.prepaim.com/admin/mcq/postbranch", {
           name: branch,
           token,
         })

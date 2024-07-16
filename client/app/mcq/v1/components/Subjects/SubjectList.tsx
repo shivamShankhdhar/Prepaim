@@ -71,14 +71,14 @@ const SubjectList = () => {
       // fetch chapters according to the subject
       axios
         .get(
-          `http://www.prepaim.com:4000/mcq/getallchaptersbysubject/${selectedSubjectForQuiz}`
+          `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${selectedSubjectForQuiz}`
         )
         .then((data) => {
           // fetch question according to the subject and chapter
           if (data.data.length > 0) {
             axios
               .get(
-                `http://www.prepaim.com:4000/mcq/getallquestionsbysubjectandchapter/${selectedSubjectForQuiz}/${data.data[0].name}`
+                `https://www.api.data.prepaim.com/mcq/getallquestionsbysubjectandchapter/${selectedSubjectForQuiz}/${data.data[0].name}`
               )
               .then((response) => {
                 try {

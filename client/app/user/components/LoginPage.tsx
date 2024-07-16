@@ -19,7 +19,9 @@ const LoginPage = () => {
       try {
         setIsLogging(true);
         axios
-          .get(`http://www.prepaim.com:4000/user/login/${userName}/${password}`)
+          .get(
+            `https://www.api.data.prepaim.com/user/login/${userName}/${password}`
+          )
           .then((response) => {
             document.cookie = `username=${userName}`;
             document.cookie = `token=${response.data.token}`;

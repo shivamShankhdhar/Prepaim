@@ -13,7 +13,7 @@ const Chapters = () => {
   useEffect(() => {
     try {
       axios
-        .get("http://www.prepaim.com:4000/api/getallchapters")
+        .get("https://www.api.data.prepaim.com/api/getallchapters")
         .then((response) => {
           setChapters(response.data);
           setLoadingChapters(false);

@@ -17,7 +17,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
         setLoadingChapters(true);
         axios
           .get(
-            `http://www.prepaim.com:4000/mcq/getallchaptersbysubject/${selectedSubject}`
+            `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${selectedSubject}`
           )
           .then((res) => {
             if (res.data.length > 0) {

@@ -191,7 +191,7 @@ const AddQuestionForMcq = () => {
       try {
         // post question to db
         axios
-          .post("http://www.prepaim.com:4000/admin/mcq/postquestion", {
+          .post("https://www.api.data.prepaim.com/admin/mcq/postquestion", {
             question,
             token,
           })
@@ -245,7 +245,7 @@ const AddQuestionForMcq = () => {
     try {
       axios
         .get(
-          `http://www.prepaim.com:4000/mcq/getallchaptersbysubject/${selectedSubject}`
+          `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${selectedSubject}`
         )
         .then((response) => {
           setChapters(response.data);

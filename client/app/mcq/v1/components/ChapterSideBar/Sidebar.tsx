@@ -25,7 +25,7 @@ const Sidebar = ({ error }: Props) => {
     try {
       axios
         .get(
-          `http://www.prepaim.com:4000/mcq/getallchaptersbysubject/${subject}`
+          `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${subject}`
         )
         .then((response) => {
           setChapters(response.data);

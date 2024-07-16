@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-axios.defaults.baseURL = "http://www.prepaim.com:4000";
+axios.defaults.baseURL = "https://www.api.data.prepaim.com";
 //custom hook
 const usePost = (query) => {
   const [data, setData] = useState({

@@ -28,7 +28,7 @@ const AddCodingQuestion = () => {
       if (question !== "") {
         axios
           .get(
-            `http://www.prepaim.com:4000/admin/coding/checkCodingQuestionAvailability/${question}`
+            `https://www.api.data.prepaim.com/admin/coding/checkCodingQuestionAvailability/${question}`
           )
           .then((res) => {
             // console.log(`this is from success ${res.data.isAvailable}`);
@@ -149,7 +149,7 @@ const AddCodingQuestion = () => {
       try {
         axios
           .post(
-            "http://www.prepaim.com:4000/admin/coding/postquestionforcoding",
+            "https://www.api.data.prepaim.com/admin/coding/postquestionforcoding",
             {
               questionObj,
               token,

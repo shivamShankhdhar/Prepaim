@@ -16,7 +16,7 @@ const DeleteCodingQuestion = () => {
       setDeletingQuestion(true);
       axios
         .delete(
-          `http://www.prepaim.com:4000/admin/coding/deleteCodingQuestionById/${id}`
+          `https://www.api.data.prepaim.com/admin/coding/deleteCodingQuestionById/${id}`
         )
         .then((res) => {
           setDeletingQuestion(false);
