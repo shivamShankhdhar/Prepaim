@@ -15,9 +15,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Header />
-        {children}
-        <Toaster position="top-center" reverseOrder={false} />
+        <main className="flex flex-col w-full">
+          <Header />
+          {children}
+          <Toaster position="top-center" reverseOrder={false} />
+        </main>
       </body>
     </html>
   );

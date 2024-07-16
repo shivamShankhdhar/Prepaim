@@ -25,10 +25,10 @@ export default function RootLayout({
     // <html lang="en">
     <html>
       <body>
-        <div className="flex w-full h-[100vh] overflow-hidden flex-col">
+        <main className="flex w-full h-[100vh] overflow-hidden flex-col">
           <Header />
           <CookiesProvider>{children}</CookiesProvider>
-        </div>
+        </main>
         <Toaster position="top-center"></Toaster>
       </body>
     </html>

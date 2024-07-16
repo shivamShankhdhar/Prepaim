@@ -12,7 +12,7 @@ import { useCookies } from "next-client-cookies";
 
 const Header = () => {
   const cookies = useCookies();
-  console.log(cookies);
+
   const usernameFromCookies = cookies.get("username");
 
   // const isAdminFromCookie = document.cookie;

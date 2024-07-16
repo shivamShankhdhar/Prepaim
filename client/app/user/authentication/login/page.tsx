@@ -3,16 +3,20 @@
 
 import SimpleLoader from "@/app/components/Global/SimpleLoader";
 import axios from "axios";
+import { useCookies } from "next-client-cookies";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { MdLogin } from "react-icons/md";
 const LoginPage = () => {
+  const cookies = useCookies();
   const pathname = usePathname();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [isLogging, setIsLogging] = useState(false);
   const [error, setError] = useState("");
+  const router = useRouter();
   // const router = useRouter();
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -26,14 +30,15 @@ const LoginPage = () => {
             `https://api.data.prepaim.com/user/login/${userName}/${password}`
           )
           .then((response) => {
-            document.cookie = `username=${userName}`;
-            document.cookie = `token=${response.data.token}`;
-            document.cookie = `isAdmin=${response.data.isAdmin}`;
+            cookies.set("username", userName);
+            cookies.set("token", response.data.token);
+            cookies.set("isAdmin", response.data.isAdmin);
+
             toast.success(
               `Hello, ${userName} You are logged In successfylly...!`
             );
             setIsLogging(false);
-            window.location.reload();
+            router.push(`/${pathname}`);
           })
           .catch((error) => {
             setIsLogging(false);
@@ -43,9 +48,6 @@ const LoginPage = () => {
         setIsLogging(false);
         return toast.error(error.message);
       }
-
-      // window.location.reload();
-      // router.push(pathname);
     }
   };
   return (
