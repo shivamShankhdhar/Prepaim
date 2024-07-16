@@ -24,7 +24,7 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   // (allMcqQuestions);
   return (
     <div className="flex-1 px-1 flex flex-col">
-      <div className="w-full text-2xl font-semibold text-purple-900 border-2 border-dotted pb-1 border-purple-900 border-t-0 border-r-0 border-l-0 border-b-1">
+      <div className="w-full text-2xl font-semibold text-purple-900 ">
         Try MCQ
       </div>
       <div className="py-3">
