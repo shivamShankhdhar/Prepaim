@@ -26,27 +26,23 @@ const SubjectItem = ({
       </div>
       <div className="flex-none flex justify-center gap-1 items-center">
         <div className="flex justify-between items-center gap-3 ">
-          <div
+          <Button
             onClick={() => handleNavigateToQuestion(item.name)}
-            className="py-1 flex rounded-md justify-center items-center gap-1 cursor-pointer px-5 bg-purple-800 text-white  hover:bg-purple-900"
+            className="py-1 flex rounded-md focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-1 cursor-pointer px-5 bg-purple-800 text-white  hover:bg-purple-900"
             title="Start Quizz"
           >
             {selectedSubject === item.name && searchingChapters && (
               <SimpleLoader clr="white" size={15} />
             )}
-            {selectedSubject === item.name
-              ? searchingChapters
-                ? "wait..."
-                : "Quizz"
-              : "Quizz"}
-          </div>
-          <Link
-            className="py-1 bg-gray-200 rounded-md text-black px-5  hover:bg-gray-300"
+            quizz
+          </Button>
+          <Button
+            className="py-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-md text-black px-5  hover:bg-gray-300"
             href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
             title={`Explore all Chapters of ${item.name}`}
           >
             Chapters
-          </Link>
+          </Button>
         </div>
       </div>
     </div>

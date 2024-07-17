@@ -20,7 +20,7 @@ const HeroSection = () => {
           <Button
             sx={{ border: 1 }}
             href="/mcq/v1/subjects"
-            className="flex justify-center border border-white items-center bg-white text-purple-700 px-5 text-sm cursor-pointer rounded-sm py-2 hover:bg-purple-700 hover:text-white"
+            className="flex justify-center focus:ring-4 focus:outline-none focus:ring-white-300 border border-white items-center bg-white text-purple-700 px-5 text-sm cursor-pointer rounded-sm py-2 hover:bg-purple-700 hover:text-white"
           >
             Try MCQ Questions
           </Button>

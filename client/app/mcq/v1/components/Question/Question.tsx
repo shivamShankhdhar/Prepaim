@@ -89,30 +89,22 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 <div className="flex flex-col justify-between py-2">
                   <div className="flex w-full justify-between py-1 ">
                     <Button
-                      className="bg-gray-200 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
+                      href={`/mcq/v1/${subject}/${chapter}/${questionNo - 1}`}
+                      className="bg-gray-200 focus:ring-4 focus:outline-none flex gap-1 justify-center items-center focus:ring-purple-300 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === 1}
                       // onClick={handlePrevQuestion}
                     >
-                      <Link
-                        href={`/mcq/v1/${subject}/${chapter}/${questionNo - 1}`}
-                        className="flex justify-center items-center"
-                      >
-                        <IoIosArrowDropleft size={20} />
-                        &nbsp; Prev
-                      </Link>
+                      <IoIosArrowDropleft size={20} />
+                      Prev
                     </Button>
 
                     <Button
-                      className=" bg-purple-600 hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-200 disabled:cursor-not-allowed py-1"
+                      href={`/mcq/v1/${subject}/${chapter}/${questionNo + 1}`}
+                      className=" bg-purple-600 focus:ring-4 flex justify-center items-center focus:outline-none focus:ring-purple-300 hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === questions.length}
                       // onClick={handleNextQuestion}
                     >
-                      <Link
-                        href={`/mcq/v1/${subject}/${chapter}/${questionNo + 1}`}
-                        className="flex justify-center items-center"
-                      >
-                        Next &nbsp; <IoIosArrowDropright size={20} />
-                      </Link>
+                      Next <IoIosArrowDropright size={20} />
                     </Button>
                   </div>
                 </div>

@@ -1,4 +1,5 @@
 import SimpleLoader from "@/app/components/Global/SimpleLoader";
+import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { LiaCommentSlashSolid, LiaCommentSolid } from "react-icons/lia";
@@ -11,22 +12,18 @@ const CommentToggleBtn = ({
   loadingComment,
   error,
 }: any) => {
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
   return (
-    <div
+    <Button
       title={`Total Comments : ${comments.length}`}
-      className="px-2 flex flex-row min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-sm bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
+      className="px-2 flex flex-row focus:ring-4 focus:outline-none focus:ring-purple-300 min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-sm bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
       onClick={handleCommentToggle}
     >
-      {isClient && isCommentSection ? (
+      {isCommentSection ? (
         <LiaCommentSlashSolid size={25} />
       ) : (
         <LiaCommentSolid size={25} />
       )}
-      <div className="flex flex-row text-[15px] justify-start items-center gap-1">
+      <p className="flex flex-row text-[15px]  justify-start items-center gap-1">
         {!loadingComment ? (
           error === "" ? (
             <>
@@ -50,8 +47,8 @@ const CommentToggleBtn = ({
         ) : (
           <SimpleLoader size={15} cls={"text-purple-800 "} />
         )}
-      </div>
-    </div>
+      </p>
+    </Button>
   );
 };
 

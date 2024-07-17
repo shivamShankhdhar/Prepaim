@@ -50,7 +50,7 @@ const ActionBarForSubjects = ({ setBranch, Branch }: any) => {
            <SelectDropdown
              options={branchesOptions.filter((item) => item.value !== "")}
              setProperty={setBranch}
-             text={"Select Branch"}
+             text={Branch || "Select Branch"}
              loading={loadingBranches}
              defaultValue={Branch}
            />
