@@ -1,6 +1,8 @@
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 // import
 import { CookiesProvider } from "next-client-cookies/server";
+import Header from "./components/Global/Header";
 
 export const metadata = {
   title: "PrepAim | Home",
@@ -15,9 +17,11 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <main className="flex flex-col w-full">
-          <CookiesProvider>{children}</CookiesProvider>
-        </main>
+        <CookiesProvider>
+          <Header />
+          <main className="flex flex-col w-full">{children}</main>
+        </CookiesProvider>
+        <Toaster position="top-center"></Toaster>
       </body>
     </html>
   );

@@ -9,6 +9,7 @@ import { Menu, MenuItem } from "@mui/material";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useCookies } from "next-client-cookies";
+import { CookiesProvider } from "next-client-cookies/server";
 
 const Header = () => {
   const cookies = useCookies();

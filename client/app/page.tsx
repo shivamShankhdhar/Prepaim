@@ -31,10 +31,8 @@ export default function Home() {
   const [errorLoadingSubjects, setErrorLoadingSubjects] = useState("");
 
   return (
-    <div className="flex w-full items-center flex-col h-[fit-content] mb-3">
-      <div className="w-full">
-        <Header />
-      </div>
+    <div className="flex w-full items-center flex-col mb-3">
+      <div className="w-full"></div>
       {/* HERO SECTION  */}
       <HeroSection />
       {/* MCQ Questions LIST  */}

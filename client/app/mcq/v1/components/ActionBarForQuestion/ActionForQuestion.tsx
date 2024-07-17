@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ActionBarSkeleton from "./ActionBarSkeleton";
 import ToggleAnswerExplanationBtn from "./ActionBarItems/ToggleAnswerExplanationBtn";
 import CommentToggleBtn from "./ActionBarItems/CommentToggleBtn";
@@ -17,9 +17,15 @@ const ActionForQuestion = ({
   subject,
   chapter,
 }: any) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className=" w-full gap-1 mt-1 flex flex-col items-center ">
-      {errorForActionBar === "" ? (
+      {isClient && errorForActionBar === "" ? (
         !loading ? (
           <div className="flex w-full justify-center items-center max-h-auto min-h-[50px] ">
             <div className="flex gap-1 w-full  rounded-md bg-white py-2 px-5">

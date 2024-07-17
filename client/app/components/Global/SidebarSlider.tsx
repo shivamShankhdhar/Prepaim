@@ -5,6 +5,7 @@ import { IoIosClose } from "react-icons/io";
 import SidebarItem from "@/app/mcq/v1/components/ChapterSideBar/SidebarItem";
 import QuestionBoard from "@/app/mcq/v1/components/QuestionBoard/QuestionBoard";
 const SidebarSlider = ({
+  uniqueKey,
   open,
   setOpen,
   items,
@@ -49,7 +50,10 @@ const SidebarSlider = ({
             </div>
 
             {items.map((item: any) => (
-              <SidebarItem item={item} key={item.name} />
+              <SidebarItem
+                item={item}
+                key={`${item.name}-${itemType}-${item.id}-key-at-sidebarslider-forquestionboard-${uniqueKey}`}
+              />
             ))}
           </div>
         ) : (

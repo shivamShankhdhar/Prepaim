@@ -10,7 +10,6 @@ const QuestionItems = ({ index, item }: any) => {
   return (
     <Link href={`/mcq/v1/${subject}/${chapter}/${index + 1}`}>
       <p
-        key={`${index}-${item.question}`}
         className={`flex justify-center items-center h-9 w-9 cursor-pointer rounded-full ${
           // on item level
           item.level === "a"

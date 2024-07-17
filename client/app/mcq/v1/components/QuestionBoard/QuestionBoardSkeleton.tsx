@@ -10,7 +10,7 @@ const QuestionBoardSkeleton = () => {
           {items.map((item: any) => {
             return (
               <div
-                key={item}
+                key={`key-at-questionboard-skeleton-${item}`}
                 className="py-4 px-4 rounded-full justify-center bg-gray-200 animate-pulse"
               ></div>
             );

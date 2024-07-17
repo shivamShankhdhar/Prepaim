@@ -1,5 +1,4 @@
 import SimpleLoader from "@/app/components/Global/SimpleLoader";
-import { Button } from "@mui/material";
 import React from "react";
 import { FiSend } from "react-icons/fi";
 

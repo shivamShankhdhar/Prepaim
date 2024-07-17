@@ -49,7 +49,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
         <div className="w-full flex justify-center gap-5 flex-wrap">
           {subjects.map((language: any) => (
             <div
-              key={language.name}
+              key={`${language.name}-key-at-home-page-trymcq-questions`}
               onClick={() => {
                 setSelectedSubject(language.name);
               }}

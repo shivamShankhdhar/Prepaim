@@ -16,7 +16,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="w-full flex flex-wrap justify-center items-center pb-11 gap-2 py-5">
-          <div className="flex justify-center border  border-white items-center bg-white text-purple-700 px-5 text-sm cursor-pointer rounded-sm py-2 hover:bg-purple-700 hover:text-white">
+          <div className="flex justify-center border border-white items-center bg-white text-purple-700 px-5 text-sm cursor-pointer rounded-sm py-2 hover:bg-purple-700 hover:text-white">
             <Link href="#trymcq">Try MCQ Questions</Link>
           </div>
 

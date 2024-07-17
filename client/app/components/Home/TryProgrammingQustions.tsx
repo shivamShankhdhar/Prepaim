@@ -71,7 +71,7 @@ const TryProgrammingQustions = ({ subjects }: any) => {
       <div className="w-full flex justify-center gap-5 flex-wrap">
         {subjects.map((subject: any) => (
           <div
-            key={subject.name}
+            key={`${subject.name}-key-at-home-page-trycoding-questions`}
             onClick={() => {
               setSelectedSubject(subject.name);
               setIsLoadingQuestionFromServer(true);

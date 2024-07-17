@@ -1,5 +1,5 @@
 import SimpleLoader from "@/app/components/Global/SimpleLoader";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { LiaCommentSlashSolid, LiaCommentSolid } from "react-icons/lia";
 import { MdOutlineErrorOutline } from "react-icons/md";
@@ -11,13 +11,17 @@ const CommentToggleBtn = ({
   loadingComment,
   error,
 }: any) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <div
       title={`Total Comments : ${comments.length}`}
       className="px-2 flex flex-row min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
       onClick={handleCommentToggle}
     >
-      {isCommentSection ? (
+      {isClient && isCommentSection ? (
         <LiaCommentSlashSolid size={25} />
       ) : (
         <LiaCommentSolid size={25} />

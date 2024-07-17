@@ -38,7 +38,6 @@ const QuestionBoard = ({
   return (
     <div
       className={`bg-white gap-0   border-r-0 border-t-0 border-b-0 border border-gray-200 flex-col flex-grow-1  w-[350px]`}
-      id="question_board"
     >
       <div className="w-full text-gray-500 text-center px-2 py-[10px] border border-t-0 border-l-0 border-r-0 flex items-center font-bold">
         <div className="w-[fit-content] bg-purple-100 border-purple-300 cursor-pointer text-gray-500 hover:bg-purple-100 p-1 border rounded-md sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
@@ -58,14 +57,14 @@ const QuestionBoard = ({
                   return (
                     <>
                       <LevelHeading
-                        key={`${item.question}-${index}`}
+                        key={`key-at-levelheading-at-mcq-question-for-question-board-${item.question}-levelheading`}
                         index={index}
                         item={item}
                         medium={medium}
                         advance={advance}
                       />
                       <QuestionItems
-                        key={`${item.question}-${Date.now()}`}
+                        key={`key-at-questionboard-for-question-item-${index}-${item.question}`}
                         index={index}
                         item={item}
                         questionNo={questionNo}

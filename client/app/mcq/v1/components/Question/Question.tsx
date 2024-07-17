@@ -70,7 +70,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     (ans: any, index: number) => {
                       return (
                         <AnswerItem
-                          key={`${questions[questionNo]?.question}-${ans}`}
+                          key={`ket-prop-at-question-answer-item-${index}-${ans}`}
                           questions={questions}
                           questionNo={questionNo - 1}
                           answer={ans.ans}

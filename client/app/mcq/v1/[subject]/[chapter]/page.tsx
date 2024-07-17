@@ -20,7 +20,7 @@ const ChapterPage = () => {
     try {
       axios
         .get(
-          `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${subject}`
+          `https://api.data.prepaim.com/mcq/getallchaptersbysubject/${subject}`
         )
         .then((response) => {
           setChapters(response.data);

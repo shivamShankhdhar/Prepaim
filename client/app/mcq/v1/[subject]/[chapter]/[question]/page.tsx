@@ -125,8 +125,9 @@ const QuestionPage = () => {
 
   return (
     <>
-      <div className="flex justify-between overflow-hidden ">
+      <div className="flex justify-between h-[92vh] overflow-hidden ">
         <SidebarSlider
+          uniqueKey="chapters"
           open={openSidebarSlider}
           items={chapters}
           setOpen={setOpenSidebarSlider}
@@ -134,6 +135,7 @@ const QuestionPage = () => {
         />
 
         <SidebarSlider
+          uniqueKey="question_board"
           open={openQuestionBoard}
           setOpen={setOpenQuestionBoard}
           itemType="question-board"
@@ -203,10 +205,7 @@ const QuestionPage = () => {
         </div>
 
         {/* question board  */}
-        <div
-          className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex"
-          id="question_board"
-        >
+        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <QuestionBoard
             error={error}
             questions={questions}
