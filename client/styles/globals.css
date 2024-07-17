@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  height: 100%;
+}
+
+body {
+  @apply bg-purple-100;
+  font-family: "Teko", sans-serif;
+  font-optical-sizing: auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}

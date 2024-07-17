@@ -1,13 +1,12 @@
 "use client";
+import "../styles/globals.css";
 import { useEffect, useState } from "react";
-import "./globals.css";
 import HeroSection from "./components/Home/HeroSection";
 import Footer from "./components/Footer/Footer";
 import ErrorMessage from "./components/Global/ErrorMessage";
 import SimpleLoader from "./components/Global/SimpleLoader";
 import TryProgrammingQustions from "./components/Home/TryProgrammingQustions";
 import TryMCQ from "./components/Home/TryMCQ";
-import Header from "./components/Global/Header";
 import useFetch from "./hooks/fetch.hook";
 
 export default function Home() {

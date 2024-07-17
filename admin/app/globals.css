@@ -1,8 +1,6 @@
-@tailwindbase;
-@tailwindcomponents;
-@tailwindutilities;
-
-@importurl('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layerbase{
 :root{
@@ -72,7 +70,7 @@ height:100%;
 }
 body{
 /*background-color:#FFFACD;*/
-@apply bg-purple-100;
+@applybg-purple-100;
 font-family:"Teko",sans-serif;
 font-optical-sizing:auto;
 min-height:100%;
@@ -80,4 +78,41 @@ display:flex;
 flex-direction:column;
 margin:0;
 padding: 0;
+  /*background-color:#2E3944;*/
+    /*color:#fff;*/
+    /*@applybg-[url('/assets/bg4.jpg')]bg-centerbg-blend-saturation;*/
+  }
+  
+  
+  /*
+        @layerbase{
+        *{
+        @applyborder-border;
+        }
+        body{
+        @applybg-backgroundtext-foreground;
+        }
+        }*/
+  
+  
+  /*width*/
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /*Track*/
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /*Handle*/
+  ::-webkit-scrollbar-thumb {
+    @applybg-gray-400;
+    transition: 0.5s;
+    border-radius: 10px;
+  }
+  
+  /*Handleonhover*/
+  ::-webkit-scrollbar-thumb:hover {
+    @applybg-gray-500;
 }

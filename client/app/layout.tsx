@@ -1,5 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import "./globals.css";
+import "../styles/globals.css";
 // import
 import { CookiesProvider } from "next-client-cookies/server";
 import Header from "./components/Global/Header";
