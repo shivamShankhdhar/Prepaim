@@ -8,7 +8,7 @@ const AnswerItemSkeleton = () => {
         return (
           <div
             key={`${item}`}
-            className="bg-gray-100 w-[49%] animate-pulse py-4 h-10 rounded-md"
+            className="bg-gray-100  sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] animate-pulse py-4 h-10 rounded-md"
           ></div>
         );
       })}
