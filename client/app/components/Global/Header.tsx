@@ -65,21 +65,6 @@ const Header = () => {
               "aria-labelledby": "basic-button",
             }}
           >
-            <MenuItem onClick={handleClose} className="flex gap-1">
-              <FaRegUserCircle />
-              {usernameFromCookies}
-            </MenuItem>
-            {isAdminFromCookie !== undefined && (
-              <MenuItem onClick={handleClose}>
-                <McqDashboardBtn />
-              </MenuItem>
-            )}
-            {isAdminFromCookie !== undefined && (
-              <MenuItem onClick={handleClose}>
-                <CodingDashboardBtn />
-              </MenuItem>
-            )}
-
             <MenuItem onClick={handleClose}>
               <Logout />
             </MenuItem>
