@@ -2,117 +2,28 @@
 @tailwind components;
 @tailwind utilities;
 
-@layerbase{
-:root{
---background:00%100%;
---foreground:222.284%4.9%;
-
---card:00%100%;
---card-foreground:222.284%4.9%;
-
---popover:00%100%;
---popover-foreground:222.284%4.9%;
-
---primary:222.247.4%11.2%;
---primary-foreground:21040%98%;
-
---secondary:21040%96.1%;
---secondary-foreground:222.247.4%11.2%;
-
---muted:21040%96.1%;
---muted-foreground:215.416.3%46.9%;
-
---accent:21040%96.1%;
---accent-foreground:222.247.4%11.2%;
-
---destructive:084.2%60.2%;
---destructive-foreground:21040%98%;
-
---border:214.331.8%91.4%;
---input:214.331.8%91.4%;
---ring:222.284%4.9%;
-
---radius:0.5rem;
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
 }
 
-.dark{
---background:222.284%4.9%;
---foreground:21040%98%;
+*/
 
---card:222.284%4.9%;
---card-foreground:21040%98%;
-
---popover:222.284%4.9%;
---popover-foreground:21040%98%;
-
---primary:21040%98%;
---primary-foreground:222.247.4%11.2%;
-
---secondary:217.232.6%17.5%;
---secondary-foreground:21040%98%;
-
---muted:217.232.6%17.5%;
---muted-foreground:21520.2%65.1%;
-
---accent:217.232.6%17.5%;
---accent-foreground:21040%98%;
-
---destructive:062.8%30.6%;
---destructive-foreground:21040%98%;
-
---border:217.232.6%17.5%;
---input:217.232.6%17.5%;
---ring:212.726.8%83.9%;
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
 }
-}
-html{
-height:100%;
-}
-body{
-/*background-color:#FFFACD;*/
-@applybg-purple-100;
-font-family:"Teko",sans-serif;
-font-optical-sizing:auto;
-min-height:100%;
-display:flex;
-flex-direction:column;
-margin:0;
-padding: 0;
-  /*background-color:#2E3944;*/
-    /*color:#fff;*/
-    /*@applybg-[url('/assets/bg4.jpg')]bg-centerbg-blend-saturation;*/
+
+/* @layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
-  
-  
-  /*
-        @layerbase{
-        *{
-        @applyborder-border;
-        }
-        body{
-        @applybg-backgroundtext-foreground;
-        }
-        }*/
-  
-  
-  /*width*/
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /*Track*/
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  
-  /*Handle*/
-  ::-webkit-scrollbar-thumb {
-    @applybg-gray-400;
-    transition: 0.5s;
-    border-radius: 10px;
-  }
-  
-  /*Handleonhover*/
-  ::-webkit-scrollbar-thumb:hover {
-    @applybg-gray-500;
 }
+
+*/
