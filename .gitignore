@@ -1,5 +1,11 @@
+
+#next modules
 client/node_modules
 client/.next
+
+admin/node_modules
+admin/.next
+
 server/.env
 # client/.env
 client/.env.local
