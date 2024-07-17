@@ -24,7 +24,7 @@ const ShareBtn = () => {
 
   return (
     <div
-      className={`min-w-[fit-content] flex-1 rounded-md px-2 flex gap-2 py-0 justify-center cursor-pointer items-center border  ${
+      className={`min-w-[fit-content] flex-1 rounded-sm px-2 flex gap-2 py-0 justify-center cursor-pointer items-center border  ${
         linkCopied
           ? "text-purple-800 bg-purple-100 border-purple-800 hover:bg-purple-200"
           : "bg-purple-100 text-purple-800  border-purple-300 hover:bg-purple-200"

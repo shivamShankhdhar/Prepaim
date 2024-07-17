@@ -31,21 +31,21 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
         {loading === true ? (
           <SimpleLoader size={15} clr="purple" />
         ) : (
-          <ul className="w-full px-5 py-2">
+          <ul className="w-full py-2">
             {allMcqQuestions.length > 0 &&
               allMcqQuestions?.slice(0, 10)?.map((item, index) => (
                 <li
                   key={item._id}
-                  className="hover:text-purple-900 flex items-satrt gap-1"
+                  className="hover:text-purple-900 flex flex-row gap-1"
                 >
+                  <MdKeyboardDoubleArrowRight size={20} />
                   <Link
                     className="flex gap-1"
                     href={`/mcq/v1/${item.subject?.replaceAll(
                       " ",
                       "-"
-                    )}/${item.chapter?.replaceAll(" ", "-")}/${index}`}
+                    )}/${item.chapter?.replaceAll(" ", "-")}/1`}
                   >
-                    <MdKeyboardDoubleArrowRight size={20} />
                     {item.question}
                   </Link>
                 </li>

@@ -16,6 +16,7 @@ const ChapterPage = () => {
     [{ name: "", subject: "" }].filter((i) => i.name !== "")
   );
   const [error, setError] = useState("");
+
   useEffect(() => {
     try {
       axios
@@ -52,6 +53,7 @@ const ChapterPage = () => {
                 return (
                   <ChapterItem
                     key={index}
+                    chapterItemLength={chapters.length}
                     data={data}
                     index={index}
                     subject={subject}

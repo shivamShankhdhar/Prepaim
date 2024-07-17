@@ -17,7 +17,7 @@ const ActionBarForSubjects = ({ setBranch, Branch }: any) => {
  const [error, setError] = useState("");
  useEffect(() => {
    axios
-     .get("https://www.api.data.prepaim.com/admin/mcq/getallbranches")
+     .get("/admin/mcq/getallbranches")
      .then((response) => {
        setBranchesFromServer(response.data);
        setLoadingBranches(false);
@@ -26,7 +26,7 @@ const ActionBarForSubjects = ({ setBranch, Branch }: any) => {
        setLoadingBranches(false);
      });
  }, []);
-
+  
  useEffect(() => {
    branchesFromServer.map((item) => {
      if (branchesOptions.find((i) => i.value === item.name)) {

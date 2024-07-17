@@ -13,7 +13,7 @@ const ToggleAnswerExplanationBtn = ({
 
   return (
     <div
-      className="bg-purple-100 min-w-[fit-content] flex-1 h-9 border rounded-md hover:bg-purple-200 flex items-center justify-center gap-2 px-2 py-0 cursor-pointer text-purple-900 border-purple-300 "
+      className="bg-purple-100 min-w-[fit-content] flex-1 h-9 border rounded-sm hover:bg-purple-200 flex items-center justify-center gap-2 px-2 py-0 cursor-pointer text-purple-900 border-purple-300 "
       onClick={handleAnswerExplanationToggle}
     >
       {isClient && isAnswerExplanationOpen && <IoEyeOffOutline />}

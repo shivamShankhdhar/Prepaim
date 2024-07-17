@@ -11,6 +11,7 @@ import { Button } from "@mui/material";
 import QuestionLevel from "@/app/components/QuestionLevel/QuestionLevel";
 import AnswerItem from "../Answer/AnswerItem";
 import { IoIosClose } from "react-icons/io";
+import { useCookies } from "next-client-cookies";
 interface Props {
   questions: any;
   chapter: any;
@@ -19,10 +20,12 @@ interface Props {
 }
 
 const Question = ({ questions, chapter, error, loading }: Props) => {
+  const cookies = useCookies();
+
   const { subject } = useParams();
   const { question } = useParams();
   const questionNo = Number(question);
-  const [isQuestionGuideOpen, setIsQuestionGuideOpen] = useState(true);
+
   return (
     <>
       {Object.values(error).toString() === "" ? (
@@ -39,7 +42,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 </div>
 
                 {/* question component  */}
-                <div className="mt-0 py-0 font-semibold">
+                <div className="mt-0 py-0">
                   <div className="text-lg text-gray-600">
                     Q {questionNo}.
                     {questions.length > 0 &&
@@ -48,7 +51,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                   </div>
                 </div>
                 {/* question guide  */}
-                {isQuestionGuideOpen && (
+                {cookies.get("isQuestionGuideClosed") !== "true" && (
                   <div className="bg-purple-100 border border-purple-300 text-purple-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
                     <div className="flex-1 ">
                       Try clicking an answer to check whether it is right or
@@ -57,7 +60,9 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     <div
                       title="Close"
                       className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-700 text-white"
-                      onClick={() => setIsQuestionGuideOpen(false)}
+                      onClick={() =>
+                        cookies.set("isQuestionGuideClosed", "true")
+                      }
                     >
                       <IoIosClose size={20} />
                     </div>
@@ -90,7 +95,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     >
                       <Link
                         href={`/mcq/v1/${subject}/${chapter}/${questionNo - 1}`}
-                        className="flex"
+                        className="flex justify-center items-center"
                       >
                         <IoIosArrowDropleft size={20} />
                         &nbsp; Prev
@@ -104,7 +109,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     >
                       <Link
                         href={`/mcq/v1/${subject}/${chapter}/${questionNo + 1}`}
-                        className="flex"
+                        className="flex justify-center items-center"
                       >
                         Next &nbsp; <IoIosArrowDropright size={20} />
                       </Link>

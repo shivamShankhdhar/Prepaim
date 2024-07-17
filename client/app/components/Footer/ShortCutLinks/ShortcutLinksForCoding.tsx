@@ -40,20 +40,20 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
           {loading === true ? (
             <SimpleLoader size={15} clr="purple" />
           ) : (
-            <ul className="w-full px-5 py-2">
+            <ul className="w-full  py-2">
               {allCodingQuestions.length > 0 &&
                 allCodingQuestions.slice(0, 10).map((item, index) => (
                   <li
                     key={item._id}
-                    className="hover:text-purple-900 flex items-satrt gap-1"
+                    className="hover:text-purple-900 flex gap-1"
                   >
+                    <MdKeyboardDoubleArrowRight size={20} />
                     <Link
                       className="flex items-satrt gap-1"
                       href={`${`/coding/v1/${
                         allSubjects[0].name
                       }/${item.question?.replaceAll(" ", "-")}`}`}
                     >
-                      <MdKeyboardDoubleArrowRight size={20} />
                       {item.question}
                     </Link>
                   </li>

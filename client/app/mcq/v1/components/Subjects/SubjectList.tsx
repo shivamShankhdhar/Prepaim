@@ -19,7 +19,7 @@ const SubjectList = () => {
     { _id: null, name: "", image: "", branch: "" },
   ]);
 
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   const [Branch, setBranch] = useState("Engineering");
 
@@ -50,14 +50,24 @@ const SubjectList = () => {
   const handleReloadSubjects = () => {
     setReloadSubjects((prev) => !prev);
   };
-  const { data } = useFetch("admin/mcq/getallsubjects");
+
   useEffect(() => {
-    if (data.apiData !== undefined && data.serverError !== null) {
-      setSubjects(data.apiData);
-      setLoading(data.isLoading);
-      setAllSubjectsError(data.serverError);
+    try {
+      axios
+        .get("/admin/getallsubjects")
+        .then((response) => {
+          setSubjects(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setLoading(false);
+          setAllSubjectsError(error.response.data.msg);
+        });
+    } catch (error: any) {
+      setAllSubjectsError(error);
+      setLoading(false);
     }
-  }, [reloadSubjects, data.apiData, data.isLoading, data.serverError]);
+  }, []);
 
   useEffect(() => {
     setSubjectsAfterFilter(
@@ -70,15 +80,13 @@ const SubjectList = () => {
       setSearchingChapters(true);
       // fetch chapters according to the subject
       axios
-        .get(
-          `https://www.api.data.prepaim.com/mcq/getallchaptersbysubject/${selectedSubjectForQuiz}`
-        )
+        .get(`/mcq/getallchaptersbysubject/${selectedSubjectForQuiz}`)
         .then((data) => {
           // fetch question according to the subject and chapter
           if (data.data.length > 0) {
             axios
               .get(
-                `https://www.api.data.prepaim.com/mcq/getallquestionsbysubjectandchapter/${selectedSubjectForQuiz}/${data.data[0].name}`
+                `/mcq/getallquestionsbysubjectandchapter/${selectedSubjectForQuiz}/${data.data[0].name}`
               )
               .then((response) => {
                 try {
@@ -122,10 +130,10 @@ const SubjectList = () => {
   }
   // dropdowns
   return (
-    <div className="flex w-full flex-col mt-1 items-center h-[92vh] rounded-md overflow-hidden">
+    <div className="flex w-full flex-col p-3 mt-1 items-center">
       {/* navigations for grid and list */}
       {!isLoading ? (
-        <div className="px-2 w-full">
+        <div className=" w-full">
           <ActionBarForSubjects
             isLoading={isLoading}
             Branch={Branch}
@@ -136,24 +144,21 @@ const SubjectList = () => {
         <ActionBarForSubjectSkeleton />
       )}
       {/* displaying subjects according to the layout */}
-      <div className="w-full flex px-2 overhid justify-center">
+      <div className="w-full flex flex-col px-3 border py-3 gap-2 bg-white border-purple-200 mt-1 rounded-md justify-center">
         {!isLoading ? (
           allSubjectsError === "" ? (
             subjectsAfterFilter.length > 0 ? (
-              <div
-                className={`w-full flex flex-wrap justify-center gap-1 bg-white rounded-md mt-1`}
-              >
-                {subjectsAfterFilter.sort().map((item, index) => (
-                  <SubjectItem
-                    key={index}
-                    item={item}
-                    index={index}
-                    selectedSubject={selectedSubject}
-                    searchingChapters={searchingChapters}
-                    handleNavigateToQuestion={handleNavigateToQuestion}
-                  />
-                ))}
-              </div>
+              subjectsAfterFilter.sort().map((item, index) => (
+                <SubjectItem
+                  key={`${item._id}-${index}`} //${index}
+                  item={item}
+                  subjectItemLength={subjectsAfterFilter.length}
+                  index={index}
+                  selectedSubject={selectedSubject}
+                  searchingChapters={searchingChapters}
+                  handleNavigateToQuestion={handleNavigateToQuestion}
+                />
+              ))
             ) : (
               <SubjectsNotFoundForSelectedCategory />
             )
