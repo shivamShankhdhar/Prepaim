@@ -1,5 +1,5 @@
 import Header from "@/app/components/Global/Header";
-import "../../../globals.css";
+
 import { Toaster } from "react-hot-toast";
 export const metadata = {
   title: "Login-PrepAim ",

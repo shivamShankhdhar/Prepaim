@@ -42,7 +42,7 @@ const Header = () => {
       >
         <div className="w-full flex h-[100vh] justify-center items-center">
           <div className="flex flex-col w-[500px] px-2 py-1 bg-white rounded-md">
-            <div className="w-full flex justify-end items-end ">
+            <div className="w-full flex justify-end items-end">
               <Button
                 sx={{ border: 1 }}
                 onClick={handleClose}
