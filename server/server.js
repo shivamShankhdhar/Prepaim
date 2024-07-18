@@ -40,9 +40,9 @@ app.use("/static", express.static("public/static"));
 
 // api routes
 
-// app.use("/admin", adminRouter);
-// app.use("/admin/mcq", adminMcqRouter);
-// app.use("/admin/coding", adminCodingRouter);
+app.use("/admin", adminRouter);
+app.use("/admin/mcq", adminMcqRouter);
+app.use("/admin/coding", adminCodingRouter);
 app.use("/coding", codingRouter);
 app.use("/mcq", mcqRouter);
 app.use("/user", userRouter);
