@@ -12,7 +12,7 @@ import uploadController from "./controller/upload/upload.controller.js";
 import multerUpload from "./controller/upload/multer.controller.js";
 
 dotenv.config();
-
+// @Crossorigin
 const app = express();
 
 app.use(cors());
