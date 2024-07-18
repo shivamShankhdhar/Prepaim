@@ -5,19 +5,22 @@ import { useRouter } from "next/navigation";
 import SubjectListSkeleton from "./SubjectListSkeleton";
 import ActionBarForSubjectSkeleton from "../ActionBarForSubjects/ActionBarForSubjectSkeleton";
 import { SlReload } from "react-icons/sl";
-import toast, { Toaster } from "react-hot-toast";
-import SubjectItem from "./SubjectItem";
 import SubjectsNotFoundForSelectedCategory from "./SubjectsNotFoundForSelectedCategory";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import ActionBarForSubjects from "../ActionBarForSubjects/ActionBarForSubjects";
-import useFetch from "@/app/hooks/fetch.hook";
+import SubjectItemListView from "./SubjectItemListView";
+import toast from "react-hot-toast";
+import SubjectItemGridView from "./SubjectItemGridView";
+import LayoutToggle from "../../../../components/Global/LayoutToggle";
 
-const SubjectList = () => {
+const SubjectList = ({ setSubjectLength }: any) => {
   // options for dropdown for layout
   const router = useRouter();
   let [subjects, setSubjects] = useState([
-    { _id: null, name: "", image: "", branch: "" },
+    { _id: "", name: "", image: "", branch: "" },
   ]);
+
+  const [layOutView, setLayoutView] = useState("grid");
 
   const [isLoading, setLoading] = useState(true);
 
@@ -28,8 +31,57 @@ const SubjectList = () => {
   const [reloadSubjects, setReloadSubjects] = useState(false);
 
   const [subjectsAfterFilter, setSubjectsAfterFilter] = useState(
-    subjects.filter((subject) => subject.branch === `${Branch}`)
+    // subjects.filter((subject) => subject.branch === `${Branch}`)
+    [{ _id: "null", name: "", image: "", branch: "" }]
   );
+
+  const [filterBySubjectName, setFilterBySubjectName] = useState("");
+  // trying different things here
+  const [subjectsCombinedFilters, SetSubjectsCombinedFilters] = useState([
+    { _id: "null", name: "", image: "", branch: "" },
+  ]);
+
+  useEffect(() => {
+    try {
+      axios
+        .get(
+          `/mcq/getSubjectsbyBranchAndSubject/${Branch}/${filterBySubjectName}`
+        )
+        .then((response) => {
+          setSubjects(response.data);
+          setLoading(false);
+        })
+        .catch((err) => {
+          setAllSubjectsError(err.message);
+          setLoading(false);
+        });
+    } catch (error) {
+      setLoading(false);
+    }
+  }, [Branch, filterBySubjectName]);
+
+  useEffect(() => {
+    if (Branch !== "") {
+      setSubjectsAfterFilter(
+        subjects.filter((subject) => subject.branch === Branch)
+      );
+    }
+  }, [Branch, subjects]);
+
+  useEffect(() => {
+    if (filterBySubjectName !== "") {
+      setSubjectsAfterFilter(
+        subjectsAfterFilter.filter(
+          (subject) =>
+            subject.name === filterBySubjectName && subject.branch === Branch
+        )
+      );
+    }
+  }, [subjectsAfterFilter, filterBySubjectName]);
+
+  useEffect(() => {
+    setSubjectLength(subjectsAfterFilter.length);
+  }, [subjectsAfterFilter.length, filterBySubjectName]);
 
   //navigate to question
   const [selectedSubjectForQuiz, setSelectedSubjectForQuiz] = useState("");
@@ -45,6 +97,8 @@ const SubjectList = () => {
       },
     ].filter((q) => q.question !== "")
   );
+
+  // set this for identifying the current click subject button  to show simple loader or not
   const [selectedSubject, setSelectedSubject] = useState("");
 
   const handleReloadSubjects = () => {
@@ -68,12 +122,6 @@ const SubjectList = () => {
       setLoading(false);
     }
   }, []);
-
-  useEffect(() => {
-    setSubjectsAfterFilter(
-      subjects.filter((subject) => subject.branch === Branch)
-    );
-  }, [Branch, subjects]);
 
   useEffect(() => {
     if (selectedSubjectForQuiz !== "") {
@@ -101,25 +149,31 @@ const SubjectList = () => {
                   } else {
                     setSearchingChapters(false);
                     ("Something went wrong...!");
-                    // toast.error("Something went wrong...!")
+                    setSelectedSubjectForQuiz("");
+                    setSelectedSubject("");
+                    // return toast.error("Something went wrong...!");
                   }
                 } catch (error: any) {
                   setSearchingChapters(false);
-                  error.messgae;
-                  // toast.error("Something went wrong...!")
+                  setSelectedSubjectForQuiz("");
+                  setSelectedSubject("");
+                  // return toast.error("Something went wrong...!");
                 }
               })
               .catch((err) => {
                 setSearchingChapters(false);
-                err.messgae;
-                // toast.error("Something went wrong...!")
+                setSelectedSubjectForQuiz("");
+                setSelectedSubject("");
+
+                return toast.error("Something went wrong...!");
               });
           } else {
             setSearchingChapters(false);
-            toast.error("No chapters found...!");
+            setSelectedSubjectForQuiz("");
+            setSelectedSubject("");
+            return toast.error("No chapters found...!");
           }
-        })
-        .catch((e) => e);
+        });
     }
   }, [selectedSubjectForQuiz]);
 
@@ -130,7 +184,7 @@ const SubjectList = () => {
   }
   // dropdowns
   return (
-    <div className="flex w-full flex-col p-3 mt-1 items-center">
+    <div className="flex w-full flex-col py-2 px-3 items-center">
       {/* navigations for grid and list */}
       {!isLoading ? (
         <div className=" w-full">
@@ -138,27 +192,47 @@ const SubjectList = () => {
             isLoading={isLoading}
             Branch={Branch}
             setBranch={setBranch}
+            subjects={subjects}
+            setSubjectBySearch={setFilterBySubjectName}
           />
         </div>
       ) : (
         <ActionBarForSubjectSkeleton />
       )}
+      {/* toggle section for grid and list */}
+      <LayoutToggle layOutView={layOutView} setLayoutView={setLayoutView} />
       {/* displaying subjects according to the layout */}
-      <div className="w-full flex flex-col px-3 border py-3 gap-2 bg-white border-purple-200 mt-1 rounded-md justify-center">
+      <div
+        className={`w-full flex ${
+          layOutView === "list" ? "flex-col" : "flex-row flex-wrap"
+        } px-2 border py-3 gap-2 bg-white border-purple-200 mt-1 rounded-md justify-center`}
+      >
         {!isLoading ? (
           allSubjectsError === "" ? (
-            subjectsAfterFilter.length > 0 ? (
-              subjectsAfterFilter.sort().map((item, index) => (
-                <SubjectItem
-                  key={`${item._id}-${index}`} //${index}
-                  item={item}
-                  subjectItemLength={subjectsAfterFilter.length}
-                  index={index}
-                  selectedSubject={selectedSubject}
-                  searchingChapters={searchingChapters}
-                  handleNavigateToQuestion={handleNavigateToQuestion}
-                />
-              ))
+            subjects.length > 0 ? (
+              subjects.sort().map((item, index) =>
+                layOutView === "list" ? (
+                  <SubjectItemListView
+                    key={`${item._id}-${index}`} //${index}
+                    item={item}
+                    subjectItemLength={subjects.length}
+                    index={index}
+                    selectedSubject={selectedSubject}
+                    searchingChapters={searchingChapters}
+                    handleNavigateToQuestion={handleNavigateToQuestion}
+                  />
+                ) : (
+                  <SubjectItemGridView
+                    key={`${item._id}-${index}`} //${index}
+                    item={item}
+                    subjectItemLength={subjects.length}
+                    index={index}
+                    selectedSubject={selectedSubject}
+                    searchingChapters={searchingChapters}
+                    handleNavigateToQuestion={handleNavigateToQuestion}
+                  />
+                )
+              )
             ) : (
               <SubjectsNotFoundForSelectedCategory />
             )

@@ -20,16 +20,12 @@ const ChapterPage = () => {
   useEffect(() => {
     try {
       axios
-        .get(
-          `https://api.data.prepaim.com/mcq/getallchaptersbysubject/${subject}`
-        )
+        .get(`/mcq/getallchaptersbysubject/${subject}`)
         .then((response) => {
           setChapters(response.data);
           setIsLoading(false);
         })
         .catch((error) => {
-          // setIsLoading(false)
-          // setError(error.response.data.msg)
           toast.error("Something went wrong...!");
           setError("Something went wrong...!");
           setIsLoading(false);
@@ -41,8 +37,8 @@ const ChapterPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-[100vh] w-full">
-      <Breadcrum subject={subject.toString()} />
+    <div className="flex flex-col items-center h-[92vh] w-full">
+      <Breadcrum chaptersLength={chapters.length} />
       <div className="w-full px-2">
         <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
           {isLoading === true ? (

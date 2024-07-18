@@ -23,7 +23,7 @@ const CommentToggleBtn = ({
       ) : (
         <LiaCommentSolid size={25} />
       )}
-      <p className="flex flex-row text-[15px]  justify-start items-center gap-1">
+      <div className="flex flex-row text-[15px]  justify-start items-center gap-1">
         {!loadingComment ? (
           error === "" ? (
             <>
@@ -47,7 +47,7 @@ const CommentToggleBtn = ({
         ) : (
           <SimpleLoader size={15} cls={"text-purple-800 "} />
         )}
-      </p>
+      </div>
     </Button>
   );
 };

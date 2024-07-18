@@ -28,7 +28,7 @@ const ActionForQuestion = ({
       {isClient && errorForActionBar === "" ? (
         !loading ? (
           <div className="flex w-full justify-center items-center max-h-auto min-h-[50px] ">
-            <div className="flex gap-1 w-full flex-wrap rounded-md bg-white py-2 px-5">
+            <div className="flex gap-3 w-full flex-wrap rounded-md bg-white py-2 px-5">
               {/* answer explanation button  */}
               <ToggleAnswerExplanationBtn
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}

@@ -1,20 +1,20 @@
 import { Router } from "express";
 import * as Controller from "../../controller/mcq/api.controller.js";
-const adminMcqRouter = Router();
+const McqRouter = Router();
 
-adminMcqRouter.route("/postcomment").post(Controller.postComment);
+McqRouter.route("/postcomment").post(Controller.postComment);
 // get routes
-adminMcqRouter
-  .route("/getsubjectsbybranch/:branch")
-  .get(Controller.getSubjectsByBranch);
-adminMcqRouter
-  .route("/getallchaptersbysubject/:subject")
-  .get(Controller.getAllChaptersBySubject);
-adminMcqRouter
-  .route("/getallquestionsbysubjectandchapter/:subject/:chapter")
-  .get(Controller.getQuestionsBySubjectAndChapter); // get all comments
-adminMcqRouter
-  .route("/getcommentbyquestion/:question")
-  .get(Controller.getCommentByQuestion); //get comment by question
+McqRouter.route("/getSubjectsbyBranchAndSubject/:branch/:subject").get(
+  Controller.getSubjectsByBranchAndSubject
+);
+McqRouter.route("/getallchaptersbysubject/:subject").get(
+  Controller.getAllChaptersBySubject
+);
+McqRouter.route("/getallquestionsbysubjectandchapter/:subject/:chapter").get(
+  Controller.getQuestionsBySubjectAndChapter
+); // get all comments
+McqRouter.route("/getcommentbyquestion/:question").get(
+  Controller.getCommentByQuestion
+); //get comment by question
 
-export default adminMcqRouter;
+export default McqRouter;

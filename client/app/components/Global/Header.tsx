@@ -40,8 +40,10 @@ const Header = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className="w-full flex h-[100vh] justify-center items-center">
-          <div className="flex flex-col w-[500px] px-2 py-1 bg-white rounded-md">
+        {/* container for 100% height and width */}
+        <div className="w-full flex h-[100vh] px-5 justify-center items-center">
+          {/* container that contains the login form  */}
+          <div className="flex flex-col sm:w-[80%] max-sm:w-[80%] md:w-[40%] max-md:w-[40%] lg:w-[500px] xl:w-[500px] 2xl:w-[500px] px-2 py-1 bg-white rounded-md">
             <div className="w-full flex justify-end items-end">
               <Button
                 sx={{ border: 1 }}
@@ -59,11 +61,17 @@ const Header = () => {
       <div className="flex-1">
         <Link href={"/"}>
           <Image
+            priority={true}
             src={"/assets/Brandlogo/logo.png"}
             height={10}
             width={150}
             alt="www.prepaim.com"
-            style={{ objectFit: "contain", height: "30px" }}
+            style={{
+              objectFit: "contain",
+              objectPosition: "center",
+              width: "auto",
+              height: "40px",
+            }}
           />
         </Link>
       </div>
@@ -73,8 +81,9 @@ const Header = () => {
           <Logout />
         ) : (
           <Button
+            sx={{ border: 1, textTransform: "none" }}
             onClick={handleOpen}
-            className="text-white flex justify-center items-center gap-1 bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+            className="flex justify-center items-center gap-1 bg-purple-200 border border-purple-300 text-purple-800 hover:bg-purple-300 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-full text-sm px-2 py-1 text-center"
           >
             <CgLogIn /> Login
           </Button>

@@ -57,14 +57,14 @@ const QuestionBoard = ({
                   return (
                     <>
                       <LevelHeading
-                        key={`key-at-levelheading-at-mcq-question-for-question-board-${item.question}-levelheading`}
+                        key={`key-at-levelheading-at-mcq-question-for-question-board-${index}-levelheading`}
                         index={index}
                         item={item}
                         medium={medium}
                         advance={advance}
                       />
                       <QuestionItems
-                        key={`key-at-questionboard-for-question-item-${index}-${item.question}`}
+                        key={`key-at-questionboard-for-question-items-${index}-${questionNo}-${item._id}`}
                         index={index}
                         item={item}
                         questionNo={questionNo}

@@ -4,10 +4,12 @@ import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 interface Props {
-  subject: String;
+  subject?: String;
   chapter?: String;
   questionNo?: String;
   totalquestion?: String;
+  subjectLength?: Number;
+  chaptersLength?: Number;
 }
 
 const Breadcrum = (props: Props) => {
@@ -18,7 +20,8 @@ const Breadcrum = (props: Props) => {
   const pathname = usePathname();
   const splitedPath = pathname.split("/");
   const lastItemOfPathname = splitedPath[splitedPath.length - 1];
-
+  // common class for all active items in breadcrumb
+  const commonClassForActiveElements = `flex justify-center items-center text-sm  px-2 bg-purple-100  border border-purple-300 rounded-full text-purple-900`;
   return (
     <div className="w-full flex-wrap flex flex-row justify-center text-[16px] items-center ">
       <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-3 items-center justify-start ">
@@ -30,9 +33,9 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;
             {lastItemOfPathname === subject ? (
-              <div className="flex justify-center items-center text-sm rounded-sm px-2 bg-purple-500 text-white">
-                {subject}
-              </div>
+              <div
+                className={`${commonClassForActiveElements}`}
+              >{` ${subject} - ${props.subjectLength || 0} `}</div>
             ) : (
               <Link href={`/mcq/v1/subjects`}>
                 {subject && subject.toString().replaceAll("-", " ")}
@@ -45,9 +48,9 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;{" "}
             {lastItemOfPathname === chapter ? (
-              <div className="flex justify-center items-center text-sm rounded-sm px-2 bg-purple-500 text-white">
-                {chapter}
-              </div>
+              <div
+                className={`${commonClassForActiveElements}`}
+              >{` ${chapter} - ${props.chaptersLength || 0} `}</div>
             ) : (
               <Link href={`/mcq/v1/${subject}/chapters`}>
                 {chapter && chapter.toString().replaceAll("-", " ")}
@@ -60,7 +63,7 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;
             {lastItemOfPathname === question ? (
-              <div className="flex justify-center items-center text-sm rounded-sm px-2 bg-purple-500 text-white">
+              <div className={`${commonClassForActiveElements}`}>
                 {props.questionNo} / {props.totalquestion}
               </div>
             ) : (
