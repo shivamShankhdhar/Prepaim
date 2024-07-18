@@ -8,7 +8,6 @@ import mcqRouter from "./routes/mcq/route.js";
 import adminCodingRouter from "./routes/admin/coding/admin.coding.route.js";
 import userRouter from "./routes/user/user.route.js";
 import adminRouter from "./routes/admin/admin.route.js";
-import multer from "multer";
 import uploadController from "./controller/upload/upload.controller.js";
 import multerUpload from "./controller/upload/multer.controller.js";
 
