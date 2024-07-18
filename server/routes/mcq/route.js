@@ -6,7 +6,7 @@ mcqRouter.route("/postcomment").post(Controller.postComment);
 // get routes
 mcqRouter
   .route("/getSubjectsbyBranchAndSubject/:branch")
-  .get(Controller.getSubjectsByBranchAndSubject);
+  .get(Controller.getSubjectsByBranch);
 mcqRouter
   .route("/getallchaptersbysubject/:subject")
   .get(Controller.getAllChaptersBySubject);

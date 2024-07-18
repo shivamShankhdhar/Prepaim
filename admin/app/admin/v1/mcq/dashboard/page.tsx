@@ -27,7 +27,7 @@ const McqDashboard = () => {
     try {
       axios
         .delete(
-          `https://api.data.prepaim.com/admin/mcq/delete-question/${questionIdForDelete}`
+          `http://localhost:4000/admin/mcq/delete-question/${questionIdForDelete}`
         )
         .then((response) => {
           toast.success("Question deleted successfully");

@@ -27,9 +27,7 @@ const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
       try {
         setIsLogging(true);
         axios
-          .get(
-            `https://api.data.prepaim.com/user/login/${userName}/${password}`
-          )
+          .get(`http://localhost:4000/user/login/${userName}/${password}`)
           .then((response) => {
             setCloseMenuAfterLogin(false);
             cookies.set("username", userName);

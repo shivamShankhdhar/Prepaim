@@ -67,7 +67,7 @@ const CommentList = () => {
       try {
         axios
           .delete(
-            `https://api.data.prepaim.com/api/delete-comment/${commentIdForDelete}`
+            `http://localhost:4000/api/delete-comment/${commentIdForDelete}`
           )
           .then((response) => {
             toast.success("Comment Deleted...!");
@@ -106,7 +106,7 @@ const CommentList = () => {
     try {
       setloadingComments(true);
       axios
-        .get("https://api.data.prepaim.com/admin/mcq/getallcomments")
+        .get("http://localhost:4000/admin/mcq/getallcomments")
         .then((response) => {
           setComments(response.data);
           setloadingComments(false);
@@ -125,7 +125,7 @@ const CommentList = () => {
       try {
         axios
           .put(
-            `https://api.data.prepaim.com/admin/mcq/update-comment-approval/${commentIdForApproval}`
+            `http://localhost:4000/admin/mcq/update-comment-approval/${commentIdForApproval}`
           )
           .then((response) => {
             setCommentApproved((prev) => !prev);

@@ -42,7 +42,7 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
           ) : (
             <ul className="w-full  py-2">
               {allCodingQuestions.length > 0 &&
-                allCodingQuestions.slice(0, 10).map((item, index) => (
+                allCodingQuestions?.slice(0, 10)?.map((item, index) => (
                   <li
                     key={item._id}
                     className="hover:text-purple-900 flex gap-1"

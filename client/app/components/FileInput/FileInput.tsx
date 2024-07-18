@@ -30,12 +30,12 @@ const FileInput = ({ setImageURLFromServer }: any) => {
         return { ...prev, started: true };
       });
       axios
-        .post("https://api.data.prepaim.com/upload", formData, {
+        .post("http://localhost:4000/upload", formData, {
           headers: {
             "Content-Type": "multipart/form-data",
           },
           onUploadProgress: (progressEvent) => {
-            (progressEvent);
+            progressEvent;
             setProgress((prev) => {
               if (progressEvent.progress === undefined) return prev;
               return { ...prev, progress: progressEvent.progress };
@@ -44,17 +44,17 @@ const FileInput = ({ setImageURLFromServer }: any) => {
             if (total === undefined) return;
             let percent = Math.floor((loaded * 100) / total);
             setMessage(`${loaded}kb of ${total}kb | ${percent}%`);
-            (`${loaded}kb of ${total}kb | ${percent}%`);
+            `${loaded}kb of ${total}kb | ${percent}%`;
           },
         })
         .then((response) => {
-          (response.data);
+          response.data;
           setImageURL(response.data.image_url);
 
           setIsUploading(false);
         })
         .catch((error) => {
-          (error);
+          error;
           setIsUploading(false);
         });
     } catch (error) {

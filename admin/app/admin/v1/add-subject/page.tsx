@@ -94,7 +94,7 @@ const AddSubject = () => {
       if (imageURL === "") return toast.error("Subject image required...!");
       setIsPosting(true);
       await axios
-        .post("https://api.data.prepaim.com/admin/postsubject", {
+        .post("http://localhost:4000/admin/postsubject", {
           subjectObj,
           token,
         })
@@ -117,7 +117,7 @@ const AddSubject = () => {
     try {
       axios
         .get(
-          `https://api.data.prepaim.com/admin/checkSubjectAvailability/${subjectName}`
+          `http://localhost:4000/admin/checkSubjectAvailability/${subjectName}`
         )
         .then((response) => {
           setIsSubjectAvailableAsyncCheck(response.data.isSubjectAvailable);
