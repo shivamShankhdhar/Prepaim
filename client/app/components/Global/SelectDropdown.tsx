@@ -2,13 +2,24 @@ import React, { useState } from "react";
 
 import Select from "react-select";
 
+interface Props {
+  options?: any;
+  text?: any;
+  setProperty?: any;
+  loading?: any;
+  defaultValue?: any;
+  isSearchable?: any;
+  isClearable?: any;
+}
 const SelectDropdown = ({
   options,
   text,
   setProperty,
   loading,
   defaultValue,
-}: any) => {
+  isSearchable,
+  isClearable,
+}: Props) => {
   return (
     <Select
       className="basic-single"
@@ -17,6 +28,7 @@ const SelectDropdown = ({
       placeholder={text}
       isLoading={loading}
       onChange={(e: any) => setProperty(e.value)}
+      defaultValue={defaultValue}
     />
   );
 };

@@ -37,47 +37,32 @@ const SubjectList = ({ setSubjectLength }: any) => {
 
   const [filterBySubjectName, setFilterBySubjectName] = useState("");
   // trying different things here
-  const [subjectsCombinedFilters, SetSubjectsCombinedFilters] = useState([
-    { _id: "null", name: "", image: "", branch: "" },
-  ]);
 
   useEffect(() => {
-    try {
-      axios
-        .get(
-          `/mcq/getSubjectsbyBranchAndSubject/${Branch}/${filterBySubjectName}`
-        )
-        .then((response) => {
-          setSubjects(response.data);
-          setLoading(false);
-        })
-        .catch((err) => {
-          setAllSubjectsError(err.message);
-          setLoading(false);
-        });
-    } catch (error) {
-      setLoading(false);
-    }
-  }, [Branch, filterBySubjectName]);
-
-  useEffect(() => {
-    if (Branch !== "") {
+    if (Branch !== "" && filterBySubjectName === "") {
       setSubjectsAfterFilter(
         subjects.filter((subject) => subject.branch === Branch)
       );
-    }
-  }, [Branch, subjects]);
-
-  useEffect(() => {
-    if (filterBySubjectName !== "") {
+    } else if (Branch !== "" && filterBySubjectName !== "") {
       setSubjectsAfterFilter(
-        subjectsAfterFilter.filter(
+        subjects.filter(
           (subject) =>
-            subject.name === filterBySubjectName && subject.branch === Branch
+            subject.branch === Branch && subject.name === filterBySubjectName
         )
       );
     }
-  }, [subjectsAfterFilter, filterBySubjectName]);
+  }, [Branch, subjects, filterBySubjectName]);
+
+  // useEffect(() => {
+  //   if (filterBySubjectName !== "") {
+  //     setSubjectsAfterFilter(
+  //       subjectsAfterFilter.filter(
+  //         (subject) =>
+  //           subject.name === filterBySubjectName && subject.branch === Branch
+  //       )
+  //     );
+  //   }
+  // }, [subjectsAfterFilter, filterBySubjectName]);
 
   useEffect(() => {
     setSubjectLength(subjectsAfterFilter.length);
@@ -192,7 +177,8 @@ const SubjectList = ({ setSubjectLength }: any) => {
             isLoading={isLoading}
             Branch={Branch}
             setBranch={setBranch}
-            subjects={subjects}
+            subjects={subjectsAfterFilter}
+            selectedSubjectBySearch={filterBySubjectName}
             setSubjectBySearch={setFilterBySubjectName}
           />
         </div>
@@ -209,13 +195,13 @@ const SubjectList = ({ setSubjectLength }: any) => {
       >
         {!isLoading ? (
           allSubjectsError === "" ? (
-            subjects.length > 0 ? (
-              subjects.sort().map((item, index) =>
+            subjectsAfterFilter.length > 0 ? (
+              subjectsAfterFilter.sort().map((item, index) =>
                 layOutView === "list" ? (
                   <SubjectItemListView
                     key={`${item._id}-${index}`} //${index}
                     item={item}
-                    subjectItemLength={subjects.length}
+                    subjectItemLength={subjectsAfterFilter.length}
                     index={index}
                     selectedSubject={selectedSubject}
                     searchingChapters={searchingChapters}
@@ -225,7 +211,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   <SubjectItemGridView
                     key={`${item._id}-${index}`} //${index}
                     item={item}
-                    subjectItemLength={subjects.length}
+                    subjectItemLength={subjectsAfterFilter.length}
                     index={index}
                     selectedSubject={selectedSubject}
                     searchingChapters={searchingChapters}

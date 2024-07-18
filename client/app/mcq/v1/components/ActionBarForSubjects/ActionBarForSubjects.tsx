@@ -6,6 +6,7 @@ const ActionBarForSubjects = ({
   setBranch,
   Branch,
   subjects,
+  selectedSubjectBySearch,
   setSubjectBySearch,
 }: any) => {
   const [branchesFromServer, setBranchesFromServer] = useState([{ name: "" }]);
@@ -20,8 +21,6 @@ const ActionBarForSubjects = ({
   ]);
 
   const [loadingSubjectOptions, setLoadingSubjectOptions] = useState(true);
-
-  const [selectedSubjectBySearch, setSelectedSubjectBySearch] = useState("");
 
   useEffect(() => {
     setSubjectBySearch(selectedSubjectBySearch);
@@ -63,11 +62,11 @@ const ActionBarForSubjects = ({
       }
     });
     setLoadingSubjectOptions(false);
-  }, [subjects, Branch, selectedSubjectBySearch]);
+  }, [subjects, Branch]);
 
-  useEffect(() => {
-    setSubjectOptions([{ value: "", label: "" }]);
-  }, [Branch]);
+  // useEffect(() => {
+  //   setSubjectOptions([{ value: "", label: "" }]);
+  // }, [Branch]);
 
   return (
     <div className="bg-white w-full flex sm:justify-start max-sm:justify-start md:justify-start max-md:justify-start lg:justify-between xl:justify-between 2xl:justify-between gap-1 py-1 flex-wrap rounded-md px-5 items-center">
@@ -77,10 +76,19 @@ const ActionBarForSubjects = ({
           <div className="flex-1">
             <SelectDropdown
               options={subjectsOptions.filter((item) => item.value !== "")}
-              setProperty={setSelectedSubjectBySearch}
-              text={selectedSubjectBySearch || "Search Subject"}
+              setProperty={setSubjectBySearch}
+              text={
+                (selectedSubjectBySearch && selectedSubjectBySearch) ||
+                "Search Subject"
+              }
               loading={loadingSubjectOptions}
             />
+          </div>
+          <div
+            className="px-2 bg-purple-800 text-white cursor-pointer py-1 rounded-sm"
+            onClick={() => setSubjectBySearch("")}
+          >
+            Reset Search
           </div>
         </div>
         <div className="min-w-[fit-content] gap-1 flex sm:justify-start max-sm:justify-start md:justify-start max-md:justify-start lg:justify-end xl:justify-end 2xl:justify-end  items-center flex-1">

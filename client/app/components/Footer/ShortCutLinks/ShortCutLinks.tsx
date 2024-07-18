@@ -17,7 +17,7 @@ const ShortCutLinks = () => {
     } catch (error) {}
   }, []);
   return (
-    <div className="flex-1 flex-row flex justify-center  gap-2 p-2 flex-wrap">
+    <div className="flex-1 sm:flex-col max-sm:flex-col md:flex-col max-md:flex-col lg:flex-row xl:flex-row 2xl:flex-row flex justify-center  gap-2 p-2 flex-wrap">
       <ShortcutLinksForMcq allSubjects={allSubjects} />
       <ShortcutLinksForCoding allSubjects={allSubjects} />
     </div>

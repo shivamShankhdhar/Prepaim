@@ -45,11 +45,10 @@ export const getQuestionsBySubjectAndChapter = async (req, res) => {
 // get all subjects
 
 // search subjects by branch
-export const getSubjectsByBranchAndSubject = async (req, res) => {
+export const getSubjectsByBranch = async (req, res) => {
   const { branch } = req.params;
-  const { subject } = req.params;
   try {
-    await Subject.find({ branch, subject })
+    await Subject.find({ branch })
       .then((data) => {
         return res.status(200).send(data);
       })
