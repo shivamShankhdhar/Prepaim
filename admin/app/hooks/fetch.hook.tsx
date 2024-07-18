@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 const default_backend_url =
-  process.env.AXIOS_BASE_URL || "http://localhost:4000";
+  process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
 axios.defaults.baseURL = default_backend_url;
 // (default_backend_url);
 //custom hook

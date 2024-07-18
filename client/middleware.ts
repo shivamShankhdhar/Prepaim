@@ -10,9 +10,7 @@ export function middleware(request: NextRequest) {
 axios.defaults.headers.get["Content-Type"] =
   "application-json/x-www-form-urlencoded";
 
-const default_backend_url =
-process.env.AXIOS_BASE_URL || "http://localhost:4000";
-  axios.defaults.baseURL = default_backend_url;
+
   
   console.log("middle ware called")
   

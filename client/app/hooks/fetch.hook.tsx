@@ -2,6 +2,10 @@ import axios from "axios";
 import { headers } from "next/headers";
 import { useEffect, useState } from "react";
 
+const default_backend_url =
+  process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
+axios.defaults.baseURL = default_backend_url;
+
 const useFetch = (query: any) => {
   // (query);
   const [data, setData] = useState<any>({
