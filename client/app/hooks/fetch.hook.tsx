@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 const default_backend_url =
   process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
 axios.defaults.baseURL = default_backend_url;
+
+axios.defaults.headers.post["Content-Type"] =
+  "application-json/x-www-form-urlencoded";
+
 // (default_backend_url);
 //custom hook
 const useFetch = (query: any) => {
