@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import SimpleLoader from "../Global/SimpleLoader";
+
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import Image from "next/image";
+import SimpleLoader from "../../Global/SimpleLoader";
 
 const TryMCQ = ({ subjects, loading }: any) => {
   const router = useRouter();
