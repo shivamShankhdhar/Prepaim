@@ -14,10 +14,8 @@ import multerUpload from "./controller/upload/multer.controller.js";
 dotenv.config();
 const app = express();
  const corsOptions = {
-   origin:
-     "https://www.prepaim.com" ||
-     "https://prepaim.com" ||
-     "http://localhost:3000", //(https://your-client-app.com)
+   origin: "https://prepaim.com",
+   //(https://your-client-app.com)
    optionsSuccessStatus: 200,
  };
 
