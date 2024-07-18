@@ -36,9 +36,8 @@ export default function Home() {
       <HeroSection />
       {/* MCQ Questions LIST  */}
       <div className="w-full flex px-2 flex-col">
-        {/* mcq questions list */}
-
-        <div className="w-full flex flex-col gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
+        {/* try coding questions  */}
+        {/* <div className="w-full flex flex-col gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
           {loadingSubjects === false ? (
             errorLoadingSubjects === "" ? (
               <TryProgrammingQustions
@@ -57,7 +56,8 @@ export default function Home() {
           ) : (
             <SimpleLoader size={40} clr={"purple"} />
           )}
-        </div>
+        </div> */}
+        {/* try mcq questions  */}
         <div className="w-full flex flex-col gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
           {loadingSubjects === false ? (
             errorLoadingSubjects === "" ? (

@@ -70,7 +70,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 )}
 
                 {/* answers */}
-                <div className=" flex justify-center items-center py-5 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap">
+                <div className=" flex border border-dashed border-b-1 border-t-0 border-r-0 border-l-0 justify-center items-center py-5 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap">
                   {questions[questionNo - 1]?.answer.map(
                     (ans: any, index: number) => {
                       return (
@@ -99,8 +99,14 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                     </Button>
 
                     <Button
+                      sx={{
+                        "&.Mui-disabled": {
+                          background: "#eaeaea",
+                          color: "#c0c0c0",
+                        },
+                      }}
                       href={`/mcq/v1/${subject}/${chapter}/${questionNo + 1}`}
-                      className=" bg-purple-600 focus:ring-4 flex justify-center items-center focus:outline-none focus:ring-purple-300 hover:bg-purple-700 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
+                      className=" bg-purple-900 focus:ring-4 flex justify-center items-center focus:outline-none focus:ring-purple-300 hover:bg-purple-950 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
                       disabled={questionNo === questions.length}
                       // onClick={handleNextQuestion}
                     >

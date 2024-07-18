@@ -26,7 +26,7 @@ const ShareBtn = () => {
     <Button
       className={`min-w-[fit-content] focus:ring-2 focus:outline-none focus:ring-purple-300 flex-1 rounded-sm px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
         linkCopied
-          ? "text-purple-800 bg-purple-100 border-purple-800 hover:bg-purple-200"
+          ? "text-green-800 bg-green-100 border-green-800 hover:bg-green-200"
           : "bg-purple-100 text-purple-800  border-purple-300 hover:bg-purple-200"
       }`}
       title={`Share with your friends on ${link}`}

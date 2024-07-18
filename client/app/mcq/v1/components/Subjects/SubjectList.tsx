@@ -136,13 +136,15 @@ const SubjectList = ({ setSubjectLength }: any) => {
                     ("Something went wrong...!");
                     setSelectedSubjectForQuiz("");
                     setSelectedSubject("");
-                    // return toast.error("Something went wrong...!");
+                    return toast.error(
+                      `No Question found Chpater - ${data.data[0].name} Subject - ${selectedSubjectForQuiz}...!`
+                    );
                   }
                 } catch (error: any) {
                   setSearchingChapters(false);
                   setSelectedSubjectForQuiz("");
                   setSelectedSubject("");
-                  // return toast.error("Something went wrong...!");
+                  return toast.error("Something went wrong...!");
                 }
               })
               .catch((err) => {

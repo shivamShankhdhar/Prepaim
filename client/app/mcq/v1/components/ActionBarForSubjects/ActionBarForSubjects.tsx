@@ -72,7 +72,7 @@ const ActionBarForSubjects = ({
     <div className="bg-white w-full flex sm:justify-start max-sm:justify-start md:justify-start max-md:justify-start lg:justify-between xl:justify-between 2xl:justify-between gap-1 py-1 flex-wrap rounded-md px-5 items-center">
       <>
         <div className="sm:flex-1 max-sm:flex-1  md:flex-1 max-md:flex-1 lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex gap-1 justify-start items-center flex-wrap">
-          <div className="sans-serif w-[fit-content]">Search Subject :</div>
+          {/* <div className="sans-serif w-[fit-content]">Search Subject :</div> */}
           <div className="flex-1">
             <SelectDropdown
               options={subjectsOptions.filter((item) => item.value !== "")}
@@ -93,7 +93,7 @@ const ActionBarForSubjects = ({
         </div>
         <div className="min-w-[fit-content] gap-1 flex sm:justify-start max-sm:justify-start md:justify-start max-md:justify-start lg:justify-end xl:justify-end 2xl:justify-end  items-center flex-1">
           <div className="flex justify-center items-center sans-serif">
-            Filter By Branch Category :
+            {/* Filter By Branch Category : */}Category
           </div>
           <div className="lg:w-[fit-content] xl:w-[fit-content] 2xl:w-[fit-content] sm:flex-1 max-sm:flex-1 md:flex-1 max-md:flex-1">
             <SelectDropdown

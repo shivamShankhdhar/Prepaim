@@ -36,11 +36,14 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
               allMcqQuestions?.slice(0, 10)?.map((item, index) => (
                 <li
                   key={item._id}
-                  className="hover:text-purple-900 flex flex-row gap-1"
+                  className="hover:text-purple-900 flexjustify-between items-center flex-row gap-1"
                 >
-                  <MdKeyboardDoubleArrowRight size={20} />
+                  <p>
+                    <MdKeyboardDoubleArrowRight size={20} />
+                  </p>
+
                   <Link
-                    className="flex gap-1"
+                    className="flex flex-1 gap-1"
                     href={`/mcq/v1/${item.subject?.replaceAll(
                       " ",
                       "-"

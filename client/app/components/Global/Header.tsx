@@ -43,7 +43,7 @@ const Header = () => {
         {/* container for 100% height and width */}
         <div className="w-full flex h-[100vh] px-5 justify-center items-center">
           {/* container that contains the login form  */}
-          <div className="flex flex-col sm:w-[80%] max-sm:w-[80%] md:w-[40%] max-md:w-[40%] lg:w-[500px] xl:w-[500px] 2xl:w-[500px] px-2 py-1 bg-white rounded-md">
+          <div className="flex flex-col sm:w-[90%] max-sm:w-[90%] md:w-[40%] max-md:w-[40%] lg:w-[500px] xl:w-[500px] 2xl:w-[500px] px-2 py-1 bg-white rounded-md">
             <div className="w-full flex justify-end items-end">
               <Button
                 sx={{ border: 1 }}
