@@ -1,13 +1,15 @@
 "use client";
 import "../styles/globals.css";
 import { useEffect, useState } from "react";
-import HeroSection from "./components/Home/HeroSection";
+import HeroSection from "./components/Home/HeroSection/HeroSection";
 import Footer from "./components/Footer/Footer";
 import ErrorMessage from "./components/Global/ErrorMessage";
 import SimpleLoader from "./components/Global/SimpleLoader";
-import TryProgrammingQustions from "./components/Home/TryProgrammingQustions";
-import TryMCQ from "./components/Home/TryMCQ";
+import TryProgrammingQustions from "./components/Home/HeroSection/TryProgrammingQustions";
+
 import useFetch from "./hooks/fetch.hook";
+import TryMCQ from "./components/Home/HeroSection/TryMCQ";
+import TryMcqSkeleton from "./components/Home/HeroSection/TryMcqSkeleton";
 
 export default function Home() {
   const [subjectsFromServer, setSubjectsFromServer] = useState(
@@ -75,7 +77,7 @@ export default function Home() {
               />
             )
           ) : (
-            <SimpleLoader size={40} clr={"purple"} />
+            <TryMcqSkeleton />
           )}
         </div>
       </div>

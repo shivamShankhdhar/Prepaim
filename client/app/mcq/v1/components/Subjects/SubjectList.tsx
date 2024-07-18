@@ -8,10 +8,13 @@ import { SlReload } from "react-icons/sl";
 import SubjectsNotFoundForSelectedCategory from "./SubjectsNotFoundForSelectedCategory";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import ActionBarForSubjects from "../ActionBarForSubjects/ActionBarForSubjects";
-import SubjectItemListView from "./SubjectItemListView";
+// import SubjectItemListView from "./SubjectItemListView";
 import toast from "react-hot-toast";
-import SubjectItemGridView from "./SubjectItemGridView";
+import SubjectItemGridView from "./Layouts/Grid/SubjectItemGridView";
 import LayoutToggle from "../../../../components/Global/LayoutToggle";
+import SubjectItemListView from "./Layouts/List/SubjectItemListView";
+import SubjctListViewSkeleton from "./Layouts/List/SubjctListViewSkeleton";
+import SubjctGridViewSkeleton from "./Layouts/Grid/SubjctGridViewSkeleton";
 
 const SubjectList = ({ setSubjectLength }: any) => {
   // options for dropdown for layout
@@ -195,54 +198,63 @@ const SubjectList = ({ setSubjectLength }: any) => {
           layOutView === "list" ? "flex-col" : "flex-row flex-wrap"
         } px-2 border py-3 gap-2 bg-white border-purple-200 mt-1 rounded-md justify-center`}
       >
-        {!isLoading ? (
-          allSubjectsError === "" ? (
-            subjectsAfterFilter.length > 0 ? (
-              subjectsAfterFilter.sort().map((item, index) =>
-                layOutView === "list" ? (
-                  <SubjectItemListView
-                    key={`${item._id}-${index}`} //${index}
-                    item={item}
-                    subjectItemLength={subjectsAfterFilter.length}
-                    index={index}
-                    selectedSubject={selectedSubject}
-                    searchingChapters={searchingChapters}
-                    handleNavigateToQuestion={handleNavigateToQuestion}
-                  />
-                ) : (
-                  <SubjectItemGridView
-                    key={`${item._id}-${index}`} //${index}
-                    item={item}
-                    subjectItemLength={subjectsAfterFilter.length}
-                    index={index}
-                    selectedSubject={selectedSubject}
-                    searchingChapters={searchingChapters}
-                    handleNavigateToQuestion={handleNavigateToQuestion}
-                  />
-                )
+        {allSubjectsError === "" ? (
+          subjectsAfterFilter.length > 0 ? (
+            subjectsAfterFilter.sort().map((item, index) =>
+              layOutView === "list" ? (
+                // list view
+                <>
+                  {isLoading ? (
+                    <SubjctListViewSkeleton />
+                  ) : (
+                    <SubjectItemListView
+                      key={`${item._id}-${index}`} //${index}
+                      item={item}
+                      subjectItemLength={subjectsAfterFilter.length}
+                      index={index}
+                      selectedSubject={selectedSubject}
+                      searchingChapters={searchingChapters}
+                      handleNavigateToQuestion={handleNavigateToQuestion}
+                    />
+                  )}
+                </>
+              ) : (
+                <>
+                  {isLoading ? (
+                    <SubjctGridViewSkeleton />
+                  ) : (
+                    <SubjectItemGridView
+                      key={`${item._id}-${index}`} //${index}
+                      item={item}
+                      subjectItemLength={subjectsAfterFilter.length}
+                      index={index}
+                      selectedSubject={selectedSubject}
+                      searchingChapters={searchingChapters}
+                      handleNavigateToQuestion={handleNavigateToQuestion}
+                    />
+                  )}
+                </>
               )
-            ) : (
-              <SubjectsNotFoundForSelectedCategory />
             )
           ) : (
-            <div className="flex flex-col w-full justify-center items-center">
-              <div className="bg-white flex flex-col justify-center items-center py-5 rounded-md w-full mt-2 gap-2">
-                <ErrorMessage
-                  text={"Something Went Wrong...!"}
-                  isBg={false}
-                  isButton={false}
-                />
-                <div
-                  className="flex clex-row items-center justify-center gap-1 bg-purple-700 cursor-pointer rounded-sm text-white py-1 px-2"
-                  onClick={handleReloadSubjects}
-                >
-                  <SlReload size={15} /> Reload
-                </div>
-              </div>
-            </div>
+            <SubjectsNotFoundForSelectedCategory />
           )
         ) : (
-          <SubjectListSkeleton />
+          <div className="flex flex-col w-full justify-center items-center">
+            <div className="bg-white flex flex-col justify-center items-center py-5 rounded-md w-full mt-2 gap-2">
+              <ErrorMessage
+                text={"Something Went Wrong...!"}
+                isBg={false}
+                isButton={false}
+              />
+              <div
+                className="flex clex-row items-center justify-center gap-1 bg-purple-700 cursor-pointer rounded-sm text-white py-1 px-2"
+                onClick={handleReloadSubjects}
+              >
+                <SlReload size={15} /> Reload
+              </div>
+            </div>
+          </div>
         )}
       </div>
     </div>
