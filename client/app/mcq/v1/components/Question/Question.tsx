@@ -42,7 +42,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 </div>
 
                 {/* question component  */}
-                <div className="mt-0 py-0">
+                <div className="mt-3 py-0">
                   <div className="text-lg text-gray-600">
                     Q {questionNo}.
                     {questions.length > 0 &&
@@ -70,7 +70,7 @@ const Question = ({ questions, chapter, error, loading }: Props) => {
                 )}
 
                 {/* answers */}
-                <div className=" flex border border-dashed border-b-1 border-t-0 border-r-0 border-l-0 justify-center items-center py-5 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap">
+                <div className=" flex border border-dashed border-b-1 border-t-0 border-r-0 border-l-0 justify-center items-center pb-5 pt-3 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap">
                   {questions[questionNo - 1]?.answer.map(
                     (ans: any, index: number) => {
                       return (
