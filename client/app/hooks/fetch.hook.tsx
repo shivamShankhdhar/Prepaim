@@ -1,14 +1,7 @@
 import axios from "axios";
+import { headers } from "next/headers";
 import { useEffect, useState } from "react";
-const default_backend_url =
-  process.env.AXIOS_BASE_URL || "https://api.data.prepaim.com";
-axios.defaults.baseURL = default_backend_url;
 
-axios.defaults.headers.post["Content-Type"] =
-  "application-json/x-www-form-urlencoded";
-
-// (default_backend_url);
-//custom hook
 const useFetch = (query: any) => {
   // (query);
   const [data, setData] = useState<any>({
@@ -24,7 +17,9 @@ const useFetch = (query: any) => {
       try {
         setData((prev: any) => ({ ...prev, isLoading: true }));
         axios
-          .get(`${query}`)
+          .get(`${query}`, {
+            headers: { "Application-Type": "application/json" },
+          })
           .then((response) => {
             // (response.data);
             setData((prev: any) => ({

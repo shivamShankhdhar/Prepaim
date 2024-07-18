@@ -15,7 +15,7 @@ dotenv.config();
 const app = express();
  const corsOptions = {
    origin: "https://prepaim.com",
-   //(https://your-client-app.com)
+
    optionsSuccessStatus: 200,
  };
 
