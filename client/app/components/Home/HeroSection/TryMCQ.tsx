@@ -50,7 +50,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
   return (
     <div id="trymcq" className="w-full px-11 gap-5">
       <div className="w-[fit-content] text-center text-gray-700 py-1 font-semibold text-2xl">
-        Try MCQ&apos;
+        Try MCQ&apos;s
       </div>
 
       <div className="w-full flex justify-center gap-5 py-5 flex-wrap">
