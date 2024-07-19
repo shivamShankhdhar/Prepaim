@@ -30,7 +30,7 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
           </div>
           <div className="">
             <Button
-              className="text-white focus:ring-4 focus:outline-none focus:ring-purple-300 bg-purple-700 py-1 hover:bg-purple-800 justify-start"
+              className="text-white focus:ring-4 focus:outline-none focus:ring-purple-300 bg-purple-900 py-1 hover:bg-purple-950 justify-start"
               href={`/mcq/v1/${data.subject.replaceAll(
                 " ",
                 "-"
