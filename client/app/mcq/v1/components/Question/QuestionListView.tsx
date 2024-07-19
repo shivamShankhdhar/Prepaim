@@ -80,7 +80,12 @@ const QuestionListView = () => {
       {loading ? (
         <>
           {loadingItemShowingSkeleton.map((item: any) => {
-            return <QuestionSkeleton requestedPage={"list-view"} />;
+            return (
+              <QuestionSkeleton
+                key={`key-atquestion-list-view-skeleton-${item}`}
+                requestedPage={"list-view"}
+              />
+            );
           })}
         </>
       ) : (
