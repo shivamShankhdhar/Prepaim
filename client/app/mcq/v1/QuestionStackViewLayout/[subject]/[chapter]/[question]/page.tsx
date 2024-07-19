@@ -184,6 +184,7 @@ const QuestionPage = () => {
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions
+              requestedPage={"grid-view-question-page"}
               setProperty1={setOpenSidebarSlider}
               setProperty2={setOpenQuestionBoard}
               subject={subject.toString()}
