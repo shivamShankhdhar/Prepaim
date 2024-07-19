@@ -128,10 +128,10 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   setQuestionOne(response.data[0]);
                   if (response.data.length > 0) {
                     router.push(
-                      `/mcq/v1/QuestionStackViewLayout/${selectedSubjectForQuiz}/${data.data[0].name.replaceAll(
+                      `/mcq/v1/${selectedSubjectForQuiz}/${data.data[0].name.replaceAll(
                         " ",
                         "-"
-                      )}/1`
+                      )}/QuestionStackViewLayout/1`
                     );
                   } else {
                     setSearchingChapters(false);

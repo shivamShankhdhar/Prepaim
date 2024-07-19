@@ -43,7 +43,7 @@ const QuestionPageLayoutToggle = () => {
           // onClick={() => setPageLayoutView("grid")}
         >
           <Link
-            href={`/mcq/v1/QuestionStackViewLayout/${subject}/${chapter}/${question}`}
+            href={`/mcq/v1/${subject}/${chapter}/QuestionStackViewLayout/${question}`}
           >
             <TbGridDots size={20} />
           </Link>
@@ -62,7 +62,7 @@ const QuestionPageLayoutToggle = () => {
           // onClick={() => setPageLayoutView("list")}
         >
           <Link
-            href={`/mcq/v1/QuestionListViewLayout/${subject}/${chapter}/${question}`}
+            href={`/mcq/v1/${subject}/${chapter}/QuestionListViewLayout/${question}`}
           >
             <TbListDetails size={20} />
           </Link>

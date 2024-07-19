@@ -11,7 +11,7 @@ const QuestionItems = ({ index, item }: any) => {
   return (
     <Button
       sx={{ minHeight: 0, minWidth: 0 }}
-      href={`/mcq/v1/QuestionStackViewLayout/${subject}/${chapter}/${
+      href={`/mcq/v1/${subject}/${chapter}/QuestionStackViewLayout/${
         index + 1
       }`}
       className={`px-0 py-0 rounded-full h-9 w-9 ${
