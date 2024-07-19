@@ -131,7 +131,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                       `/mcq/v1/${selectedSubjectForQuiz}/${data.data[0].name.replaceAll(
                         " ",
                         "-"
-                      )}/QuestionStackViewLayout/1`
+                      )}/QuestionStackViewPage/1`
                     );
                   } else {
                     setSearchingChapters(false);

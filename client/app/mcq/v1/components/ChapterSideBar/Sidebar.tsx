@@ -26,9 +26,9 @@ const Sidebar = ({ error, requestingPage }: Props) => {
 
   useEffect(() => {
     setPageViewMode(
-      pathname.includes("QuestionListViewLayout")
-        ? "QuestionListViewLayout"
-        : "QuestionStackViewLayout"
+      pathname.includes("QuestionListViewPage")
+        ? "QuestionListViewPage"
+        : "QuestionStackViewPage"
     );
   }, [pageViewMode]);
 

@@ -47,10 +47,7 @@ const SubjectItemGridView = ({
         </Button>
         <Button
           className="py-1 flex-1 w-full bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-sm text-black px-2 hover:bg-gray-300"
-          href={`/mcq/v1/QuestionStackViewLayout/${item.name.replaceAll(
-            " ",
-            "-"
-          )}/chapters`}
+          href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
           title={`Explore all Chapters of ${item.name}`}
         >
           Chapters

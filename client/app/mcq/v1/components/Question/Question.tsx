@@ -96,7 +96,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
                   <div className="flex flex-col justify-between py-2">
                     <div className="flex w-full justify-between py-1 ">
                       <Button
-                        href={`/mcq/v1/QuestionStackViewLayout/${subject}/${chapter}/${
+                        href={`/mcq/v1/QuestionStackViewPage/${subject}/${chapter}/${
                           questionNo - 1
                         }`}
                         className="bg-gray-200 focus:ring-4 focus:outline-none flex gap-1 justify-center items-center focus:ring-purple-300 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
@@ -114,7 +114,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
                             color: "#c0c0c0",
                           },
                         }}
-                        href={`/mcq/v1/QuestionStackViewLayout/${subject}/${chapter}/${
+                        href={`/mcq/v1/QuestionStackViewPage/${subject}/${chapter}/${
                           questionNo + 1
                         }`}
                         className=" bg-purple-900 focus:ring-4 flex justify-center items-center focus:outline-none focus:ring-purple-300 hover:bg-purple-950 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"

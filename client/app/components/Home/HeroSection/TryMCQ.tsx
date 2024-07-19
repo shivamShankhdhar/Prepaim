@@ -21,7 +21,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
           .then((res) => {
             if (res.data.length > 0) {
               router.push(
-                `/mcq/v1/QuestionStackViewLayout/${selectedSubject}/${res.data[0].name.replaceAll(
+                `/mcq/v1/QuestionStackViewPage/${selectedSubject}/${res.data[0].name.replaceAll(
                   " ",
                   "-"
                 )}/1`

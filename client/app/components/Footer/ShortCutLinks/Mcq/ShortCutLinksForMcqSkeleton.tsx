@@ -8,7 +8,7 @@ const ShortCutLinksForMcqSkeleton = () => {
         return (
           <div
             key={`key-at-shortcut-link-for-mcq-skeleton-${item}`}
-            className="w-full flex flex-row flex-wrap gap-2 py-2 bg-gray-100 animate-pulse px-[50%] rounded-md"
+            className="w-full flex flex-row flex-wrap gap-2 py-4 bg-gray-100 animate-pulse px-[50%] rounded-md"
           ></div>
         );
       })}

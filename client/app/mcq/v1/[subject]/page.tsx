@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import Breadcrum from "@/app/components/Global/Breadcrum";
-import SubjectList from "../../components/Subjects/SubjectList";
+import SubjectList from "../components/Subjects/SubjectList";
 import Footer from "@/app/components/Footer/Footer";
 
 const SubjectPage = () => {

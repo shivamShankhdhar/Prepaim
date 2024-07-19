@@ -38,7 +38,7 @@ const Breadcrum = (props: Props) => {
                 className={`${commonClassForActiveElements}`}
               >{` ${subject} - ${props.subjectLength || 0} `}</div>
             ) : (
-              <Link href={`/mcq/v1/QuestionStackViewLayout/subjects`}>
+              <Link href={`/mcq/v1/subjects`}>
                 {subject && subject.toString().replaceAll("-", " ")}
               </Link>
             )}
@@ -53,9 +53,7 @@ const Breadcrum = (props: Props) => {
                 className={`${commonClassForActiveElements}`}
               >{` ${chapter} - ${props.chaptersLength || 0} `}</div>
             ) : (
-              <Link
-                href={`/mcq/v1/QuestionStackViewLayout/${subject}/chapters`}
-              >
+              <Link href={`/mcq/v1/${subject}/chapters`}>
                 {chapter && chapter.toString().replaceAll("-", " ")}
               </Link>
             )}
@@ -71,7 +69,7 @@ const Breadcrum = (props: Props) => {
               </div>
             ) : (
               <Link
-                href={`/mcq/v1/QuestionStackViewLayout/${subject}/chapters/${chapter}/questions`}
+                href={`/mcq/v1/${subject}/chapters/${chapter}/${`QuestionStackViewPage`}/questions`}
               >
                 {question && question.toString().replaceAll("-", " ")}
               </Link>

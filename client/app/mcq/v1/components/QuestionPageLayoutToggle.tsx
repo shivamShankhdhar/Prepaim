@@ -12,16 +12,16 @@ const QuestionPageLayoutToggle = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [PageLayoutView, setPageLayoutView] = useState(
-    pathname.includes("QuestionStackViewLayout") ? "grid" : "list"
+    pathname.includes("QuestionStackViewPage") ? "grid" : "list"
   );
   // useEffect(() => {
   //   if (PageLayoutView === "grid") {
   //     router.push(
-  //       `/mcq/v1/QuestionStackViewLayout/${subject}/${chapter}/${question}`
+  //       `/mcq/v1/QuestionStackViewPage/${subject}/${chapter}/${question}`
   //     );
   //   } else {
   //     router.push(
-  //       `/mcq/v1/QuestionListViewLayout/${subject}/${chapter}/${question}`
+  //       `/mcq/v1/QuestionListViewPage/${subject}/${chapter}/${question}`
   //     );
   //   }
   // }, [PageLayoutView]);
@@ -43,7 +43,7 @@ const QuestionPageLayoutToggle = () => {
           // onClick={() => setPageLayoutView("grid")}
         >
           <Link
-            href={`/mcq/v1/${subject}/${chapter}/QuestionStackViewLayout/${question}`}
+            href={`/mcq/v1/${subject}/${chapter}/QuestionStackViewPage/${question}`}
           >
             <TbGridDots size={20} />
           </Link>
@@ -62,7 +62,7 @@ const QuestionPageLayoutToggle = () => {
           // onClick={() => setPageLayoutView("list")}
         >
           <Link
-            href={`/mcq/v1/${subject}/${chapter}/QuestionListViewLayout/${question}`}
+            href={`/mcq/v1/${subject}/${chapter}/QuestionListViewPage/${question}`}
           >
             <TbListDetails size={20} />
           </Link>

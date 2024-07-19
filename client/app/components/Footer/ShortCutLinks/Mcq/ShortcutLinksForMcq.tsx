@@ -45,10 +45,13 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
 
                   <Link
                     className="flex flex-1 gap-1"
-                    href={`/mcq/v1/QuestionStackViewLayout/${item.subject?.replaceAll(
+                    href={`/mcq/v1/${item.subject?.replaceAll(
                       " ",
                       "-"
-                    )}/${item.chapter?.replaceAll(" ", "-")}/1`}
+                    )}/${item.chapter?.replaceAll(
+                      " ",
+                      "-"
+                    )}/QuestionStackViewPage/1`}
                   >
                     {item.question}
                   </Link>

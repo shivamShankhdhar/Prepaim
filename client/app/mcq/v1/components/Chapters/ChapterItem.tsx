@@ -20,10 +20,10 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
           <div className="w-full flex-1">
             <Button
               className="hover:bg-white w-full py-1 justify-start text-black"
-              href={`/mcq/v1/QuestionStackViewLayout/${data.subject.replaceAll(
+              href={`/mcq/v1/${data.subject.replaceAll(
                 " ",
                 "-"
-              )}/${data.name.replaceAll(" ", "-")}/1`}
+              )}/${data.name.replaceAll(" ", "-")}/QuestionStackViewPage/1`}
             >
               <div>{data.name}</div>
             </Button>
@@ -31,7 +31,7 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
           <div className="">
             <Button
               className="text-white focus:ring-4 focus:outline-none focus:ring-purple-300 bg-purple-900 py-1 hover:bg-purple-950 justify-start"
-              href={`/mcq/v1/QuestionStackViewLayout/${data.subject.replaceAll(
+              href={`/mcq/v1/QuestionStackViewPage/${data.subject.replaceAll(
                 " ",
                 "-"
               )}/${data.name.replaceAll(" ", "-")}/1`}
