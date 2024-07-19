@@ -48,7 +48,7 @@ const Header = () => {
               <Button
                 sx={{ border: 1 }}
                 onClick={handleClose}
-                className="flex focus:ring-4 focus:outline-none focus:ring-purple-300 cursor-pointer bg-purple-100 py-1 px-1 text-purple-900 rounded-md  border border-purple-300"
+                className="flex focus:ring-4 focus:outline-none focus:ring-purple-300 cursor-pointer bg-purple-100 py-1 px-1 text-purple-900 rounded-sm  border border-purple-300"
               >
                 <IoCloseOutline size={15} className="p-0 m-0" />
               </Button>
@@ -83,7 +83,7 @@ const Header = () => {
           <Button
             sx={{ border: 1, textTransform: "none" }}
             onClick={handleOpen}
-            className="flex justify-center items-center gap-1 bg-purple-200 border border-purple-300 text-purple-800 hover:bg-purple-300 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-full text-sm px-2 py-1 text-center"
+            className="flex justify-center items-center gap-1 bg-purple-200 border border-purple-300 text-purple-800 hover:bg-purple-300 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
           >
             <CgLogIn /> Login
           </Button>
