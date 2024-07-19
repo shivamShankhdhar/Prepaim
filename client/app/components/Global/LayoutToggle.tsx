@@ -1,4 +1,5 @@
 import React from "react";
+import toast from "react-hot-toast";
 import { TbGridDots, TbListDetails } from "react-icons/tb";
 
 const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
@@ -19,7 +20,10 @@ const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
               ? "text-purple font-semibold"
               : "text-purple-300"
           } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-purple-300`}
-          onClick={() => setLayoutView("grid")}
+          onClick={() => {
+            setLayoutView("grid");
+            toast.success("Grid View Selected");
+          }}
         >
           <TbGridDots size={20} />
         </div>
@@ -34,7 +38,10 @@ const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
               ? "text-purple font-semibold"
               : "text-purple-300"
           } items-center px-4 cursor-pointer  `}
-          onClick={() => setLayoutView("list")}
+          onClick={() => {
+            setLayoutView("list");
+            toast.success("List View Selected");
+          }}
         >
           <TbListDetails size={20} />
         </div>

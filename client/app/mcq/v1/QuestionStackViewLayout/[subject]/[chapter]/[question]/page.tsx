@@ -49,6 +49,7 @@ const QuestionPage = () => {
   const [questions, setQuestions] = useState(
     [
       {
+        _id: "",
         question: "",
         answer: [{ ans: "", isTrue: false }],
         explanation: [{ answer: "", explanation: "" }],
