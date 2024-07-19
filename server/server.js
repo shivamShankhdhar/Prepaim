@@ -20,6 +20,10 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
+// for resolving __dirname not defined error
+
+const __dirname = path.resolve();
+
 app.use(cors(corsOptions));
 app.use(express.json());
 
