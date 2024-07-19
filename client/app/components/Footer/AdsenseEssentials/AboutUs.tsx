@@ -32,10 +32,8 @@ const AboutUs = () => {
       </p>
       <br />
       <p>
-        Founded in 2024 by
-        <span className="font-semibold"> Er. Shivam Shankhdhar </span>and
-        <span className="font-semibold"> Shraddha Varshney</span>, our passion
-        for educational success drives everything we do.
+        Founded in 2024 by Er. Shivam Shankhdhar and Shraddha Varshney, our
+        passion for educational success drives everything we do.
       </p>
       <br />
       <p>
@@ -44,7 +42,7 @@ const AboutUs = () => {
         CDAC, Noida. Shraddha Varshney is currently pursuing an MCA degree from
         AKTU after completing her B.Sc. in Mathematics.
       </p>
-      <h1 className="text-2xl font-semibold">
+      <h1 className="text-xl font-semibold">
         PrepAim - Your trusted partner in preparation excellence.
       </h1>
     </div>
