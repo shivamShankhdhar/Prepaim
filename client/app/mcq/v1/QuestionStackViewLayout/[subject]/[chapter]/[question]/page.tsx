@@ -14,9 +14,29 @@ import Breadcrum from "@/app/components/Global/Breadcrum";
 
 import QuestionPageLayoutToggle from "@/app/mcq/v1/components/QuestionPageLayoutToggle";
 import QuestionStackView from "@/app/mcq/v1/components/Question/QuestionStackView";
+import { useCookies } from "next-client-cookies";
+import toast from "react-hot-toast";
 
 const QuestionPage = () => {
   const router = useRouter();
+  const cookies = useCookies();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      if (cookies.get("pageViewLayout") === undefined) {
+        cookies.set("pageViewLayout", "gridPageView");
+      } else {
+        toast.success("Switched to Test/Prepration mode");
+        // cookies.remove("pageViewLayout");
+        cookies.set("pageViewLayout", "gridPageView");
+      }
+    }
+  }, [cookies, isClient]);
 
   const { subject } = useParams();
   const { question } = useParams();

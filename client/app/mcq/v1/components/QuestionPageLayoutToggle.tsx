@@ -26,7 +26,7 @@ const QuestionPageLayoutToggle = () => {
   //   }
   // }, [PageLayoutView]);
   return (
-    <div className="w-full flex justify-end items-center gap-3 py-1">
+    <div className="w-full flex justify-end items-center gap-3 py-1 px-5">
       <ShareBtn />
       <div className="flex justify-center w-[fit-content]  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-800">
         <div

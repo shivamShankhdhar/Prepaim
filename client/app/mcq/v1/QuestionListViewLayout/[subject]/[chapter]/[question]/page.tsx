@@ -4,18 +4,35 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Sidebar from "@/app/mcq/v1/components/ChapterSideBar/Sidebar";
-import Question from "@/app/mcq/v1/components/Question/Question";
-import Navigation from "@/app/mcq/v1/components/Question/Navigation";
-import QuestionBoard from "@/app/mcq/v1/components/QuestionBoard/QuestionBoard";
 import Actions from "@/app/mcq/v1/components/Actions";
 import Footer from "@/app/components/Footer/Footer";
 import SidebarSlider from "@/app/components/Global/SidebarSlider";
 import Breadcrum from "@/app/components/Global/Breadcrum";
 import QuestionPageLayoutToggle from "@/app/mcq/v1/components/QuestionPageLayoutToggle";
 import QuestionListView from "@/app/mcq/v1/components/Question/QuestionListView";
+import { useCookies } from "next-client-cookies";
+import toast from "react-hot-toast";
 
 const QuestionPage = () => {
   const router = useRouter();
+  const cookies = useCookies();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+      console.log(cookies.get("pageViewLayout"));
+      if (cookies.get("pageViewLayout") === undefined) {
+        cookies.set("pageViewLayout", "listPageView");
+      } else {
+        toast.success("Switched to Prepration mode");
+        // cookies.set("pageViewLayout", "listPageView");
+      }
+    }
+  }, [cookies, isClient]);
 
   const { subject } = useParams();
   const { question } = useParams();
