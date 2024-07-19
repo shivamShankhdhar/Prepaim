@@ -15,7 +15,11 @@ import * as path from "path";
 dotenv.config();
 const app = express();
 const corsOptions = {
-  origin: ["https://prepaim.com", "https://prepaim.in"],
+  origin: [
+    "https://prepaim.com",
+    "https://prepaim.in",
+    "http://localhost:3000",
+  ],
   default: "https://prepaim.com",
   optionsSuccessStatus: 200,
 };
