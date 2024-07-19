@@ -6,11 +6,9 @@ import Image from "next/image";
 
 const SubjectItemGridView = ({
   item,
-  index,
   handleNavigateToQuestion,
   searchingChapters,
   selectedSubject,
-  subjectItemLength,
 }: any) => {
   return (
     <div

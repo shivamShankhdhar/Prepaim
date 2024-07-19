@@ -60,24 +60,20 @@ export default function Home() {
           )}
         </div> */}
         {/* try mcq questions  */}
-        <div className="w-full flex flex-col gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
-          {loadingSubjects === false ? (
-            errorLoadingSubjects === "" ? (
-              <TryMCQ
-                loading={loadingSubjects}
-                subjects={subjectsFromServer.sort((a, b) =>
-                  a.name.localeCompare(b.name)
-                )}
-              />
-            ) : (
-              <ErrorMessage
-                text={errorLoadingSubjects}
-                isBg={false}
-                isButton={false}
-              />
-            )
+        <div className="w-full flex gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
+          {errorLoadingSubjects === "" ? (
+            <TryMCQ
+              loading={loadingSubjects}
+              subjects={subjectsFromServer.sort((a, b) =>
+                a.name.localeCompare(b.name)
+              )}
+            />
           ) : (
-            <TryMcqSkeleton />
+            <ErrorMessage
+              text={errorLoadingSubjects}
+              isBg={false}
+              isButton={false}
+            />
           )}
         </div>
       </div>

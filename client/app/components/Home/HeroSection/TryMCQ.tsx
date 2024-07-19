@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
-import Image from "next/image";
-import SimpleLoader from "../../Global/SimpleLoader";
+import SubjectItemGridView from "@/app/mcq/v1/components/Subjects/Layouts/Grid/SubjectItemGridView";
+import SubjctGridViewSkeleton from "@/app/mcq/v1/components/Subjects/Layouts/Grid/SubjctGridViewSkeleton";
 
 const TryMCQ = ({ subjects, loading }: any) => {
   const router = useRouter();
@@ -26,80 +26,48 @@ const TryMCQ = ({ subjects, loading }: any) => {
                   "-"
                 )}/1`
               );
-              // setLoadingChapters(false);
             } else {
               setLoadingChapters(false);
-              return toast.error("No chapters found for this subject");
+              setSelectedSubject("");
+              return toast.error(
+                `No chapters found for subject - ${selectedSubject}`
+              );
             }
-            // (res.data);
           })
-          .catch((err) => err);
-      } catch (error) {}
+          .catch((err) => {
+            setLoadingChapters(false);
+            setSelectedSubject("");
+            return toast.error("Something went wrong");
+          });
+      } catch (error) {
+        setLoadingChapters(false);
+        setSelectedSubject("");
+        toast.error("Something went wrong");
+      }
     }
   }, [selectedSubject]);
   // (selectedSubject);
   return (
     <div id="trymcq" className="w-full px-11 gap-5">
-      <Toaster />
       <div className="w-[fit-content] text-center text-gray-700 py-1 font-semibold text-2xl">
-        Try MCQ&apos;s
+        Try MCQ&apos;
       </div>
-      {loading ? (
-        <SimpleLoader size={15} clr={"purple"} />
-      ) : (
-        <div className="w-full flex justify-center gap-5 flex-wrap">
-          {subjects.map((language: any) => (
-            <div
-              key={`${language.name}-key-at-home-page-trymcq-questions`}
-              onClick={() => {
-                setSelectedSubject(language.name);
-              }}
-              title={`Try MCQ for ${language.name}`}
-              className="flex justify-center cursor-pointer border-purple-300 items-center py-3 border rounded-md bg-purple-100 hover:bg-purple-200"
-            >
-              {loadingChapters ? (
-                selectedSubject === language.name ? (
-                  <>
-                    <div className="w-full px-4 ">
-                      <Image
-                        src={language.image}
-                        height={80}
-                        width={80}
-                        title={`Try MCQ for ${language.name}`}
-                        alt={`Try MCQ for ${language.name}`}
-                      />
-                    </div>
 
-                    <div className="w-[80px] flex justify-center items-center h-[100px] rounded-md absolute bg-white/50 backdrop:blur ">
-                      <SimpleLoader clr={"purple"} />
-                    </div>
-                  </>
-                ) : (
-                  <div className="w-full px-4">
-                    <Image
-                      src={language.image}
-                      height={80}
-                      width={80}
-                      title={`Try MCQ for ${language.name}`}
-                      alt={`Try MCQ for ${language.name}`}
-                    />
-                  </div>
-                )
-              ) : (
-                <div className="w-full px-4">
-                  <Image
-                    src={language.image}
-                    height={80}
-                    width={80}
-                    title={`Try MCQ for ${language.name}`}
-                    alt={`Try MCQ for ${language.name}`}
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="w-full flex justify-center gap-5 py-5 flex-wrap">
+        {loading ? (
+          <SubjctGridViewSkeleton />
+        ) : (
+          subjects.map((language: any) => (
+            <SubjectItemGridView
+              key={`key-at-subject-grid-view-at-home-page-for-${language._id}`} // ${language._id}
+              item={language}
+              handleNavigateToQuestion={setSelectedSubject}
+              selectedSubject={selectedSubject}
+              searchingChapters={loadingChapters}
+            />
+          ))
+        )}
+      </div>
     </div>
   );
 };

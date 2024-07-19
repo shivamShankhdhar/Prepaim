@@ -1,8 +1,9 @@
+import SimpleLoader from "@/app/components/Global/SimpleLoader";
 import useFetch from "@/app/hooks/fetch.hook";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import SimpleLoader from "../../Global/SimpleLoader";
+import ShortCutLinksForMcqSkeleton from "./ShortCutLinksForMcqSkeleton";
 const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   // fetch all questions from db
   const { data } = useFetch("/admin/mcq/getallquestions");
@@ -29,7 +30,7 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
       </div>
       <div className="py-3">
         {loading === true ? (
-          <SimpleLoader size={15} clr="purple" />
+          <ShortCutLinksForMcqSkeleton />
         ) : (
           <ul className="w-full py-2">
             {allMcqQuestions.length > 0 &&

@@ -69,7 +69,7 @@ const Header = () => {
             style={{
               objectFit: "contain",
               objectPosition: "center",
-              width: "auto",
+              width: "120px",
               height: "40px",
             }}
           />

@@ -3,7 +3,8 @@ import axios from "axios";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import SimpleLoader from "../../Global/SimpleLoader";
+import SimpleLoader from "../../../Global/SimpleLoader";
+import ShortCutLinksForCodingSkeleton from "./ShortCutLinksForMcqSkeleton";
 
 const ShortcutLinksForCoding = ({ allSubjects }: any) => {
   const { data: CodingQuestion } = useFetch(
@@ -38,7 +39,7 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
         </div>
         <div className="py-3">
           {loading === true ? (
-            <SimpleLoader size={15} clr="purple" />
+            <ShortCutLinksForCodingSkeleton />
           ) : (
             <ul className="w-full  py-2">
               {allCodingQuestions.length > 0 &&

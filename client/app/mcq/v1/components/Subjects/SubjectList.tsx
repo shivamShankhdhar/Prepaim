@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import SubjectListSkeleton from "./SubjectListSkeleton";
 import ActionBarForSubjectSkeleton from "../ActionBarForSubjects/ActionBarForSubjectSkeleton";
 import { SlReload } from "react-icons/sl";
 import SubjectsNotFoundForSelectedCategory from "./SubjectsNotFoundForSelectedCategory";
@@ -22,23 +21,42 @@ const SubjectList = ({ setSubjectLength }: any) => {
   let [subjects, setSubjects] = useState([
     { _id: "", name: "", image: "", branch: "" },
   ]);
+  const [isLoading, setLoading] = useState(true);
+  const [allSubjectsError, setAllSubjectsError] = useState("");
 
   const [layOutView, setLayoutView] = useState("grid");
 
-  const [isLoading, setLoading] = useState(true);
-
   const [Branch, setBranch] = useState("Engineering");
-
-  const [allSubjectsError, setAllSubjectsError] = useState("");
 
   const [reloadSubjects, setReloadSubjects] = useState(false);
 
   const [subjectsAfterFilter, setSubjectsAfterFilter] = useState(
     // subjects.filter((subject) => subject.branch === `${Branch}`)
-    [{ _id: "null", name: "", image: "", branch: "" }]
+    [{ _id: "", name: "", image: "", branch: "" }]
   );
 
+  const [selectedSubject, setSelectedSubject] = useState("");
   const [filterBySubjectName, setFilterBySubjectName] = useState("");
+
+  useEffect(() => {
+    try {
+      axios
+        .get("/admin/getallsubjects")
+        .then((response) => {
+          setAllSubjectsError("");
+          setSubjects(response.data);
+          setLoading(false);
+        })
+        .catch((error) => {
+          setLoading(false);
+          setAllSubjectsError(error.response.data.msg);
+        });
+    } catch (error: any) {
+      setAllSubjectsError(error.message);
+      setLoading(false);
+    }
+  }, []);
+
   // trying different things here
 
   useEffect(() => {
@@ -87,29 +105,10 @@ const SubjectList = ({ setSubjectLength }: any) => {
   );
 
   // set this for identifying the current click subject button  to show simple loader or not
-  const [selectedSubject, setSelectedSubject] = useState("");
 
   const handleReloadSubjects = () => {
     setReloadSubjects((prev) => !prev);
   };
-
-  useEffect(() => {
-    try {
-      axios
-        .get("/admin/getallsubjects")
-        .then((response) => {
-          setSubjects(response.data);
-          setLoading(false);
-        })
-        .catch((error) => {
-          setLoading(false);
-          setAllSubjectsError(error.response.data.msg);
-        });
-    } catch (error: any) {
-      setAllSubjectsError(error);
-      setLoading(false);
-    }
-  }, []);
 
   useEffect(() => {
     if (selectedSubjectForQuiz !== "") {
@@ -167,16 +166,16 @@ const SubjectList = ({ setSubjectLength }: any) => {
     }
   }, [selectedSubjectForQuiz]);
 
-  function handleNavigateToQuestion(subject: string) {
+  const handleNavigateToQuestion = (subject: string) => {
     setSelectedSubject(subject);
     setSelectedSubjectForQuiz(subject);
     // alert(subject)
-  }
+  };
   // dropdowns
   return (
     <div className="flex w-full flex-col py-2 px-3 items-center">
       {/* navigations for grid and list */}
-      {!isLoading ? (
+      {isLoading === false ? (
         <div className=" w-full">
           <ActionBarForSubjects
             isLoading={isLoading}
@@ -198,15 +197,18 @@ const SubjectList = ({ setSubjectLength }: any) => {
           layOutView === "list" ? "flex-col" : "flex-row flex-wrap"
         } px-2 border py-3 gap-2 bg-white border-purple-200 mt-1 rounded-md justify-center`}
       >
-        {allSubjectsError === "" ? (
-          subjectsAfterFilter.length > 0 ? (
-            subjectsAfterFilter.sort().map((item, index) =>
-              layOutView === "list" ? (
-                // list view
-                <>
-                  {isLoading ? (
-                    <SubjctListViewSkeleton />
-                  ) : (
+        {layOutView === "list" ? (
+          // list view
+          <>
+            {isLoading ? (
+              <SubjctListViewSkeleton />
+            ) : allSubjectsError === "" ? (
+              subjectsAfterFilter.filter((item) => item.name !== "").length >
+              0 ? (
+                subjectsAfterFilter
+                  .filter((item) => item.name !== "")
+                  .sort()
+                  .map((item, index) => (
                     <SubjectItemListView
                       key={`${item._id}-${index}`} //${index}
                       item={item}
@@ -216,13 +218,29 @@ const SubjectList = ({ setSubjectLength }: any) => {
                       searchingChapters={searchingChapters}
                       handleNavigateToQuestion={handleNavigateToQuestion}
                     />
-                  )}
-                </>
+                  ))
               ) : (
-                <>
-                  {isLoading ? (
-                    <SubjctGridViewSkeleton />
-                  ) : (
+                <SubjectsNotFoundForSelectedCategory />
+              )
+            ) : (
+              <ErrorMessage
+                text={allSubjectsError}
+                isBg={true}
+                isButton={true}
+              />
+            )}
+          </>
+        ) : (
+          <>
+            {isLoading ? (
+              <SubjctGridViewSkeleton />
+            ) : allSubjectsError === "" ? (
+              subjectsAfterFilter.filter((item) => item.name !== "").length >
+              0 ? (
+                subjectsAfterFilter
+                  .filter((item) => item.name !== "")
+                  .sort()
+                  .map((item, index) => (
                     <SubjectItemGridView
                       key={`${item._id}-${index}`} //${index}
                       item={item}
@@ -232,29 +250,18 @@ const SubjectList = ({ setSubjectLength }: any) => {
                       searchingChapters={searchingChapters}
                       handleNavigateToQuestion={handleNavigateToQuestion}
                     />
-                  )}
-                </>
+                  ))
+              ) : (
+                <SubjectsNotFoundForSelectedCategory />
               )
-            )
-          ) : (
-            <SubjectsNotFoundForSelectedCategory />
-          )
-        ) : (
-          <div className="flex flex-col w-full justify-center items-center">
-            <div className="bg-white flex flex-col justify-center items-center py-5 rounded-md w-full mt-2 gap-2">
+            ) : (
               <ErrorMessage
-                text={"Something Went Wrong...!"}
-                isBg={false}
-                isButton={false}
+                text={allSubjectsError}
+                isBg={true}
+                isButton={true}
               />
-              <div
-                className="flex clex-row items-center justify-center gap-1 bg-purple-700 cursor-pointer rounded-sm text-white py-1 px-2"
-                onClick={handleReloadSubjects}
-              >
-                <SlReload size={15} /> Reload
-              </div>
-            </div>
-          </div>
+            )}
+          </>
         )}
       </div>
     </div>
