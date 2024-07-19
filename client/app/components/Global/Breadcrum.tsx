@@ -24,7 +24,7 @@ const Breadcrum = (props: Props) => {
   const commonClassForActiveElements = `flex justify-center items-center text-sm  px-2 bg-purple-100  border border-purple-300 rounded-full text-purple-900`;
   return (
     <div className="w-full flex-wrap flex flex-row justify-center text-[16px] items-center ">
-      <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-3 items-center justify-start ">
+      <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-[11px] items-center justify-start ">
         <Link href={"/"}>
           {/* <FcHome size={20} /> */}
           Home
@@ -38,7 +38,7 @@ const Breadcrum = (props: Props) => {
                 className={`${commonClassForActiveElements}`}
               >{` ${subject} - ${props.subjectLength || 0} `}</div>
             ) : (
-              <Link href={`/mcq/v1/subjects`}>
+              <Link href={`/mcq/v1/QuestionStackViewLayout/subjects`}>
                 {subject && subject.toString().replaceAll("-", " ")}
               </Link>
             )}
@@ -53,7 +53,9 @@ const Breadcrum = (props: Props) => {
                 className={`${commonClassForActiveElements}`}
               >{` ${chapter} - ${props.chaptersLength || 0} `}</div>
             ) : (
-              <Link href={`/mcq/v1/${subject}/chapters`}>
+              <Link
+                href={`/mcq/v1/QuestionStackViewLayout/${subject}/chapters`}
+              >
                 {chapter && chapter.toString().replaceAll("-", " ")}
               </Link>
             )}
@@ -68,7 +70,9 @@ const Breadcrum = (props: Props) => {
                 {props.questionNo} / {props.totalquestion}
               </div>
             ) : (
-              <Link href={`/mcq/v1/${subject}/chapters/${chapter}/questions`}>
+              <Link
+                href={`/mcq/v1/QuestionStackViewLayout/${subject}/chapters/${chapter}/questions`}
+              >
                 {question && question.toString().replaceAll("-", " ")}
               </Link>
             )}

@@ -15,6 +15,7 @@ const ActionForQuestion = ({
   handleCommentToggle,
   isCommentSection,
   subject,
+  isShareBtn,
   chapter,
 }: any) => {
   const [isClient, setIsClient] = useState(false);
@@ -43,7 +44,8 @@ const ActionForQuestion = ({
                 error={error}
               />
               {/* share button  */}
-              <ShareBtn />
+              {isShareBtn && <ShareBtn />}
+              {/* <ShareBtn /> */}
               {/* <SocialShare /> */}
             </div>
           </div>

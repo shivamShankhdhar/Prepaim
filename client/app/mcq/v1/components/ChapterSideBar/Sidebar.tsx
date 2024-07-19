@@ -8,18 +8,29 @@ import { IoBookOutline } from "react-icons/io5";
 import ChapterSideBarSkeleton from "./ChapterSideBarSkeleton";
 import SidebarItem from "./SidebarItem";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
-
+import { usePathname } from "next/navigation";
 interface Props {
   error: any;
+  requestingPage: any;
 }
 
-const Sidebar = ({ error }: Props) => {
+const Sidebar = ({ error, requestingPage }: Props) => {
   const { chapter } = useParams();
   const { subject } = useParams();
-
+  const pathname = usePathname();
   const [chapters, setChapters] = useState(
     [{ name: "" }].filter((i) => i.name !== "")
   );
+
+  const [pageViewMode, setPageViewMode] = useState("");
+
+  useEffect(() => {
+    setPageViewMode(
+      pathname.includes("QuestionListViewLayout")
+        ? "QuestionListViewLayout"
+        : "QuestionStackViewLayout"
+    );
+  }, [pageViewMode]);
 
   useEffect(() => {
     try {
@@ -34,7 +45,7 @@ const Sidebar = ({ error }: Props) => {
           error;
         });
     } catch (error: any) {
-      (error.message);
+      error.message;
     }
   }, [subject]);
 
@@ -57,7 +68,8 @@ const Sidebar = ({ error }: Props) => {
               .filter((i) => i.name !== "")
               .map((item, index) => (
                 <SidebarItem
-                  key={item.name}
+                  pageViewMode={pageViewMode}
+                  key={`${index}-${item.name}`} //${item.name}
                   item={item}
                   index={index}
                   subject={subject}

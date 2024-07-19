@@ -9,6 +9,7 @@ import AddDiscuss from "../Discuss/AddDiscuss";
 import ActionForQuestion from "../ActionBarForQuestion/ActionForQuestion";
 
 const Navigation = ({
+  questionId,
   questionsLength,
   questionItm,
   questionObject,
@@ -20,6 +21,7 @@ const Navigation = ({
   isCommentSection,
   subject,
   chapter,
+  isShareBtn,
 }: any) => {
   const { question } = useParams();
   const questionNo = Number(question);
@@ -64,7 +66,6 @@ const Navigation = ({
     const Obj = {
       user: userName !== "" ? userName : "user",
       question: question,
-      // user_image: "/assets/user_profile_fake.png",
       comment: comment,
       date_added: new Date(),
       isApproved: false,
@@ -139,12 +140,15 @@ const Navigation = ({
       {questionNo > 0 && questionNo < questionsLength + 1 && (
         <div className="flex flex-col w-full justify-center items-center gap-1">
           <ActionForQuestion
+            questionId={questionId}
+            isShareBtn={isShareBtn}
             error={error}
             comments={comments}
+            questionItm={questionItm}
+            questionObject={questionObject}
             loading={loading}
             loadingComment={loadingComment}
             errorForActionBar={errorForActionBar}
-            isAnswerExplanationOpen={isAnswerExplanationOpen}
             handleAnswerExplanationToggle={handleAnswerExplanationToggle}
             handleCommentToggle={handleCommentToggle}
             isCommentSection={isCommentSection}

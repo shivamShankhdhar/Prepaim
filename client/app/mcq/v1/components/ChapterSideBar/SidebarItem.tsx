@@ -3,13 +3,16 @@ import React from "react";
 import { SiTicktick } from "react-icons/si";
 import { FiPlusCircle } from "react-icons/fi";
 import { useParams } from "next/navigation";
-const SidebarItem = ({ item, index }: any) => {
+const SidebarItem = ({ item, index, pageViewMode }: any) => {
   const { subject } = useParams();
   const { chapter } = useParams();
   return (
     <Link
       key={`${index}-${item}`}
-      href={`/mcq/v1/${subject}/${item.name.replaceAll(" ", "-")}/1`}
+      href={`/mcq/v1/${pageViewMode}/${subject}/${item.name.replaceAll(
+        " ",
+        "-"
+      )}/1`}
     >
       <p
         className={`flex border border-t-0 border-l-1 border-b-0 border-r-0 items-center gap-2 w-full px-2 py-2  ${

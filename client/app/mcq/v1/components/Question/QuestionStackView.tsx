@@ -20,7 +20,13 @@ interface Props {
   pageMode?: String;
 }
 
-const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
+const QuestionStackView = ({
+  questions,
+  chapter,
+  error,
+  loading,
+  pageMode,
+}: Props) => {
   const cookies = useCookies();
 
   const { subject } = useParams();
@@ -81,7 +87,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
                     (ans: any, index: number) => {
                       return (
                         <AnswerItem
-                          key={`key-prop-at-question-answer-item-${index}-${ans}`}
+                          key={`ket-prop-at-question-answer-item-${index}-${ans}`}
                           questions={questions}
                           questionNo={questionNo - 1}
                           answer={ans.ans}
@@ -140,7 +146,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
             />
           )
         ) : (
-          <QuestionSkeleton />
+          <QuestionSkeleton requestedPage="grid-view" />
         )
       ) : (
         <ErrorMessage isBg={false} isButton={true} text={error} />
@@ -148,4 +154,4 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
     </>
   );
 };
-export default Question;
+export default QuestionStackView;
