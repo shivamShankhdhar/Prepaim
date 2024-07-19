@@ -1,6 +1,6 @@
-import express from "express"
-import cors from "cors"
-import dotenv from "dotenv"
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
 import connectDB from "./db/db.connect.js";
 import codingRouter from "./routes/coding/coding.route.js";
 import adminMcqRouter from "./routes/admin/mcq/mcq.route.js";
@@ -14,28 +14,28 @@ import path from "path";
 
 dotenv.config();
 const app = express();
- const corsOptions = {
-   origin: ["https://prepaim.com", "http:localhost:3000"],
-   default: "https://prepaim.com",
-   optionsSuccessStatus: 200,
- };
+const corsOptions = {
+  origin: ["https://prepaim.com", "http:localhost:3000"],
+  default: "https://prepaim.com",
+  optionsSuccessStatus: 200,
+};
 
- app.use(cors(corsOptions));
- app.use(express.json());
+app.use(cors(corsOptions));
+app.use(express.json());
 
- const port = 4000;
+const port = 4000;
 
- app.get("/", (req, res) => {
-   res.status(201).json("Home Get request");
- });
+app.get("/", (req, res) => {
+  res.status(201).json("Home Get request");
+});
 
- // files upload logic
+// files upload logic
 
- app.post("/upload", multerUpload().single("file"), uploadController);
+app.post("/upload", multerUpload().single("file"), uploadController);
 
- // routes
- // static files routes
- app.use("/static", express.static(path.join(__dirname, "uploads/images")));
+// routes
+// static files routes
+app.use("/static", express.static(path.join(__dirname, "uploads/images")));
 
 // api routes
 
@@ -46,11 +46,13 @@ app.use("/coding", codingRouter);
 app.use("/mcq", mcqRouter);
 app.use("/user", userRouter);
 
-connectDB().then((data) => {
-  ("Database Connected")
-  app.listen(port, () => {
-    (`Server is running on port ${port}`)
+connectDB()
+  .then((data) => {
+    ("Database Connected");
+    app.listen(port, () => {
+      `Server is running on port ${port}`;
+    });
   })
-}).catch((error) => {
-  (error)
-})
+  .catch((error) => {
+    error;
+  });
