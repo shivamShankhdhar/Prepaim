@@ -14,29 +14,26 @@ import multerUpload from "./controller/upload/multer.controller.js";
 dotenv.config();
 const app = express();
  const corsOptions = {
-   origin: "https://prepaim.com",
-
+   origin: "https://prepaim.com" || "http:localhost:3000",
    optionsSuccessStatus: 200,
  };
 
  app.use(cors(corsOptions));
+ app.use(express.json());
 
+ const port = 4000;
 
-app.use(express.json());
+ app.get("/", (req, res) => {
+   res.status(201).json("Home Get request");
+ });
 
-const port = 4000;
+ // files upload logic
 
-app.get("/", (req, res) => {
-  res.status(201).json("Home Get request");
-});
+ app.post("/upload", multerUpload().single("file"), uploadController);
 
-// files upload logic
-
-app.post("/upload", multerUpload().single("file"), uploadController);
-
-// routes
-// static files routes
-app.use("/static", express.static("public/static"));
+ // routes
+ // static files routes
+ app.use("/static", express.static(path.join(__dirname, "uploads/images")));
 
 // api routes
 
