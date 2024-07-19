@@ -28,8 +28,11 @@ const QuestionPage = () => {
       if (cookies.get("pageViewLayout") === undefined) {
         cookies.set("pageViewLayout", "listPageView");
       } else {
-        toast.success("Switched to Prepration mode");
-        // cookies.set("pageViewLayout", "listPageView");
+        if (cookies.get("pageViewLayout") !== "listPageView") {
+          toast.success("Switched to Prepration mode");
+          cookies.set("pageViewLayout", "listPageView");
+        }
+          
       }
     }
   }, [cookies, isClient]);

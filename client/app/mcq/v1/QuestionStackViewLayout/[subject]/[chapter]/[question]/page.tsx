@@ -31,9 +31,11 @@ const QuestionPage = () => {
       if (cookies.get("pageViewLayout") === undefined) {
         cookies.set("pageViewLayout", "gridPageView");
       } else {
-        toast.success("Switched to Test/Prepration mode");
-        // cookies.remove("pageViewLayout");
-        cookies.set("pageViewLayout", "gridPageView");
+        if (cookies.get("pageViewLayout") !== "gridPageView") {
+          toast.success("Switched to Test/Prepration mode");
+          // cookies.remove("pageViewLayout");
+          cookies.set("pageViewLayout", "gridPageView");
+        }
       }
     }
   }, [cookies, isClient]);
