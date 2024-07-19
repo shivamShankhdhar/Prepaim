@@ -10,7 +10,7 @@ import userRouter from "./routes/user/user.route.js";
 import adminRouter from "./routes/admin/admin.route.js";
 import uploadController from "./controller/upload/upload.controller.js";
 import multerUpload from "./controller/upload/multer.controller.js";
-import path from "path";
+import * as path from "path";
 
 dotenv.config();
 const app = express();
