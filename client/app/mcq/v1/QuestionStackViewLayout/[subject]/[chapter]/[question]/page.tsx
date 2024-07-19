@@ -183,14 +183,14 @@ const QuestionPage = () => {
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           <div className="w-full">
             {/* breadcrumb  */}
-            {/* <Actions
+            <Actions
               setProperty1={setOpenSidebarSlider}
               setProperty2={setOpenQuestionBoard}
               subject={subject.toString()}
               chapter={chapter.toString()}
               totalquestion={questionsLength.toString()}
               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
-            /> */}
+            />
             <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
               <Breadcrum
                 subject={subject.toString()}
