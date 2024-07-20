@@ -1,6 +1,5 @@
 import Chapter from "../../models/mcq/chapter.model.js";
 import Question from "../../models/mcq/question.model.js";
-import Subject from "../../models/admin/subject.model.js";
 import Comment from "../../models/mcq/comments.model.js";
 // post api
 // post questions
