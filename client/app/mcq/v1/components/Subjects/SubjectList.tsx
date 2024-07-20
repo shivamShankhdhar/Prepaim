@@ -39,7 +39,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
   useEffect(() => {
     try {
       axios
-        .get("/admin/getallsubjects")
+        .get("/mcq/getallsubjects")
         .then((response) => {
           setAllSubjectsError("");
           setSubjects(response.data);
