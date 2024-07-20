@@ -200,7 +200,7 @@ const QuestionPage = () => {
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
 
-            <div className="w-full px-2 flex justify-between  h-[85vh] flex-wrap flex-row gap-2">
+            <div className="w-full px-2 flex justify-between  min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
               {/* question*/}
               <PreprationQuestionItem />
             </div>
