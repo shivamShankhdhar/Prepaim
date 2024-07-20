@@ -22,7 +22,7 @@ const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
           } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-purple-300`}
           onClick={() => {
             setLayoutView("grid");
-            toast.success("Grid View Selected");
+            toast.success("Success !! Changed to Grid View.");
           }}
         >
           <TbGridDots size={20} />
@@ -40,7 +40,7 @@ const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
           } items-center px-4 cursor-pointer  `}
           onClick={() => {
             setLayoutView("list");
-            toast.success("List View Selected");
+            toast.success("Success !! Changed to List View.");
           }}
         >
           <TbListDetails size={20} />

@@ -207,7 +207,7 @@ const QuestionPage = () => {
             </div>
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
-            <div className="px-2">
+            <div className="px-2 min-h-[92vh] max-[fit-content]">
               {/* question*/}
               <TestPreprationQuestionItem
                 pageMode={"stack-page-mode"}
@@ -215,22 +215,10 @@ const QuestionPage = () => {
                 chapter={chapter}
                 error={error}
                 loading={loading}
-              />
-            </div>
-            <div className="flex w-full px-2 justify-center mb-5">
-              <Navigation
-                isShareBtn={true}
-                questionsLength={questions.length}
-                questionItm={questions[questionNo - 1]?.question}
-                questionObject={questions[questionNo - 1]}
-                loading={loading}
-                errorForActionBar={error}
                 handleCommentToggle={handleCommentToggle}
                 isCommentSection={isCommentSection}
-                handleAnswerExplanationToggle={handleAnswerExplanationToggle}
                 isAnswerExplanationOpen={isAnswerExplanationOpen}
-                subject={subject}
-                chapter={chapter}
+                handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
             </div>
           </div>

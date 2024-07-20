@@ -103,7 +103,7 @@ const ActionBarForSubjects = ({
               setProperty={setBranch}
               text={Branch || "Select Branch"}
               loading={loadingBranches}
-              defaultValue={Branch}
+              defaultValue={Branch || branchesFromServer[0].name}
             />
           </div>
         </div>

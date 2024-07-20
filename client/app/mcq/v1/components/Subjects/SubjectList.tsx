@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import ActionBarForSubjectSkeleton from "../ActionBarForSubjects/ActionBarForSubjectSkeleton";
-import { SlReload } from "react-icons/sl";
-import SubjectsNotFoundForSelectedCategory from "./SubjectsNotFoundForSelectedCategory";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import ActionBarForSubjects from "../ActionBarForSubjects/ActionBarForSubjects";
 // import SubjectItemListView from "./SubjectItemListView";
@@ -220,7 +218,11 @@ const SubjectList = ({ setSubjectLength }: any) => {
                     />
                   ))
               ) : (
-                <SubjectsNotFoundForSelectedCategory />
+                <ErrorMessage
+                  isBg={true}
+                  isButton={false}
+                  text={"Subjects not found for selected category..."}
+                />
               )
             ) : (
               <ErrorMessage
@@ -252,7 +254,11 @@ const SubjectList = ({ setSubjectLength }: any) => {
                     />
                   ))
               ) : (
-                <SubjectsNotFoundForSelectedCategory />
+                <ErrorMessage
+                  text={"Subjects not found for selected category..."}
+                  isBg={true}
+                  isButton={false}
+                />
               )
             ) : (
               <ErrorMessage

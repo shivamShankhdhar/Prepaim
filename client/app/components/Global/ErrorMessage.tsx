@@ -8,11 +8,10 @@ interface Props {
 }
 const ErrorMessage = ({ text, isButton, isBg }: Props) => {
   return (
-    <div className="w-full flex gap-3 text-red-800 text-center items-center flex-col justify-center mt-2">
+    <div className="w-full flex gap-3 text-red-500 text-center items-center flex-col justify-center mt-2">
       <div
         className={`${
-          isBg &&
-          "bg-red-100 w-full border-2 border-dashed border-red-800 px-5 py-2 rounded-md"
+          isBg && "bg-red-50 w-full ring-2 ring-red-500 px-5 py-2 rounded-md"
         }`}
       >
         <div className="flex justify-center items-center">

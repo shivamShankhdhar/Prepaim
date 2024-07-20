@@ -12,12 +12,17 @@ import QuestionLevel from "@/app/components/QuestionLevel/QuestionLevel";
 import AnswerItem from "../Answer/AnswerItem";
 import { IoIosClose } from "react-icons/io";
 import { useCookies } from "next-client-cookies";
+import Navigation from "./Navigation";
 interface Props {
   questions: any;
   chapter: any;
   error: String;
   loading: boolean;
   pageMode?: String;
+  handleCommentToggle?: any;
+  isCommentSection?: boolean;
+  isAnswerExplanationOpen?: boolean;
+  handleAnswerExplanationToggle?: any;
 }
 
 const TestPreprationQuestionItem = ({
@@ -26,6 +31,10 @@ const TestPreprationQuestionItem = ({
   error,
   loading,
   pageMode,
+  handleCommentToggle,
+  isCommentSection,
+  isAnswerExplanationOpen,
+  handleAnswerExplanationToggle,
 }: Props) => {
   const cookies = useCookies();
 
@@ -34,7 +43,7 @@ const TestPreprationQuestionItem = ({
   const questionNo = Number(question);
 
   return (
-    <>
+    <div className="w-full flex flex-col items-center gap-2">
       {Object.values(error).toString() === "" ? (
         loading === false ? (
           questions.length > 0 ? (
@@ -43,7 +52,7 @@ const TestPreprationQuestionItem = ({
                 key={`question-${questionNo}-${
                   questions[questionNo - 1]?.question
                 }`}
-                className=" bg-white px-5 py-2 shadow-lg rounded-md mx-auto mt-2 items-center "
+                className=" bg-white px-5 py-2 h-[fit-content]  shadow-lg rounded-md mx-auto mt-2 items-center "
               >
                 {/* question hardship level  */}
                 <div className="w-full mt-2 h-5 flex justify-end items-center">
@@ -154,7 +163,23 @@ const TestPreprationQuestionItem = ({
       ) : (
         <ErrorMessage isBg={true} isButton={true} text={error} />
       )}
-    </>
+      {/* actions for question page */}
+      <Navigation
+        isShareBtn={true}
+        questionsLength={questions.length}
+        questionItm={questions[questionNo - 1]?.question}
+        questionObject={questions[questionNo - 1]}
+        loading={loading}
+        errorForActionBar={error}
+        handleCommentToggle={handleCommentToggle}
+        isCommentSection={isCommentSection}
+        handleAnswerExplanationToggle={handleAnswerExplanationToggle}
+        isAnswerExplanationOpen={isAnswerExplanationOpen}
+        subject={subject}
+        chapter={chapter}
+      />
+    </div>
+    // here is the end of top
   );
 };
 export default TestPreprationQuestionItem;

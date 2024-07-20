@@ -37,9 +37,9 @@ const ChapterPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center h-[92vh] w-full">
+    <div className="flex flex-col items-center  w-full">
       <Breadcrum chaptersLength={chapters.length} />
-      <div className="w-full px-2">
+      <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
         <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
           {isLoading === true ? (
             <ChapterItemSkeleton />

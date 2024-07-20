@@ -16,7 +16,9 @@ const ShareBtn = () => {
     navigator.clipboard;
     navigator.clipboard.writeText(link);
     setLinkCopied(true);
-    toast.success("Link copied to clipboard, you can share it with others");
+    toast.success(
+      "Success !!Link copied to clipboard, you can share it with others"
+    );
     setTimeout(() => {
       setLinkCopied(false);
     }, 3000);
@@ -33,7 +35,7 @@ const ShareBtn = () => {
       onClick={() => handleShare()}
     >
       {linkCopied ? (
-        <LuCopyCheck size={20} className="text-purple-800" />
+        <LuCopyCheck size={20} className="text-green-800" />
       ) : (
         <IoShareSocialOutline size={20} />
       )}

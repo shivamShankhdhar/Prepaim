@@ -30,7 +30,7 @@ const QuestionPage = () => {
         cookies.set("questionPageMode", "prepration-mode");
       } else {
         if (cookies.get("questionPageMode") !== "prepration-mode") {
-          toast.success("Switched to Prepration mode");
+          toast.success("Success !! Switched to Prepration mode");
           cookies.set("questionPageMode", "prepration-mode");
         }
       }
@@ -200,7 +200,7 @@ const QuestionPage = () => {
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
 
-            <div className="w-full px-2 flex justify-between items-center flex-wrap flex-row gap-2">
+            <div className="w-full px-2 flex justify-between  h-[85vh] flex-wrap flex-row gap-2">
               {/* question*/}
               <PreprationQuestionItem />
             </div>

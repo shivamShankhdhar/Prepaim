@@ -28,7 +28,7 @@ const Breadcrum = (props: Props) => {
 
   // render
   return (
-    <div className="w-full flex-wrap flex flex-row justify-center text-[16px] items-center ">
+    <div className="w-full flex-wrap sticky top-0 flex flex-row justify-center text-[16px] items-center ">
       <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-[11px] items-center justify-start ">
         <Link href={"/"}>
           {/* <FcHome size={20} /> */}

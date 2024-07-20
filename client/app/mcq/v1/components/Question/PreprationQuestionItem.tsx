@@ -68,7 +68,7 @@ const PreprationQuestionItem = () => {
   // const [isAnswerHide, setIsAnswerHide] = useState(false);
 
   return (
-    <div className="w-full flex-wrap flex justify-center gap-3 py-3">
+    <div className="w-full flex-wrap flex items-start justify-center px-5 gap-3 py-3">
       {/* question item */}
       {loading ? (
         <>
@@ -196,7 +196,7 @@ const PreprationQuestionItem = () => {
         ) : (
           <ErrorMessage
             text="No Question Available"
-            isButton={true}
+            isButton={false}
             isBg={true}
           />
         )
