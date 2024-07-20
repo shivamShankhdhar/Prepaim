@@ -8,6 +8,7 @@ const SidebarSlider = ({
   uniqueKey,
   open,
   setOpen,
+  requestedPage,
   items,
   itemType,
   questions,
@@ -51,6 +52,7 @@ const SidebarSlider = ({
 
             {items.map((item: any) => (
               <SidebarItem
+                pageViewMode={requestedPage}
                 item={item}
                 key={`${item.name}-${itemType}-${item.id}-key-at-sidebarslider-forquestionboard-${uniqueKey}`}
               />

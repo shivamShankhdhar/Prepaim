@@ -10,27 +10,17 @@ import SidebarItem from "./SidebarItem";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import { usePathname } from "next/navigation";
 interface Props {
-  error: any;
-  requestingPage: any;
+  error: String;
+  requestedPage: String;
 }
 
-const Sidebar = ({ error, requestingPage }: Props) => {
+const Sidebar = ({ error, requestedPage }: Props) => {
   const { chapter } = useParams();
   const { subject } = useParams();
   const pathname = usePathname();
   const [chapters, setChapters] = useState(
     [{ name: "" }].filter((i) => i.name !== "")
   );
-
-  const [pageViewMode, setPageViewMode] = useState("");
-
-  useEffect(() => {
-    setPageViewMode(
-      pathname.includes("QuestionListViewPage")
-        ? "QuestionListViewPage"
-        : "QuestionStackViewPage"
-    );
-  }, [pageViewMode]);
 
   useEffect(() => {
     try {
@@ -68,7 +58,7 @@ const Sidebar = ({ error, requestingPage }: Props) => {
               .filter((i) => i.name !== "")
               .map((item, index) => (
                 <SidebarItem
-                  pageViewMode={pageViewMode}
+                  pageViewMode={requestedPage}
                   key={`${index}-${item.name}`} //${item.name}
                   item={item}
                   index={index}

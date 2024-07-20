@@ -4,14 +4,18 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Sidebar from "@/app/mcq/v1/components/ChapterSideBar/Sidebar";
+import Navigation from "@/app/mcq/v1/components/Question/Navigation";
+import QuestionBoard from "@/app/mcq/v1/components/QuestionBoard/QuestionBoard";
 import Actions from "@/app/mcq/v1/components/Actions";
 import Footer from "@/app/components/Footer/Footer";
 import SidebarSlider from "@/app/components/Global/SidebarSlider";
 import Breadcrum from "@/app/components/Global/Breadcrum";
+
 import QuestionPageLayoutToggle from "@/app/mcq/v1/components/QuestionPageLayoutToggle";
-import QuestionListView from "@/app/mcq/v1/components/Question/QuestionListView";
+import QuestionStackView from "@/app/mcq/v1/components/Question/TestPreprationQuestionItem";
 import { useCookies } from "next-client-cookies";
 import toast from "react-hot-toast";
+import TestPreprationQuestionItem from "@/app/mcq/v1/components/Question/TestPreprationQuestionItem";
 
 const QuestionPage = () => {
   const router = useRouter();
@@ -24,15 +28,14 @@ const QuestionPage = () => {
 
   useEffect(() => {
     if (isClient) {
-      console.log(cookies.get("pageViewLayout"));
-      if (cookies.get("pageViewLayout") === undefined) {
-        cookies.set("pageViewLayout", "listPageView");
+      if (cookies.get("questionPageMode") === undefined) {
+        cookies.set("questionPageMode", "test-prepration-mode");
       } else {
-        if (cookies.get("pageViewLayout") !== "listPageView") {
-          toast.success("Switched to Prepration mode");
-          cookies.set("pageViewLayout", "listPageView");
+        if (cookies.get("questionPageMode") !== "test-prepration-mode") {
+          toast.success("Switched to Test / Prepration mode");
+          // cookies.remove("pageViewLayout");
+          cookies.set("questionPageMode", "test-prepration-mode");
         }
-          
       }
     }
   }, [cookies, isClient]);
@@ -46,6 +49,7 @@ const QuestionPage = () => {
   const [questions, setQuestions] = useState(
     [
       {
+        _id: "",
         question: "",
         answer: [{ ans: "", isTrue: false }],
         explanation: [{ answer: "", explanation: "" }],
@@ -90,7 +94,10 @@ const QuestionPage = () => {
             .replaceAll("-", " ")}`
         )
         .then((res) => {
-          setQuestions(res.data);
+          const fetchedData = res.data.sort((a: any, b: any) =>
+            String(a.level).localeCompare(String(b.level))
+          );
+          setQuestions(fetchedData);
           setLoading(false);
         })
         .catch((err) => {
@@ -151,10 +158,10 @@ const QuestionPage = () => {
           items={chapters}
           setOpen={setOpenSidebarSlider}
           itemType="chapters"
+          requestedPage={"Test-Prepration-Mode"}
         />
 
         <SidebarSlider
-          pageView="list-view"
           uniqueKey="question_board"
           open={openQuestionBoard}
           setOpen={setOpenQuestionBoard}
@@ -167,17 +174,19 @@ const QuestionPage = () => {
           setIsCommentSection={setIsCommentSection}
           setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
         />
+
         <div
           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
           id="question_board"
         >
-          <Sidebar requestingPage={"list-view-question-page"} error={error} />
+          <Sidebar requestedPage={"Test-Prepration-Mode"} error={error} />
         </div>
+
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions
-              requestedPage={"list-view-question-page"}
+              requestedPage={"Test-Prepration-Page"}
               setProperty1={setOpenSidebarSlider}
               setProperty2={setOpenQuestionBoard}
               subject={subject.toString()}
@@ -198,17 +207,38 @@ const QuestionPage = () => {
             </div>
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
-
-            <div className="w-full px-2 flex justify-between items-center flex-wrap flex-row gap-2">
+            <div className="px-2">
               {/* question*/}
-              <QuestionListView />
+              <TestPreprationQuestionItem
+                pageMode={"stack-page-mode"}
+                questions={questions}
+                chapter={chapter}
+                error={error}
+                loading={loading}
+              />
+            </div>
+            <div className="flex w-full px-2 justify-center mb-5">
+              <Navigation
+                isShareBtn={true}
+                questionsLength={questions.length}
+                questionItm={questions[questionNo - 1]?.question}
+                questionObject={questions[questionNo - 1]}
+                loading={loading}
+                errorForActionBar={error}
+                handleCommentToggle={handleCommentToggle}
+                isCommentSection={isCommentSection}
+                handleAnswerExplanationToggle={handleAnswerExplanationToggle}
+                isAnswerExplanationOpen={isAnswerExplanationOpen}
+                subject={subject}
+                chapter={chapter}
+              />
             </div>
           </div>
           <Footer />
         </div>
 
         {/* question board  */}
-        {/* <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <QuestionBoard
             error={error}
             questions={questions}
@@ -218,7 +248,7 @@ const QuestionPage = () => {
             setIsCommentSection={setIsCommentSection}
             setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
           />
-        </div> */}
+        </div>
       </div>
     </>
   );

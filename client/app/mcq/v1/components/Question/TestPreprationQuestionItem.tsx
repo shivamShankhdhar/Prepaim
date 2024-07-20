@@ -20,7 +20,13 @@ interface Props {
   pageMode?: String;
 }
 
-const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
+const TestPreprationQuestionItem = ({
+  questions,
+  chapter,
+  error,
+  loading,
+  pageMode,
+}: Props) => {
   const cookies = useCookies();
 
   const { subject } = useParams();
@@ -33,7 +39,12 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
         loading === false ? (
           questions.length > 0 ? (
             questionNo > 0 && questionNo < questions.length + 1 ? (
-              <div className=" bg-white px-5 py-2 shadow-lg rounded-md mx-auto mt-2 items-center ">
+              <div
+                key={`question-${questionNo}-${
+                  questions[questionNo - 1]?.question
+                }`}
+                className=" bg-white px-5 py-2 shadow-lg rounded-md mx-auto mt-2 items-center "
+              >
                 {/* question hardship level  */}
                 <div className="w-full mt-2 h-5 flex justify-end items-center">
                   <QuestionLevel
@@ -81,7 +92,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
                     (ans: any, index: number) => {
                       return (
                         <AnswerItem
-                          key={`key-prop-at-question-answer-item-${index}-${ans}`}
+                          key={`ket-prop-at-question-answer-item-${index}-${ans}`}
                           questions={questions}
                           questionNo={questionNo - 1}
                           answer={ans.ans}
@@ -96,7 +107,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
                   <div className="flex flex-col justify-between py-2">
                     <div className="flex w-full justify-between py-1 ">
                       <Button
-                        href={`/mcq/v1/QuestionStackViewPage/${subject}/${chapter}/${
+                        href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${
                           questionNo - 1
                         }`}
                         className="bg-gray-200 focus:ring-4 focus:outline-none flex gap-1 justify-center items-center focus:ring-purple-300 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
@@ -114,7 +125,7 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
                             color: "#c0c0c0",
                           },
                         }}
-                        href={`/mcq/v1/QuestionStackViewPage/${subject}/${chapter}/${
+                        href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${
                           questionNo + 1
                         }`}
                         className=" bg-purple-900 focus:ring-4 flex justify-center items-center focus:outline-none focus:ring-purple-300 hover:bg-purple-950 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
@@ -132,20 +143,18 @@ const Question = ({ questions, chapter, error, loading, pageMode }: Props) => {
             )
           ) : (
             <ErrorMessage
-              text={`No questions found for chapter - ${chapter
-                .toString()
-                .replaceAll("-", " ")}`}
+              text={`No questions found `}
               isButton={false}
-              isBg={false}
+              isBg={true}
             />
           )
         ) : (
-          <QuestionSkeleton />
+          <QuestionSkeleton requestedPage="Test-Prepration-Page" />
         )
       ) : (
-        <ErrorMessage isBg={false} isButton={true} text={error} />
+        <ErrorMessage isBg={true} isButton={true} text={error} />
       )}
     </>
   );
 };
-export default Question;
+export default TestPreprationQuestionItem;

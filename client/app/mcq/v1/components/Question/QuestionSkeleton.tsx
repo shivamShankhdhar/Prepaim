@@ -6,7 +6,7 @@ const QuestionSkeleton = ({ requestedPage }: any) => {
   return (
     <div
       className={` bg-white mt-2 shadow-md rounded-md border border-purple-200 mx-auto mt- px-5 items-center ${
-        requestedPage === "list-view"
+        requestedPage !== "Test-Prepration-Page"
           ? "sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] gap-2"
           : "w-full"
       }`}

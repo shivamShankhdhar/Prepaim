@@ -1,7 +1,6 @@
 import React from "react";
-import { Button } from "@mui/material";
 import { SlReload } from "react-icons/sl";
-import { VscError } from "react-icons/vsc";
+import { MdOutlineErrorOutline } from "react-icons/md";
 interface Props {
   text: String;
   isButton: any;
@@ -9,15 +8,15 @@ interface Props {
 }
 const ErrorMessage = ({ text, isButton, isBg }: Props) => {
   return (
-    <div className="w-full flex gap-3 text-rose-800 text-center items-center flex-col justify-center mt-5">
+    <div className="w-full flex gap-3 text-red-800 text-center items-center flex-col justify-center mt-2">
       <div
         className={`${
           isBg &&
-          "bg-rose-100 w-full border-2 border-rose-800 px-5 py-2 rounded-md"
+          "bg-red-100 w-full border-2 border-dashed border-red-800 px-5 py-2 rounded-md"
         }`}
       >
         <div className="flex justify-center items-center">
-          <VscError size={30} />
+          <MdOutlineErrorOutline size={30} />
         </div>
         <div>{text}</div>
       </div>

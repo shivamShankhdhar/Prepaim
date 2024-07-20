@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { TbGridDots, TbListDetails } from "react-icons/tb";
 import { useParams, usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import ShareBtn from "@/app/components/Global/ShareBtn";
 
+import { VscChecklist } from "react-icons/vsc";
+import { RiBookReadLine } from "react-icons/ri";
 const QuestionPageLayoutToggle = () => {
   const { subject } = useParams();
   const { chapter } = useParams();
@@ -12,59 +13,60 @@ const QuestionPageLayoutToggle = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [PageLayoutView, setPageLayoutView] = useState(
-    pathname.includes("QuestionStackViewPage") ? "grid" : "list"
+    pathname.includes("Test-Prepration-Mode") ? "test-mode" : "prepration-mode"
   );
   // useEffect(() => {
-  //   if (PageLayoutView === "grid") {
+  //   if (PageLayoutView === "test-mode") {
   //     router.push(
-  //       `/mcq/v1/QuestionStackViewPage/${subject}/${chapter}/${question}`
+  //       `/mcq/v1/Test-Prepration-Mode/${subject}/${chapter}/${question}`
   //     );
   //   } else {
   //     router.push(
-  //       `/mcq/v1/QuestionListViewPage/${subject}/${chapter}/${question}`
+  //       `/mcq/v1/Questionprepration-modeViewPage/${subject}/${chapter}/${question}`
   //     );
   //   }
   // }, [PageLayoutView]);
   return (
     <div className="w-full flex justify-end items-center gap-3 py-1 px-5">
-      <ShareBtn />
+      {/* share buttons shows only on prepration mode */}
+      {!pathname.includes("Test-Prepration-Mode") && <ShareBtn />}
       <div className="flex justify-center w-[fit-content]  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-800">
         <div
           title={`${
-            PageLayoutView === "grid"
+            PageLayoutView === "test-mode"
               ? "Cureently Displaying Test/Prepration Mode "
               : "Select to change Prepration Mode to Test/Prepration Mode "
           }`}
           className={`flex justify-center  ${
-            PageLayoutView === "grid"
+            PageLayoutView === "test-mode"
               ? "text-purple-900 font-semibold"
               : "text-purple-300"
           } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-purple-300`}
-          // onClick={() => setPageLayoutView("grid")}
+          // onClick={() => setPageLayoutView("test-mode")}
         >
           <Link
-            href={`/mcq/v1/${subject}/${chapter}/QuestionStackViewPage/${question}`}
+            href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${question}`}
           >
-            <TbGridDots size={20} />
+            <VscChecklist size={20} />
           </Link>
         </div>
         <div
           title={`${
-            PageLayoutView === "list"
+            PageLayoutView === "prepration-mode"
               ? "Cureently Displaying Prepration Mode"
               : "Select to change Test/Prepration Mode to Prepration Mode"
           }`}
           className={`flex justify-center  ${
-            PageLayoutView === "list"
+            PageLayoutView === "prepration-mode"
               ? "text-purple-900 font-semibold"
               : "text-purple-300"
           } items-center px-4 cursor-pointer  `}
-          // onClick={() => setPageLayoutView("list")}
+          // onClick={() => setPageLayoutView("prepration-mode")}
         >
           <Link
-            href={`/mcq/v1/${subject}/${chapter}/QuestionListViewPage/${question}`}
+            href={`/mcq/v1/${subject}/${chapter}/Prepration-Mode/${question}`}
           >
-            <TbListDetails size={20} />
+            <RiBookReadLine size={20} />
           </Link>
         </div>
       </div>

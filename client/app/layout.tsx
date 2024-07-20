@@ -19,7 +19,7 @@ const latoFonts = Roboto({
   display: "swap",
 });
 export const metadata = {
-  title: "PrepAim | Home",
+  title: "Home | PrepAim",
   description:
     "Prepaim.com helps students to prepare for the examination related to the enginnering for higher education",
 };

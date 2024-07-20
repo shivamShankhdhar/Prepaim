@@ -1,8 +1,8 @@
 import React from "react";
-import { FcHome } from "react-icons/fc";
 import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
+import { Button } from "@mui/material";
 interface Props {
   subject?: String;
   chapter?: String;
@@ -18,10 +18,15 @@ const Breadcrum = (props: Props) => {
   const { question } = useParams();
 
   const pathname = usePathname();
+  // split route to get the items
   const splitedPath = pathname.split("/");
+  // check for the current route
   const lastItemOfPathname = splitedPath[splitedPath.length - 1];
+
   // common class for all active items in breadcrumb
-  const commonClassForActiveElements = `flex justify-center items-center text-sm  px-2 bg-purple-100  border border-purple-300 rounded-full text-purple-900`;
+  const commonClassForActiveElements = `flex justify-center items-center text-sm py-0  px-2 bg-purple-100 hover:bg-purple-100 hover:text-purple-900 hover:cursor-text border border-purple-300 rounded-full text-purple-900`;
+
+  // render
   return (
     <div className="w-full flex-wrap flex flex-row justify-center text-[16px] items-center ">
       <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-[11px] items-center justify-start ">
@@ -34,9 +39,9 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;
             {lastItemOfPathname === subject ? (
-              <div
+              <Button
                 className={`${commonClassForActiveElements}`}
-              >{` ${subject} - ${props.subjectLength || 0} `}</div>
+              >{` ${subject} - ${props.subjectLength || 0} `}</Button>
             ) : (
               <Link href={`/mcq/v1/subjects`}>
                 {subject && subject.toString().replaceAll("-", " ")}
@@ -49,9 +54,9 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;{" "}
             {lastItemOfPathname === chapter ? (
-              <div
+              <Button
                 className={`${commonClassForActiveElements}`}
-              >{` ${chapter} - ${props.chaptersLength || 0} `}</div>
+              >{` ${chapter} - ${props.chaptersLength || 0} `}</Button>
             ) : (
               <Link href={`/mcq/v1/${subject}/chapters`}>
                 {chapter && chapter.toString().replaceAll("-", " ")}
@@ -64,12 +69,12 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;
             {lastItemOfPathname === question ? (
-              <div className={`${commonClassForActiveElements}`}>
+              <Button className={`${commonClassForActiveElements}`}>
                 {props.questionNo} / {props.totalquestion}
-              </div>
+              </Button>
             ) : (
               <Link
-                href={`/mcq/v1/${subject}/chapters/${chapter}/${`QuestionStackViewPage`}/questions`}
+                href={`/mcq/v1/${subject}/chapters/${chapter}/${`Test-Prepration-Mode`}/questions`}
               >
                 {question && question.toString().replaceAll("-", " ")}
               </Link>

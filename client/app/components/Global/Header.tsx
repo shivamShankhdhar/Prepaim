@@ -81,9 +81,9 @@ const Header = () => {
           <Logout />
         ) : (
           <Button
-            sx={{ border: 1, textTransform: "none" }}
+            // sx={{ border: 1, textTransform: "none" }}
             onClick={handleOpen}
-            className="flex justify-center items-center gap-1 bg-purple-200 border border-purple-300 text-purple-800 hover:bg-purple-300 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+            className="flex justify-center items-center gap-1 bg-purple-100 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
           >
             <CgLogIn /> Login
           </Button>

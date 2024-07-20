@@ -15,7 +15,7 @@ const CommentToggleBtn = ({
   return (
     <Button
       title={`Total Comments : ${comments.length}`}
-      className="px-2 flex flex-row focus:ring-2 focus:outline-none focus:ring-purple-300 min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-sm bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
+      className="px-2 flex flex-row focus:ring-2 focus:outline-none focus:ring-purple-300 min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
       onClick={handleCommentToggle}
     >
       {isCommentSection ? (

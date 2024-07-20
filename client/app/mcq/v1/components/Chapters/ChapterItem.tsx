@@ -19,22 +19,24 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
         <div className="flex w-full justify-between items-center">
           <div className="w-full flex-1">
             <Button
+              sx={{ textTransform: "none" }}
               className="hover:bg-white w-full py-1 justify-start text-black"
               href={`/mcq/v1/${data.subject.replaceAll(
                 " ",
                 "-"
-              )}/${data.name.replaceAll(" ", "-")}/QuestionStackViewPage/1`}
+              )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
             >
               <div>{data.name}</div>
             </Button>
           </div>
           <div className="">
             <Button
-              className="text-white focus:ring-4 focus:outline-none focus:ring-purple-300 bg-purple-900 py-1 hover:bg-purple-950 justify-start"
-              href={`/mcq/v1/QuestionStackViewPage/${data.subject.replaceAll(
+              sx={{ textTransform: "none" }}
+              className="text-white focus:ring-4 focus:outline-none focus:ring-white bg-purple-900 py-1 hover:bg-purple-950 gap-2"
+              href={`/mcq/v1/${data.subject.replaceAll(
                 " ",
                 "-"
-              )}/${data.name.replaceAll(" ", "-")}/1`}
+              )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
             >
               Quizz
             </Button>

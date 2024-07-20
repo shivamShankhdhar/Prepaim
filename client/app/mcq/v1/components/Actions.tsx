@@ -17,38 +17,38 @@ const Actions = ({
 }: any) => {
   return (
     <div className="flex justify-start bg-white items-center px-2 max-sm:flex max-md:flex md:flex sm:flex lg:hidden xl:hidden 2xl:hidden">
-      {requestedPage === "grid-view-question-page" && (
-        <div>
-          <PopupState variant="popover" popupId="demo-popup-menu">
-            {(popupState: any) => (
-              <React.Fragment>
-                {/* <Button variant="contained">Dashboard</Button> */}
-                {/* hamburger icon  */}
-                <div
-                  className="flex justify-center items-center p-2 cursor-pointer rounded-md  "
-                  {...bindTrigger(popupState)}
-                >
-                  <RxHamburgerMenu size={15} />
-                </div>
-                {/* options menu */}
-                <Menu {...bindMenu(popupState)}>
-                  <MenuItem onClick={popupState.close}>
-                    <div onClick={() => setProperty1(true)} className="py-0">
-                      Chapters
-                    </div>
-                  </MenuItem>
+      <div>
+        <PopupState variant="popover" popupId="demo-popup-menu">
+          {(popupState: any) => (
+            <React.Fragment>
+              {/* <Button variant="contained">Dashboard</Button> */}
+              {/* hamburger icon  */}
+              <div
+                className="flex justify-center items-center p-2 cursor-pointer rounded-md  "
+                {...bindTrigger(popupState)}
+              >
+                <RxHamburgerMenu size={15} />
+              </div>
+              {/* options menu */}
+              <Menu {...bindMenu(popupState)}>
+                <MenuItem onClick={popupState.close}>
+                  <div onClick={() => setProperty1(true)} className="py-0">
+                    Chapters
+                  </div>
+                </MenuItem>
+                {requestedPage === "Test-Prepration-Page" && (
                   <MenuItem onClick={popupState.close}>
                     <div onClick={() => setProperty2(true)} className="py-0">
                       Question Board
                     </div>
                   </MenuItem>
-                  {/* <MenuItem onClick={popupState.close}>Logout</MenuItem> */}
-                </Menu>
-              </React.Fragment>
-            )}
-          </PopupState>
-        </div>
-      )}
+                )}
+                {/* <MenuItem onClick={popupState.close}>Logout</MenuItem> */}
+              </Menu>
+            </React.Fragment>
+          )}
+        </PopupState>
+      </div>
 
       <div className="flex-1">
         <Breadcrum
