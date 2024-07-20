@@ -21,10 +21,10 @@ const TryMCQ = ({ subjects, loading }: any) => {
           .then((res) => {
             if (res.data.length > 0) {
               router.push(
-                `/mcq/v1/Test-Prepration-Mode/${selectedSubject}/${res.data[0].name.replaceAll(
+                `/mcq/v1/${selectedSubject}/${res.data[0].name.replaceAll(
                   " ",
                   "-"
-                )}/1`
+                )}/Test-Prepration-Mode/1`
               );
             } else {
               setLoadingChapters(false);
