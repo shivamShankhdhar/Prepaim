@@ -29,7 +29,7 @@ const ActionBarForSubjects = ({
 
   useEffect(() => {
     axios
-      .get("/admin/mcq/getallbranches")
+      .get("/mcq/getallbranches")
       .then((response) => {
         setBranchesFromServer(response.data);
         setLoadingBranches(false);

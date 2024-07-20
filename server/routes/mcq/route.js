@@ -4,7 +4,8 @@ const mcqRouter = Router();
 
 mcqRouter.route("/postcomment").post(Controller.postComment);
 mcqRouter.route("/getallquestions").get(Controller.getAllQuestions);
-mcqRouter.route("/getAllSubjects").get(Controller.getAllSubjects);
+mcqRouter.route("/getallsubjects").get(Controller.getAllSubjects);
+mcqRouter.route("/getallbranches").get(Controller.getAllBranches);
 // get routes
 mcqRouter
   .route("/getSubjectsbyBranchAndSubject/:branch")

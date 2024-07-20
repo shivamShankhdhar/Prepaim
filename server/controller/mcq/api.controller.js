@@ -1,6 +1,8 @@
 import Chapter from "../../models/mcq/chapter.model.js";
 import Question from "../../models/mcq/question.model.js";
 import Comment from "../../models/mcq/comments.model.js";
+import Subject from "../../models/mcq/subject.model.js";
+import Branch from "../../models/mcq/branch.model.js";
 // post api
 // post questions
 
@@ -10,7 +12,6 @@ import Comment from "../../models/mcq/comments.model.js";
 
 //get api
 // get all questions
-
 
 export const postComment = async (req, res) => {
   if (req.body) {
@@ -40,6 +41,14 @@ export const getAllQuestions = async (req, res) => {
 export const getAllSubjects = async (req, res) => {
   try {
     const data = await Subject.find({});
+    return res.status(200).send(data);
+  } catch (error) {
+    return res.status(500).send({ error: error.message });
+  }
+};
+export const getAllBranches = async (req, res) => {
+  try {
+    const data = await Branch.find({});
     return res.status(200).send(data);
   } catch (error) {
     return res.status(500).send({ error: error.message });
