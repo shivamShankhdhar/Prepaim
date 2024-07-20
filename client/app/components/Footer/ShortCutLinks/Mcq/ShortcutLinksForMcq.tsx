@@ -6,7 +6,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ShortCutLinksForMcqSkeleton from "./ShortCutLinksForMcqSkeleton";
 const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   // fetch all questions from db
-  const { data } = useFetch("/admin/mcq/getallquestions");
+  const { data } = useFetch("/mcq/getallquestions");
   const [allMcqQuestions, setAllMcqQuestions] = useState(
     [{ _id: "", question: "", chapter: "", subject: "" }].filter(
       (item) => item.question !== ""

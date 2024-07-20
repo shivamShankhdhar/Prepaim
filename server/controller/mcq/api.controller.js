@@ -10,6 +10,8 @@ import Comment from "../../models/mcq/comments.model.js";
 
 //get api
 // get all questions
+
+
 export const postComment = async (req, res) => {
   if (req.body) {
     try {
@@ -25,9 +27,19 @@ export const postComment = async (req, res) => {
     } catch (error) {}
   }
 };
+
+export const getAllQuestions = async (req, res) => {
+  try {
+    const data = await Question.find({});
+    return res.status(200).send(data);
+  } catch (error) {
+    return res.status(500).send({ error: error.message });
+  }
+};
+
 export const getAllSubjects = async (req, res) => {
   try {
-    const data = await Subject.find();
+    const data = await Subject.find({});
     return res.status(200).send(data);
   } catch (error) {
     return res.status(500).send({ error: error.message });
