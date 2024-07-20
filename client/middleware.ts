@@ -8,18 +8,15 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   
 axios.defaults.headers.get["Content-Type"] =
-  "application-json/x-www-form-urlencoded";
-
-
+    "application-json/x-www-form-urlencoded";
   
   console.log("middle ware called")
-  
-
 
   const username = request.cookies.get('username')?.value
   const isAdmin = request.cookies.get('isAdmin')?.value
   
   const pathname = request.nextUrl.pathname
+  
   // const AceesloginPageAfterLogin = request.nextUrl.pathname === "/user/authentication/login"
 
   if (username === undefined ) { 
@@ -31,8 +28,7 @@ axios.defaults.headers.get["Content-Type"] =
     return NextResponse.rewrite(new URL('/user/authentication/login', request.url))
   }
   
-}
- 
+} 
 // See "Matching Paths" below to learn more
 export const config = {
   matcher: ['/admin/:path*', "/user/:path*",]

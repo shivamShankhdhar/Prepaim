@@ -171,7 +171,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
   };
   // dropdowns
   return (
-    <div className="flex w-full flex-col py-2 px-3 items-center">
+    <div className="flex w-full flex-col py-2 min-h-[92vh] max-h-[fit-content] px-3 items-center">
       {/* navigations for grid and list */}
       {isLoading === false ? (
         <div className=" w-full">
