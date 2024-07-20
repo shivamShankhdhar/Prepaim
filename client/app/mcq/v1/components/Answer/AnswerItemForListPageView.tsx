@@ -47,7 +47,7 @@ const AnswerItemForListPageView = ({
   return (
     <>
       <div
-        className={`border gap-2 rounded-sm  cursor-pointer  py-2 px-3 w-full flex`}
+        className={`border gap-2 rounded-sm py-2 px-3 w-full flex`}
         onClick={handleAnserClicked}
         id={`id-at-list-view-page-answeritem-for-click-event-${question.replaceAll(
           " ",
