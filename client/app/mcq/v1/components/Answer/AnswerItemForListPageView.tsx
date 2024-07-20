@@ -1,3 +1,4 @@
+import { useCookies } from "next-client-cookies";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 
@@ -10,6 +11,8 @@ const AnswerItemForListPageView = ({
   index,
   isTrue,
 }: any) => {
+  const cookies = useCookies();
+
   // const answerPrefix
   // const handleAnserClicked = (id: any) => {
   //   const questionById = document.getElementById(id);
@@ -25,30 +28,27 @@ const AnswerItemForListPageView = ({
   //     questionById?.classList.add("hover:border-red-800");
   //   }
   // };
+  const handleAnserClicked = () => {
+    if (cookies.get("answer-cliked-at-prepration-page") === undefined) {
+      cookies.set("answer-cliked-at-prepration-page", "true");
+      toast.error(
+        "This is feature is not enabled in Prepration Mode please switch to Test/Prepration mode from toggle button",
+        {
+          position: "top-center",
+        }
+      );
+    }
+  };
+
   const answerPrefix = "";
+
   const items = ["A", "B", "C", "D"];
+
   return (
     <>
       <div
         className={`border gap-2 rounded-sm  cursor-pointer  py-2 px-3 w-full flex`}
-        // onClick={() =>
-        //   handleAnserClicked(
-        //     `id-at-list-view-page-answeritem-for-click-event-${question.replaceAll(
-        //       " ",
-        //       "-"
-        //     )}-${answer}-${
-        //       items[index]
-        //     }-${qustion_id}-uniqueKeyCombination-${uniqueKeyCombination}`
-        //   )
-        // }
-        onClick={() => {
-          return toast.error(
-            "You are on prepration Page view for trying question with your knowlegde please switch to Test/Prepration mode from toggle button",
-            {
-              position: "top-center",
-            }
-          );
-        }}
+        onClick={handleAnserClicked}
         id={`id-at-list-view-page-answeritem-for-click-event-${question.replaceAll(
           " ",
           "-"
