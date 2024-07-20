@@ -207,7 +207,7 @@ const QuestionPage = () => {
             </div>
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
-            <div className="px-2 min-h-[92vh] max-[fit-content]">
+            <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
               <TestPreprationQuestionItem
                 pageMode={"stack-page-mode"}

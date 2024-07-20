@@ -52,7 +52,7 @@ const TestPreprationQuestionItem = ({
                 key={`question-${questionNo}-${
                   questions[questionNo - 1]?.question
                 }`}
-                className=" bg-white px-5 py-2 h-[fit-content]  shadow-lg rounded-md mx-auto mt-2 items-center "
+                className=" bg-white px-5 py-2 w-full h-[fit-content]  shadow-lg rounded-md mx-auto mt-2 items-center "
               >
                 {/* question hardship level  */}
                 <div className="w-full mt-2 h-5 flex justify-end items-center">
