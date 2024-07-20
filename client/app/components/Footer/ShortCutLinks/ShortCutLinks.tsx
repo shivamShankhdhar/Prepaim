@@ -10,7 +10,7 @@ const ShortCutLinks = () => {
   useEffect(() => {
     try {
       axios
-        .get("/admin/getallsubjects")
+        .get("/mcq/getallsubjects")
         .then((response) => {
           setAllSubjects(response.data);
         })

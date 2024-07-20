@@ -17,7 +17,7 @@ export default function Home() {
 
   const [loadingSubjects, setLoadingSubjects] = useState(true);
 
-  const { data } = useFetch("/admin/getallsubjects");
+  const { data } = useFetch("/mcq/getallsubjects");
 
   useEffect(() => {
     if (data.apiData !== undefined) {
