@@ -32,7 +32,7 @@ const AnswerItemForListPageView = ({
     if (cookies.get("answer-cliked-at-prepration-page") === undefined) {
       cookies.set("answer-cliked-at-prepration-page", "true");
       toast.error(
-        "This is feature is not enabled in Prepration Mode please switch to Test/Prepration mode from toggle button",
+        "This feature is not enabled in Prepration Mode please switch to Test/Prepration mode from toggle button",
         {
           position: "top-center",
         }
