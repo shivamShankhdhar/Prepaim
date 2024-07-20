@@ -3,6 +3,7 @@ import * as Controller from "../../controller/mcq/api.controller.js";
 const mcqRouter = Router();
 
 mcqRouter.route("/postcomment").post(Controller.postComment);
+mcqRouter.route("/getAllSubjects").get(Controller.getAllSubjects);
 // get routes
 mcqRouter
   .route("/getSubjectsbyBranchAndSubject/:branch")

@@ -25,6 +25,14 @@ export const postComment = async (req, res) => {
     } catch (error) {}
   }
 };
+export const getAllSubjects = async (req, res) => {
+  try {
+    const data = await Subject.find();
+    return res.status(200).send(data);
+  } catch (error) {
+    return res.status(500).send({ error: error.message });
+  }
+};
 // get questions according to the subject and chapters
 export const getQuestionsBySubjectAndChapter = async (req, res) => {
   let { subject } = req.params;
