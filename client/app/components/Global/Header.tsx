@@ -162,22 +162,23 @@ const Header = () => {
           // <Logout />
           <>
             <Button
-              // sx={{ border: 1, textTransform: "none" }}
+              sx={{ border: 1 }}
               onClick={() => {
                 setLoginModelCurrentOpenComponent("login");
                 handleOpen();
               }}
-              className="flex justify-center items-center gap-1 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+              className="flex justify-center items-center gap-1 hover:rounded-full border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
             >
               Login
             </Button>
             <Button
+              sx={{ border: 1 }}
               // sx={{ border: 1, textTransform: "none" }}
               onClick={() => {
                 setLoginModelCurrentOpenComponent("register");
                 handleOpen();
               }}
-              className="flex justify-center items-center gap-1 bg-purple-100 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+              className="flex justify-center items-center gap-1 hover:rounded-full bg-purple-100 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
             >
               Join
             </Button>
