@@ -13,6 +13,7 @@ import { Button } from "@mui/material";
 const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
   const cookies = useCookies();
   const pathname = usePathname();
+  const hostName = window.location.host;
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogging, setIsLogging] = useState(false);
@@ -41,7 +42,7 @@ const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
             // cookies.set("logged_in_user_email", response.data.user_email);
             toast.success(`Welcome back !! ${response.data.full_name}`);
             setIsLogging(false);
-            router.push(`/${pathname}`);
+            router.push(`${hostName}/${pathname}`);
           })
           .catch((error) => {
             setIsLogging(false);

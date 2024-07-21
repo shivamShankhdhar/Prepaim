@@ -10,10 +10,10 @@ const Logout = () => {
   const cookies = useCookies();
   // (c)ookies;
   const handleLogout = () => {
-    cookies.remove("username");
+    cookies.remove("logged_in_user_full_name");
     cookies.remove("token");
-    // cookies.remove("role");
-    cookies.remove("isAdmin");
+    cookies.remove("loged_in_user_id");
+    cookies.remove("user_profile_image");
     window.location.reload();
     // alert("you are logged out");
   };
