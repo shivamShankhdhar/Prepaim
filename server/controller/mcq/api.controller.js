@@ -14,6 +14,7 @@ import Branch from "../../models/mcq/branch.model.js";
 // get all questions
 
 export const postComment = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   if (req.body) {
     try {
       const comment = new Comment(req.body);
@@ -30,6 +31,7 @@ export const postComment = async (req, res) => {
 };
 
 export const getAllQuestions = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   try {
     const data = await Question.find({});
     return res.status(200).send(data);
@@ -39,6 +41,7 @@ export const getAllQuestions = async (req, res) => {
 };
 
 export const getAllSubjects = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   try {
     const data = await Subject.find({});
     return res.status(200).send(data);
@@ -47,6 +50,7 @@ export const getAllSubjects = async (req, res) => {
   }
 };
 export const getAllBranches = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   try {
     const data = await Branch.find({});
     return res.status(200).send(data);
@@ -56,6 +60,7 @@ export const getAllBranches = async (req, res) => {
 };
 // get questions according to the subject and chapters
 export const getQuestionsBySubjectAndChapter = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   let { subject } = req.params;
   let { chapter } = req.params;
   subject = subject.replace("-", " ");
@@ -73,6 +78,7 @@ export const getQuestionsBySubjectAndChapter = async (req, res) => {
 
 // search subjects by branch
 export const getSubjectsByBranch = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   const { branch } = req.params;
   try {
     await Subject.find({ branch })
@@ -90,6 +96,7 @@ export const getSubjectsByBranch = async (req, res) => {
 // get all chapters
 
 export const getAllChaptersBySubject = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   const { subject } = req.params;
   if (subject !== "") {
     try {
@@ -109,6 +116,7 @@ export const getAllChaptersBySubject = async (req, res) => {
 };
 
 export const getCommentByQuestion = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   const { question } = req.params;
   try {
     const data = await Comment.find({ question, isApproved: true });

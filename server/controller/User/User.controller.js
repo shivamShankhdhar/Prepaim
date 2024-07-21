@@ -3,6 +3,7 @@ import User from "../../models/user/user.model.js";
 import bcrypt from "bcrypt";
 
 export const Login = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   try {
     const { userEmail } = req.body.data;
     const { userPassword } = req.body.data;
@@ -48,7 +49,9 @@ export const Login = async (req, res) => {
     return res.status(501).send({ error: error.message });
   }
 };
+
 export const registerUser = async (req, res) => {
+  res.headers("Access-Control-Allow-Origin", "*");
   try {
     const { first_name, last_name, email, password, user_profile_image } =
       req.body.data;
