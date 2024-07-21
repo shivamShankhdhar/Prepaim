@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import SimpleLoader from "@/app/components/Global/SimpleLoader";
@@ -27,6 +28,7 @@ const LoginFormComponent = ({
   const [isLogging, setIsLogging] = useState(false);
   const [error, setError] = useState("");
   const router = useRouter();
+  // console.log(`${email} ${password}`);
   // const router = useRouter();
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -37,7 +39,7 @@ const LoginFormComponent = ({
         setIsLogging(true);
         axios
           .post(`/user/login`, {
-            data: { email, password },
+            data: { email: email, password: password },
           })
           .then((response) => {
             console.log(response.data);
