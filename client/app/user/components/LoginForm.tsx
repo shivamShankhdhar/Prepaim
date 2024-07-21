@@ -28,9 +28,10 @@ const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
         setIsLogging(true);
         axios
           .get(`/user/login`, {
-            params: { userEmail: userEmail, userPassword: password },
+            data: { userEmail: userEmail, userPassword: password },
           })
           .then((response) => {
+            console.log(response.data);
             setCloseMenuAfterLogin(false);
             // cookies.set("logged_in_user_username", response.data.username);
             cookies.set("logged_in_user_full_name", response.data.full_name);

@@ -15,7 +15,7 @@ const ShortCutLinks = () => {
           setAllSubjects(response.data);
         })
         .catch((error) => {
-          return toast.error(error.response.error);
+          return toast.error(error.response.data.error);
         });
     } catch (error: any) {
       toast.error(error.message);

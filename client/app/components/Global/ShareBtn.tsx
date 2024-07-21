@@ -12,7 +12,8 @@ interface Props {
 
 const ShareBtn = ({ cls }: Props) => {
   const [linkCopied, setLinkCopied] = useState(false);
-  const hostName = window.location.host;
+  const [hostName, setHostName] = useState(window.location.host);
+  // const hostName = window.location.host;
   const pathname = usePathname();
 
   const link = `https://www.${hostName}${pathname}`;
