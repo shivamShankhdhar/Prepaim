@@ -44,7 +44,7 @@ const ActionForQuestion = ({
                 error={error}
               />
               {/* share button  */}
-              {isShareBtn && <ShareBtn />}
+              {isShareBtn && <ShareBtn cls={"bg-purple-100"} />}
               {/* <ShareBtn /> */}
               {/* <SocialShare /> */}
             </div>
