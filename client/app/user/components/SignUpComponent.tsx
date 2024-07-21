@@ -39,7 +39,8 @@ const SignUpComponent = ({ setProperty }: any) => {
           })
           .catch((error) => {
             setIsSigningUp(false);
-            return toast.error(error.response.data.error);
+            console.log(error);
+            // return toast.error(error.response);
           });
       } catch (error: any) {
         console.log(error.message);

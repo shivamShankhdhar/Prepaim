@@ -53,7 +53,7 @@ export const registerUser = async (req, res) => {
       req.body.data;
     const isExists = User.findOne({ email });
     if (isExists) {
-      return res.status(401).send({ error: "user already exists" });
+      return res.status(401).json({ error: "user already exists" });
     } else {
       // first check password for empty and then hash it
       if (password !== "") {
@@ -79,19 +79,19 @@ export const registerUser = async (req, res) => {
                 { expiresIn: "2h" }
               );
 
-              return res.status(201).send({
+              return res.status(201).json({
                 message: "Successfully registered",
                 token,
                 data: data,
               });
             })
             .catch((error) => {
-              return res.status(501).send({ error: error.message });
+              return res.status(501).json({ error: error.message });
             });
         });
       }
     }
   } catch (error) {
-    return res.status(501).send({ error: error.message });
+    return res.status(501).json({ error: error.message });
   }
 };
