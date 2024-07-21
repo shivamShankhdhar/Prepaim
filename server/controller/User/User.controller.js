@@ -3,8 +3,8 @@ import User from "../../models/user/user.model.js";
 
 export const Login = async (req, res) => {
   try {
-    const { userEmail } = req.params;
-    const { password } = req.params;
+    const { userEmail } = req.data;
+    const { password } = req.data;
     console.log(`login details`, userEmail, password);
     // const isAdmin = true;
     const isExists = await User.findOne({ email: userEmail, password });

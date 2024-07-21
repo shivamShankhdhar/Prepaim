@@ -45,7 +45,7 @@ const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
           })
           .catch((error) => {
             setIsLogging(false);
-            return toast.error(error.response.data.error);
+            return toast.error(error.response);
           });
       } catch (error: any) {
         setIsLogging(false);
