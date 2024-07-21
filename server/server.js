@@ -56,11 +56,11 @@ app.use("/user", userRouter);
 
 connectDB()
   .then((data) => {
-    ("Database Connected");
+    console.log("Database Connected");
     app.listen(port, () => {
-      `Server is running on port ${port}`;
+      console.log(`Server is running on port ${port}`);
     });
   })
   .catch((error) => {
-    error;
+    console.log(error.message);
   });

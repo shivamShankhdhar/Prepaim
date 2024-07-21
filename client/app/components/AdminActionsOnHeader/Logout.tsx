@@ -20,13 +20,13 @@ const Logout = () => {
   return (
     <>
       {cookies !== undefined && (
-        <Button
-          className="text-white flex justify-center items-center gap-1 bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+        <div
+          className="flex justify-center items-center gap-1 py-0"
           onClick={handleLogout}
         >
           <CgLogOut size={15} />
           Log Out
-        </Button>
+        </div>
       )}
     </>
   );

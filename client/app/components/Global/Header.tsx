@@ -6,9 +6,11 @@ import Link from "next/link";
 import LoginFormComponent from "@/app/user/components/LoginForm";
 import { CgLogIn } from "react-icons/cg";
 import { useCookies } from "next-client-cookies";
-import { Button, Menu } from "@mui/material";
+import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { IoCloseOutline } from "react-icons/io5";
 import Modal from "@mui/material/Modal";
+import { CgProfile } from "react-icons/cg";
+import SignUpComponent from "@/app/user/components/SignUpComponent";
 
 const style = {
   position: "absolute" as "absolute",
@@ -29,7 +31,25 @@ const Header = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const usernameFromCookies = cookies.get("username");
+  const loged_in_user_id = cookies.get("loged_in_user_id");
+  const logged_in_user_full_name = cookies.get("logged_in_user_full_name");
+  const user_profile_image = cookies.get("user_profile_image");
+
+  // menu items for after login actions
+
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const openMenuForUser = Boolean(anchorEl);
+  const handleClickForOpenUserMenu = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseMenuForUser = () => {
+    setAnchorEl(null);
+  };
+
+  const [loginModelCurrentComponent, setLoginModelCurrentComponent] =
+    useState("");
 
   return (
     <div className="flex sticky top-0 justify-between border-purple-300 border-[2px] border-l-0 border-t-0 border-r-0 bg-white h-[50px] items-center px-5 py-3 border-b z-50">
@@ -53,7 +73,11 @@ const Header = () => {
                 <IoCloseOutline size={15} className="p-0 m-0" />
               </Button>
             </div>
-            <LoginFormComponent setCloseMenuAfterLogin={setOpen} />
+            {loginModelCurrentComponent === "login" ? (
+              <LoginFormComponent setCloseMenuAfterLogin={setOpen} />
+            ) : (
+              <SignUpComponent />
+            )}
           </div>
         </div>
       </Modal>
@@ -77,16 +101,70 @@ const Header = () => {
       </div>
 
       <div className="flex gap-1 justify-end items-center">
-        {usernameFromCookies !== undefined ? (
-          <Logout />
+        {loged_in_user_id !== undefined &&
+        loged_in_user_id !== "" &&
+        logged_in_user_full_name !== undefined &&
+        logged_in_user_full_name !== "" ? (
+          <div className="flex justify-center items-center w-[fit-content]">
+            <div
+              onClick={(e: any) => handleClickForOpenUserMenu(e)}
+              className="w-full flex justify-center items-center"
+            >
+              <Avatar
+                alt={logged_in_user_full_name}
+                src={user_profile_image || "/assets/user_profile_fake.png"}
+                sx={{ width: 30, height: 30 }}
+                className="cursor-pointer ring-3 ring-purple-300"
+              />
+            </div>
+
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={openMenuForUser}
+              onClose={handleCloseMenuForUser}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+              className="text-gray-700 "
+            >
+              <div className="w-full px-3">
+                <MenuItem onClick={handleCloseMenuForUser}>
+                  <div className="flex justify-center items-center gap-1">
+                    <CgProfile /> {logged_in_user_full_name}
+                  </div>
+                </MenuItem>
+                {/* <MenuItem onClick={handleCloseMenuForUser}>My account</MenuItem> */}
+                <MenuItem onClick={handleCloseMenuForUser}>
+                  <Logout />
+                </MenuItem>
+              </div>
+            </Menu>
+          </div>
         ) : (
-          <Button
-            // sx={{ border: 1, textTransform: "none" }}
-            onClick={handleOpen}
-            className="flex justify-center items-center gap-1 bg-purple-100 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
-          >
-            <CgLogIn /> Login
-          </Button>
+          // <Logout />
+          <>
+            <Button
+              // sx={{ border: 1, textTransform: "none" }}
+              onClick={() => {
+                setLoginModelCurrentComponent("login");
+                handleOpen();
+              }}
+              className="flex justify-center items-center gap-1 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+            >
+              Login
+            </Button>
+            <Button
+              // sx={{ border: 1, textTransform: "none" }}
+              onClick={() => {
+                setLoginModelCurrentComponent("sign-up");
+                handleOpen();
+              }}
+              className="flex justify-center items-center gap-1 bg-purple-100 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+            >
+              Join
+            </Button>
+          </>
         )}
       </div>
     </div>
