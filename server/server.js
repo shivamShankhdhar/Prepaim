@@ -14,6 +14,7 @@ import * as path from "path";
 
 dotenv.config();
 const app = express();
+
 const corsOptions = {
   origin: [
     "https://prepaim.com",
@@ -21,22 +22,20 @@ const corsOptions = {
     "http://localhost:3000",
   ],
   default: "https://prepaim.com",
-  optionsSuccessStatus: 200,
+  // optionsSuccessStatus: 200,
 };
 
+app.use(cors(corsOptions));
+app.use(express.json());
+
+const port = 4000;
 // for resolving __dirname not defined error
 
 const __dirname = path.resolve();
 
-app.use(cors({ origin: "https://prepaim.com" }));
-
-app.use(express.json());
-
-const port = 4000;
-
-app.get("/", (req, res) => {
-  res.status(201).json("Home Get request");
-});
+// app.get("/", (req, res) => {
+//   res.status(201).json("Home Get request");
+// });
 
 // files upload logic
 
