@@ -57,7 +57,7 @@ export const registerUser = async (req, res) => {
     const isExists = User.find({ email });
     console.log(isExists);
 
-    if (isExists !== null) {
+    if (isExists.length > 0) {
       return res.status(404).send({ error: "user already exists" });
     } else {
       // first check password for empty and then hash it
