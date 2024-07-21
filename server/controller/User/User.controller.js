@@ -51,6 +51,9 @@ export const registerUser = async (req, res) => {
   try {
     const { first_name, last_name, email, password, user_profile_image } =
       req.body.data;
+    
+    console.log(req.body.data);
+
     const isExists = User.findOne({ email });
     if (isExists) {
       return res.status(401).json({ error: "user already exists" });
@@ -60,8 +63,8 @@ export const registerUser = async (req, res) => {
         bcrypt.hash(password, 10).then((hashedPassword) => {
           const user = new User({
             email,
-            firstName: first_name,
-            lastName: last_name,
+            first_name: first_name,
+            last_name: last_name,
             password: hashedPassword,
             user_profile_image: user_profile_image || "",
           });
@@ -89,6 +92,8 @@ export const registerUser = async (req, res) => {
               return res.status(501).json({ error: error.message });
             });
         });
+      } else {
+        return res.status(401).json({ error: "password can't be empty" });
       }
     }
   } catch (error) {
