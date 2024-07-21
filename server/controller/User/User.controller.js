@@ -54,7 +54,7 @@ export const registerUser = async (req, res) => {
     
     console.log(req.body.data);
 
-    const isExists = User.find({ email });
+    const isExists = User.findOne({ email });
     console.log(isExists);
 
     if (isExists.length > 0) {
