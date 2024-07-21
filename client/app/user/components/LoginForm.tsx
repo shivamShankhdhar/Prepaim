@@ -22,7 +22,7 @@ const LoginFormComponent = ({
   const cookies = useCookies();
   const pathname = usePathname();
   const hostName = window.location.host;
-  const [userEmail, setUserEmail] = useState("");
+  const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogging, setIsLogging] = useState(false);
   const [error, setError] = useState("");
@@ -30,14 +30,14 @@ const LoginFormComponent = ({
   // const router = useRouter();
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (userEmail === "") return toast.error("Username is required...!");
+    if (email === "") return toast.error("Username is required...!");
     else if (password === "") return toast.error("Password is required...!");
     else {
       try {
         setIsLogging(true);
         axios
           .post(`/user/login`, {
-            data: { userEmail: userEmail, userPassword: password },
+            data: { email, password },
           })
           .then((response) => {
             console.log(response.data);
@@ -75,7 +75,7 @@ const LoginFormComponent = ({
         <input
           className="w-full outline-none  border px-2 rounded-md py-2"
           type="text"
-          onChange={(e) => setUserEmail(e.target.value)}
+          onChange={(e) => setemail(e.target.value)}
           placeholder="Enter your email..."
         />
         <input

@@ -5,20 +5,19 @@ import bcrypt from "bcrypt";
 export const Login = async (req, res) => {
   // res.headers("Access-Control-Allow-Origin", "*");
   try {
-    const { userEmail } = req.body.data;
-    const { userPassword } = req.body.data;
+    const { email } = req.body.data;
+    const { password } = req.body.data;
 
-    if (userPassword !== "") {
-      bcrypt.compare(password, userPassword).then(async (result) => {
+    const isExists = await User.findOne({ email });
+    if (isExists !== null) {
+      bcrypt.compare(isExists.password, password).then(async (result) => {
         if (result) {
-          const isExists = await User.findOne({
-            email: userEmail,
-            password: userPassword,
+          const user_email_with_password = await User.findOne({
+            email,
+            password,
           });
           console.log(isExists);
-
-          if (isExists !== null) {
-            // if password, create jwt token
+          if (user_email_with_password !== null) {
             const token = jsonwebtoken.sign(
               {
                 userEmail: isExists.email,
@@ -37,13 +36,15 @@ export const Login = async (req, res) => {
               // user_email: isExists.email,
             });
           } else {
-            return res.status(401).send({ error: "user not found" });
+            return res.status(401).send({ error: "Wrong Password..." });
           }
-        } else {
-          return res.status(401).send({ error: "password doesn't match" });
+          // if password, create jwt token
         }
-        // const isAdmin = true;
       });
+    } else {
+      return res
+        .status(401)
+        .send({ error: "user not found with this email..." });
     }
   } catch (error) {
     return res.status(501).send({ error: error.message });
@@ -71,8 +72,8 @@ export const registerUser = async (req, res) => {
         bcrypt.hash(password, 10).then(async (hashedPassword) => {
           const user = new User({
             email,
-            first_name: first_name,
-            last_name: last_name,
+            first_name,
+            last_name,
             password: hashedPassword,
             user_profile_image: user_profile_image || "",
           });
@@ -84,7 +85,7 @@ export const registerUser = async (req, res) => {
 
               const token = jsonwebtoken.sign(
                 {
-                  userEmail: data.email,
+                  email: data.email,
                 },
                 "secret",
                 { expiresIn: "2h" }
