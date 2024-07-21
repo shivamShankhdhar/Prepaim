@@ -9,9 +9,9 @@ export const Login = async (req, res) => {
     const { userPassword } = req.body.data;
 
     if (userPassword !== "") {
-      bcrypt.compare(password, userPassword).then((result) => {
+      bcrypt.compare(password, userPassword).then(async (result) => {
         if (result) {
-          const isExists = User.findOne({
+          const isExists = await User.findOne({
             email: userEmail,
             password: userPassword,
           });
@@ -58,7 +58,7 @@ export const registerUser = async (req, res) => {
 
     console.log(req.body.data);
 
-    const isExists = User.findOne({ email });
+    const isExists = await User.findOne({ email });
     console.log(isExists);
 
     if (isExists !== null) {
@@ -68,7 +68,7 @@ export const registerUser = async (req, res) => {
     } else {
       // first check password for empty and then hash it
       if (password !== "") {
-        bcrypt.hash(password, 10).then((hashedPassword) => {
+        bcrypt.hash(password, 10).then(async (hashedPassword) => {
           const user = new User({
             email,
             first_name: first_name,
@@ -76,7 +76,7 @@ export const registerUser = async (req, res) => {
             password: hashedPassword,
             user_profile_image: user_profile_image || "",
           });
-          user
+          await user
             .save()
             .then((data) => {
               // user crated then login the user
