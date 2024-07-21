@@ -1,5 +1,6 @@
 import jsonwebtoken from "jsonwebtoken";
 import User from "../../models/user/user.model.js";
+import bcrypt from "bcrypt";
 
 export const Login = async (req, res) => {
   try {
@@ -51,13 +52,13 @@ export const registerUser = async (req, res) => {
   try {
     const { first_name, last_name, email, password, user_profile_image } =
       req.body.data;
-    
+
     console.log(req.body.data);
 
     const isExists = User.findOne({ email });
     console.log(isExists);
 
-    if (isExists.length > 0) {
+    if (isExists !== null) {
       return res.status(404).send({ error: "user already exists" });
     } else {
       // first check password for empty and then hash it
