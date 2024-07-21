@@ -9,7 +9,7 @@ export const Login = async (req, res) => {
     const { userPassword } = req.body.data;
 
     if (userPassword !== "") {
-      bcrpypt.compare(password, userPassword).then((result) => {
+      bcrypt.compare(password, userPassword).then((result) => {
         if (result) {
           const isExists = User.findOne({
             email: userEmail,
