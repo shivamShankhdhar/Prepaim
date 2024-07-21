@@ -149,6 +149,7 @@ const Navigation = ({
             loading={loading}
             loadingComment={loadingComment}
             errorForActionBar={errorForActionBar}
+            isAnswerExplanationOpen={isAnswerExplanationOpen}
             handleAnswerExplanationToggle={handleAnswerExplanationToggle}
             handleCommentToggle={handleCommentToggle}
             isCommentSection={isCommentSection}

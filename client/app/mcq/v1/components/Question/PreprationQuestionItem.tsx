@@ -68,7 +68,7 @@ const PreprationQuestionItem = () => {
   // const [isAnswerHide, setIsAnswerHide] = useState(false);
 
   return (
-    <div className="w-full flex-wrap flex items-start justify-center px-5 gap-3 py-3">
+    <div className="w-full flex-wrap flex items-start justify-center px-2 gap-3 py-3">
       {/* question item */}
       {loading ? (
         <>
@@ -102,7 +102,7 @@ const PreprationQuestionItem = () => {
                       />
                     </div>
                     {/* question heading  */}
-                    <div className="w-full flex justify-start items-center mb-2">
+                    <div className="w-full flex justify-start items-center py-3">
                       Q&nbsp;{questionNo + 1}. {question.question}
                     </div>
                     {/* answer  */}

@@ -171,8 +171,6 @@ const QuestionPage = () => {
           questionNo={questionNo - 1}
           setQuestionNo={setQuestionNo}
           loading={loading}
-          setIsCommentSection={setIsCommentSection}
-          setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
         />
 
         <div

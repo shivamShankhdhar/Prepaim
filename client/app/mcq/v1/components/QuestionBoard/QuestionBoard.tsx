@@ -14,8 +14,6 @@ const QuestionBoard = ({
   loading,
   error,
   handleClose,
-  setIsCommentSection,
-  setIsAnswerExplanationOpen,
 }: any) => {
   const [medium, setMedium] = useState(0);
   const [advance, setAdvance] = useState(0);
@@ -69,8 +67,6 @@ const QuestionBoard = ({
                         item={item}
                         questionNo={questionNo}
                         setQuestionNo={setQuestionNo}
-                        setIsCommentSection={setIsCommentSection}
-                        setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
                       />
                     </>
                   );

@@ -16,8 +16,6 @@ const SidebarSlider = ({
   setQuestionNo,
   loading,
   error,
-  setIsCommentSection,
-  setIsAnswerExplanationOpen,
 }: any) => {
   const handleClose = () => {
     setOpen(false);
@@ -68,8 +66,6 @@ const SidebarSlider = ({
                 setQuestionNo,
                 loading,
                 error,
-                setIsCommentSection,
-                setIsAnswerExplanationOpen,
               }}
             />
           </>

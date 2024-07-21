@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Button } from "@mui/material";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -5,7 +6,11 @@ import toast from "react-hot-toast";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { LuCopyCheck } from "react-icons/lu";
 
-const ShareBtn = () => {
+interface Props {
+  cls?: any;
+}
+
+const ShareBtn = ({ cls }: Props) => {
   const [linkCopied, setLinkCopied] = useState(false);
   const hostName = window.location.host;
   const pathname = usePathname();
@@ -29,7 +34,10 @@ const ShareBtn = () => {
       className={`min-w-[fit-content] rounded-md px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
         linkCopied
           ? "text-green-800 bg-green-100 border-green-800 hover:bg-green-200 focus:ring-2 focus:outline-none focus:ring-green-300"
-          : "bg-purple-100 text-purple-800  border-purple-300 hover:bg-purple-200"
+          : `${cn(
+              " text-purple-800  border-purple-300 hover:bg-purple-200",
+              cls
+            )}`
       }`}
       title={`Share with your friends on ${link}`}
       onClick={() => handleShare()}

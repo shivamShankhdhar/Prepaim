@@ -165,8 +165,6 @@ const QuestionPage = () => {
           questionNo={questionNo - 1}
           setQuestionNo={setQuestionNo}
           loading={loading}
-          setIsCommentSection={setIsCommentSection}
-          setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
         />
         <div
           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
@@ -200,7 +198,7 @@ const QuestionPage = () => {
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
 
-            <div className="w-full px-2 flex justify-between  min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
+            <div className="w-full flex justify-between min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
               {/* question*/}
               <PreprationQuestionItem />
             </div>
