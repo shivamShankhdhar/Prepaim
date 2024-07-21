@@ -33,14 +33,14 @@ const SignUpComponent = ({ setProperty }: any) => {
             },
           })
           .then((response) => {
-            console.log(response.data);
+            console.log(`this is from success ${response}`);
             toast.success("Account created successfully...");
             setIsSigningUp(false);
           })
           .catch((error) => {
             setIsSigningUp(false);
-            // console.log(error);
-            return toast.error(error.response.data.error);
+            console.log(`this is from error ${error}`);
+            // return toast.error(error.response.data.error);
           });
       } catch (error: any) {
         console.log(error.message);

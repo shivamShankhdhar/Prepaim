@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { MdLogin } from "react-icons/md";
 import { Button } from "@mui/material";
 
 const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
