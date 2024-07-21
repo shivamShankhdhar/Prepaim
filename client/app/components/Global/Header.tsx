@@ -38,6 +38,7 @@ const Header = () => {
   const loged_in_user_first_name = cookies.get("logged_in_user_first_name");
 
   const loged_in_user_last_name = cookies.get("logged_in_user_last_name");
+  const token = cookies.get("token");
 
   // menu items for after login actions
 
@@ -105,7 +106,9 @@ const Header = () => {
       </div>
 
       <div className="flex gap-1 justify-end items-center">
-        {loged_in_user_id !== undefined &&
+        {token !== undefined &&
+        token !== "" &&
+        loged_in_user_id !== undefined &&
         loged_in_user_id !== "" &&
         loged_in_user_first_name !== undefined &&
         loged_in_user_first_name !== "" ? (

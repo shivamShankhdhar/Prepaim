@@ -13,13 +13,15 @@ axios.defaults.headers.get["Content-Type"] =
   console.log("middle ware called")
 
   const loged_in_user_id = request.cookies.get('loged_in_user_id')?.value
+
+  const token = request.cookies.get('token')?.value
  
   
   const pathname = request.nextUrl.pathname
   
   // const AceesloginPageAfterLogin = request.nextUrl.pathname === "/user/authentication/login"
 
-  if (loged_in_user_id === undefined ) { 
+  if (token === undefined && loged_in_user_id === undefined ) { 
     return NextResponse.rewrite(new URL('/user/authentication/login', request.url))
   }
   else {
