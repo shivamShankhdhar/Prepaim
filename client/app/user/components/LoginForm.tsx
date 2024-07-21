@@ -9,7 +9,16 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { Button } from "@mui/material";
 
-const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
+interface Props {
+  isRequestingFromModel?: boolean;
+  setProperty?: any;
+  setCloseMenuAfterLogin?: any;
+}
+const LoginFormComponent = ({
+  isRequestingFromModel,
+  setProperty,
+  setCloseMenuAfterLogin,
+}: Props) => {
   const cookies = useCookies();
   const pathname = usePathname();
   const hostName = window.location.host;
@@ -55,34 +64,49 @@ const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
   };
 
   return (
-    <form
-      className="flex flex-col w-full gap-2 p-5 items-center "
-      onSubmit={handleSubmit}
-    >
-      <div className="w-full flex justify-start text-3xl gap-2 font-semibold">
-        Login
-      </div>
-      <input
-        className="w-full outline-none  border px-2 rounded-md py-2"
-        type="text"
-        onChange={(e) => setUserEmail(e.target.value)}
-        placeholder="Enter your email..."
-      />
-      <input
-        className="w-full outline-none  border px-2 rounded-md py-2"
-        type="password"
-        autoComplete="current-password"
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Enter your password..."
-      ></input>
-      <Button
-        className="justify-center focus:ring-4 focus:outline-none focus:ring-purple-300 outline-none gap-2 w-[fit-content] flex items-center bg-purple-800 text-white px-3 py-1 hover:bg-purple-900 rounded-sm"
-        type="submit"
+    <div className="w-full flex flex-col gap-2 py-5">
+      <form
+        className="flex flex-col w-full gap-2 px-5 py-2 items-center "
+        onSubmit={handleSubmit}
       >
-        {isLogging && <SimpleLoader size={15} clr={"white"} />}
-        Login
-      </Button>
-    </form>
+        <div className="w-full flex justify-start text-3xl gap-2 font-semibold">
+          Login
+        </div>
+        <input
+          className="w-full outline-none  border px-2 rounded-md py-2"
+          type="text"
+          onChange={(e) => setUserEmail(e.target.value)}
+          placeholder="Enter your email..."
+        />
+        <input
+          className="w-full outline-none  border px-2 rounded-md py-2"
+          type="password"
+          autoComplete="current-password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter your password..."
+        ></input>
+        <Button
+          className="justify-center focus:ring-4 focus:outline-none focus:ring-purple-300 outline-none gap-2 w-[fit-content] flex items-center bg-purple-900 text-white px-3 py-1 hover:bg-purple-950 rounded-sm"
+          type="submit"
+        >
+          {isLogging && <SimpleLoader size={15} clr={"white"} />}
+          Login
+        </Button>
+      </form>
+      {isRequestingFromModel && (
+        <div className="w-full flex justify-center items-center">
+          <div className="flex justify-center items-center w-[fit-content]">
+            Not Joined yet ?{" "}
+            <div
+              className="text-purple-800 bg-purple-200 rounded-full px-2 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
+              onClick={() => setProperty("register")}
+            >
+              Join now
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

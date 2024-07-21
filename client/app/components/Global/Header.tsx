@@ -53,7 +53,7 @@ const Header = () => {
     setAnchorEl(null);
   };
 
-  const [loginModelCurrentComponent, setLoginModelCurrentComponent] =
+  const [loginModelCurrentOpenComponent, setLoginModelCurrentOpenComponent] =
     useState("");
 
   return (
@@ -66,7 +66,7 @@ const Header = () => {
         aria-describedby="modal-modal-description"
       >
         {/* container for 100% height and width */}
-        <div className="w-full flex h-[100vh] px-5 justify-center items-center">
+        <div className="w-full flex h-[100vh] px-5 justify-center items-center overflow-y-auto">
           {/* container that contains the login form  */}
           <div className="flex flex-col sm:w-[90%] max-sm:w-[90%] md:w-[40%] max-md:w-[40%] lg:w-[500px] xl:w-[500px] 2xl:w-[500px] px-2 py-1 bg-white rounded-md">
             <div className="w-full flex justify-end items-end">
@@ -75,13 +75,20 @@ const Header = () => {
                 onClick={handleClose}
                 className="flex focus:ring-4 focus:outline-none focus:ring-purple-300 cursor-pointer bg-purple-100 py-1 px-1 text-purple-900 rounded-sm  border border-purple-300"
               >
-                <IoCloseOutline size={15} className="p-0 m-0" />
+                <IoCloseOutline size={15} />
               </Button>
             </div>
-            {loginModelCurrentComponent === "login" ? (
-              <LoginFormComponent setCloseMenuAfterLogin={setOpen} />
+            {loginModelCurrentOpenComponent === "login" ? (
+              <LoginFormComponent
+                isRequestingFromModel={true}
+                setProperty={setLoginModelCurrentOpenComponent}
+                setCloseMenuAfterLogin={setOpen}
+              />
             ) : (
-              <SignUpComponent />
+              <SignUpComponent
+                isRequestingFromModel={true}
+                setProperty={setLoginModelCurrentOpenComponent}
+              />
             )}
           </div>
         </div>
@@ -157,7 +164,7 @@ const Header = () => {
             <Button
               // sx={{ border: 1, textTransform: "none" }}
               onClick={() => {
-                setLoginModelCurrentComponent("login");
+                setLoginModelCurrentOpenComponent("login");
                 handleOpen();
               }}
               className="flex justify-center items-center gap-1 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
@@ -167,7 +174,7 @@ const Header = () => {
             <Button
               // sx={{ border: 1, textTransform: "none" }}
               onClick={() => {
-                setLoginModelCurrentComponent("sign-up");
+                setLoginModelCurrentOpenComponent("register");
                 handleOpen();
               }}
               className="flex justify-center items-center gap-1 bg-purple-100 border border-purple-300 text-purple-800 hover:bg-purple-200 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"

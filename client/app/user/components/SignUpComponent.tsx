@@ -5,7 +5,7 @@ import { useCookies } from "next-client-cookies";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
-const SignUpComponent = ({ setProperty }: any) => {
+const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
   const cookies = useCookies();
   const [userEmail, setUserEmail] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -66,49 +66,64 @@ const SignUpComponent = ({ setProperty }: any) => {
     }
   };
   return (
-    <form
-      className="flex flex-col w-full gap-2 p-5 items-center "
-      onSubmit={handleSubmit}
-    >
-      <div className="w-full flex justify-start text-3xl gap-2 font-semibold">
-        Join Us
-      </div>
-      <input
-        className="w-full outline-none  border px-2 rounded-md py-2"
-        type="email"
-        onChange={(e) => setUserEmail(e.target.value)}
-        placeholder="Enter your email..."
-      />
-
-      <input
-        className="w-full outline-none  border px-2 rounded-md py-2"
-        type="text"
-        onChange={(e) => setFirstName(e.target.value)}
-        placeholder="Enter your first name..."
-      />
-
-      <input
-        className="w-full outline-none  border px-2 rounded-md py-2"
-        type="text"
-        onChange={(e) => setLastName(e.target.value)}
-        placeholder="Enter your last name..."
-      />
-
-      <input
-        className="w-full outline-none  border px-2 rounded-md py-2"
-        type="password"
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Enter a password to secure your account..."
-      />
-      <Button
-        // variant="contained"
-        className="w-[fir-content] focus:ring-3 focus:ring-purple-300 focus:outline-none flex justify-center items-center gap-2 px-3 bg-purple-900 hover:bg-purple-950 text-white rounded-md py-1"
-        type="submit"
+    <div className="w-full flex flex-col gap-2 py-5">
+      <form
+        className="flex flex-col w-full gap-2 px-5 py-2 items-center "
+        onSubmit={handleSubmit}
       >
-        {isSigningUp && <SimpleLoader size={15} clr={"white"} />}
-        {isSigningUp ? "Signing Up..." : "Sign Up"}
-      </Button>
-    </form>
+        <div className="w-full flex justify-start text-3xl gap-2 font-semibold">
+          Join Us
+        </div>
+
+        <input
+          className="w-full outline-none  border px-2 rounded-md py-2"
+          type="text"
+          onChange={(e) => setFirstName(e.target.value)}
+          placeholder="Enter your first name..."
+        />
+
+        <input
+          className="w-full outline-none  border px-2 rounded-md py-2"
+          type="text"
+          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Enter your last name..."
+        />
+        <input
+          className="w-full outline-none  border px-2 rounded-md py-2"
+          type="email"
+          onChange={(e) => setUserEmail(e.target.value)}
+          placeholder="Enter your email..."
+        />
+
+        <input
+          className="w-full outline-none  border px-2 rounded-md py-2"
+          type="password"
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Enter a password to secure your account..."
+        />
+        <Button
+          // variant="contained"
+          className="justify-center focus:ring-4 focus:outline-none focus:ring-purple-300 outline-none gap-2 w-[fit-content] flex items-center bg-purple-900 text-white px-3 py-1 hover:bg-purple-950 rounded-sm"
+          type="submit"
+        >
+          {isSigningUp && <SimpleLoader size={15} clr={"white"} />}
+          {isSigningUp ? "Signing Up..." : "Sign Up"}
+        </Button>
+      </form>
+      {isRequestingFromModel && (
+        <div className="w-full flex justify-center items-center">
+          <div className="flex justify-center items-center w-[fit-content]">
+            Already Joined ?{" "}
+            <div
+              className="text-purple-800 bg-purple-200 rounded-full px-2 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
+              onClick={() => setProperty("login")}
+            >
+              Login now
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
