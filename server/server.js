@@ -50,9 +50,9 @@ app.use("/static", express.static(path.join(__dirname, "uploads/images")));
 //app.use("/admin", adminRouter);
 //app.use("/admin/mcq", adminMcqRouter);
 //app.use("/admin/coding", adminCodingRouter);
-app.use("/coding", codingRouter);
-app.use("/mcq", mcqRouter);
-app.use("/user", userRouter);
+app.use("/coding", cors(corsOptions), codingRouter);
+app.use("/mcq", cors(corsOptions), mcqRouter);
+app.use("/user", cors(corsOptions), userRouter);
 
 connectDB()
   .then((data) => {
