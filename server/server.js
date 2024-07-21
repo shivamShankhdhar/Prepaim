@@ -21,6 +21,7 @@ const corsOptions = {
     "https://prepaim.in",
     "http://localhost:3000",
   ],
+  methods: ["POST", "GET"],
   default: "https://prepaim.com",
   // optionsSuccessStatus: 200,
 };
