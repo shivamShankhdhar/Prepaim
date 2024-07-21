@@ -4,10 +4,13 @@ import User from "../../models/user/user.model.js";
 export const Login = async (req, res) => {
   try {
     const { userEmail } = req.body.data;
-    const { password } = req.body.data;
+    const { userPassword } = req.body.data;
     console.log(`login details`, userEmail, password);
     // const isAdmin = true;
-    const isExists = await User.findOne({ email: userEmail, password });
+    const isExists = await User.findOne({
+      email: userEmail,
+      password: userPassword,
+    });
     console.log(isExists);
     // (isExists);
     // if (isExists !== null) {
