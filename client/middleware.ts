@@ -10,26 +10,25 @@ export function middleware(request: NextRequest) {
 axios.defaults.headers.get["Content-Type"] =
     "application-json/x-www-form-urlencoded";
   
-//   console.log("middle ware called")
+  console.log("middle ware called")
 
-//   const username = request.cookies.get('loged_in_user_id')?.value
+  const loged_in_user_id = request.cookies.get('loged_in_user_id')?.value
  
   
-//   const pathname = request.nextUrl.pathname
+  const pathname = request.nextUrl.pathname
   
-//   // const AceesloginPageAfterLogin = request.nextUrl.pathname === "/user/authentication/login"
+  // const AceesloginPageAfterLogin = request.nextUrl.pathname === "/user/authentication/login"
 
-//   if (username === undefined ) { 
-//     return NextResponse.rewrite(new URL('/user/authentication/login', request.url))
-//   }
-//   if (isAdmin === 'true') {
-//     return NextResponse.next()
-//   } else {
-//     return NextResponse.rewrite(new URL('/user/authentication/login', request.url))
-//   }
+  if (loged_in_user_id === undefined ) { 
+    return NextResponse.rewrite(new URL('/user/authentication/login', request.url))
+  }
+  else {
+    return NextResponse.next()
+  }
   
 } 
 // See "Matching Paths" below to learn more
 export const config = {
-  // matcher: ['/admin/:path*', "/user/:path*",]
+  matcher: ["/user/:path*",]
+  // '/admin/:path*',
 }

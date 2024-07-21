@@ -32,8 +32,12 @@ const Header = () => {
   const handleClose = () => setOpen(false);
 
   const loged_in_user_id = cookies.get("loged_in_user_id");
-  const logged_in_user_full_name = cookies.get("logged_in_user_full_name");
+  // const logged_in_user_full_name = cookies.get("logged_in_user_full_name");
   const user_profile_image = cookies.get("user_profile_image");
+
+  const loged_in_user_first_name = cookies.get("logged_in_user_first_name");
+
+  const loged_in_user_last_name = cookies.get("logged_in_user_last_name");
 
   // menu items for after login actions
 
@@ -103,15 +107,15 @@ const Header = () => {
       <div className="flex gap-1 justify-end items-center">
         {loged_in_user_id !== undefined &&
         loged_in_user_id !== "" &&
-        logged_in_user_full_name !== undefined &&
-        logged_in_user_full_name !== "" ? (
+        loged_in_user_first_name !== undefined &&
+        loged_in_user_first_name !== "" ? (
           <div className="flex justify-center items-center w-[fit-content]">
             <div
               onClick={(e: any) => handleClickForOpenUserMenu(e)}
               className="w-full flex justify-center items-center"
             >
               <Avatar
-                alt={logged_in_user_full_name}
+                alt={loged_in_user_first_name}
                 src={user_profile_image || "/assets/user_profile_fake.png"}
                 sx={{ width: 30, height: 30 }}
                 className="cursor-pointer ring-3 ring-purple-300"
@@ -126,13 +130,16 @@ const Header = () => {
               MenuListProps={{
                 "aria-labelledby": "basic-button",
               }}
-              className="text-gray-700 "
+              className="text-gray-700"
             >
               <div className="w-full px-3">
                 <MenuItem onClick={handleCloseMenuForUser}>
-                  <div className="flex justify-center items-center gap-1">
-                    <CgProfile /> {logged_in_user_full_name}
-                  </div>
+                  <Link href={`/user/profile/${loged_in_user_id}`}>
+                    <div className="flex justify-center items-center gap-1">
+                      <CgProfile />{" "}
+                      {`${loged_in_user_first_name} ${loged_in_user_last_name}`}
+                    </div>
+                  </Link>
                 </MenuItem>
                 {/* <MenuItem onClick={handleCloseMenuForUser}>My account</MenuItem> */}
                 <MenuItem onClick={handleCloseMenuForUser}>

@@ -1,10 +1,12 @@
 import SimpleLoader from "@/app/components/Global/SimpleLoader";
 import { Button } from "@mui/material";
 import axios from "axios";
+import { useCookies } from "next-client-cookies";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 const SignUpComponent = ({ setProperty }: any) => {
+  const cookies = useCookies();
   const [userEmail, setUserEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -33,14 +35,30 @@ const SignUpComponent = ({ setProperty }: any) => {
             },
           })
           .then((response) => {
-            console.log(`this is from success ${response}`);
-            toast.success("Account created successfully...");
+            cookies.set(
+              "logged_in_user_first_name",
+              `${response.data.data.first_name}` || ""
+            );
+
+            cookies.set(
+              "logged_in_user_last_name",
+              `${response.data.data.last_name}` || ""
+            );
+            cookies.set("token", response.data.token);
+            cookies.set("loged_in_user_id", response.data.data._id);
+            cookies.set(
+              "user_profile_image",
+              response.data.data.user_profile_image
+            );
+            toast.success(response.data.message);
+            // toast.success(response.data);
             setIsSigningUp(false);
+            window.location.reload();
           })
           .catch((error) => {
             setIsSigningUp(false);
             console.log(`this is from error ${error}`);
-            return toast.error(error.response.data.error);
+            return toast.error(error.response.data);
           });
       } catch (error: any) {
         console.log(error.message);

@@ -90,10 +90,10 @@ export const registerUser = async (req, res) => {
                 { expiresIn: "2h" }
               );
 
-              return res.status(201).json({
+              return res.status(201).send({
                 message: "Successfully registered and logged in too...",
                 token,
-                data: data,
+                data,
               });
             })
             .catch((error) => {
@@ -104,7 +104,7 @@ export const registerUser = async (req, res) => {
         return res.status(401).send({ error: "password can't be empty" });
       }
     }
-  } catch (error) {
-    return res.status(501).send({ error: error.message });
+  } catch (err) {
+    return res.status(501).send({ error: err.message });
   }
 };
