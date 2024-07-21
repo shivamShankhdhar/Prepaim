@@ -55,8 +55,10 @@ export const registerUser = async (req, res) => {
     console.log(req.body.data);
 
     const isExists = User.findOne({ email });
+    console.log(isExists);
+
     if (isExists !== null) {
-      return res.status(401).json({ error: "user already exists" });
+      return res.status(404).send({ error: "user already exists" });
     } else {
       // first check password for empty and then hash it
       if (password !== "") {
@@ -89,14 +91,14 @@ export const registerUser = async (req, res) => {
               });
             })
             .catch((error) => {
-              return res.status(501).json({ error: error.message });
+              return res.status(501).send({ error: error.message });
             });
         });
       } else {
-        return res.status(401).json({ error: "password can't be empty" });
+        return res.status(401).send({ error: "password can't be empty" });
       }
     }
   } catch (error) {
-    return res.status(501).json({ error: error.message });
+    return res.status(501).send({ error: error.message });
   }
 };
