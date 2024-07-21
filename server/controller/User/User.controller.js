@@ -62,7 +62,9 @@ export const registerUser = async (req, res) => {
     console.log(isExists);
 
     if (isExists !== null) {
-      return res.status(404).send({ error: "user already exists" });
+      return res
+        .status(404)
+        .send({ error: "User already exists with this email" });
     } else {
       // first check password for empty and then hash it
       if (password !== "") {
@@ -89,7 +91,7 @@ export const registerUser = async (req, res) => {
               );
 
               return res.status(201).json({
-                message: "Successfully registered",
+                message: "Successfully registered and logged in too...",
                 token,
                 data: data,
               });
