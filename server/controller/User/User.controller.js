@@ -5,7 +5,7 @@ export const Login = async (req, res) => {
   try {
     const { userEmail } = req.body.data;
     const { userPassword } = req.body.data;
-    console.log(`login details`, userEmail, password);
+    console.log(`login details`, userEmail, userPassword);
     // const isAdmin = true;
     const isExists = await User.findOne({
       email: userEmail,
