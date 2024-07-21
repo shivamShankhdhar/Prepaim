@@ -28,7 +28,8 @@ const corsOptions = {
 
 const __dirname = path.resolve();
 
-app.use(cors(corsOptions));
+app.use(cors({ origin: "https://prepaim.com" }));
+
 app.use(express.json());
 
 const port = 4000;
