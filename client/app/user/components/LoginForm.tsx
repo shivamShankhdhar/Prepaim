@@ -27,7 +27,7 @@ const LoginFormComponent = ({ setCloseMenuAfterLogin }: any) => {
       try {
         setIsLogging(true);
         axios
-          .get(`/user/login`, {
+          .post(`/user/login`, {
             data: { userEmail: userEmail, userPassword: password },
           })
           .then((response) => {
