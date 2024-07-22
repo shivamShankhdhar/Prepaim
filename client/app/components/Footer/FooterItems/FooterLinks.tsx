@@ -74,7 +74,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("about");
           }}
-          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100"
         >
           About us
         </li>
@@ -83,7 +83,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("Privacy");
           }}
-          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100"
         >
           Privacy
         </li>
@@ -92,7 +92,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("terms-of-services");
           }}
-          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100"
         >
           Terms of Services
         </li>
@@ -101,7 +101,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("contact");
           }}
-          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100"
         >
           Contact
         </li>
