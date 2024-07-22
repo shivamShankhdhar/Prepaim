@@ -43,7 +43,7 @@ export const Login = async (req, res) => {
         .send({ error: "user not found with this email..." });
     }
   } catch (error) {
-    return res.status(501).send({ error: "something went wrong..." });
+    return res.status(501).send({ error: error.message });
   }
 };
 
