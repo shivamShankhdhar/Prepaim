@@ -61,8 +61,8 @@ const LoginFormComponent = ({
           })
           .catch((error) => {
             setIsLogging(false);
-            console.log(error.response.data);
-            return toast.error(error.response.data);
+            console.log(error);
+            return toast.error(error.response.data.error);
           });
       } catch (error: any) {
         setIsLogging(false);

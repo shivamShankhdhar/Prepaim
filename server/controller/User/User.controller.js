@@ -9,49 +9,51 @@ export const Login = async (req, res) => {
 
     console.log(`${email} ${password}`);
     const isExists = await User.findOne({ email });
-console.log(`${isExists}`);
-if (isExists !== null) {
-  await bcrypt
-    .compare(password, isExists.password)
-    .then(async (result) => {
-      if (result) {
-        const user_email_with_password = await User.findOne({
-          email,
-          password,
+    console.log(`${isExists}`);
+    if (isExists !== null) {
+      await bcrypt
+        .compare(password, isExists.password)
+        .then(async (result) => {
+          if (result) {
+            const user_email_with_password = await User.findOne({
+              email,
+              password,
+            });
+            console.log(user_email_with_password);
+            if (user_email_with_password !== null) {
+              const token = jsonwebtoken.sign(
+                {
+                  email: user_email_with_password.email,
+                },
+                "secret",
+                { expiresIn: "2h" }
+              );
+              return res.status(200).send({
+                message: "Logged in successfully",
+                token,
+                // isAdmin: isExists.isAdmin,
+                user_id: isExists._id || "",
+                user_profile_image: isExists.user_profile_image || "",
+                full_name:
+                  `${isExists.first_name} ${isExists.last_name}` || "anonymous",
+                // user_email: isExists.email,
+              });
+            } else {
+              return res.status(401).send({ error: "Wrong Password..." });
+            }
+            // if password, create jwt token
+          } else {
+            return res.status(404).send({ error: "Wrong Password..." });
+          }
+        })
+        .catch((error) => {
+          return res.status(501).send({ error: "something went wrong..." });
         });
-        console.log(isExists);
-        if (user_email_with_password !== null) {
-          const token = jsonwebtoken.sign(
-            {
-              userEmail: isExists.email,
-            },
-            "secret",
-            { expiresIn: "2h" }
-          );
-          return res.status(200).send({
-            message: "Logged in successfully",
-            token,
-            // isAdmin: isExists.isAdmin,
-            user_id: isExists._id || "",
-            user_profile_image: isExists.user_profile_image || "",
-            full_name:
-              `${isExists.first_name} ${isExists.last_name}` || "anonymous",
-            // user_email: isExists.email,
-          });
-        } else {
-          return res.status(401).send({ error: "Wrong Password..." });
-        }
-        // if password, create jwt token
-      } else {
-        return res.status(401).send({ error: "Wrong Password..." });
-      }
-    })
-    .catch((error) => {
-      return res.status(501).send({ error: "something went wrong..." });
-    });
-} else {
-  return res.status(401).send({ error: "user not found with this email..." });
-}
+    } else {
+      return res
+        .status(404)
+        .send({ error: "user not found with this email..." });
+    }
   } catch (error) {
     return res.status(501).send({ error: "something went wrong..." });
   }
@@ -108,7 +110,7 @@ export const registerUser = async (req, res) => {
             });
         });
       } else {
-        return res.status(401).send({ error: "password can't be empty" });
+        return res.status(404).send({ error: "password can't be empty" });
       }
     }
   } catch (err) {
