@@ -11,35 +11,32 @@ export const Login = async (req, res) => {
     const isExists = await User.findOne({ email: email });
     console.log(`${isExists}`);
     if (isExists !== null) {
-      await bcrypt
-        .compare(password, isExists.password)
-        .then((result) => {
-          if (result) {
-            const token = jsonwebtoken.sign(
-              {
-                email: user_email_with_password.email,
-              },
-              "secret",
-              { expiresIn: "2h" }
-            );
-            return res.status(200).send({
-              message: "Logged in successfully",
-              token,
-              // isAdmin: isExists.isAdmin,
-              user_id: isExists._id || "",
-              user_profile_image: isExists.user_profile_image || "",
-              full_name:
-                `${isExists.first_name} ${isExists.last_name}` || "anonymous",
-              // user_email: isExists.email,
-            });
-          } else {
-            return res.status(401).send({ error: "Wrong Password..." });
-          }
-          // if password, create jwt token
-        })
-        .catch((error) => {
-          return res.status(501).send({ error: "something went wrong..." });
+      const isPasswordMatched = await bcrypt.compare(
+        password,
+        isExists.password
+      );
+      if (isPasswordMatched) {
+        const token = jsonwebtoken.sign(
+          {
+            email: user_email_with_password.email,
+          },
+          "secret",
+          { expiresIn: "2h" }
+        );
+        return res.status(200).send({
+          message: "Logged in successfully",
+          token,
+          // isAdmin: isExists.isAdmin,
+          user_id: isExists._id || "",
+          user_profile_image: isExists.user_profile_image || "",
+          first_name: `${isExists.first_name}`,
+          last_name: `${isExists.last_name}`,
+          // user_email: isExists.email,
         });
+      } else {
+        return res.status(401).send({ error: "Wrong Password..." });
+      }
+      // if password, create jwt token
     } else {
       return res
         .status(404)
