@@ -11,40 +11,31 @@ export const Login = async (req, res) => {
     const isExists = await User.findOne({ email: email });
     console.log(`${isExists}`);
     if (isExists !== null) {
-      bcrypt
+      await bcrypt
         .compare(password, isExists.password)
-        .then(async (result) => {
+        .then((result) => {
           if (result) {
-            const user_email_with_password = await User.findOne({
-              email,
-              password,
+            const token = jsonwebtoken.sign(
+              {
+                email: user_email_with_password.email,
+              },
+              "secret",
+              { expiresIn: "2h" }
+            );
+            return res.status(200).send({
+              message: "Logged in successfully",
+              token,
+              // isAdmin: isExists.isAdmin,
+              user_id: isExists._id || "",
+              user_profile_image: isExists.user_profile_image || "",
+              full_name:
+                `${isExists.first_name} ${isExists.last_name}` || "anonymous",
+              // user_email: isExists.email,
             });
-            console.log(user_email_with_password);
-            if (user_email_with_password !== null) {
-              const token = jsonwebtoken.sign(
-                {
-                  email: user_email_with_password.email,
-                },
-                "secret",
-                { expiresIn: "2h" }
-              );
-              return res.status(200).send({
-                message: "Logged in successfully",
-                token,
-                // isAdmin: isExists.isAdmin,
-                user_id: isExists._id || "",
-                user_profile_image: isExists.user_profile_image || "",
-                full_name:
-                  `${isExists.first_name} ${isExists.last_name}` || "anonymous",
-                // user_email: isExists.email,
-              });
-            } else {
-              return res.status(401).send({ error: "Wrong Password..." });
-            }
-            // if password, create jwt token
           } else {
-            return res.status(404).send({ error: "Wrong Password..." });
+            return res.status(401).send({ error: "Wrong Password..." });
           }
+          // if password, create jwt token
         })
         .catch((error) => {
           return res.status(501).send({ error: "something went wrong..." });
