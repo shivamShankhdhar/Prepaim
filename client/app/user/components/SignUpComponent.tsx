@@ -16,14 +16,23 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
   const [error, setError] = useState("");
 
   const handleSubmit = (e: any) => {
+    setIsSigningUp(true);
     e.preventDefault();
-    if (userEmail === "") return toast.error("Email is required...");
-    else if (firstName === "") return toast.error("First name is required...");
-    else if (lastName === "") return toast.error("Last name is required...");
-    else if (password === "") return toast.error("Password is required...");
-    else {
+    if (firstName === "") {
+      setIsSigningUp(false);
+      return toast.error("First name is required...");
+    } else if (lastName === "") {
+      setIsSigningUp(false);
+      return toast.error("Last name is required...");
+    } else if (userEmail === "") {
+      setIsSigningUp(false);
+      return toast.error("Email is required...");
+    } else if (password === "") {
+      setIsSigningUp(false);
+      return toast.error("Password is required...");
+    } else {
       try {
-        setIsSigningUp(true);
+        // setIsSigningUp(true);
         axios
           .post(`/user/register`, {
             data: {
@@ -72,16 +81,14 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
         onSubmit={handleSubmit}
       >
         <div className="w-full flex justify-start text-3xl gap-2 font-semibold">
-          Join Us
+          Sign Up
         </div>
-
         <input
           className="w-full outline-none  border px-2 rounded-md py-2"
           type="text"
           onChange={(e) => setFirstName(e.target.value)}
           placeholder="Enter your first name..."
         />
-
         <input
           className="w-full outline-none  border px-2 rounded-md py-2"
           type="text"
@@ -94,7 +101,6 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
           onChange={(e) => setUserEmail(e.target.value)}
           placeholder="Enter your email..."
         />
-
         <input
           className="w-full outline-none  border px-2 rounded-md py-2"
           type="password"
@@ -103,6 +109,7 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
         />
         <Button
           // variant="contained"
+          sx={{ textTransform: "none" }}
           className="justify-center focus:ring-4 focus:outline-none focus:ring-purple-300 outline-none gap-2 w-[fit-content] flex items-center bg-purple-900 text-white px-3 py-1 hover:bg-purple-950 rounded-sm"
           type="submit"
         >
@@ -113,9 +120,9 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
       {isRequestingFromModel && (
         <div className="w-full flex justify-center items-center">
           <div className="flex justify-center items-center w-[fit-content]">
-            Already Joined ?{" "}
+            Already have an account ?{" "}
             <div
-              className="text-purple-800 bg-purple-200 rounded-full px-2 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
+              className="text-purple-800 bg-purple-200 rounded-full px-5 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
               onClick={() => setProperty("login")}
             >
               Login now

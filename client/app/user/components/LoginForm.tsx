@@ -31,12 +31,17 @@ const LoginFormComponent = ({
   // console.log(`${email} ${password}`);
   // const router = useRouter();
   const handleSubmit = (e: any) => {
+    setIsLogging(true);
     e.preventDefault();
-    if (email === "") return toast.error("Username is required...!");
-    else if (password === "") return toast.error("Password is required...!");
-    else {
+    setIsLogging(true);
+    if (email === "") {
+      setIsLogging(false);
+      return toast.error("Username is required...!");
+    } else if (password === "") {
+      setIsLogging(false);
+      return toast.error("Password is required...!");
+    } else {
       try {
-        setIsLogging(true);
         axios
           .post(`/user/login`, {
             data: { email: email, password: password },
@@ -56,11 +61,11 @@ const LoginFormComponent = ({
           })
           .catch((error) => {
             setIsLogging(false);
-            return toast.error(error.response.data.error);
+            return toast.error(error.response);
           });
       } catch (error: any) {
         setIsLogging(false);
-        return toast.error(error.message);
+        return toast.error("Something went wrong...");
       }
     }
   };
@@ -88,6 +93,7 @@ const LoginFormComponent = ({
           placeholder="Enter your password..."
         ></input>
         <Button
+          sx={{ textTransform: "none" }}
           className="justify-center focus:ring-4 focus:outline-none focus:ring-purple-300 outline-none gap-2 w-[fit-content] flex items-center bg-purple-900 text-white px-3 py-1 hover:bg-purple-950 rounded-sm"
           type="submit"
         >
@@ -98,12 +104,12 @@ const LoginFormComponent = ({
       {isRequestingFromModel && (
         <div className="w-full flex justify-center items-center">
           <div className="flex justify-center items-center w-[fit-content]">
-            Not Joined yet ?{" "}
+            Don't have an account ?{" "}
             <div
-              className="text-purple-800 bg-purple-200 rounded-full px-2 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
+              className="text-purple-800 bg-purple-200 rounded-full px-5 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
               onClick={() => setProperty("register")}
             >
-              Join now
+              Sign now
             </div>
           </div>
         </div>
