@@ -21,8 +21,7 @@ const LoginFormComponent = ({
   setCloseMenuAfterLogin,
 }: Props) => {
   const cookies = useCookies();
-  const pathname = usePathname();
-  const hostName = window.location.host;
+  // const pathname = usePathname();
   const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogging, setIsLogging] = useState(false);
@@ -49,16 +48,13 @@ const LoginFormComponent = ({
           .then((response) => {
             console.log(response.data);
             setCloseMenuAfterLogin(false);
-            // cookies.set("logged_in_user_username", response.data.username);
             cookies.set("logged_in_user_first_name", response.data.first_name);
             cookies.set("logged_in_user_last_name", response.data.last_name);
             cookies.set("token", response.data.token);
             cookies.set("loged_in_user_id", response.data.user_id);
             cookies.set("user_profile_image", response.data.user_profile_image);
-            // cookies.set("logged_in_user_email", response.data.user_email);
             toast.success(`Welcome back !! ${response.data.full_name}`);
             setIsLogging(false);
-            // window.location.reload();
           })
           .catch((error) => {
             setIsLogging(false);

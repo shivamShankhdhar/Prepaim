@@ -4,6 +4,7 @@ import axios from "axios";
 import { useCookies } from "next-client-cookies";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import Router from "next/router";
 
 const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
   const cookies = useCookies();
@@ -62,7 +63,7 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
             toast.success(response.data.message);
             // toast.success(response.data);
             setIsSigningUp(false);
-            window.location.reload();
+            Router.reload();
           })
           .catch((error) => {
             setIsSigningUp(false);

@@ -1,3 +1,4 @@
+// import { headers } from "next/headers";
 import { cn } from "@/lib/utils";
 import { Button } from "@mui/material";
 import { usePathname } from "next/navigation";
@@ -12,11 +13,10 @@ interface Props {
 
 const ShareBtn = ({ cls }: Props) => {
   const [linkCopied, setLinkCopied] = useState(false);
-  const [hostName, setHostName] = useState(window.location.host);
-  // const hostName = window.location.host;
+
   const pathname = usePathname();
 
-  const link = `https://www.${hostName}${pathname}`;
+  const link = `https://www.prepaim.com${pathname}`;
 
   const handleShare = () => {
     navigator.clipboard;
