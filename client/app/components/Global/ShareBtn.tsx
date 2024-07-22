@@ -22,9 +22,7 @@ const ShareBtn = ({ cls }: Props) => {
     navigator.clipboard;
     navigator.clipboard.writeText(link);
     setLinkCopied(true);
-    toast.success(
-      "Success !!Link copied to clipboard, you can share it with others"
-    );
+    toast.success("Link copied to clipboard, you can share it with others");
     setTimeout(() => {
       setLinkCopied(false);
     }, 3000);

@@ -30,7 +30,7 @@ const QuestionPage = () => {
         cookies.set("questionPageMode", "prepration-mode");
       } else {
         if (cookies.get("questionPageMode") !== "prepration-mode") {
-          toast.success("Success !! Switched to Prepration mode");
+          toast.success("Switched to Prepration mode");
           cookies.set("questionPageMode", "prepration-mode");
         }
       }
