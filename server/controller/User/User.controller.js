@@ -18,7 +18,7 @@ export const Login = async (req, res) => {
       if (isPasswordMatched) {
         const token = jsonwebtoken.sign(
           {
-            email: user_email_with_password.email,
+            email: isExists.email,
           },
           "secret",
           { expiresIn: "2h" }
