@@ -87,7 +87,7 @@ const Breadcrum = (props: Props) => {
                           Number(props.totalquestion) > 1
                             ? "questions"
                             : "question"
-                        } and you are currently on ${
+                        } in total and you are currently on ${
                           props.questionNo
                         } of them. ${
                           Number(props.totalquestion) > 5
