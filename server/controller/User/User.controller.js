@@ -6,7 +6,6 @@ export const Login = async (req, res) => {
   // res.headers("Access-Control-Allow-Origin", "*");
   try {
     const { email, password } = req.body.data;
-
     console.log(`${email} ${password}`);
     const isExists = await User.findOne({ email: email });
     console.log(`${isExists}`);
@@ -43,7 +42,7 @@ export const Login = async (req, res) => {
         .send({ error: "user not found with this email..." });
     }
   } catch (error) {
-    return res.status(501).send({ error: error.message });
+    return res.status(501).send({ error: "Internal server error..." });
   }
 };
 
@@ -102,6 +101,6 @@ export const registerUser = async (req, res) => {
       }
     }
   } catch (err) {
-    return res.status(501).send({ error: err.message });
+    return res.status(501).send({ error: "Internal server error..." });
   }
 };
