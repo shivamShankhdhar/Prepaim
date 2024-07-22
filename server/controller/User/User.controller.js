@@ -8,7 +8,7 @@ export const Login = async (req, res) => {
     const { email, password } = req.body.data;
 
     console.log(`${email} ${password}`);
-    const isExists = await User.findOne({ email: email });
+    const isExists = User.findOne({ email: email });
     console.log(`${isExists}`);
     if (isExists !== null) {
       await bcrypt
