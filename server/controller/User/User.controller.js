@@ -6,12 +6,11 @@ export const Login = async (req, res) => {
   // res.headers("Access-Control-Allow-Origin", "*");
   try {
     const { email, password } = req.body.data;
-    
 
     console.log(`${email} ${password}`);
     const isExists = await User.findOne({ email });
     if (isExists !== null) {
-      bcrypt.compare(isExists.password, password).then(async (result) => {
+      await bcrypt.compare(password, isExists.password).then(async (result) => {
         if (result) {
           const user_email_with_password = await User.findOne({
             email,
@@ -40,6 +39,8 @@ export const Login = async (req, res) => {
             return res.status(401).send({ error: "Wrong Password..." });
           }
           // if password, create jwt token
+        } else {
+          return res.status(401).send({ error: "Wrong Password..." });
         }
       });
     } else {
@@ -70,7 +71,7 @@ export const registerUser = async (req, res) => {
     } else {
       // first check password for empty and then hash it
       if (password !== "") {
-        bcrypt.hash(password, 10).then(async (hashedPassword) => {
+        await bcrypt.hash(password, 10).then(async (hashedPassword) => {
           const user = new User({
             email,
             first_name,
