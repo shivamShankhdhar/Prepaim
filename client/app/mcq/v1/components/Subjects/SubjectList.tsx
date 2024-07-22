@@ -47,7 +47,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
         })
         .catch((error) => {
           setLoading(false);
-          setAllSubjectsError(error.response.data.msg);
+          setAllSubjectsError(error.response.error);
         });
     } catch (error: any) {
       setAllSubjectsError(error.message);
