@@ -67,7 +67,7 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
           .catch((error) => {
             setIsSigningUp(false);
             console.log(`this is from error ${error}`);
-            return toast.error(error.response.data);
+            return toast.error(error.response.data.error);
           });
       } catch (error: any) {
         console.log(error.message);

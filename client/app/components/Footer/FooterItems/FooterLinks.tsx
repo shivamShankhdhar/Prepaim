@@ -2,9 +2,10 @@ import { Modal } from "@mui/material";
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import PrivacyPolicy from "../AdsenseEssentials/PrivacyPolicy";
-import Disclaimer from "../AdsenseEssentials/Disclaimer";
+// import Disclaimer from "../AdsenseEssentials/TermsOfServices";
 import AboutUs from "../AdsenseEssentials/AboutUs";
 import ContactUsForm from "../AdsenseEssentials/ContactUsForm";
+import TermsOfServices from "../AdsenseEssentials/TermsOfServices";
 
 const style = {
   position: "absolute" as "absolute",
@@ -48,9 +49,9 @@ const FooterLinks = () => {
                 <PrivacyPolicy />
               </div>
             )}
-            {openItem === "Disclaimer" && (
+            {openItem === "terms-of-services" && (
               <div>
-                <Disclaimer />
+                <TermsOfServices />
               </div>
             )}
             {openItem === "about" && (
@@ -89,11 +90,11 @@ const FooterLinks = () => {
         <li
           onClick={() => {
             handleOpen();
-            setOpenItem("Disclaimer");
+            setOpenItem("terms-of-services");
           }}
           className="flex cursor-pointer justify-center items-center px-3 py- rounded-md hover:bg-purple-100"
         >
-          Disclaimer
+          Terms of Services
         </li>
         <li
           onClick={() => {

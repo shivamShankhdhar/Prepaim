@@ -1,15 +1,17 @@
 import React from "react";
 
-const Disclaimer = () => {
+const TermsOfServices = () => {
   return (
     <div className="text-purple-900">
-      <h1 className="text-2xl font-semibold">Disclaimer for PrepAim</h1>
+      <h1 className="text-2xl font-semibold">
+        Terms of services for using PrepAim
+      </h1>
       <p>
         If you require any more information or have any questions about our
-        site&apos;s disclaimer, please feel free to contact us by email at
-        contact-prepaim@gmail.com
+        site&apos;s terms and services, please feel free to contact us by email
+        at contact-prepaim@gmail.com
       </p>
-      <h2>Disclaimers for prepaim</h2>
+      <h2>Terms of services and use for prepaim</h2>
       <p>
         All the information on this website - www.prepaim.com - is published in
         good faith and for general information purpose only. prepaim does not
@@ -49,4 +51,4 @@ const Disclaimer = () => {
   );
 };
 
-export default Disclaimer;
+export default TermsOfServices;
