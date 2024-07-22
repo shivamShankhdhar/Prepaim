@@ -11,7 +11,7 @@ export const Login = async (req, res) => {
     const isExists = await User.findOne({ email: email });
     console.log(`${isExists}`);
     if (isExists !== null) {
-      await bcrypt
+      bcrypt
         .compare(password, isExists.password)
         .then(async (result) => {
           if (result) {
@@ -62,7 +62,7 @@ export const Login = async (req, res) => {
 export const registerUser = async (req, res) => {
   // res.headers("Access-Control-Allow-Origin", "*");
   try {
-    const { first_name, last_name, email, password, user_profile_image } =
+    const { email, first_name, last_name, password, user_profile_image } =
       req.body.data;
 
     console.log(req.body.data);
