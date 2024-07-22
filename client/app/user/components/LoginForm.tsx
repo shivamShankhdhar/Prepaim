@@ -57,7 +57,7 @@ const LoginFormComponent = ({
             // cookies.set("logged_in_user_email", response.data.user_email);
             toast.success(`Welcome back !! ${response.data.full_name}`);
             setIsLogging(false);
-            window.location.reload();
+            // window.location.reload();
           })
           .catch((error) => {
             setIsLogging(false);
