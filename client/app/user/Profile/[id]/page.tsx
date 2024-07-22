@@ -8,14 +8,7 @@ const Profile = () => {
   const cookies = useCookies();
   const user_id = cookies.get("loged_in_user_id");
 
-  return (
-    <div className="w-full flex px-2">
-      this is profile page
-      {/* {user_id} */}
-      {user_id}
-      {/* {id} */}
-    </div>
-  );
+  return <div className="w-full flex px-2">{user_id}</div>;
 };
 
 export default Profile;
