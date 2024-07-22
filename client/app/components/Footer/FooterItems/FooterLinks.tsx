@@ -34,7 +34,7 @@ const FooterLinks = () => {
         aria-describedby="modal-modal-description"
       >
         <div className="w-full flex flex-col gap-1 py-1 text-sm bg-purple-50 h-[100vh] overflow-y-auto">
-          <div className="w-full flex justify-end items-center cursor-pointer px-11">
+          <div className="w-full flex-wrap flex justify-end items-center cursor-pointer px-11">
             <div
               onClick={handleClose}
               title="Close this page"
@@ -68,13 +68,13 @@ const FooterLinks = () => {
         </div>
       </Modal>
 
-      <ul className="flex  w-[fit-content] gap-1 mt-3 text-sm">
+      <ul className="flex flex-wrap gap-1 text-sm">
         <li
           onClick={() => {
             handleOpen();
             setOpenItem("about");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
         >
           About us
         </li>
@@ -83,7 +83,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("Privacy");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
         >
           Privacy
         </li>
@@ -92,7 +92,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("terms-of-services");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py- rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
         >
           Terms of Services
         </li>
@@ -101,7 +101,7 @@ const FooterLinks = () => {
             handleOpen();
             setOpenItem("contact");
           }}
-          className="flex cursor-pointer justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
+          className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-3 py-1 rounded-md hover:bg-purple-100"
         >
           Contact
         </li>

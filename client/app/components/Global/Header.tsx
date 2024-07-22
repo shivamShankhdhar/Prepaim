@@ -38,12 +38,15 @@ const Header = () => {
   const loged_in_user_first_name = cookies.get("logged_in_user_first_name");
 
   const loged_in_user_last_name = cookies.get("logged_in_user_last_name");
+
   const token = cookies.get("token");
 
   // menu items for after login actions
 
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
   const openMenuForUser = Boolean(anchorEl);
+
   const handleClickForOpenUserMenu = (
     event: React.MouseEvent<HTMLButtonElement>
   ) => {
@@ -78,6 +81,7 @@ const Header = () => {
                 <IoCloseOutline size={15} />
               </div>
             </div>
+
             {loginModelCurrentOpenComponent === "login" ? (
               <LoginFormComponent
                 isRequestingFromModel={true}
@@ -159,31 +163,34 @@ const Header = () => {
             </Menu>
           </div>
         ) : (
+          <></>
           // <Logout />
-          <>
-            <Button
-              // sx={{ border: 1 }}
-              sx={{ border: 1, textTransform: "none" }}
-              onClick={() => {
-                setLoginModelCurrentOpenComponent("login");
-                handleOpen();
-              }}
-              className="flex gap-1  border border-purple-300 text-purple-800 hover:bg-purple-900 hover:text-white focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
-            >
-              Login
-            </Button>
-            <Button
-              // sx={{ border: 1 }}
-              sx={{ border: 1, textTransform: "none" }}
-              onClick={() => {
-                setLoginModelCurrentOpenComponent("register");
-                handleOpen();
-              }}
-              className="flex gap-1 bg-purple-900 border border-purple-300 text-white hover:bg-purple-950 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
-            >
-              Sign Up
-            </Button>
-          </>
+
+          // login and logout buttons for non logged in users
+          // <>
+          //   <Button
+          //     // sx={{ border: 1 }}
+          //     sx={{ border: 1, textTransform: "none" }}
+          //     onClick={() => {
+          //       setLoginModelCurrentOpenComponent("login");
+          //       handleOpen();
+          //     }}
+          //     className="flex gap-1  border border-purple-300 text-purple-800 hover:bg-purple-900 hover:text-white focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+          //   >
+          //     Login
+          //   </Button>
+          //   <Button
+          //     // sx={{ border: 1 }}
+          //     sx={{ border: 1, textTransform: "none" }}
+          //     onClick={() => {
+          //       setLoginModelCurrentOpenComponent("register");
+          //       handleOpen();
+          //     }}
+          //     className="flex gap-1 bg-purple-900 border border-purple-300 text-white hover:bg-purple-950 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+          //   >
+          //     Sign Up
+          //   </Button>
+          // </>
         )}
       </div>
     </div>

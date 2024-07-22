@@ -28,7 +28,7 @@ const SubjectItemGridView = ({
               width: "auto",
               height: "auto",
             }}
-            className="rounded-full overflow-hidden p-2 object-fill"
+            className=" p-2 object-fill"
           />
         </div>
       </div>

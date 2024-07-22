@@ -5,7 +5,7 @@ const CopyrightInfo = () => {
   return (
     <div className="flex justify-center items-center gap-1 text-sm ">
       <LuCopyright />
-      <div>copyright 2024 || Powered by www.prepaim.com.</div>
+      copyright 2024 || Powered by www.prepaim.com.
     </div>
   );
 };
