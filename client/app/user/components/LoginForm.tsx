@@ -104,7 +104,7 @@ const LoginFormComponent = ({
       {isRequestingFromModel && (
         <div className="w-full flex justify-center items-center">
           <div className="flex justify-center items-center w-[fit-content]">
-            Don't have an account ?{" "}
+            Don&apos;t have an account ?{" "}
             <div
               className="text-purple-800 bg-purple-200 rounded-full px-5 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
               onClick={() => setProperty("register")}
