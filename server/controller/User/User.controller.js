@@ -5,8 +5,8 @@ import bcrypt from "bcrypt";
 export const Login = async (req, res) => {
   // res.headers("Access-Control-Allow-Origin", "*");
   try {
-    const { email } = req.body.data;
-    const { password } = req.body.data;
+    const { email, password } = req.body.data;
+    
 
     console.log(`${email} ${password}`);
     const isExists = await User.findOne({ email });
@@ -48,7 +48,7 @@ export const Login = async (req, res) => {
         .send({ error: "user not found with this email..." });
     }
   } catch (error) {
-    return res.status(501).send({ error: error.message });
+    return res.status(501).send({ error: "something went wrong..." });
   }
 };
 

@@ -9,8 +9,6 @@ export function middleware(request: NextRequest) {
   
 axios.defaults.headers.get["Content-Type"] =
     "application-json/x-www-form-urlencoded";
-  
-  console.log("middle ware called")
 
   const loged_in_user_id = request.cookies.get('loged_in_user_id')?.value
 
