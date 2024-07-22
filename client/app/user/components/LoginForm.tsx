@@ -53,9 +53,7 @@ const LoginFormComponent = ({
             cookies.set("token", response.data.token);
             cookies.set("loged_in_user_id", response.data.user_id);
             cookies.set("user_profile_image", response.data.user_profile_image);
-            toast.success(
-              `Welcome back !! ${response.data.first_name} ${response.data.last_name}`
-            );
+            toast.success(`Welcome back !! ${response.data.first_name}`);
             setIsLogging(false);
           })
           .catch((error) => {
