@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/home/HeroSection.jsx", "app/components/home/HeroSection.jsx", "app/components/home/HeroSection.jsx", "app/components/DropDown.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/home/HeroSection.jsx", "app/components/home/HeroSection.jsx", "app/components/home/HeroSection.jsx", "app/components/DropDown.jsx", "next-sitemap.js"],
   "exclude": ["node_modules"]
 }

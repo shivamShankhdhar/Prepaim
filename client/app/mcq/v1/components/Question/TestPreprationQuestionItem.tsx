@@ -68,7 +68,6 @@ const TestPreprationQuestionItem = ({
                     Q {questionNo}.
                     {questions.length > 0 &&
                       questions[questionNo - 1]?.question}
-                    &nbsp;?
                   </div>
                 </div>
                 {/* question guide  */}

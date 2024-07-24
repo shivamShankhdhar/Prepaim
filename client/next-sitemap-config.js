@@ -1,12 +1,6 @@
-export default function sitemap() {
-  return {
-    routes: [
-      {
-        path: "/",
-        changefreq: "daily",
-        priority: 0.7,
-        lastmod: new Date().toISOString(),
-      },
-    ],
-  };
-}
+/** @type {import('next-sitemap').IConfig} */
+module.exports = {
+  siteUrl: "https://prepaim.com",
+  generateRobotsTxt: true, // (optional)
+  // ...other options
+};

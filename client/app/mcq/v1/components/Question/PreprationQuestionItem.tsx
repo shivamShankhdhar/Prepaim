@@ -103,7 +103,7 @@ const PreprationQuestionItem = () => {
                     </div>
                     {/* question heading  */}
                     <div className="w-full flex justify-start items-center py-3">
-                      Q&nbsp;{questionNo + 1}. {question.question}&nbsp;?
+                      Q&nbsp;{questionNo + 1}. {question.question}
                     </div>
                     {/* answer  */}
                     <>
