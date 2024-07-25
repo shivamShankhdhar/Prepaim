@@ -5,9 +5,10 @@ const AnswerExplanationForListView = ({
   question,
   loading,
   clickedId,
-  clickedToCloseId,
-  isAnswerHide,
+  rightOptionIndex,
 }: any) => {
+  const rightAnswerOptionSuffix = ["A", "B", "C", "D"];
+
   const [isAnswerExplanationOpen, setIsAnswerExplanationOpen] = useState(false);
 
   useEffect(() => {
@@ -34,20 +35,28 @@ const AnswerExplanationForListView = ({
           <div className="w-full">
             <>
               {question?.answer
-                .filter((i: any) => i.isTrue === true)
+                // .filter((i: any) => i.isTrue === true)
                 .map((item: any, index: any) => {
                   return (
-                    <div
-                      key={`${item.ans}-${index}`}
-                      className="text-gray-600 py-2 flex"
-                    >
-                      <div className="uppercase ">
-                        Right Answer <span className="font-semibold">:</span>{" "}
-                      </div>
-                      &nbsp;
-                      <div className=" flex-1  ">{item.ans}</div>
-                      &nbsp;
-                    </div>
+                    <>
+                      {item.isTrue && (
+                        <div
+                          key={`${item.ans}-${index}`}
+                          className="text-gray-600 py-2 flex"
+                        >
+                          <div className="uppercase ">
+                            Right Answer{" "}
+                            <span className="font-semibold">:</span>{" "}
+                          </div>
+                          &nbsp;
+                          <div className=" flex-1  ">
+                            {`Option (${rightAnswerOptionSuffix[index]}) - `}
+                            {item.ans}
+                          </div>
+                          &nbsp;
+                        </div>
+                      )}
+                    </>
                   );
                 })}
             </>

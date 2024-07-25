@@ -67,6 +67,13 @@ const PreprationQuestionItem = () => {
   // };
   // const [isAnswerHide, setIsAnswerHide] = useState(false);
 
+  //   const [rightAnswerIndex, setRightAnswerIndex] = useState(0);
+
+  //  useEffect(() => {
+  //    questionsFromServer.map((item: any, index: any) => {
+
+  //    })
+  //  })
   return (
     <div className="w-full flex-wrap flex items-start justify-center px-2 gap-3 py-3">
       {/* question item */}
@@ -113,16 +120,20 @@ const PreprationQuestionItem = () => {
                       >
                         {question.answer.map((item: any, index: any) => {
                           return (
-                            <AnswerItemForListPageView
-                              key={`key-at-list-view-page-mode-answer-item-${question._id}-${item.ans}-${index}--${questionNo}`}
-                              uniqueKeyCombination={`${question._id}-${item.ans}-${index}`}
-                              qustion_id={question._id}
-                              index={index}
-                              question={question.question}
-                              answer={item.ans}
-                              questionNo={questionNo + 1}
-                              isTrue={item.isTrue}
-                            />
+                            <>
+                              {/* set right answer index for showing right option in the answer explanation  */}
+
+                              <AnswerItemForListPageView
+                                key={`key-at-list-view-page-mode-answer-item-${question._id}-${item.ans}-${index}--${questionNo}`}
+                                uniqueKeyCombination={`${question._id}-${item.ans}-${index}`}
+                                qustion_id={question._id}
+                                index={index}
+                                question={question.question}
+                                answer={item.ans}
+                                questionNo={questionNo + 1}
+                                isTrue={item.isTrue}
+                              />
+                            </>
                           );
                         })}
                       </div>
@@ -165,6 +176,7 @@ const PreprationQuestionItem = () => {
                       <AnswerExplanationForListView
                         question={question}
                         loading={loading}
+                        // rightOptionIndex={rightAnswerIndex}
                         // isAnswerHide={isAnswerHide}
                         clickedId={clickedId}
                         clickedToCloseId={clickedToCloseId}
