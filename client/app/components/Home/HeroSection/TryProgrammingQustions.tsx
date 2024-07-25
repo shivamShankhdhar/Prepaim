@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import SimpleLoader from "../../Global/SimpleLoader";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";;
 import axios from "axios";
 import useFetch from "@/app/hooks/fetch.hook";
 

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@mui/material";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";;
 import { IoShareSocialOutline } from "react-icons/io5";
 import { LuCopyCheck } from "react-icons/lu";
 

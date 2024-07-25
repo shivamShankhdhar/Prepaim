@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";;
 import AnswerExplanation from "../Answer/AnswerExplanation";
 import { useParams } from "next/navigation";
 import AllDiscuss from "../Discuss/AllDiscuss";

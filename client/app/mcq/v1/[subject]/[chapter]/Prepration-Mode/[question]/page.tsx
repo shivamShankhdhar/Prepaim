@@ -11,7 +11,7 @@ import Breadcrum from "@/app/components/Global/Breadcrum";
 import QuestionPageLayoutToggle from "@/app/mcq/v1/components/QuestionPageLayoutToggle";
 import QuestionListView from "@/app/mcq/v1/components/Question/PreprationQuestionItem";
 import { useCookies } from "next-client-cookies";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";;
 import PreprationQuestionItem from "@/app/mcq/v1/components/Question/PreprationQuestionItem";
 
 const QuestionPage = () => {

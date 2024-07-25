@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import { useCookies } from "next-client-cookies";
 import React, { useState } from "react";
-import toast from "react-hot-toast";
+import { toast } from "react-toastify";;
 import Router from "next/router";
 
 const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
