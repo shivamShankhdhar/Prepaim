@@ -3,6 +3,7 @@ import ActionBarSkeleton from "./ActionBarSkeleton";
 import ToggleAnswerExplanationBtn from "./ActionBarItems/ToggleAnswerExplanationBtn";
 import CommentToggleBtn from "./ActionBarItems/CommentToggleBtn";
 import ShareBtn from "@/app/components/Global/ShareBtn";
+import ReportQuestionIssue from "../ReportQuestionIssue/ReportQuestionIssue";
 
 const ActionForQuestion = ({
   comments,
@@ -16,6 +17,8 @@ const ActionForQuestion = ({
   isCommentSection,
   subject,
   isShareBtn,
+  questionItm,
+  questionId,
   chapter,
 }: any) => {
   const [isClient, setIsClient] = useState(false);
@@ -47,6 +50,10 @@ const ActionForQuestion = ({
               {isShareBtn && <ShareBtn cls={"bg-purple-100"} />}
               {/* <ShareBtn /> */}
               {/* <SocialShare /> */}
+              <ReportQuestionIssue
+                question={questionItm}
+                question_id={questionId}
+              />
             </div>
           </div>
         ) : (

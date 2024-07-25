@@ -164,6 +164,7 @@ const TestPreprationQuestionItem = ({
       )}
       {/* actions for question page */}
       <Navigation
+        question_id={questions[questionNo - 1]?._id}
         isShareBtn={true}
         questionsLength={questions.length}
         questionItm={questions[questionNo - 1]?.question}

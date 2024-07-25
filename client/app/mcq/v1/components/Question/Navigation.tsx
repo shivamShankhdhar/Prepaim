@@ -9,7 +9,7 @@ import AddDiscuss from "../Discuss/AddDiscuss";
 import ActionForQuestion from "../ActionBarForQuestion/ActionForQuestion";
 
 const Navigation = ({
-  questionId,
+  question_id,
   questionsLength,
   questionItm,
   questionObject,
@@ -140,7 +140,7 @@ const Navigation = ({
       {questionNo > 0 && questionNo < questionsLength + 1 && (
         <div className="flex flex-col w-full justify-center items-center gap-1">
           <ActionForQuestion
-            questionId={questionId}
+            questionId={question_id}
             isShareBtn={isShareBtn}
             error={error}
             comments={comments}

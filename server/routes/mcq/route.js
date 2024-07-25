@@ -13,16 +13,13 @@ const mcqRouter = Router();
 // };
 
 // app.use(cors(corsOptions));
-mcqRouter.route("/postcomment").post( Controller.postComment);
+mcqRouter.route("/postcomment").post(Controller.postComment);
 mcqRouter
-  .route("/getallquestions")
-  .get( Controller.getAllQuestions);
-mcqRouter
-  .route("/getallsubjects")
-  .get( Controller.getAllSubjects);
-mcqRouter
-  .route("/getallbranches")
-  .get( Controller.getAllBranches);
+  .route("/postMcqQuestionMistakeReport")
+  .post(Controller.postMcqQuestionMistakeReport);
+mcqRouter.route("/getallquestions").get(Controller.getAllQuestions);
+mcqRouter.route("/getallsubjects").get(Controller.getAllSubjects);
+mcqRouter.route("/getallbranches").get(Controller.getAllBranches);
 // get routes
 mcqRouter
   .route("/getSubjectsbyBranchAndSubject/:branch")
@@ -36,5 +33,6 @@ mcqRouter
 mcqRouter
   .route("/getcommentbyquestion/:question")
   .get(Controller.getCommentByQuestion); //get comment by question
+
 
 export default mcqRouter;

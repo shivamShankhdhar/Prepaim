@@ -12,7 +12,8 @@ const ErrorMessage = ({ text, isButton, isBg }: Props) => {
     <div className="w-full flex gap-3 text-red-500 text-center items-center flex-col justify-center mt-2">
       <div
         className={`${
-          isBg && "bg-red-50 w-full ring-2 ring-red-500 px-5 py-2 rounded-md"
+          isBg &&
+          "bg-white ring-offset-1 w-full ring-2 ring-red-400 px-5 py-2 rounded-md"
         }`}
       >
         <div className="flex justify-center items-center">

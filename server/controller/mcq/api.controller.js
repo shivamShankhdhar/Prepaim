@@ -3,6 +3,7 @@ import Question from "../../models/mcq/question.model.js";
 import Comment from "../../models/mcq/comments.model.js";
 import Subject from "../../models/mcq/subject.model.js";
 import Branch from "../../models/mcq/branch.model.js";
+import McqQuestionMistakeReport from "../../models/mcq/mcqQuestionMistakeReport.js";
 // post api
 // post questions
 
@@ -29,6 +30,35 @@ export const postComment = async (req, res) => {
   }
 };
 
+// post question mistake here
+export const postMcqQuestionMistakeReport = async (req, res) => {
+  const { reason } = req.body.data;
+  if (req.body) {
+    try {
+      const isExists = await McqQuestionMistakeReport.findOne({
+        reason: { $search: reason },
+      });
+      if (isExists) {
+        return res.status(400).send({
+          msg: "The problem that you are facing we are already working on it ,It will resolve as soon as possible,Thanks for your patience",
+        });
+      }
+
+      const mistake = new McqQuestionMistakeReport(req.body.data);
+      await mistake
+        .save()
+        .then((data) => {
+          return res.status(201).send({
+            message:
+              "we have received your report,Thanks for your valuable report.",
+          });
+        })
+        .catch((e) => {
+          return res.status(400).send({ error: "something went wrong...!" });
+        });
+    } catch (error) {}
+  }
+}; 
 export const getAllQuestions = async (req, res) => {
   try {
     const data = await Question.find({});
@@ -123,6 +153,7 @@ export const getCommentByQuestion = async (req, res) => {
     return res.status(500).send(error);
   }
 };
+
 
 // get all branches
 
