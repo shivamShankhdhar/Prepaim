@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";;
+import toast from "react-hot-toast";;
 import ChapterItemSkeleton from "../../components/Chapters/ChapterItemSkeleton";
 import ChapterItem from "../../components/Chapters/ChapterItem";
 import Breadcrum from "@/app/components/Global/Breadcrum";

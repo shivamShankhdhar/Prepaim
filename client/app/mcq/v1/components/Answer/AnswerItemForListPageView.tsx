@@ -1,6 +1,6 @@
 import { useCookies } from "next-client-cookies";
 import React, { useEffect, useState } from "react";
-import { toast } from "react-toastify";;
+import toast from "react-hot-toast";;
 
 const AnswerItemForListPageView = ({
   question,

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ShortcutLinksForMcq from "./Mcq/ShortcutLinksForMcq";
 import ShortcutLinksForCoding from "./Coding/ShortcutLinksForCoding";
-import { toast } from "react-toastify";;
+import toast from "react-hot-toast";;
 
 const ShortCutLinks = () => {
   const [allSubjects, setAllSubjects] = useState([{ name: "" }]);

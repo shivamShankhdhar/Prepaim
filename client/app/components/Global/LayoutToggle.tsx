@@ -1,5 +1,5 @@
 import React from "react";
-import { toast } from "react-toastify";;
+import toast from "react-hot-toast";;
 import { TbGridDots, TbListDetails } from "react-icons/tb";
 import { RiBookReadLine } from "react-icons/ri";
 const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {

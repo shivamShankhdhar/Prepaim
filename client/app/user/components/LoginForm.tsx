@@ -7,7 +7,7 @@ import { useCookies } from "next-client-cookies";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { toast } from "react-toastify";;
+import toast from "react-hot-toast";;
 import { Button } from "@mui/material";
 
 interface Props {

@@ -6,7 +6,7 @@ import ActionBarForSubjectSkeleton from "../ActionBarForSubjects/ActionBarForSub
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import ActionBarForSubjects from "../ActionBarForSubjects/ActionBarForSubjects";
 // import SubjectItemListView from "./SubjectItemListView";
-import { toast } from "react-toastify";;
+import toast from "react-hot-toast";;
 import SubjectItemGridView from "./Layouts/Grid/SubjectItemGridView";
 import LayoutToggle from "../../../../components/Global/LayoutToggle";
 import SubjectItemListView from "./Layouts/List/SubjectItemListView";
