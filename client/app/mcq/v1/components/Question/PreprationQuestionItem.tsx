@@ -135,13 +135,13 @@ const PreprationQuestionItem = () => {
                     isTrue={question?.isTrue}
                   /> */}
 
-                    <div className="flex w-full px-2 justify-start items-start gap-2 flex-col mb-5">
+                    <div className="flex w-full justify-start items-start gap-2 flex-col mb-5">
                       {/* {clickedId == "" && (
                      
                     )} */}
                       {clickedId === question._id ? (
                         <Button
-                          className="bg-purple-200 flex hover:bg-purple-300 gap-1 border border-purple-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-purple-900 rounded-md"
+                          className="bg-purple-200 flex text-sm  focus:ring-3 focus:ring-purple-300 hover:bg-purple-300 gap-1 border border-purple-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-purple-900 rounded-sm"
                           onClick={() => {
                             setClickedId("");
                           }}
@@ -152,7 +152,7 @@ const PreprationQuestionItem = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="bg-purple-200 flex hover:bg-purple-300 gap-1 border border-purple-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-purple-900 rounded-md"
+                          className="bg-purple-200 flex text-sm focus:ring-3 focus:ring-purple-300 hover:bg-purple-300 gap-1 border border-purple-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-purple-900 rounded-sm"
                           onClick={() => {
                             setClickedId(question._id);
                           }}

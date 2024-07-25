@@ -17,9 +17,9 @@ const ContactUsForm = () => {
     }, 2000);
   };
   return (
-    <div className="w-full flex justify-center items-center p-5 h-[70vh]">
+    <div className="w-full flex justify-center items-center h-[70vh]">
       <div className="sm:w-full max-sm:w-full md:w-[80%] max-md:w-[80%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] border rounded-md bg-white">
-        <form className="w-full flex flex-col items-center gap-2 p-5">
+        <form className="w-full flex flex-col items-center gap-2 px-2 py-3">
           <div className="w-full text-purple-900 text-2xl font-semibold">
             Contact Us
           </div>

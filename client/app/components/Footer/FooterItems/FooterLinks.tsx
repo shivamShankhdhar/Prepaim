@@ -38,7 +38,7 @@ const FooterLinks = () => {
             <div
               onClick={handleClose}
               title="Close this page"
-              className="p-2 bg-purple-100 hover:bg-purple-200 border-purple-300 text-purple-800 border rounded-md"
+              className="p-1 mt-3 bg-purple-100 hover:bg-purple-200 border-purple-300 text-purple-800 border rounded-md"
             >
               <IoClose size={20} />
             </div>
