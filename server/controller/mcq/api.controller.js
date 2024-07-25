@@ -33,10 +33,11 @@ export const postComment = async (req, res) => {
 // post question mistake here
 export const postMcqQuestionMistakeReport = async (req, res) => {
   const { reason } = req.body.data;
+  console.log(reason);
   if (req.body) {
     try {
       const isExists = await McqQuestionMistakeReport.findOne({
-        reason: { $search: reason },
+        reason: { $regex: reason, $options: "i" },
       });
       if (isExists) {
         return res.status(400).send({
