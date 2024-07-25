@@ -100,7 +100,7 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
         open={open}
         TransitionComponent={Transition}
         keepMounted
-        className=" flex justify-center items-center"
+        className=" flex justify-center items-center px-2"
         // onClose={handleClose}
         aria-describedby="alert-dialog-slide-description"
       >
