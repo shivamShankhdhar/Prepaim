@@ -48,14 +48,14 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
     user_id: user_id,
     userName: "",
     question_id,
-    questionIssues: "",
+    reason: "",
   });
 
   useEffect(() => {
     setIssueObject({
       ...isseueObject,
       userName: userName,
-      questionIssues: questionIssues,
+      reason: questionIssues,
     });
   }, [userName, questionIssues]);
 
