@@ -52,7 +52,7 @@ const TestPreprationQuestionItem = ({
                 key={`question-${questionNo}-${
                   questions[questionNo - 1]?.question
                 }`}
-                className=" bg-white px-5 py-2 w-full h-[fit-content]  shadow-lg rounded-md mx-auto mt-2 items-center "
+                className=" bg-white px-5 py-1 w-full h-[fit-content] shadow-lg rounded-md mx-auto mt-2 items-center "
               >
                 {/* question hardship level  */}
                 <div className="w-full mt-2 h-5 flex justify-end items-center">
@@ -63,7 +63,7 @@ const TestPreprationQuestionItem = ({
                 </div>
 
                 {/* question component  */}
-                <div className="mt-3 py-0">
+                <div className="mt-3 py-2">
                   <div className="text-lg text-gray-600">
                     Q {questionNo}.
                     {questions.length > 0 &&
@@ -93,7 +93,7 @@ const TestPreprationQuestionItem = ({
                 <div
                   className={`flex ${
                     pageMode === "stack-page-mode" &&
-                    "border border-dashed border-b-1 border-t-0 border-r-0 border-l-0"
+                    "border border-dashed border-b-1 border-purple-700 border-t-1 border-r-0 border-l-0"
                   }  justify-center items-center pb-5 pt-3 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap`}
                 >
                   {questions[questionNo - 1]?.answer.map(

@@ -1,7 +1,7 @@
 import React from "react";
 import { SlReload } from "react-icons/sl";
 import { MdOutlineErrorOutline } from "react-icons/md";
-import Router from "next/router";
+// import Router from "next/router";
 interface Props {
   text: String;
   isButton: any;
@@ -24,7 +24,7 @@ const ErrorMessage = ({ text, isButton, isBg }: Props) => {
         <div className="w-[fit-content]">
           <div
             className="bg-purple-800 flex px-3 justify-center cursor-pointer items-center rounded-md text-white hover:bg-purple-700 py-1"
-            onClick={() => Router.reload()}
+            onClick={() => window.location.reload()}
           >
             <SlReload size={18} />
             &nbsp; Reload
