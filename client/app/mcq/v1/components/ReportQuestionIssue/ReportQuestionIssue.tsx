@@ -107,7 +107,7 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
         <DialogTitle>{"Submit Report for this Question"}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            <div className="sm:w-[400px] max-sm:w-[400px] md:w-[450px] max-md:w-[450px] lg:w-[550px] xl:w-[550px] 2xl:w-[550px]">
+            <div className="sm:w-[320px] max-sm:w-[350px] md:w-[450px] max-md:w-[450px] lg:w-[550px] xl:w-[550px] 2xl:w-[550px]">
               Q. {question}
             </div>
             <div className="w-full">
