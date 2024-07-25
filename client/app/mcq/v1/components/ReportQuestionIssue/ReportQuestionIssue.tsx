@@ -71,7 +71,7 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
       try {
         await axios
           .post(
-            "https://api.admin-panel.prepaim.com/mcq/postMcqQuestionMistakeReport",
+            "https://api.data.prepaim.com/mcq/postMcqQuestionMistakeReport",
             { data: isseueObject }
           )
           .then((data) => {
