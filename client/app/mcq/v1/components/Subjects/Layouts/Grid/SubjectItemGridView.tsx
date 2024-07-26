@@ -12,7 +12,7 @@ const SubjectItemGridView = ({
 }: any) => {
   return (
     <div
-      className={`sm:w-full max-sm:w-full md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex flex-col shadow-xl h-[fit-content] hover:shadow-2xl border border-purple-200 bg-white justify-center py-5 px-2 items-center rounded-md gap-2`}
+      className={`sm:w-[80%] max-sm:w-[80%] md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex flex-col shadow-xl h-[fit-content] hover:shadow-2xl border border-purple-200 bg-white justify-center py-5 px-2 items-center rounded-md gap-2`}
     >
       <div className="w-full flex gap-2 overflow-hidden justify-center items-center flex-col">
         <div className="flex justify-center m-5 items-center rounded-full  h-[150px] w-[150px] ">
@@ -34,10 +34,10 @@ const SubjectItemGridView = ({
       </div>
 
       <div className="text-lg  text-purple-950 font-semibold">{item.name}</div>
-      <div className="flex w-[70%] flex-col gap-3 ">
+      <div className="flex w-[50%] flex-col gap-3 ">
         <Button
           onClick={() => handleNavigateToQuestion(item.name)}
-          className="py-1 flex-1 flex w-[100%] rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-1 cursor-pointer px-2 bg-purple-800 text-white  hover:bg-purple-900"
+          className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-950"
           title="Start Quizz"
         >
           {selectedSubject === item.name && searchingChapters && (
@@ -46,7 +46,7 @@ const SubjectItemGridView = ({
           quizz
         </Button>
         <Button
-          className="py-1 flex-1 w-full bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-sm text-black px-2 hover:bg-gray-300"
+          className="py-1 flex-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 rounded-sm text-black px-2 hover:bg-gray-300"
           href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
           title={`Explore all Chapters of ${item.name}`}
         >
