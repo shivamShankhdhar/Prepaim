@@ -84,9 +84,11 @@ const TryProgrammingQustions = ({ subjects }: any) => {
 
       <div className="w-full flex justify-center gap-5 flex-wrap">
         {subjects.map((subject: any) => (
-          <LightTooltip title={`Try MCQ for ${subject.name}`}>
+          <LightTooltip
+            key={`${subject.name}-key-at-home-page-trycoding-questions`}
+            title={`Try MCQ for ${subject.name}`}
+          >
             <div
-              key={`${subject.name}-key-at-home-page-trycoding-questions`}
               onClick={() => {
                 setSelectedSubject(subject.name);
                 setIsLoadingQuestionFromServer(true);
