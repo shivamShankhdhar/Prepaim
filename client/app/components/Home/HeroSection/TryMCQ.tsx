@@ -48,12 +48,12 @@ const TryMCQ = ({ subjects, loading }: any) => {
   }, [selectedSubject]);
   // (selectedSubject);
   return (
-    <div id="trymcq" className="w-full px-11 gap-5">
-      <div className="w-[fit-content] text-center text-gray-700 py-1 font-semibold text-2xl">
+    <>
+      <div className="w-full  text-gray-700 border border-dashed border-b-1 border-t-0 border-l-0 border-r-0 border-purple-800 py-1 flex justify-center items-center font-semibold text-2xl">
         Try MCQ&apos;s
       </div>
 
-      <div className="w-full flex justify-center gap-5 py-5 flex-wrap">
+      <div className="w-full flex justify-center gap-5 py-2 flex-wrap">
         {loading ? (
           <SubjctGridViewSkeleton />
         ) : (
@@ -68,7 +68,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
           ))
         )}
       </div>
-    </div>
+    </>
   );
 };
 

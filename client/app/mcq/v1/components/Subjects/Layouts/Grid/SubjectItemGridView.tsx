@@ -12,7 +12,7 @@ const SubjectItemGridView = ({
 }: any) => {
   return (
     <div
-      className={`w-[300px] flex flex-col shadow-xl h-[fit-content] hover:shadow-2xl border border-purple-200 bg-white justify-center py-5 px-2 items-center rounded-md gap-2`}
+      className={`sm:w-full max-sm:w-full md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex flex-col shadow-xl h-[fit-content] hover:shadow-2xl border border-purple-200 bg-white justify-center py-5 px-2 items-center rounded-md gap-2`}
     >
       <div className="w-full flex gap-2 overflow-hidden justify-center items-center flex-col">
         <div className="flex justify-center m-5 items-center rounded-full  h-[150px] w-[150px] ">

@@ -57,7 +57,7 @@ export default function Home() {
           )}
         </div> */}
         {/* try mcq questions  */}
-        <div className="w-full flex gap-2 flex-wrap rounded-md items-center mt-3 px-5 py-2 bg-white border">
+        <div className="w-full flex gap-2 flex-wrap rounded-md items-center mt-3 p-2 bg-white ">
           {errorLoadingSubjects === "" ? (
             <TryMCQ
               loading={loadingSubjects}
