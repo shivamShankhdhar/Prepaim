@@ -83,7 +83,8 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
             handleClose();
           })
           .catch((err) => {
-            toast.error("Something went wrong...");
+            if (err.response !== undefined)
+              toast.error("Something went wrong...");
             setIsSubmitting(false);
             setOpen(false);
           });

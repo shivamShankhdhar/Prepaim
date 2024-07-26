@@ -18,7 +18,9 @@ const app = express();
 const corsOptions = {
   origin: [
     "https://prepaim.com",
+    "https://www.prepaim.com",
     "https://prepaim.in",
+    "https://www.prepaim.in",
     "http://localhost:3000",
   ],
   methods: ["POST", "GET"],
