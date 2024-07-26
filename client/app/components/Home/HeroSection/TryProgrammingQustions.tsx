@@ -7,6 +7,20 @@ import toast from "react-hot-toast";;
 import axios from "axios";
 import useFetch from "@/app/hooks/fetch.hook";
 
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
+
 const TryProgrammingQustions = ({ subjects }: any) => {
   const [selectedSubject, setSelectedSubject] = useState("");
   const [isLoadingQuestionFromServer, setIsLoadingQuestionFromServer] =
@@ -70,55 +84,56 @@ const TryProgrammingQustions = ({ subjects }: any) => {
 
       <div className="w-full flex justify-center gap-5 flex-wrap">
         {subjects.map((subject: any) => (
-          <div
-            key={`${subject.name}-key-at-home-page-trycoding-questions`}
-            onClick={() => {
-              setSelectedSubject(subject.name);
-              setIsLoadingQuestionFromServer(true);
-            }}
-            title={`Try MCQ for ${subject.name}`}
-            className="flex justify-center cursor-pointer border-purple-300 items-center py-3 border rounded-md bg-purple-100 hover:bg-purple-200"
-          >
-            {isLoadingQuestionFromServer ? (
-              selectedSubject === subject.name ? (
-                <>
-                  <div className="w-full px-4 ">
+          <LightTooltip title={`Try MCQ for ${subject.name}`}>
+            <div
+              key={`${subject.name}-key-at-home-page-trycoding-questions`}
+              onClick={() => {
+                setSelectedSubject(subject.name);
+                setIsLoadingQuestionFromServer(true);
+              }}
+              className="flex justify-center cursor-pointer border-purple-300 items-center py-3 border rounded-md bg-purple-100 hover:bg-purple-200"
+            >
+              {isLoadingQuestionFromServer ? (
+                selectedSubject === subject.name ? (
+                  <>
+                    <div className="w-full px-4 ">
+                      <Image
+                        src={subject.image}
+                        height={80}
+                        width={80}
+                        // title={`Try MCQ for ${subject.name}`}
+                        alt={`Try MCQ for ${subject.name}`}
+                      />
+                    </div>
+
+                    <div className="w-[80px] flex justify-center items-center h-[100px] rounded-md absolute bg-white/50 backdrop:blur ">
+                      <SimpleLoader clr={"purple"} />
+                    </div>
+                  </>
+                ) : (
+                  <div className="w-full px-4">
                     <Image
                       src={subject.image}
                       height={80}
                       width={80}
-                      title={`Try MCQ for ${subject.name}`}
+                      // title={`Try MCQ for ${subject.name}`}
                       alt={`Try MCQ for ${subject.name}`}
                     />
                   </div>
-
-                  <div className="w-[80px] flex justify-center items-center h-[100px] rounded-md absolute bg-white/50 backdrop:blur ">
-                    <SimpleLoader clr={"purple"} />
-                  </div>
-                </>
+                )
               ) : (
                 <div className="w-full px-4">
                   <Image
                     src={subject.image}
                     height={80}
                     width={80}
-                    title={`Try MCQ for ${subject.name}`}
+                    // title={`Try MCQ for ${subject.name}`}
                     alt={`Try MCQ for ${subject.name}`}
                   />
                 </div>
-              )
-            ) : (
-              <div className="w-full px-4">
-                <Image
-                  src={subject.image}
-                  height={80}
-                  width={80}
-                  title={`Try MCQ for ${subject.name}`}
-                  alt={`Try MCQ for ${subject.name}`}
-                />
-              </div>
-            )}
-          </div>
+              )}
+            </div>
+          </LightTooltip>
         ))}
       </div>
     </div>

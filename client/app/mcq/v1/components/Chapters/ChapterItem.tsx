@@ -2,6 +2,19 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import React from "react";
 
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
 const ChapterItem = ({ data, index, chapterItemLength }: any) => {
   return (
     <div
@@ -13,35 +26,45 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
     >
       <div
         className="flex w-full gap-1 items-center"
-        title={`Click to go to quizz for chapter \`${data.name}\``}
+        // title={`Click to go to quizz for chapter \`${data.name}\``}
       >
         <div className="w-[fit-content]">{index + 1}.</div>
+
         <div className="flex w-full justify-between items-center">
           <div className="w-full flex-1">
-            <Button
-              sx={{ textTransform: "none" }}
-              className="hover:bg-white w-full py-1 justify-start text-black"
-              href={`/mcq/v1/${data.subject.replaceAll(
-                " ",
-                "-"
-              )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
+            <LightTooltip
+              title={`Click to go to quizz for chapter \`${data.name}\``}
             >
-              <div>{data.name}</div>
-            </Button>
+              <Button
+                sx={{ textTransform: "none" }}
+                className="hover:bg-white w-full py-1 justify-start text-black"
+                href={`/mcq/v1/${data.subject.replaceAll(
+                  " ",
+                  "-"
+                )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
+              >
+                <div>{data.name}</div>
+              </Button>
+            </LightTooltip>
           </div>
           <div className="">
-            <Button
-              sx={{ textTransform: "none" }}
-              className="text-white focus:ring-4 focus:outline-none focus:ring-white bg-purple-900 py-1 hover:bg-purple-950 gap-2"
-              href={`/mcq/v1/${data.subject.replaceAll(
-                " ",
-                "-"
-              )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
+            <LightTooltip
+              title={`Click to go to quizz for chapter \`${data.name}\``}
             >
-              Quizz
-            </Button>
+              <Button
+                sx={{ textTransform: "none" }}
+                className="text-white focus:ring-4 focus:outline-none focus:ring-white bg-purple-900 py-1 hover:bg-purple-950 gap-2"
+                href={`/mcq/v1/${data.subject.replaceAll(
+                  " ",
+                  "-"
+                )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
+              >
+                Quizz
+              </Button>
+            </LightTooltip>
           </div>
         </div>
+        {/* </LightTooltip> */}
       </div>
     </div>
   );

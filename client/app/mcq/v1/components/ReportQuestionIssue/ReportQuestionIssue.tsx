@@ -17,6 +17,20 @@ import SimpleLoader from "@/app/components/Global/SimpleLoader";
 import axios from "axios";
 import toast from "react-hot-toast";
 
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
+
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement<any, any>;
@@ -145,13 +159,14 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
           </Button>
         </DialogActions>
       </Dialog>
-      <Button
-        title="Report Issue for this question if you think any.Your suggestion will be helpful."
-        className="bg-red-100 text-red-600 py-1 focus:ring-1 focus:ring-red-400 hover:bg-red-200 flex flex-row focus:outline-none px-2 w-[fit-content] h-9 border cursor-pointer rounded-md justify-center gap-2"
-        onClick={handleClickOpen}
-      >
-        <MdOutlineReportProblem size={15} /> Report Issue
-      </Button>
+      <LightTooltip title="Report Issue for this question if you think any.Your suggestion will be helpful.">
+        <Button
+          className="bg-red-100 text-red-600 py-1 focus:ring-1 focus:ring-red-400 hover:bg-red-200 flex flex-row focus:outline-none px-2 w-[fit-content] h-9 border cursor-pointer rounded-md justify-center gap-2"
+          onClick={handleClickOpen}
+        >
+          <MdOutlineReportProblem size={15} /> Report Issue
+        </Button>
+      </LightTooltip>
     </>
   );
 };

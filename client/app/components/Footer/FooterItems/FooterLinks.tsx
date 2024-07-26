@@ -7,6 +7,20 @@ import AboutUs from "../AdsenseEssentials/AboutUs";
 import ContactUsForm from "../AdsenseEssentials/ContactUsForm";
 import TermsOfServices from "../AdsenseEssentials/TermsOfServices";
 
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
+
 const style = {
   position: "absolute" as "absolute",
   top: "50%",
@@ -35,13 +49,14 @@ const FooterLinks = () => {
       >
         <div className="w-full flex flex-col gap-1 py-1 text-sm bg-purple-50 h-[100vh] overflow-y-auto">
           <div className="w-full flex-wrap flex justify-end items-center cursor-pointer px-11">
-            <div
-              onClick={handleClose}
-              title="Close this page"
-              className="p-1 mt-3 bg-purple-100 hover:bg-purple-200 border-purple-300 text-purple-800 border rounded-md"
-            >
-              <IoClose size={20} />
-            </div>
+            <LightTooltip title="Close this page">
+              <div
+                onClick={handleClose}
+                className="p-1 mt-3 bg-purple-100 hover:bg-purple-200 border-purple-300 text-purple-800 border rounded-md"
+              >
+                <IoClose size={20} />
+              </div>
+            </LightTooltip>
           </div>
           <div className="w-full px-11 py-3 ">
             {openItem === "Privacy" && (

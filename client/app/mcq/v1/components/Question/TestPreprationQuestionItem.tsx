@@ -13,6 +13,21 @@ import AnswerItem from "../Answer/AnswerItem";
 import { IoIosClose } from "react-icons/io";
 import { useCookies } from "next-client-cookies";
 import Navigation from "./Navigation";
+
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
+
 interface Props {
   questions: any;
   chapter: any;
@@ -77,15 +92,17 @@ const TestPreprationQuestionItem = ({
                       Try clicking an answer to check whether it is right or
                       wrong
                     </div>
-                    <div
-                      title="Close"
-                      className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-700 text-white"
-                      onClick={() =>
-                        cookies.set("isQuestionGuideClosed", "true")
-                      }
-                    >
-                      <IoIosClose size={20} />
-                    </div>
+                    <LightTooltip title="Close">
+                      <div
+                        // title="Close"
+                        className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-700 text-white"
+                        onClick={() =>
+                          cookies.set("isQuestionGuideClosed", "true")
+                        }
+                      >
+                        <IoIosClose size={20} />
+                      </div>
+                    </LightTooltip>
                   </div>
                 )}
 

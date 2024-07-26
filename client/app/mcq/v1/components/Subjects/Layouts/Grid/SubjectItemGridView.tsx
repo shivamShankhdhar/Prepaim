@@ -4,6 +4,20 @@ import SimpleLoader from "@/app/components/Global/SimpleLoader";
 import { Button } from "@mui/material";
 import Image from "next/image";
 
+
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
 const SubjectItemGridView = ({
   item,
   handleNavigateToQuestion,
@@ -35,23 +49,26 @@ const SubjectItemGridView = ({
 
       <div className="text-lg  text-purple-950 font-semibold">{item.name}</div>
       <div className="flex w-[50%] flex-col gap-3 ">
-        <Button
-          onClick={() => handleNavigateToQuestion(item.name)}
-          className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-950"
-          title="Start Quizz"
-        >
-          {selectedSubject === item.name && searchingChapters && (
-            <SimpleLoader clr="white" size={15} />
-          )}
-          quizz
-        </Button>
-        <Button
-          className="py-1 flex-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 rounded-sm text-black px-2 hover:bg-gray-300"
-          href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
-          title={`Explore all Chapters of ${item.name}`}
-        >
-          Chapters
-        </Button>
+        <LightTooltip title="Start Quizz">
+          <Button
+            onClick={() => handleNavigateToQuestion(item.name)}
+            className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-950"
+          >
+            {selectedSubject === item.name && searchingChapters && (
+              <SimpleLoader clr="white" size={15} />
+            )}
+            quizz
+          </Button>
+        </LightTooltip>
+        <LightTooltip title="Explore all chapters">
+          <Button
+            className="py-1 flex-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 rounded-sm text-black px-2 hover:bg-gray-300"
+            href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
+            // title={`Explore all Chapters of ${item.name}`}
+          >
+            Chapters
+          </Button>
+        </LightTooltip>
       </div>
     </div>
   );

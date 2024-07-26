@@ -3,6 +3,21 @@ import { FaChevronRight } from "react-icons/fa";
 import Link from "next/link";
 import { useParams, usePathname } from "next/navigation";
 import { Button } from "@mui/material";
+
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
+
 interface Props {
   subject?: String;
   chapter?: String;
@@ -31,25 +46,32 @@ const Breadcrum = (props: Props) => {
     <div className="w-full flex-wrap sticky top-0 flex flex-row justify-center text-[15px] items-center ">
       <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-[12px] items-center justify-start ">
         <Link href={"/"}>
-          {/* <FcHome size={20} /> */}
-          Home
+          <LightTooltip className="text-purple-900" title="click to go to Home">
+            <div>Home</div>
+          </LightTooltip>
         </Link>
         &nbsp;
         {subject !== undefined && (
           <>
             <FaChevronRight size={10} /> &nbsp;
             {lastItemOfPathname === subject ? (
-              <Button
-                sx={{ textTransform: "none" }}
-                className={`${commonClassForActiveElements}`}
-              >
-                {Number(props.subjectLength) > 1
-                  ? `Total Subjects - ${props.subjectLength}`
-                  : `Total Subject - ${props.subjectLength}`}
-              </Button>
+              <LightTooltip title="Total Subjects">
+                <Button
+                  sx={{ textTransform: "none" }}
+                  className={`${commonClassForActiveElements}`}
+                >
+                  {Number(props.subjectLength) > 1
+                    ? `Total Subjects - ${props.subjectLength}`
+                    : `Total Subject - ${props.subjectLength}`}
+                </Button>
+              </LightTooltip>
             ) : (
               <Link href={`/mcq/v1/subjects`}>
-                {subject && subject.toString().replaceAll("-", " ")}
+                <LightTooltip title="Click to see all subjects">
+                  <div>
+                    {subject && subject.toString().replaceAll("-", " ")}
+                  </div>
+                </LightTooltip>
               </Link>
             )}
           </>
@@ -59,17 +81,23 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;{" "}
             {lastItemOfPathname === chapter ? (
-              <Button
-                sx={{ textTransform: "none" }}
-                className={`${commonClassForActiveElements}`}
-              >
-                {Number(props.chaptersLength) > 1
-                  ? `Total Chapters - ${props.chaptersLength}`
-                  : `Total Chapter - ${props.chaptersLength}`}
-              </Button>
+              <LightTooltip title="Total Chapters">
+                <Button
+                  sx={{ textTransform: "none" }}
+                  className={`${commonClassForActiveElements}`}
+                >
+                  {Number(props.chaptersLength) > 1
+                    ? `Total Chapters - ${props.chaptersLength}`
+                    : `Total Chapter - ${props.chaptersLength}`}
+                </Button>
+              </LightTooltip>
             ) : (
               <Link href={`/mcq/v1/${subject}/chapters`}>
-                {chapter && chapter.toString().replaceAll("-", " ")}
+                <LightTooltip title={`Click to see all chapters of ${subject}`}>
+                  <div>
+                    {chapter && chapter.toString().replaceAll("-", " ")}
+                  </div>
+                </LightTooltip>
               </Link>
             )}
           </>
@@ -79,7 +107,7 @@ const Breadcrum = (props: Props) => {
           <>
             <FaChevronRight size={10} /> &nbsp;
             {lastItemOfPathname === question ? (
-              <Button
+              <LightTooltip
                 title={
                   Number(props.totalquestion) > 0
                     ? pathname.includes("Test-Prepration-Mode")
@@ -101,24 +129,31 @@ const Breadcrum = (props: Props) => {
                         } in total and you are visiting all of them.`
                     : "Oops no question there,we are working hard to make your experience better with us."
                 }
-                sx={{ textTransform: "none" }}
-                className={`${commonClassForActiveElements}`}
               >
-                {/* ---- first check for the visited page  */}
-                {/* and then check the length of the questions accordingly show s after question  */}
-                {pathname.includes("Test-Prepration-Mode")
-                  ? Number(props.totalquestion) > 1
-                    ? `Questions - ${props.questionNo} / ${props.totalquestion}`
-                    : `Question - ${props.questionNo} / ${props.totalquestion}`
-                  : Number(props.totalquestion) > 1
-                  ? `Total Questions - ${props.totalquestion}`
-                  : `Total Question - ${props.totalquestion}`}
-              </Button>
+                <Button
+                  sx={{ textTransform: "none" }}
+                  className={`${commonClassForActiveElements}`}
+                >
+                  {/* ---- first check for the visited page  */}
+                  {/* and then check the length of the questions accordingly show s after question  */}
+                  {pathname.includes("Test-Prepration-Mode")
+                    ? Number(props.totalquestion) > 1
+                      ? `Questions - ${props.questionNo} / ${props.totalquestion}`
+                      : `Question - ${props.questionNo} / ${props.totalquestion}`
+                    : Number(props.totalquestion) > 1
+                    ? `Total Questions - ${props.totalquestion}`
+                    : `Total Question - ${props.totalquestion}`}
+                </Button>
+              </LightTooltip>
             ) : (
               <Link
                 href={`/mcq/v1/${subject}/chapters/${chapter}/${`Test-Prepration-Mode`}/questions`}
               >
-                {question && question.toString().replaceAll("-", " ")}
+                <LightTooltip title="Click to see all questions">
+                  <div>
+                    {question && question.toString().replaceAll("-", " ")}
+                  </div>
+                </LightTooltip>
               </Link>
             )}
           </>

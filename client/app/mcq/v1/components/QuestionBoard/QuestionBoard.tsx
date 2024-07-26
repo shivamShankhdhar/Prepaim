@@ -7,6 +7,8 @@ import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import { IoIosClose } from "react-icons/io";
 // import { purple } from '@mui/material/colors'
 
+
+
 const QuestionBoard = ({
   questions,
   questionNo,

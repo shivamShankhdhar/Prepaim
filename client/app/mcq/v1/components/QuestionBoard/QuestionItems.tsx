@@ -3,6 +3,19 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import React from "react";
 
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+import { styled } from "@mui/material/styles";
+
+const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.common.white,
+    color: "rgba(0, 0, 0, 0.87)",
+    boxShadow: theme.shadows[4],
+    fontSize: 13,
+  },
+}));
 const QuestionItems = ({ index, item }: any) => {
   const { subject } = useParams();
   const { chapter } = useParams();
@@ -43,13 +56,16 @@ const QuestionItems = ({ index, item }: any) => {
           item.level === "c" &&
           "bg-rose-600 rounded-full text-white focus:ring-2 focus:ring-inset focus:ring-white hover:text-white hover:bg-rose-700")
       }`}
-      title={`${
-        questionNo === index
-          ? "Current selected Question"
-          : "focus to select this Question"
-      }`}
     >
-      {index + 1}
+      <LightTooltip
+        title={`${
+          questionNo === index
+            ? "Current selected Question"
+            : "Click to navigate to this Question"
+        }`}
+      >
+        {index + 1}
+      </LightTooltip>
     </Button>
   );
 };
