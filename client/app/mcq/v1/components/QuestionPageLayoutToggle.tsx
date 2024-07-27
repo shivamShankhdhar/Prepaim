@@ -64,8 +64,15 @@ const QuestionPageLayoutToggle = () => {
             } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-purple-300`}
             // onClick={() => setPageLayoutView("test-mode")}
           >
+            {/* navigate to the exact question with using id  */}
             <Link
-              href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${question}`}
+              href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${question
+                .toString()
+                .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
+                .replaceAll(" ", "-")}#${question
+                .toString()
+                .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
+                .replaceAll(" ", "-")}`}
             >
               <VscChecklist size={20} />
             </Link>

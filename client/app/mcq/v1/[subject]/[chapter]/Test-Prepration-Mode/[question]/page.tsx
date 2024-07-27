@@ -208,6 +208,7 @@ const QuestionPage = () => {
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
               <TestPreprationQuestionItem
+                questionNo={questionNo}
                 pageMode={"stack-page-mode"}
                 questions={questions}
                 chapter={chapter}

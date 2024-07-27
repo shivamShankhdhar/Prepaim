@@ -27,7 +27,11 @@ const CommentToggleBtn = ({
   error,
 }: any) => {
   return (
-    <LightTooltip title={`Total Comments : ${comments.length}`}>
+    <LightTooltip
+      title={`Total Comments : [ ${comments.length} ] ${
+        isCommentSection ? "Hide discuss" : "Show discuss"
+      }`}
+    >
       <Button
         className="px-2 flex flex-row focus:ring-2 focus:outline-none focus:ring-purple-300 min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
         onClick={handleCommentToggle}
@@ -42,12 +46,7 @@ const CommentToggleBtn = ({
             error === "" ? (
               <>
                 <div className="">({comments.length})</div>
-                <div
-                  className="flex "
-                  title={`${
-                    isCommentSection ? "Hide Comments" : "Show Comments"
-                  }`}
-                >
+                <div className="flex ">
                   {!loadingComment && isCommentSection ? (
                     <IoIosArrowUp size={15} />
                   ) : (

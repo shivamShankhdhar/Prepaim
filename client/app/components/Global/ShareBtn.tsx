@@ -43,7 +43,7 @@ const ShareBtn = ({ cls }: Props) => {
   };
 
   return (
-    <LightTooltip title={`Share with your friends on ${link}`}>
+    <LightTooltip title={`Share this question`}>
       <Button
         className={`min-w-[fit-content] rounded-md px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
           linkCopied

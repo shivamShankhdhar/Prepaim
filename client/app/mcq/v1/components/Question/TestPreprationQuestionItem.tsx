@@ -38,10 +38,12 @@ interface Props {
   isCommentSection?: boolean;
   isAnswerExplanationOpen?: boolean;
   handleAnswerExplanationToggle?: any;
+  questionNo: number;
 }
 
 const TestPreprationQuestionItem = ({
   questions,
+  questionNo,
   chapter,
   error,
   loading,
@@ -55,7 +57,7 @@ const TestPreprationQuestionItem = ({
 
   const { subject } = useParams();
   const { question } = useParams();
-  const questionNo = Number(question);
+  // const questionNo = Number(question);
 
   return (
     <div className="w-full flex flex-col items-center gap-2">
@@ -183,6 +185,7 @@ const TestPreprationQuestionItem = ({
       <Navigation
         question_id={questions[questionNo - 1]?._id}
         isShareBtn={true}
+        questionNo={questionNo}
         questionsLength={questions.length}
         questionItm={questions[questionNo - 1]?.question}
         questionObject={questions[questionNo - 1]}

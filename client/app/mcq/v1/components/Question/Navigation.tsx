@@ -14,6 +14,7 @@ const Navigation = ({
   questionItm,
   questionObject,
   loading,
+  questionNo,
   errorForActionBar,
   handleCommentToggle,
   isAnswerExplanationOpen,
@@ -24,7 +25,7 @@ const Navigation = ({
   isShareBtn,
 }: any) => {
   const { question } = useParams();
-  const questionNo = Number(question);
+  // const questionNo = Number(question);
   const [comments, setComments] = useState(
     [
       {

@@ -97,6 +97,13 @@ const PreprationQuestionItem = () => {
               return (
                 <>
                   <div
+                    id={`${question
+                      .toString()
+                      .replace(
+                        /[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi,
+                        ""
+                      )
+                      .replaceAll(" ", "-")}`}
                     key={`key-at-list-view-page-mode-for-question-${question._id}-${questionNo}`}
                     className="sm:w-full h-[fit-content] items-stretch max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] flex flex-col bg-white rounded-md border py-2 px-5 shadow-md"
                   >

@@ -43,7 +43,7 @@ const Sidebar = ({ error, requestedPage }: Props) => {
 
   return (
     <div
-      className={`w-[250px]  border border-l-0  border-t-0  border-b-0 md: border-gray-200 mt-0 bg-white  ${
+      className={`w-[270px]  border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 bg-white  ${
         length > 14 ? "overflow-y-scroll" : ""
       }`}
     >
@@ -51,13 +51,14 @@ const Sidebar = ({ error, requestedPage }: Props) => {
         <IoBookOutline size={20} />
         &nbsp; Chapters
       </div>
-      <div className="flex flex-col gap-0 pl-2 pr-1 w-full ">
+      <div className="flex flex-col gap-0 w-full ">
         {Object.values(error).toString().replaceAll(",", "") === "" ? (
           chapters.length > 0 ? (
             chapters
               .filter((i) => i.name !== "")
               .map((item, index) => (
                 <SidebarItem
+                  totalLengthOfChapters={chapters.length}
                   pageViewMode={requestedPage}
                   key={`${index}-${item.name}`} //${item.name}
                   item={item}
