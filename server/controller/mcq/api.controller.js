@@ -72,7 +72,10 @@ export const getAllQuestions = async (req, res) => {
 export const getAllSubjects = async (req, res) => {
   try {
     const data = await Subject.find({});
-    return res.status(200).send(data);
+    const sortedSubjectByName = data.sort((a, b) =>
+      a.name.localeCompare(b.name) ? 1 : -1
+    );
+    return res.status(200).send(sortedSubjectByName);
   } catch (error) {
     return res.status(500).send({ error: error.message });
   }

@@ -8,7 +8,7 @@ const AnswerExplanation = ({ question, loading }: any) => {
       {/* <div className="border flex border-dotted gap-1 py-1 border-purple-600 border-t-0 border-b-1 border-r-0 border-l-0 text-gray-600">
             Answer
           </div> */}
-      <div className="w-full">
+      <div className="w-full flex s flex-wrap">
         <>
           {question?.answer
             // .filter((i: any) => i.isTrue === true)
@@ -24,7 +24,7 @@ const AnswerExplanation = ({ question, loading }: any) => {
                         Right Answer <span className="font-semibold">:</span>{" "}
                       </div>
                       &nbsp;
-                      <div className=" flex-1  ">
+                      <div className="min-w-[fit-content] max-w-full">
                         {`Option (${rightAnswerOptionSuffix[index]}) - `}
                         {item.ans}
                       </div>
@@ -46,7 +46,9 @@ const AnswerExplanation = ({ question, loading }: any) => {
                   className="border flex border-dotted gap-1 py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 text-gray-600"
                 >
                   <div className="">EXPLANATION :</div>
-                  <div className="flex-1">{explanation.explanation}</div>
+                  <div className="min-w-[fit-content] max-w-full">
+                    {explanation.explanation}
+                  </div>
                 </div>
               );
             })
