@@ -6,6 +6,7 @@ import SidebarItem from "@/app/mcq/v1/components/ChapterSideBar/SidebarItem";
 import QuestionBoard from "@/app/mcq/v1/components/QuestionBoard/QuestionBoard";
 const SidebarSlider = ({
   uniqueKey,
+  chaptersLength,
   open,
   setOpen,
   requestedPage,
@@ -28,7 +29,7 @@ const SidebarSlider = ({
         anchor={itemType === "chapters" ? "left" : "right"}
       >
         {itemType === "chapters" ? (
-          <div className="w-[250px] px-3">
+          <div className="w-[fit-content]">
             <div className="w-full flex justify-end items-center"></div>
             <div
               className={`w-full h-11 pt-2 px-2 gap-2 font-semibold flex ${
@@ -48,8 +49,10 @@ const SidebarSlider = ({
               </div>
             </div>
 
-            {items.map((item: any) => (
+            {items.map((item: any, index: number) => (
               <SidebarItem
+                index={index}
+                totalLengthOfChapters={chaptersLength}
                 pageViewMode={requestedPage}
                 item={item}
                 key={`${item.name}-${itemType}-${item.id}-key-at-sidebarslider-forquestionboard-${uniqueKey}`}

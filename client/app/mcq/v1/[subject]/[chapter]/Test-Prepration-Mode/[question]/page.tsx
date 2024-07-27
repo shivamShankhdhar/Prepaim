@@ -156,6 +156,7 @@ const QuestionPage = () => {
           uniqueKey="chapters"
           open={openSidebarSlider}
           items={chapters}
+          chaptersLength={chapters.length}
           setOpen={setOpenSidebarSlider}
           itemType="chapters"
           requestedPage={"Test-Prepration-Mode"}
