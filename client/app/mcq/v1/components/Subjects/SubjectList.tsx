@@ -16,24 +16,20 @@ import SubjctGridViewSkeleton from "./Layouts/Grid/SubjctGridViewSkeleton";
 const SubjectList = ({ setSubjectLength }: any) => {
   // options for dropdown for layout
   const router = useRouter();
-  let [subjects, setSubjects] = useState([
-    { _id: "", name: "", image: "", branch: "" },
-  ]);
+  let [subjects, setSubjects] = useState([{ _id: "", name: "", image: "" }]);
   const [isLoading, setLoading] = useState(true);
   const [allSubjectsError, setAllSubjectsError] = useState("");
 
   const [layOutView, setLayoutView] = useState("grid");
 
-  const [Branch, setBranch] = useState("Engineering");
-
   const [reloadSubjects, setReloadSubjects] = useState(false);
 
-  const [subjectsAfterFilter, setSubjectsAfterFilter] = useState(
-    // subjects.filter((subject) => subject.branch === `${Branch}`)
-    [{ _id: "", name: "", image: "", branch: "" }]
-  );
+  const [subjectsAfterFilter, setSubjectsAfterFilter] = useState([
+    { _id: "", name: "", image: "" },
+  ]);
 
   const [selectedSubject, setSelectedSubject] = useState("");
+
   const [filterBySubjectName, setFilterBySubjectName] = useState("");
 
   useEffect(() => {
@@ -58,19 +54,14 @@ const SubjectList = ({ setSubjectLength }: any) => {
   // trying different things here
 
   useEffect(() => {
-    if (Branch !== "" && filterBySubjectName === "") {
+    if (filterBySubjectName !== "") {
       setSubjectsAfterFilter(
-        subjects.filter((subject) => subject.branch === Branch)
+        subjects.filter((subject) => subject.name === filterBySubjectName)
       );
-    } else if (Branch !== "" && filterBySubjectName !== "") {
-      setSubjectsAfterFilter(
-        subjects.filter(
-          (subject) =>
-            subject.branch === Branch && subject.name === filterBySubjectName
-        )
-      );
+    } else {
+      setSubjectsAfterFilter(subjects);
     }
-  }, [Branch, subjects, filterBySubjectName]);
+  }, [subjects, filterBySubjectName]);
 
   // useEffect(() => {
   //   if (filterBySubjectName !== "") {
@@ -177,8 +168,6 @@ const SubjectList = ({ setSubjectLength }: any) => {
         <div className=" w-full">
           <ActionBarForSubjects
             isLoading={isLoading}
-            Branch={Branch}
-            setBranch={setBranch}
             subjects={subjectsAfterFilter}
             selectedSubjectBySearch={filterBySubjectName}
             setSubjectBySearch={setFilterBySubjectName}
@@ -237,8 +226,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
             {isLoading ? (
               <SubjctGridViewSkeleton />
             ) : allSubjectsError === "" ? (
-              subjectsAfterFilter.filter((item) => item.name !== "").length >
-              0 ? (
+              subjects.filter((item) => item.name !== "").length > 0 ? (
                 subjectsAfterFilter
                   .filter((item) => item.name !== "")
                   .sort()

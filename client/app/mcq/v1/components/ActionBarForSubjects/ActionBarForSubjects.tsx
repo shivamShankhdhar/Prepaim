@@ -1,55 +1,17 @@
 import SelectDropdown from "@/app/components/Global/SelectDropdown";
 import { Button } from "@mui/material";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 const ActionBarForSubjects = ({
-  setBranch,
-  Branch,
   subjects,
-  selectedSubjectBySearch,
+  selectedBySearch,
   setSubjectBySearch,
 }: any) => {
-  const [branchesFromServer, setBranchesFromServer] = useState([{ name: "" }]);
-  const [loadingBranches, setLoadingBranches] = useState(true);
-  const [branchesOptions, setBranchesOptions] = useState([
-    { value: "", label: "" },
-  ]);
-  const [error, setError] = useState("");
-
   const [subjectsOptions, setSubjectOptions] = useState([
     { value: "", label: "" },
   ]);
 
   const [loadingSubjectOptions, setLoadingSubjectOptions] = useState(true);
-
-  useEffect(() => {
-    setSubjectBySearch(selectedSubjectBySearch);
-  }, [selectedSubjectBySearch]);
-
-  useEffect(() => {
-    axios
-      .get("/mcq/getallbranches")
-      .then((response) => {
-        setBranchesFromServer(response.data);
-        setLoadingBranches(false);
-      })
-      .catch((error) => {
-        setLoadingBranches(false);
-      });
-  }, []);
-
-  useEffect(() => {
-    branchesFromServer.map((item) => {
-      if (branchesOptions.find((i) => i.value === item.name)) {
-      } else {
-        setBranchesOptions((prev) => [
-          ...prev,
-          { value: item.name, label: item.name },
-        ]);
-      }
-    });
-  }, [branchesFromServer]);
 
   useEffect(() => {
     setLoadingSubjectOptions(true);
@@ -63,7 +25,7 @@ const ActionBarForSubjects = ({
       }
     });
     setLoadingSubjectOptions(false);
-  }, [subjects, Branch]);
+  }, [subjects]);
 
   // useEffect(() => {
   //   setSubjectOptions([{ value: "", label: "" }]);
@@ -85,25 +47,8 @@ const ActionBarForSubjects = ({
             <SelectDropdown
               options={subjectsOptions.filter((item) => item.value !== "")}
               setProperty={setSubjectBySearch}
-              text={
-                (selectedSubjectBySearch && selectedSubjectBySearch) ||
-                "Search Subject"
-              }
+              text={selectedBySearch || "Search Subject"}
               loading={loadingSubjectOptions}
-            />
-          </div>
-        </div>
-        <div className="mism:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex gap-1 justify-start items-center flex-wrap">
-          <div className="flex justify-center items-center sans-serif">
-            {/* Filter By Branch Category : */}Category
-          </div>
-          <div className="lg:w-[fit-content] xl:w-[fit-content] 2xl:w-[fit-content] sm:flex-1 max-sm:flex-1 md:flex-1 max-md:flex-1">
-            <SelectDropdown
-              options={branchesOptions.filter((item) => item.value !== "")}
-              setProperty={setBranch}
-              text={Branch || "Select Branch"}
-              loading={loadingBranches}
-              defaultValue={Branch || branchesFromServer[0].name}
             />
           </div>
         </div>
