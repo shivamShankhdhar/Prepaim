@@ -8,7 +8,7 @@ const AnswerExplanation = ({ question, loading }: any) => {
       {/* <div className="border flex border-dotted gap-1 py-1 border-purple-600 border-t-0 border-b-1 border-r-0 border-l-0 text-gray-600">
             Answer
           </div> */}
-      <div className="w-full flex s flex-wrap">
+      <div className="w-full flex flex-wrap">
         <>
           {question?.answer
             // .filter((i: any) => i.isTrue === true)
@@ -18,10 +18,10 @@ const AnswerExplanation = ({ question, loading }: any) => {
                   {item.isTrue && (
                     <div
                       key={`${item.ans}-${index}`}
-                      className="text-gray-600 py-2 flex"
+                      className=" py-2 flex text-gray-600 flex-wrap"
                     >
-                      <div className="uppercase ">
-                        Right Answer <span className="font-semibold">:</span>{" "}
+                      <div className="font-semibold">
+                        Right Answer <span>:</span>{" "}
                       </div>
                       &nbsp;
                       <div className="min-w-[fit-content] max-w-full">
@@ -43,9 +43,9 @@ const AnswerExplanation = ({ question, loading }: any) => {
               return (
                 <div
                   key={`${explanation}-${index}`}
-                  className="border flex border-dotted gap-1 py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 text-gray-600"
+                  className="border flex text-gray-600 flex-wrap border-dotted gap-1 py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 "
                 >
-                  <div className="">EXPLANATION :</div>
+                  <div className="font-semibold">Explanation :</div>
                   <div className="min-w-[fit-content] max-w-full">
                     {explanation.explanation}
                   </div>
