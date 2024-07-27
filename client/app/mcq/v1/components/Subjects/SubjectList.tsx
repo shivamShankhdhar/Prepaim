@@ -32,6 +32,8 @@ const SubjectList = ({ setSubjectLength }: any) => {
 
   const [filterBySubjectName, setFilterBySubjectName] = useState("");
 
+
+
   useEffect(() => {
     try {
       axios
@@ -43,7 +45,14 @@ const SubjectList = ({ setSubjectLength }: any) => {
         })
         .catch((error) => {
           setLoading(false);
-          setAllSubjectsError(error.response.error);
+          if (error.respone !== undefined) {
+            setAllSubjectsError(error.response.error);
+            return toast.error(error.respone.error);
+          } else {
+            setAllSubjectsError(error.message);
+            return toast.error(error.message);
+          }
+          // console.log(error);
         });
     } catch (error: any) {
       setAllSubjectsError(error.message);
@@ -113,29 +122,22 @@ const SubjectList = ({ setSubjectLength }: any) => {
                 `/mcq/getallquestionsbysubjectandchapter/${selectedSubjectForQuiz}/${data.data[0].name}`
               )
               .then((response) => {
-                try {
-                  setQuestionOne(response.data[0]);
-                  if (response.data.length > 0) {
-                    router.push(
-                      `/mcq/v1/${selectedSubjectForQuiz}/${data.data[0].name.replaceAll(
-                        " ",
-                        "-"
-                      )}/Test-Prepration-Mode/1`
-                    );
-                  } else {
-                    setSearchingChapters(false);
-                    ("Something went wrong...!");
-                    setSelectedSubjectForQuiz("");
-                    setSelectedSubject("");
-                    return toast.error(
-                      `No Question found Chpater - ${data.data[0].name} Subject - ${selectedSubjectForQuiz}...!`
-                    );
-                  }
-                } catch (error: any) {
+                setQuestionOne(response.data[0]);
+                if (response.data.length > 0) {
+                  router.push(
+                    `/mcq/v1/${selectedSubjectForQuiz}/${data.data[0].name.replaceAll(
+                      " ",
+                      "-"
+                    )}/Test-Prepration-Mode/1`
+                  );
+                } else {
                   setSearchingChapters(false);
+                  ("Something went wrong...!");
                   setSelectedSubjectForQuiz("");
                   setSelectedSubject("");
-                  return toast.error("Something went wrong...!");
+                  return toast.error(
+                    `No Question found Chpater - ${data.data[0].name} Subject - ${selectedSubjectForQuiz}...!`
+                  );
                 }
               })
               .catch((err) => {
@@ -243,7 +245,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   ))
               ) : (
                 <ErrorMessage
-                  text={"Subjects not found for selected category..."}
+                  text={"There are no Subjects..."}
                   isBg={true}
                   isButton={false}
                 />

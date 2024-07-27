@@ -45,18 +45,16 @@ const ShareBtn = ({ cls }: Props) => {
   return (
     <LightTooltip title={`Share this question`}>
       <Button
-        className={`min-w-[fit-content] rounded-md px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
+        sx={{ border: 1 }}
+        className={`w-[fit-content] rounded-md px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
           linkCopied
-            ? "text-green-800 bg-green-100 border-green-800 hover:bg-green-200 focus:ring-2 focus:outline-none focus:ring-green-300"
-            : `${cn(
-                " text-purple-800  border-purple-300 hover:bg-purple-200",
-                cls
-              )}`
+            ? " bg-green-200 text-green-950  border-green-950 hover:bg-green-300 "
+            : " bg-purple-200  hover:bg-purple-300 border-purple-950 text-purple-950"
         }`}
         onClick={() => handleShare()}
       >
         {linkCopied ? (
-          <LuCopyCheck size={20} className="text-green-800" />
+          <LuCopyCheck size={20} />
         ) : (
           <IoShareSocialOutline size={20} />
         )}

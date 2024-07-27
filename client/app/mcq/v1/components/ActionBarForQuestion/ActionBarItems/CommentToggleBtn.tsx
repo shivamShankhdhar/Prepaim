@@ -33,7 +33,8 @@ const CommentToggleBtn = ({
       }`}
     >
       <Button
-        className="px-2 flex flex-row focus:ring-2 focus:outline-none focus:ring-purple-300 min-w-[fit-content] flex-1 h-9 border cursor-pointer  rounded-md bg-purple-100 justify-center gap-2 hover:bg-purple-200 border-purple-300 text-purple-900 py-1"
+        // sx={{ border: 1 }}
+        className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-950"
         onClick={handleCommentToggle}
       >
         {isCommentSection ? (

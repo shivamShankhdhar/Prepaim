@@ -111,7 +111,7 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
   };
   return (
     <>
-      <Dialog
+      {/* <Dialog
         open={open}
         TransitionComponent={Transition}
         keepMounted
@@ -161,12 +161,12 @@ const ReportQuestionIssue = ({ question_id, question }: any) => {
       </Dialog>
       <LightTooltip title="Report Issue for this question if you think any.Your suggestion will be helpful.">
         <Button
-          className="bg-red-100 text-red-600 py-1 focus:ring-1 focus:ring-red-400 hover:bg-red-200 flex flex-row focus:outline-none px-2 w-[fit-content] h-9 border cursor-pointer rounded-md justify-center gap-2"
+          className="bg-red-600 text-white py-1 focus:ring-1 focus:ring-red-400 hover:bg-red-200 flex flex-row focus:outline-none px-2 w-[fit-content] h-9 border cursor-pointer rounded-md justify-center gap-2"
           onClick={handleClickOpen}
         >
           <MdOutlineReportProblem size={15} /> Report Issue
         </Button>
-      </LightTooltip>
+      </LightTooltip> */}
     </>
   );
 };

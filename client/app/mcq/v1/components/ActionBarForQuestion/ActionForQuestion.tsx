@@ -31,8 +31,8 @@ const ActionForQuestion = ({
     <div className=" w-full gap-1 mt-1 flex flex-col items-center ">
       {isClient && errorForActionBar === "" ? (
         !loading ? (
-          <div className="flex w-full justify-center items-center max-h-auto min-h-[50px] ">
-            <div className="flex gap-3 w-full flex-wrap rounded-md bg-white py-2 px-5">
+          <div className="flex w-full  max-h-auto min-h-[50px] ">
+            <div className="flex gap-1 justify-center items-center w-full flex-wrap rounded-md bg-white py-2 px-5">
               {/* answer explanation button  */}
               <ToggleAnswerExplanationBtn
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
@@ -47,13 +47,13 @@ const ActionForQuestion = ({
                 error={error}
               />
               {/* share button  */}
-              {isShareBtn && <ShareBtn cls={"bg-purple-100"} />}
+              {/* {isShareBtn && <ShareBtn cls={"bg-purple-100"} />}
               {/* <ShareBtn /> */}
               {/* <SocialShare /> */}
-              <ReportQuestionIssue
+              {/* <ReportQuestionIssue
                 question={questionItm}
                 question_id={questionId}
-              />
+              />  */}
             </div>
           </div>
         ) : (

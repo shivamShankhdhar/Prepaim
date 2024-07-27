@@ -43,11 +43,11 @@ const QuestionPageLayoutToggle = () => {
   //   }
   // }, [PageLayoutView]);
   return (
-    <div className="w-full flex justify-end items-center gap-3 py-1 px-5">
+    <div className="w-full flex justify-end items-center gap-2 py-1 px-5">
       {/* share buttons shows only on prepration mode */}
-      {!pathname.includes("Test-Prepration-Mode") && (
-        <ShareBtn cls={"bg-purple-200"} />
-      )}
+
+      <ShareBtn />
+
       <div className="flex justify-center w-[fit-content]  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-800">
         <LightTooltip
           title={`${
@@ -68,10 +68,6 @@ const QuestionPageLayoutToggle = () => {
             <Link
               href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${question
                 .toString()
-                .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
-                .replaceAll(" ", "-")}#${question
-                .toString()
-                .replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, "")
                 .replaceAll(" ", "-")}`}
             >
               <VscChecklist size={20} />

@@ -69,7 +69,7 @@ const TestPreprationQuestionItem = ({
                 key={`question-${questionNo}-${
                   questions[questionNo - 1]?.question
                 }`}
-                className=" bg-white px-5 py-1 w-full h-[fit-content] shadow-lg rounded-md mx-auto mt-2 items-center "
+                className=" bg-white px-5 w-full h-[fit-content] shadow-lg rounded-md mx-auto mt-2 items-center "
               >
                 {/* question hardship level  */}
                 <div className="w-full mt-2 h-5 flex justify-end items-center">
@@ -80,9 +80,9 @@ const TestPreprationQuestionItem = ({
                 </div>
 
                 {/* question component  */}
-                <div className="mt-3 py-2">
+                <div className=" py-2">
                   <div className="text-lg text-gray-600">
-                    Q {questionNo}.
+                    Q{questionNo}.
                     {questions.length > 0 &&
                       questions[questionNo - 1]?.question}
                   </div>
@@ -137,7 +137,7 @@ const TestPreprationQuestionItem = ({
                         href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${
                           questionNo - 1
                         }`}
-                        className="bg-gray-200 focus:ring-4 focus:outline-none flex gap-1 justify-center items-center focus:ring-purple-300 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
+                        className="bg-gray-200 focus:ring-2 focus:outline-none flex gap-1 justify-center items-center focus:ring-gray-100 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
                         disabled={questionNo === 1}
                         // onClick={handlePrevQuestion}
                       >
@@ -155,7 +155,7 @@ const TestPreprationQuestionItem = ({
                         href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${
                           questionNo + 1
                         }`}
-                        className=" bg-purple-900 focus:ring-4 flex justify-center items-center focus:outline-none focus:ring-purple-300 hover:bg-purple-950 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
+                        className=" bg-purple-900 focus:ring-2 flex justify-center items-center focus:outline-none focus:ring-purple-200 hover:bg-purple-950 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
                         disabled={questionNo === questions.length}
                         // onClick={handleNextQuestion}
                       >

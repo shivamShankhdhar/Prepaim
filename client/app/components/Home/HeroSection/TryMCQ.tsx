@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
-
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import toast, { Toaster } from "react-hot-toast";
 import SubjectItemGridView from "@/app/mcq/v1/components/Subjects/Layouts/Grid/SubjectItemGridView";
 import SubjctGridViewSkeleton from "@/app/mcq/v1/components/Subjects/Layouts/Grid/SubjctGridViewSkeleton";
+import { Button } from "@mui/material";
 
 const TryMCQ = ({ subjects, loading }: any) => {
   const router = useRouter();
+
   const [selectedSubject, setSelectedSubject] = React.useState("");
 
   const [loadingChapters, setLoadingChapters] = useState(false);
@@ -57,16 +58,31 @@ const TryMCQ = ({ subjects, loading }: any) => {
         {loading ? (
           <SubjctGridViewSkeleton />
         ) : (
-          subjects.map((language: any) => (
-            <SubjectItemGridView
-              key={`key-at-subject-grid-view-at-home-page-for-${language._id}`} // ${language._id}
-              item={language}
-              handleNavigateToQuestion={setSelectedSubject}
-              selectedSubject={selectedSubject}
-              searchingChapters={loadingChapters}
-            />
-          ))
+          subjects
+            .filter(
+              (item: any) => item.name === "Java" || item.name === "Python"
+              // item.name === "C++" ||
+              // item.name === "C"
+            )
+            .map((language: any) => (
+              <SubjectItemGridView
+                key={`key-at-subject-grid-view-at-home-page-for-${language._id}`} // ${language._id}
+                item={language}
+                handleNavigateToQuestion={setSelectedSubject}
+                selectedSubject={selectedSubject}
+                searchingChapters={loadingChapters}
+              />
+            ))
         )}
+      </div>
+      <div className="w-full flex justify-center py-5 itms-center">
+        <Button
+          sx={{ textTransform: "none" }}
+          href={`/mcq/v1/subjects`}
+          className="px-4 py-1 bg-purple-900 hover:bg-purple-950 text-white"
+        >
+          View all Subjects
+        </Button>
       </div>
     </>
   );
