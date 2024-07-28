@@ -19,7 +19,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 const AboutUs = () => {
   return (
     <div className="w-full px-3 py-3">
-      <div className="flex flex-col text-lg gap-2 text-purple-900 h-[90vh] px-10 py-5 bg-white rounded-md">
+      <div className="flex flex-col text-lg gap-2 text-purple-900 min-h-[90vh] max-h-[fit-content] px-10 py-5 bg-white rounded-md">
         <div className="w-full text-3xl font-semibold">About Us</div>
         <h1 className="text-2xl font-semibold">
           Discover PrepAim: Your Ultimate Destination for Preparation Excellence

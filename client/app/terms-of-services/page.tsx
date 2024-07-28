@@ -2,8 +2,8 @@ import React from "react";
 
 const TermsOfServices = () => {
   return (
-    <div className="w-full px-3 py-3">
-      <div className="text-purple-900 py-5 px-10 bg-white h-[90vh] rounded-md">
+    <div className="w-full px-3 py-3 ">
+      <div className="text-purple-900 py-5 px-10 bg-white min-h-[90vh] max-h-[fit-content] rounded-md">
         <h1 className="text-2xl font-semibold">
           Terms of services for using PrepAim
         </h1>
