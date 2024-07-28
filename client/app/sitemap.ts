@@ -58,6 +58,35 @@ export default async function sitemap() {
     }
   );
 
+  let urlSetTestPreprationMode = [{}]
+  let urlSetPreprationMode = [{}]
+
+  const questionUrls = allSubjectsFromApi.map((subject: any) => {
+    return allChaptersFromApi.map((chapter: any) => {
+      return allQuestionsFromApi.filter((q: any) => q.chapter === chapter.name && q.subject === subject.name).map((question: any, index: any) => {
+        console.log(`http://localhost:3000/mcq/v1/Test-Prepration-Mode/${subject.name}/${chapter.name}/${index + 1}`)
+        urlSetTestPreprationMode = urlSetTestPreprationMode.concat({
+          url: `http://localhost:3000/mcq/v1/${subject.name.replaceAll(" ", "-")}/${chapter.name.replaceAll(" ", "-")}/Test-Prepration-Mode/${index + 1}`,
+          lastModified:question.date_added,
+        })
+        return urlSetTestPreprationMode;
+      })
+    })
+  })
+
+
+  const questionUrlsPreprationUrls = allSubjectsFromApi.map((subject: any) => {
+    return allChaptersFromApi.map((chapter: any) => {
+      return allQuestionsFromApi.filter((q: any) => q.chapter === chapter.name && q.subject === subject.name).map((question: any, index: any) => {
+        console.log(`http://localhost:3000/mcq/v1/Test-Prepration-Mode/${subject.name}/${chapter.name}/${index + 1}`)
+        urlSetPreprationMode = urlSetPreprationMode.concat({
+          url: `http://localhost:3000/mcq/v1/${subject.name.replaceAll(" ", "-")}/${chapter.name.replaceAll(" ", "-")}/Prepration-Mode/${index + 1}`,
+          lastModified:question.date_added,
+        })
+        return urlSetPreprationMode;
+      })
+    })
+  })
 
   return [
     {
@@ -85,6 +114,7 @@ export default async function sitemap() {
       lastModified: new Date().toISOString(),
     },
     ...allChaptersForSpecificSubject,
-    // ...allQuetionsRoutes,
+    ...urlSetTestPreprationMode,
+    ...urlSetPreprationMode
   ];
 }

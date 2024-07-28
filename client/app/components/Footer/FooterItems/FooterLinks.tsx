@@ -25,6 +25,12 @@ const FooterLinks = () => {
             Contact
           </Link>
         </li>
+
+        <li className="flex cursor-pointer min-w-[fit-content] max-w-[100%] justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100">
+          <Link target="_blank" href="/sitemap.xml">
+            SiteMap
+          </Link>
+        </li>
       </ul>
     </div>
   );
