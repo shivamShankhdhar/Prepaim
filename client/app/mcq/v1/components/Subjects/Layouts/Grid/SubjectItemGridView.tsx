@@ -49,7 +49,7 @@ const SubjectItemGridView = ({
 
       <div className="text-lg  text-purple-950 font-semibold">{item.name}</div>
       <div className="flex w-[50%] flex-col gap-3 ">
-        <LightTooltip title="Start Quizz">
+        <LightTooltip title={`Start quizz for ${item.name}`}>
           <Button
             onClick={() => handleNavigateToQuestion(item.name)}
             className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-950"
@@ -60,7 +60,7 @@ const SubjectItemGridView = ({
             quizz
           </Button>
         </LightTooltip>
-        <LightTooltip title="Explore all chapters">
+        <LightTooltip title={`Explore all chapters of ${item.name}`}>
           <Button
             className="py-1 flex-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 rounded-sm text-black px-2 hover:bg-gray-300"
             href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}

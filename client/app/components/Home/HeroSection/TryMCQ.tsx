@@ -60,9 +60,12 @@ const TryMCQ = ({ subjects, loading }: any) => {
         ) : (
           subjects
             .filter(
-              (item: any) => item.name === "Java" || item.name === "Python"
-              // item.name === "C++" ||
-              // item.name === "C"
+              (item: any) =>
+                item.name === "Java" ||
+                item.name === "Python" ||
+                item.name === "C++" ||
+                item.name === "C" ||
+                item.name === "React"
             )
             .map((language: any) => (
               <SubjectItemGridView
@@ -75,15 +78,17 @@ const TryMCQ = ({ subjects, loading }: any) => {
             ))
         )}
       </div>
-      <div className="w-full flex justify-center py-5 itms-center">
-        <Button
-          sx={{ textTransform: "none" }}
-          href={`/mcq/v1/subjects`}
-          className="px-4 py-1 bg-purple-900 hover:bg-purple-950 text-white"
-        >
-          View all Subjects
-        </Button>
-      </div>
+      {subjects.length > 4 && (
+        <div className="w-full flex justify-center py-5 itms-center">
+          <Button
+            sx={{ textTransform: "none" }}
+            href={`/mcq/v1/subjects`}
+            className="px-4 py-1 bg-purple-900 hover:bg-purple-950 text-white"
+          >
+            View all Subjects
+          </Button>
+        </div>
+      )}
     </>
   );
 };

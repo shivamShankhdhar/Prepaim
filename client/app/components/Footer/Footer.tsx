@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import FooterLinks from "./FooterItems/FooterLinks";
 import FooterSocialMedia from "./FooterItems/FooterSocialMedia";

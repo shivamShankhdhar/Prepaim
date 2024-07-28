@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Sidebar from "@/app/mcq/v1/components/ChapterSideBar/Sidebar";
-import Navigation from "@/app/mcq/v1/components/Question/Navigation";
 import QuestionBoard from "@/app/mcq/v1/components/QuestionBoard/QuestionBoard";
 import Actions from "@/app/mcq/v1/components/Actions";
 import Footer from "@/app/components/Footer/Footer";
