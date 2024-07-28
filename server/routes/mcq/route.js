@@ -27,6 +27,8 @@ mcqRouter
 mcqRouter
   .route("/getallchaptersbysubject/:subject")
   .get(Controller.getAllChaptersBySubject);
+mcqRouter.route("/getallchapters").get(Controller.getAllChapters);
+
 mcqRouter
   .route("/getallquestionsbysubjectandchapter/:subject/:chapter")
   .get(Controller.getQuestionsBySubjectAndChapter); // get all comments

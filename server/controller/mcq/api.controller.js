@@ -142,6 +142,14 @@ export const getAllChaptersBySubject = async (req, res) => {
   }
 };
 
+export const getAllChapters = async (req, res) => {
+  try {
+    const data = await Chapter.find({});
+    return res.status(200).send(data);
+  } catch (error) {
+    return res.status(500).send({ error: error.message });
+  }
+};
 export const getCommentByQuestion = async (req, res) => {
   const { question } = req.params;
   try {
