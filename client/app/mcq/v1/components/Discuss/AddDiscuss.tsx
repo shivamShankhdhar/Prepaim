@@ -35,7 +35,7 @@ const AddDiscuss = ({ question }: any) => {
             if (response.status === 201) {
               setIsPostingComment(false);
               toast.success(
-                "We have added your discuss to this question discuss,but before posting it we will run some checks on it to protect our community privacy,thanks for your time."
+                "We have added your discuss to this question discuss,but before posting it we will run some checks on it to protect our community privacy, Thanks for your time."
               );
             }
           })
