@@ -71,7 +71,7 @@ const TestPreprationQuestionItem = ({
   };
 
   const [commentLength, setCommentLength] = useState(0);
-  const [loadingComments, setLoadingComments] = useState(true);
+  const [loadingComments, setLoadingComments] = useState(false);
   const [commentsError, setCommentsError] = useState("");
 
   const [commentFromUser, setCommentFromUser] = useState("");
