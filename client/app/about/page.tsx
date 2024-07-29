@@ -43,7 +43,7 @@ const AboutUs = () => {
         {/* <br /> */}
         <p>
           For inquiries, collaborations, or simply to say hello, feel free to
-          contact us at contact-prepaim@gmail.com. updates and study tips. Thank
+          contact us at contact.prepaim@gmail.com. updates and study tips. Thank
           you for choosing PrepAim. Join us on this journey to achieve your
           academic goals.
         </p>

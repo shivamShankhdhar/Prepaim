@@ -404,7 +404,7 @@ const PrivacyPolicy = () => {
           us:
         </p>
         <ul>
-          <li>By email: contact-prepaim@gmail.com</li>
+          <li>By email: contact.prepaim@gmail.com</li>
         </ul>
       </div>
     </div>

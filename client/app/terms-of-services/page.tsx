@@ -10,7 +10,7 @@ const TermsOfServices = () => {
         <p>
           If you require any more information or have any questions about our
           site&apos;s terms and services, please feel free to contact us by
-          email at contact-prepaim@gmail.com
+          email at contact.prepaim@gmail.com
         </p>
         <h2>Terms of services and use for prepaim</h2>
         <p>

@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 const CommentSchema = new mongoose.Schema({
   user: { type: String, default: "anonymous" },
-  // user_image: { type: String ,default:"/assets/user_profile_fake.png"},
   question: { type: String, require: true },
   chapter: { type: String, require: true },
   subject: { type: String, require: true },
