@@ -9,7 +9,7 @@ import Link from "next/link";
 
 const FooterSocialMedia = () => {
   return (
-    <div className="flex  justify-center items-center text-purple-900">
+    <div className="flex justify-center items-center text-purple-900">
       {/* <div className="flex w-[fit-content] items-center text-xl font-semibold">
         Follow Us on Social Media
       </div> */}
