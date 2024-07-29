@@ -7,6 +7,9 @@
 }
 
 */
+html {
+	scroll-behavior: smooth;
+}
 body {
 	@apply bg-purple-100;
 	font-family:"Teko",sans-serif;

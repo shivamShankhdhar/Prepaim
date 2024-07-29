@@ -37,15 +37,13 @@ const Sidebar = ({ error, requestedPage }: Props) => {
     } catch (error: any) {
       error.message;
     }
-  }, [subject]);
+  }, []);
 
   const length = chapters.length;
 
   return (
     <div
-      className={`w-[270px]  border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 bg-white  ${
-        length > 14 ? "overflow-y-scroll" : ""
-      }`}
+      className={`w-[270px]  border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 bg-white overflow-y-auto `}
     >
       <div className="px-2 py-[10px] text-center flex justify-center  items-center font-bold text-gray-500 border border-gray-200 border-l-0  border-t-0  border-r-0">
         <IoBookOutline size={20} />
