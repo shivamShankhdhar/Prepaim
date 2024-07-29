@@ -12,10 +12,14 @@ import QuestionLevel from "@/app/components/QuestionLevel/QuestionLevel";
 import AnswerItem from "../Answer/AnswerItem";
 import { IoIosClose } from "react-icons/io";
 import { useCookies } from "next-client-cookies";
-import Navigation from "./Navigation";
 
 import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
+import CommentToggleBtn from "../ActionBarForQuestion/ActionBarItems/CommentToggleBtn";
+import ToggleAnswerExplanationBtn from "../ActionBarForQuestion/ActionBarItems/ToggleAnswerExplanationBtn";
+import AnswerExplanation from "../Answer/AnswerExplanation";
+import AllDiscuss from "../Discuss/AllDiscuss";
+import AddDiscuss from "../Discuss/AddDiscuss";
 
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -59,6 +63,25 @@ const TestPreprationQuestionItem = ({
   const { question } = useParams();
   // const questionNo = Number(question);
 
+  const [isQuestionNavigationOpen, setIsQuestionNavigationOpen] =
+    useState(false);
+
+  const handleQuestionNavigationOpen = () => {
+    setIsQuestionNavigationOpen((prev: any) => !prev);
+  };
+
+  const [commentLength, setCommentLength] = useState(0);
+  const [loadingComments, setLoadingComments] = useState(true);
+  const [commentsError, setCommentsError] = useState("");
+
+  const [commentFromUser, setCommentFromUser] = useState("");
+  const [userNameForComment, setUserNameForComment] = useState("");
+
+  const [isPostingComment, setIsPostingComment] = useState(false);
+
+  const handleCommentSubmit = () => {
+    console.log(commentFromUser, userNameForComment);
+  };
   return (
     <div className="w-full flex flex-col items-center gap-2">
       {Object.values(error).toString() === "" ? (
@@ -131,20 +154,45 @@ const TestPreprationQuestionItem = ({
                   )}
                 </div>
                 {pageMode === "stack-page-mode" && (
-                  <div className="flex flex-col justify-between py-2">
-                    <div className="flex w-full justify-between py-1 ">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex w-full justify-between py-2 ">
+                      {/* previous button  */}
                       <Button
                         href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${
                           questionNo - 1
                         }`}
-                        className="bg-gray-200 focus:ring-2 focus:outline-none flex gap-1 justify-center items-center focus:ring-gray-100 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed py-1"
+                        className="bg-gray-200 focus:ring-2 focus:outline-none flex gap-1 justify-center items-center focus:ring-gray-100 text-gray-600 hover:bg-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed !py-1"
                         disabled={questionNo === 1}
                         // onClick={handlePrevQuestion}
                       >
                         <IoIosArrowDropleft size={20} />
                         Prev
                       </Button>
-
+                      {/* question other navigations  */}
+                      {/* for large screens  */}
+                      <div className="flex-1 sm:hidden max-sm:hidden md:flex max-md:flex lg:flex xl:flex 2xl:flex justify-center gap-1 items-center">
+                        <ToggleAnswerExplanationBtn
+                          handleQuestionNavigationOpen={
+                            handleQuestionNavigationOpen
+                          }
+                          handleAnswerExplanationToggle={
+                            handleAnswerExplanationToggle
+                          }
+                          isAnswerExplanationOpen={isAnswerExplanationOpen}
+                        />
+                        <CommentToggleBtn
+                          handleQuestionNavigationOpen={
+                            handleQuestionNavigationOpen
+                          }
+                          commentLength={commentLength}
+                          loadingComments={loadingComments}
+                          handleCommentToggle={handleCommentToggle}
+                          isCommentSection={isCommentSection}
+                          question={questions[questionNo - 1]}
+                          commentsError={commentsError}
+                        />
+                      </div>
+                      {/* next button  */}
                       <Button
                         sx={{
                           "&.Mui-disabled": {
@@ -162,6 +210,56 @@ const TestPreprationQuestionItem = ({
                         Next <IoIosArrowDropright size={20} />
                       </Button>
                     </div>
+                    {/* for mobile screens only  */}
+                    <div className="flex-1 border border-purple-600 py-2 border-dashed border-t-1 border-r-0 border-l-0 border-b-0 sm:flex max-sm:flex md:hidden max-md:hidden lg:flex xl:hidden 2xl:hidden justify-between gap-1 items-center">
+                      <ToggleAnswerExplanationBtn
+                        handleQuestionNavigationOpen={
+                          handleQuestionNavigationOpen
+                        }
+                        handleAnswerExplanationToggle={
+                          handleAnswerExplanationToggle
+                        }
+                        isAnswerExplanationOpen={isAnswerExplanationOpen}
+                      />
+                      <CommentToggleBtn
+                        handleQuestionNavigationOpen={
+                          handleQuestionNavigationOpen
+                        }
+                        commentLength={commentLength}
+                        loadingComments={loadingComments}
+                        handleCommentToggle={handleCommentToggle}
+                        isCommentSection={isCommentSection}
+                        question={questions[questionNo - 1]}
+                        commentsError={commentsError}
+                      />
+                    </div>
+                    {/* {isQuestionNavigationOpen && ( */}
+                    <div className="w-full">
+                      {isAnswerExplanationOpen && (
+                        <div className="w-full py-3">
+                          <AnswerExplanation
+                            question={questions[questionNo - 1]}
+                          />
+                        </div>
+                      )}
+                      {isCommentSection && (
+                        <div className="w-full py-3">
+                          <AddDiscuss
+                            setComment={setCommentFromUser}
+                            setUserName={setUserNameForComment}
+                            postingComment={isPostingComment}
+                            handleCommentSubmit={handleCommentSubmit}
+                          />
+                          <AllDiscuss
+                            setCommentsError={setCommentsError}
+                            setLoadingComments={setLoadingComments}
+                            question={questions[questionNo - 1]}
+                            setCommentLength={setCommentLength}
+                          />
+                        </div>
+                      )}
+                    </div>
+                    {/* )} */}
                   </div>
                 )}
               </div>
@@ -181,23 +279,6 @@ const TestPreprationQuestionItem = ({
       ) : (
         <ErrorMessage isBg={true} isButton={true} text={error} />
       )}
-      {/* actions for question page */}
-      <Navigation
-        question_id={questions[questionNo - 1]?._id}
-        isShareBtn={true}
-        questionNo={questionNo}
-        questionsLength={questions.length}
-        questionItm={questions[questionNo - 1]?.question}
-        questionObject={questions[questionNo - 1]}
-        loading={loading}
-        errorForActionBar={error}
-        handleCommentToggle={handleCommentToggle}
-        isCommentSection={isCommentSection}
-        handleAnswerExplanationToggle={handleAnswerExplanationToggle}
-        isAnswerExplanationOpen={isAnswerExplanationOpen}
-        subject={subject}
-        chapter={chapter}
-      />
     </div>
     // here is the end of top
   );

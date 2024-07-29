@@ -18,6 +18,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 const ToggleAnswerExplanationBtn = ({
+  handleQuestionNavigationOpen,
   handleAnswerExplanationToggle,
   isAnswerExplanationOpen,
 }: any) => {
@@ -27,11 +28,14 @@ const ToggleAnswerExplanationBtn = ({
     >
       <Button
         className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-950"
-        onClick={handleAnswerExplanationToggle}
+        onClick={() => {
+          handleAnswerExplanationToggle();
+          handleQuestionNavigationOpen();
+        }}
       >
         {isAnswerExplanationOpen && <IoEyeOffOutline />}
         {!isAnswerExplanationOpen && <IoEyeOutline />}
-        {isAnswerExplanationOpen ? "Hide Answer" : "Show Answer"}
+        {isAnswerExplanationOpen ? "Answer" : "Answer"}
 
         <p>{isAnswerExplanationOpen ? <IoIosArrowUp /> : <IoIosArrowDown />}</p>
       </Button>

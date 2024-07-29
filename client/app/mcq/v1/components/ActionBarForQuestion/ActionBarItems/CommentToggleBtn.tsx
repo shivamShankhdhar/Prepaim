@@ -20,22 +20,27 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 const CommentToggleBtn = ({
-  comments,
+  // comments,
+  // handleQuestionNavigationOpen,
+  commentLength,
   isCommentSection,
   handleCommentToggle,
-  loadingComment,
-  error,
+  loadingComments,
+  commentsError,
 }: any) => {
   return (
     <LightTooltip
-      title={`Total Comments : [ ${comments.length} ] ${
+      title={`Total Comments : [ ${commentLength} ] ${
         isCommentSection ? "Hide discuss" : "Show discuss"
       }`}
     >
       <Button
         // sx={{ border: 1 }}
         className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-950"
-        onClick={handleCommentToggle}
+        onClick={() => {
+          handleCommentToggle();
+          // handleQuestionNavigationOpen();
+        }}
       >
         {isCommentSection ? (
           <LiaCommentSlashSolid size={25} />
@@ -43,12 +48,12 @@ const CommentToggleBtn = ({
           <LiaCommentSolid size={25} />
         )}
         <div className="flex flex-row text-[15px]  justify-start items-center gap-1">
-          {!loadingComment ? (
-            error === "" ? (
+          {!loadingComments ? (
+            commentsError === "" ? (
               <>
-                <div className="">({comments.length})</div>
+                {/* <div className="">({comments.length})</div> */}
                 <div className="flex ">
-                  {!loadingComment && isCommentSection ? (
+                  {!loadingComments && isCommentSection ? (
                     <IoIosArrowUp size={15} />
                   ) : (
                     <IoIosArrowDown size={15} />
