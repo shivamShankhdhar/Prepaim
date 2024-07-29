@@ -239,7 +239,7 @@ const TestPreprationQuestionItem = ({
                       {isCommentSection && (
                         <>
                           <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
-                            <AddDiscuss />
+                            <AddDiscuss question={questions[questionNo - 1]} />
                           </div>
                           <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
                             <AllDiscuss
