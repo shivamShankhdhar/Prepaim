@@ -21,10 +21,10 @@ export const postComment = async (req, res) => {
       await comment
         .save()
         .then((data) => {
-          return res.status(201).send({ msg: "Comment saved...!" });
+          return res.status(201).send({ message: "Comment saved...!" });
         })
         .catch((e) => {
-          return res.status(400).send({ msg: "something went wrong...!" });
+          return res.status(400).send({ error: "something went wrong...!" });
         });
     } catch (error) {}
   }

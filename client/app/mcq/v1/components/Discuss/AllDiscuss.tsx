@@ -47,7 +47,7 @@ const AllDiscuss = ({
   }, [question, isReload]);
 
   return (
-    <div className="flex flex-col py-1 gap-1 w-full mt-2 text-gray-700 border bg-white px-2 rounded-md border-purple-400 border-t-1 border-b-0 border-l-0 border-r-0">
+    <div className="flex flex-col py-1 gap-1 w-full mt-2 text-gray-700 bg-white px-2 border rounded-md">
       <div className="flex items-center gap-2 py-3 px-0 font-semibold w-full ">
         All Discuss
       </div>

@@ -20,6 +20,8 @@ import ToggleAnswerExplanationBtn from "../ActionBarForQuestion/ActionBarItems/T
 import AnswerExplanation from "../Answer/AnswerExplanation";
 import AllDiscuss from "../Discuss/AllDiscuss";
 import AddDiscuss from "../Discuss/AddDiscuss";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -74,14 +76,6 @@ const TestPreprationQuestionItem = ({
   const [loadingComments, setLoadingComments] = useState(false);
   const [commentsError, setCommentsError] = useState("");
 
-  const [commentFromUser, setCommentFromUser] = useState("");
-  const [userNameForComment, setUserNameForComment] = useState("");
-
-  const [isPostingComment, setIsPostingComment] = useState(false);
-
-  const handleCommentSubmit = () => {
-    console.log(commentFromUser, userNameForComment);
-  };
   return (
     <div className="w-full flex flex-col items-center gap-2">
       {Object.values(error).toString() === "" ? (
@@ -236,27 +230,26 @@ const TestPreprationQuestionItem = ({
                     {/* {isQuestionNavigationOpen && ( */}
                     <div className="w-full">
                       {isAnswerExplanationOpen && (
-                        <div className="w-full py-3">
+                        <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
                           <AnswerExplanation
                             question={questions[questionNo - 1]}
                           />
                         </div>
                       )}
                       {isCommentSection && (
-                        <div className="w-full py-3">
-                          <AddDiscuss
-                            setComment={setCommentFromUser}
-                            setUserName={setUserNameForComment}
-                            postingComment={isPostingComment}
-                            handleCommentSubmit={handleCommentSubmit}
-                          />
-                          <AllDiscuss
-                            setCommentsError={setCommentsError}
-                            setLoadingComments={setLoadingComments}
-                            question={questions[questionNo - 1]}
-                            setCommentLength={setCommentLength}
-                          />
-                        </div>
+                        <>
+                          <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
+                            <AddDiscuss />
+                          </div>
+                          <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
+                            <AllDiscuss
+                              setCommentsError={setCommentsError}
+                              setLoadingComments={setLoadingComments}
+                              question={questions[questionNo - 1]}
+                              setCommentLength={setCommentLength}
+                            />
+                          </div>
+                        </>
                       )}
                     </div>
                     {/* )} */}
