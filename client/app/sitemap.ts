@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useState } from "react";
+
+const baseURL = "https://www.prepaim.com"
 
 const allSubjects = async () => {
   const subjects = await axios.get(
@@ -52,7 +53,7 @@ export default async function sitemap() {
   const allChaptersForSpecificSubject = allSubjectsFromApi.map(
     (subject: any) => {
       return {
-        url: `http://localhost:3000/mcq/v1/${subject.name}/chapters`,
+        url: `${baseURL}/${subject.name}/chapters`,
         lastModified: new Date().toISOString(),
       };
     }
@@ -66,7 +67,7 @@ export default async function sitemap() {
       return allQuestionsFromApi.filter((q: any) => q.chapter === chapter.name && q.subject === subject.name).map((question: any, index: any) => {
         // console.log(`http://localhost:3000/mcq/v1/Test-Prepration-Mode/${subject.name}/${chapter.name}/${index + 1}`)
         urlSetTestPreprationMode = urlSetTestPreprationMode.concat({
-          url: `http://localhost:3000/mcq/v1/${subject.name.replaceAll(" ", "-")}/${chapter.name.replaceAll(" ", "-")}/Test-Prepration-Mode/${index + 1}`,
+          url: `${baseURL}/mcq/v1/${subject.name.replaceAll(" ", "-")}/${chapter.name.replaceAll(" ", "-")}/Test-Prepration-Mode/${index + 1}`,
           lastModified:question.date_added,
         })
         return urlSetTestPreprationMode;
@@ -80,7 +81,7 @@ export default async function sitemap() {
       return allQuestionsFromApi.filter((q: any) => q.chapter === chapter.name && q.subject === subject.name).map((question: any, index: any) => {
         // console.log(`http://localhost:3000/mcq/v1/Test-Prepration-Mode/${subject.name}/${chapter.name}/${index + 1}`)
         urlSetPreprationMode = urlSetPreprationMode.concat({
-          url: `http://localhost:3000/mcq/v1/${subject.name.replaceAll(" ", "-")}/${chapter.name.replaceAll(" ", "-")}/Prepration-Mode/${index + 1}`,
+          url: `${baseURL}/mcq/v1/${subject.name.replaceAll(" ", "-")}/${chapter.name.replaceAll(" ", "-")}/Prepration-Mode/${index + 1}`,
           lastModified:question.date_added,
         })
         return urlSetPreprationMode;
@@ -90,27 +91,27 @@ export default async function sitemap() {
 
   return [
     {
-      url: "http://localhost:3000/",
+      url: `${baseURL}`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: "http://localhost:3000/about",
+      url: `${baseURL}/about`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: "http://localhost:3000/contact",
+      url: `${baseURL}/contact`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: "http://localhost:3000/privacy",
+      url: `${baseURL}/privacy`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: "http://localhost:3000/terms-of-services",
+      url: `${baseURL}/terms-of-services`,
       lastModified: new Date().toISOString(),
     },
     {
-      url: "http://localhost:3000/mcq/v1/subjects",
+      url: `${baseURL}/mcq/v1/subjects`,
       lastModified: new Date().toISOString(),
     },
     ...allChaptersForSpecificSubject,
