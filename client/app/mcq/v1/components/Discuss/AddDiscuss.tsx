@@ -32,7 +32,7 @@ const AddDiscuss = ({ question }: any) => {
             user: userNameForComment,
           })
           .then((response) => {
-            if (response.status === 200) {
+            if (response.status === 201) {
               setIsPostingComment(false);
               toast.success("Comment posted successfully");
             }
