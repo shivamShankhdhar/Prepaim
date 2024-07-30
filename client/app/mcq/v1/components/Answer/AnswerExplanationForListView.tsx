@@ -42,18 +42,16 @@ const AnswerExplanationForListView = ({
                       {item.isTrue && (
                         <div
                           key={`${item.ans}-${index}`}
-                          className="text-gray-600 py-2 flex"
+                          className="flex text-gray-600 flex-wrap py-2 "
                         >
-                          <div className="uppercase ">
-                            Right Answer{" "}
-                            <span className="font-semibold">:</span>{" "}
+                          <div className="font-semibold">
+                            Right Answer <span>:</span>
                           </div>
-                          &nbsp;
-                          <div className=" flex-1  ">
+
+                          <div className="w-[fit-content] ">
                             {`Option (${rightAnswerOptionSuffix[index]}) - `}
                             {item.ans}
                           </div>
-                          &nbsp;
                         </div>
                       )}
                     </>
@@ -68,10 +66,12 @@ const AnswerExplanationForListView = ({
                   return (
                     <div
                       key={`${explanation}-${index}`}
-                      className="border flex border-dotted gap-1 py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 text-gray-600"
+                      className="border flex text-gray-600 flex-wrap border-dotted py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 "
                     >
-                      <div className="">EXPLANATION :</div>
-                      <div className="flex-1">{explanation.explanation}</div>
+                      <div className="font-semibold">Explanation :</div>
+                      <div className="min-w-[fit-content] max-w-full">
+                        {explanation.explanation}
+                      </div>
                     </div>
                   );
                 })
