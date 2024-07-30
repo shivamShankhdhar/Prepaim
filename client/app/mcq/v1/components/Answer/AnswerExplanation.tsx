@@ -18,17 +18,16 @@ const AnswerExplanation = ({ question, loading }: any) => {
                   {item.isTrue && (
                     <div
                       key={`${item.ans}-${index}`}
-                      className=" py-2 flex text-gray-600 flex-wrap"
+                      className="flex text-gray-600 flex-wrap py-2 "
                     >
                       <div className="font-semibold">
-                        Right Answer <span>:</span>{" "}
+                        Right Answer <span>:</span>
                       </div>
-                      &nbsp;
-                      <div className="min-w-[fit-content] max-w-full">
+
+                      <div className="w-[fit-content] ">
                         {`Option (${rightAnswerOptionSuffix[index]}) - `}
                         {item.ans}
                       </div>
-                      &nbsp;
                     </div>
                   )}
                 </>
@@ -43,7 +42,7 @@ const AnswerExplanation = ({ question, loading }: any) => {
               return (
                 <div
                   key={`${explanation}-${index}`}
-                  className="border flex text-gray-600 flex-wrap border-dotted gap-1 py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 "
+                  className="border flex text-gray-600 flex-wrap border-dotted py-1 border-purple-600 border-t-1 border-b-0 border-r-0 border-l-0 "
                 >
                   <div className="font-semibold">Explanation :</div>
                   <div className="min-w-[fit-content] max-w-full">
