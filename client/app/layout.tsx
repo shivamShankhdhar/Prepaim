@@ -30,6 +30,20 @@ export default function RootLayout({
 }) {
   return (
     <html>
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-QYJHFSJGRC"
+        ></script>
+        <script>
+          {` window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-QYJHFSJGRC');`}
+        </script>
+      </head>
       <body className={Anek_Latin_fonts.className}>
         <CookiesProvider>
           <Header />
