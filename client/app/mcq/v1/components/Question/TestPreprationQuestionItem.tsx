@@ -263,7 +263,7 @@ const TestPreprationQuestionItem = ({
             )
           ) : (
             <ErrorMessage
-              text={`No questions found `}
+              text={`No questions found, we are working on it questions will be available soon.Thanks for your patience.`}
               isButton={false}
               isBg={true}
             />

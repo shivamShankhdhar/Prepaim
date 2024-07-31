@@ -38,12 +38,7 @@ export default function Home() {
         {/* try mcq questions  */}
         <div className="w-full flex gap-2 flex-wrap rounded-md items-center mt-3 p-2 bg-white ">
           {errorLoadingSubjects === "" ? (
-            <TryMCQ
-              loading={loadingSubjects}
-              subjects={subjectsFromServer.sort((a, b) =>
-                a.name.localeCompare(b.name)
-              )}
-            />
+            <TryMCQ loading={loadingSubjects} subjects={subjectsFromServer} />
           ) : (
             <ErrorMessage
               text={errorLoadingSubjects}
