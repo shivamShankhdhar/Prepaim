@@ -1,23 +1,17 @@
 import { Toaster } from "react-hot-toast";
 import "../styles/globals.css";
-import { Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
 // import
 import { CookiesProvider } from "next-client-cookies/server";
 import Header from "./components/Global/Header";
 
-const Anek_Latin_fonts = Roboto({
-  weight: ["400"],
+const poppins = Poppins({
+  weight: ["400", "500"],
   subsets: ["latin"],
-  display: "swap",
 });
 
-const latoFonts = Roboto({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
 export const metadata = {
   title: "Home | PrepAim",
   description:
@@ -37,14 +31,10 @@ export default function RootLayout({
           src="https://www.googletagmanager.com/gtag/js?id=G-QYJHFSJGRC"
         ></script>
       </head>
-      <body className={Anek_Latin_fonts.className}>
+      <body className={poppins.className}>
         <CookiesProvider>
           <Header />
-          <main
-            className={`flex flex-col w-full ${Anek_Latin_fonts.className}`}
-          >
-            {children}
-          </main>
+          <main className={`flex flex-col w-full`}>{children}</main>
         </CookiesProvider>
         <Toaster position="top-center"></Toaster>
         <GoogleAnalytics gaId="G-QYJHFSJGRC" />

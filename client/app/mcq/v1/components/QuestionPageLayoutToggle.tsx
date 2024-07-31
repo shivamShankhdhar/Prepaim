@@ -48,7 +48,7 @@ const QuestionPageLayoutToggle = () => {
 
       <ShareBtn />
 
-      <div className="flex justify-center w-[fit-content]  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-800">
+      <div className="flex justify-center w-[fit-content] overflow-hidden items-center border bg-white border-purple-950 rounded-md text-purple-800">
         <LightTooltip
           title={`${
             PageLayoutView === "test-mode"
@@ -59,9 +59,9 @@ const QuestionPageLayoutToggle = () => {
           <div
             className={`flex justify-center  ${
               PageLayoutView === "test-mode"
-                ? "text-purple-900 font-semibold"
-                : "text-purple-300"
-            } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-purple-300`}
+                ? "text-white bg-purple-900 font-semibold"
+                : "text-purple-950"
+            } items-center px-4 py-1 cursor-pointer  `}
             // onClick={() => setPageLayoutView("test-mode")}
           >
             {/* navigate to the exact question with using id  */}
@@ -70,7 +70,7 @@ const QuestionPageLayoutToggle = () => {
                 .toString()
                 .replaceAll(" ", "-")}`}
             >
-              <VscChecklist size={20} />
+              <VscChecklist size={25} />
             </Link>
           </div>
         </LightTooltip>
@@ -84,15 +84,15 @@ const QuestionPageLayoutToggle = () => {
           <div
             className={`flex justify-center  ${
               PageLayoutView === "prepration-mode"
-                ? "text-purple-900 font-semibold"
-                : "text-purple-300"
-            } items-center px-4 cursor-pointer  `}
+                ? "text-white bg-purple-900 font-semibold"
+                : "text-purple-950"
+            } items-center px-4 py-1 cursor-pointer  `}
             // onClick={() => setPageLayoutView("prepration-mode")}
           >
             <Link
               href={`/mcq/v1/${subject}/${chapter}/Prepration-Mode/${question}`}
             >
-              <RiBookReadLine size={20} />
+              <RiBookReadLine size={25} />
             </Link>
           </div>
         </LightTooltip>
