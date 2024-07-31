@@ -70,7 +70,7 @@ const QuestionPageLayoutToggle = () => {
                 .toString()
                 .replaceAll(" ", "-")}`}
             >
-              <VscChecklist size={25} />
+              <VscChecklist size={23} />
             </Link>
           </div>
         </LightTooltip>
@@ -92,7 +92,7 @@ const QuestionPageLayoutToggle = () => {
             <Link
               href={`/mcq/v1/${subject}/${chapter}/Prepration-Mode/${question}`}
             >
-              <RiBookReadLine size={25} />
+              <RiBookReadLine size={23} />
             </Link>
           </div>
         </LightTooltip>
