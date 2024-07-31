@@ -21,7 +21,7 @@ const latoFonts = Roboto({
 export const metadata = {
   title: "Home | PrepAim",
   description:
-    "Prepaim.com helps students to prepare for the examination related to the enginnering for higher education",
+    "This is an educational platform to help students to test their subject knowledge with mcq questions.we have make it effort less for students to reach out to the subjects questions and it will help them to sharpen their subject knowledge to insure maximum marks in their examinations/interviews.",
 };
 export default function RootLayout({
   children,
