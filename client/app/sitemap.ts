@@ -89,6 +89,9 @@ export default async function sitemap() {
     })
   })
 
+  questionUrlsPreprationUrls()
+  questionUrls()
+  
   return [
     {
       url: `${baseURL}`,
