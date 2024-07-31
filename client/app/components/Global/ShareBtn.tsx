@@ -46,7 +46,7 @@ const ShareBtn = ({ cls }: Props) => {
     <LightTooltip title={`Share this question`}>
       <Button
         sx={{ border: 1 }}
-        className={`w-[fit-content] rounded-md px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
+        className={`w-[fit-content] rounded-[3px] px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
           linkCopied
             ? " bg-green-200 text-green-950  border-green-950 hover:bg-green-300 "
             : " bg-white  hover:bg-purple-200 border-purple-950 text-purple-950"

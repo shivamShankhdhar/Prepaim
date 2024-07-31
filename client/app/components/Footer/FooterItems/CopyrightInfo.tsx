@@ -7,10 +7,7 @@ const CopyrightInfo = () => {
     <div className="flex justify-center items-center gap-1 text-sm flex-row">
       <div className="w-full flex justify-center items-center">
         <LuCopyright />
-        &nbsp; copyright 2024 || Powered by &nbsp;
-        <Link href="/" className="underline">
-          www.prepaim.com.
-        </Link>
+        &nbsp; copyright 2024 || Powered by www.prepaim.com.
       </div>
     </div>
   );

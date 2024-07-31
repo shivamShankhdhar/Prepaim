@@ -43,12 +43,12 @@ const QuestionPageLayoutToggle = () => {
   //   }
   // }, [PageLayoutView]);
   return (
-    <div className="w-full flex justify-end items-center gap-2 py-1 px-5">
+    <div className="w-full flex justify-end items-center pt-1 gap-2 px-5">
       {/* share buttons shows only on prepration mode */}
 
       <ShareBtn />
 
-      <div className="flex justify-center w-[fit-content] overflow-hidden items-center border bg-white border-purple-950 rounded-md text-purple-800">
+      <div className="flex  items-center border  bg-white border-purple-950 rounded-[3px] text-purple-800">
         <LightTooltip
           title={`${
             PageLayoutView === "test-mode"
@@ -61,7 +61,7 @@ const QuestionPageLayoutToggle = () => {
               PageLayoutView === "test-mode"
                 ? "text-white bg-purple-900 font-semibold"
                 : "text-purple-950"
-            } items-center px-4 py-1 cursor-pointer  `}
+            } items-center px-3 py-1 cursor-pointer  `}
             // onClick={() => setPageLayoutView("test-mode")}
           >
             {/* navigate to the exact question with using id  */}
@@ -86,7 +86,7 @@ const QuestionPageLayoutToggle = () => {
               PageLayoutView === "prepration-mode"
                 ? "text-white bg-purple-900 font-semibold"
                 : "text-purple-950"
-            } items-center px-4 py-1 cursor-pointer  `}
+            } items-center px-3 py-1 cursor-pointer`}
             // onClick={() => setPageLayoutView("prepration-mode")}
           >
             <Link
