@@ -4,6 +4,6 @@ client/node_modules
 client/.next
 
 
-./server/.env
+../server/.env
 # client/.env
 ./client/.env.local
