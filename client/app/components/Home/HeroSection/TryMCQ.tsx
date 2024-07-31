@@ -63,7 +63,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
               (item: any) =>
                 item.name === "Java" ||
                 item.name === "Python" ||
-                item.name === "C++" ||
+                item.name === "CPP" ||
                 item.name === "C" ||
                 item.name === "React"
             )
