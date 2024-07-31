@@ -98,7 +98,7 @@ const TestPreprationQuestionItem = ({
 
                 {/* question component  */}
                 <div className=" py-2">
-                  <div className="text-lg text-gray-600">
+                  <div className="text-lg px-2 rounded-md py-2 text-green-900 bg-purple-100 border border-purple-900">
                     Q{questionNo}.
                     {questions.length > 0 &&
                       questions[questionNo - 1]?.question}

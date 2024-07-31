@@ -1,7 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import "../styles/globals.css";
 import { Roboto } from "next/font/google";
-import { Anek_Latin } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 // import
 import { CookiesProvider } from "next-client-cookies/server";
@@ -36,13 +36,6 @@ export default function RootLayout({
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-QYJHFSJGRC"
         ></script>
-        <script>
-          {` window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-QYJHFSJGRC');`}
-        </script>
       </head>
       <body className={Anek_Latin_fonts.className}>
         <CookiesProvider>
@@ -54,6 +47,7 @@ export default function RootLayout({
           </main>
         </CookiesProvider>
         <Toaster position="top-center"></Toaster>
+        <GoogleAnalytics gaId="G-QYJHFSJGRC" />
       </body>
     </html>
   );
