@@ -22,7 +22,7 @@ const SidebarItem = ({
       }`}
     >
       <Link
-        className="flex items-center gap-2 w-full"
+        className="flex items-center gap-2 min-w-[250px] max-w-[fit-content]"
         key={`${index}-${item}`}
         href={`/mcq/v1/${subject}/${item.name.replaceAll(
           " ",
