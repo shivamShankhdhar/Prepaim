@@ -20,6 +20,8 @@ const QuestionPage = () => {
   const cookies = useCookies();
   const [isClient, setIsClient] = useState(false);
 
+  const [isAnswerLocked, setIsAnswerLocked] = useState(true);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -208,6 +210,8 @@ const QuestionPage = () => {
               {/* question*/}
               <TestPreprationQuestionItem
                 questionNo={questionNo}
+                isAnswerLocked={isAnswerLocked}
+                setIsAnswerLocked={setIsAnswerLocked}
                 pageMode={"stack-page-mode"}
                 questions={questions}
                 chapter={chapter}

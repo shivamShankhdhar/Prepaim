@@ -45,9 +45,13 @@ interface Props {
   isAnswerExplanationOpen?: boolean;
   handleAnswerExplanationToggle?: any;
   questionNo: number;
+  isAnswerLocked: any;
+  setIsAnswerLocked: any;
 }
 
 const TestPreprationQuestionItem = ({
+  setIsAnswerLocked,
+  isAnswerLocked,
   questions,
   questionNo,
   chapter,
@@ -136,6 +140,7 @@ const TestPreprationQuestionItem = ({
                     (ans: any, index: number) => {
                       return (
                         <AnswerItem
+                          setIsAnswerLocked={setIsAnswerLocked}
                           key={`ket-prop-at-question-answer-item-${index}-${ans}`}
                           questions={questions}
                           questionNo={questionNo - 1}
@@ -166,6 +171,7 @@ const TestPreprationQuestionItem = ({
                       {/* for large screens  */}
                       <div className="flex-1 sm:hidden max-sm:hidden md:flex max-md:flex lg:flex xl:flex 2xl:flex justify-center gap-1 items-center">
                         <ToggleAnswerExplanationBtn
+                          isAnswerLocked={isAnswerLocked}
                           handleQuestionNavigationOpen={
                             handleQuestionNavigationOpen
                           }
@@ -207,6 +213,7 @@ const TestPreprationQuestionItem = ({
                     {/* for mobile screens only  */}
                     <div className="flex-1 border border-purple-600 py-2 border-dashed border-t-1 border-r-0 border-l-0 border-b-0 sm:flex max-sm:flex md:hidden max-md:hidden lg:flex xl:hidden 2xl:hidden justify-between gap-1 items-center">
                       <ToggleAnswerExplanationBtn
+                        isAnswerLocked={isAnswerLocked}
                         handleQuestionNavigationOpen={
                           handleQuestionNavigationOpen
                         }

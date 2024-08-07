@@ -23,7 +23,7 @@ const AnswerExplanation = ({ question, loading }: any) => {
                       <div className="font-semibold">Right Answer :</div>
                       &nbsp;
                       <div className="w-[fit-content] ">
-                        {`Option (${rightAnswerOptionSuffix[index]}) - `}
+                        {`(${rightAnswerOptionSuffix[index]}) `}
                         {item.ans}
                       </div>
                     </div>

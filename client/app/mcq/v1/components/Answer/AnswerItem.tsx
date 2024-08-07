@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-const AnswerItem = ({ questions, questionNo, answer, index, isTrue }: any) => {
+const AnswerItem = ({
+  questions,
+  questionNo,
+  answer,
+  index,
+  isTrue,
+  setIsAnswerLocked,
+}: any) => {
   // const [isAnswerClicked, setIsAnswerClicked] = useState(false);
   // const answerPrefix
   const handleAnserClicked = (id: any) => {
@@ -18,6 +25,7 @@ const AnswerItem = ({ questions, questionNo, answer, index, isTrue }: any) => {
       questionById?.classList.add("border-red-800");
       questionById?.classList.add("!hover:border-red-800");
     }
+    setIsAnswerLocked(false);
   };
   const answerPrefix = "";
   const items = ["A", "B", "C", "D"];

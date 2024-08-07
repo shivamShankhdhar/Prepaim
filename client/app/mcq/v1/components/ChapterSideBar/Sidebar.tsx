@@ -47,7 +47,10 @@ const Sidebar = ({ error, requestedPage }: Props) => {
     >
       <div className="px-2 py-[10px] text-center flex justify-center  items-center font-bold text-gray-500 border border-gray-200 border-l-0  border-t-0  border-r-0">
         <IoBookOutline size={20} />
-        &nbsp; Chapters
+        &nbsp;{" "}
+        {chapters.length > 1
+          ? `Chapters (${chapters.length})`
+          : `Chapters (${chapters.length})`}
       </div>
       <div className="flex flex-col gap-0 w-[fit-content] ">
         {Object.values(error).toString().replaceAll(",", "") === "" ? (
