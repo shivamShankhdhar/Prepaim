@@ -21,7 +21,7 @@ const SubjectPage = () => {
         />
         {/* all subjects  */}
         <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
-        <div id="container-3be55e302f50f4200add20d753ba95bd"></div>
+
         <Footer />
       </div>
     </>
