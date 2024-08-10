@@ -43,6 +43,12 @@ export default function RootLayout({
           data-cfasync="false"
           src="//pl23995181.highratecpm.com/3be55e302f50f4200add20d753ba95bd/invoke.js"
         ></script>
+        <script
+          async
+          data-cfasync="false"
+          src="//embitterlorrycar.com/3be55e302f50f4200add20d753ba95bd/invoke.js"
+        ></script>
+        <div id="container-3be55e302f50f4200add20d753ba95bd"></div>
       </body>
     </html>
   );
