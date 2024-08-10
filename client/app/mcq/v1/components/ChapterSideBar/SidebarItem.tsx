@@ -17,7 +17,7 @@ const SidebarItem = ({
         index < totalLengthOfChapters - 1 ? "border-b-1" : "border-b-0"
       } border-r-0 items-center gap-2 w-full px-2 py-2  ${
         String(item.name.replaceAll(" ", "-")) === chapter
-          ? " bg-purple-900 border-l-1 border-l-white text-white hover:bg-purple-950 "
+          ? " bg-purple-900 border-l-1 border-l-white text-white hover:bg-purple-900 "
           : "border-purple-300 hover:bg-purple-200 text-gray-800"
       }`}
     >

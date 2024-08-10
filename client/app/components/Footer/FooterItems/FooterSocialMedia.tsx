@@ -14,15 +14,15 @@ const FooterSocialMedia = () => {
         Follow Us on Social Media
       </div> */}
       <ul className="flex gap-2">
-        {/* <li className="flex justify-center hover:text-purple-950 items-center cursor-pointer">
+        {/* <li className="flex justify-center hover:text-purple-900 items-center cursor-pointer">
           <FaFacebookSquare size={30} />
         </li> */}
-        <li className="flex justify-center hover:text-purple-950 items-center cursor-pointer">
+        <li className="flex justify-center hover:text-purple-900 items-center cursor-pointer">
           <Link href="https://www.instagram.com/prepaim" target="_blank">
             <FaInstagramSquare size={30} />
           </Link>
         </li>
-        <li className="flex justify-center hover:text-purple-950 items-center cursor-pointer">
+        <li className="flex justify-center hover:text-purple-900 items-center cursor-pointer">
           <Link
             href="https://www.linkedin.com/company/prepaim/"
             target="_blank"

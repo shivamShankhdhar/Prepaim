@@ -37,7 +37,7 @@ const ContactUsForm = () => {
               onChange={(e) => setUserContactQuery(e.target.value)}
             />
             <button
-              className="py-1 px-3 rounded-md justify-center items-center flex gap-1 w-[fit-content] bg-purple-700 hover:bg-purple-800 text-white border"
+              className="py-1 px-3 rounded-md justify-center items-center flex gap-1 w-[fit-content] bg-purple-950 hover:bg-purple-900 text-white border"
               type="submit"
               onClick={handleSubmit}
             >

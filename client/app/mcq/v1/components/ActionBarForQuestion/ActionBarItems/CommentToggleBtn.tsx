@@ -36,7 +36,7 @@ const CommentToggleBtn = ({
     >
       <Button
         // sx={{ border: 1 }}
-        className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-950"
+        className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-900"
         onClick={() => {
           handleCommentToggle();
           // handleQuestionNavigationOpen();
@@ -64,7 +64,7 @@ const CommentToggleBtn = ({
               <MdOutlineErrorOutline size={15} className="px-0" />
             )
           ) : (
-            <SimpleLoader size={15} cls={"text-purple-800 "} />
+            <SimpleLoader size={15} cls={"text-purple-900 "} />
           )}
         </div>
       </Button>

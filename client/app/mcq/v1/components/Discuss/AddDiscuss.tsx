@@ -75,7 +75,7 @@ const AddDiscuss = ({ question }: any) => {
         </div>
         <div className="w-full flex flex-row justify-center items-center ">
           <Button
-            className="bg-purple-900 text-white flex rounded-sm justify-center items-center py-1 w-[fit-content] cursor-pointer hover:bg-purple-950 px-3 gap-2"
+            className="bg-purple-900 text-white flex rounded-sm justify-center items-center py-1 w-[fit-content] cursor-pointer hover:bg-purple-900 px-3 gap-2"
             onClick={handleCommentSubmit}
           >
             {isPostingComment && <SimpleLoader size={15} cls="text-white" />}

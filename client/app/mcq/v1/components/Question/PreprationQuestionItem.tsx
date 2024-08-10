@@ -116,7 +116,7 @@ const PreprationQuestionItem = () => {
                       />
                     </div>
                     {/* question heading  */}
-                    <div className="w-full text-lg flex justify-start font-semibold text-purple-950 items-center py-3">
+                    <div className="w-full text-lg flex justify-start font-semibold text-purple-900 items-center py-3">
                       Q&nbsp;{questionNo + 1}. {question.question}
                     </div>
 

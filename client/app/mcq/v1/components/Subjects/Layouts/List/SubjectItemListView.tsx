@@ -44,7 +44,7 @@ const SubjectItemListView = ({
           <LightTooltip title="Start Quizz">
             <Button
               onClick={() => handleNavigateToQuestion(item.name)}
-              className="py-1 flex rounded-md focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-1 cursor-pointer px-2 bg-purple-800 text-white  hover:bg-purple-900"
+              className="py-1 flex rounded-md focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-1 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-900"
             >
               {selectedSubject === item.name && searchingChapters && (
                 <SimpleLoader clr="white" size={15} />
@@ -53,14 +53,14 @@ const SubjectItemListView = ({
             </Button>
           </LightTooltip>
           <LightTooltip title="Explore all chapters">
-          <Button
-            className="py-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-md text-black px-2 hover:bg-gray-300"
-            href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
-            // title={`Explore all Chapters of ${item.name}`}
-          >
-            Chapters
+            <Button
+              className="py-1 bg-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-md text-black px-2 hover:bg-gray-300"
+              href={`/mcq/v1/${item.name.replaceAll(" ", "-")}/chapters`}
+              // title={`Explore all Chapters of ${item.name}`}
+            >
+              Chapters
             </Button>
-            </LightTooltip>
+          </LightTooltip>
         </div>
       </div>
     </div>

@@ -47,6 +47,7 @@ interface Props {
   questionNo: number;
   isAnswerLocked: any;
   setIsAnswerLocked: any;
+  isTrackingProgress: any;
 }
 
 const TestPreprationQuestionItem = ({
@@ -62,6 +63,7 @@ const TestPreprationQuestionItem = ({
   isCommentSection,
   isAnswerExplanationOpen,
   handleAnswerExplanationToggle,
+  isTrackingProgress,
 }: Props) => {
   const cookies = useCookies();
 
@@ -102,7 +104,7 @@ const TestPreprationQuestionItem = ({
 
                 {/* question component  */}
                 <div className="py-2">
-                  <div className="text-lg px-2 font-semibold py-1 text-purple-950 ">
+                  <div className="text-lg px-2 font-semibold py-1 text-purple-900 ">
                     Q{questionNo}.&nbsp;
                     {questions.length > 0 &&
                       questions[questionNo - 1]?.question}
@@ -110,7 +112,7 @@ const TestPreprationQuestionItem = ({
                 </div>
                 {/* question guide  */}
                 {cookies.get("isQuestionGuideClosed") !== "true" && (
-                  <div className="bg-purple-100 border border-purple-300 text-purple-800 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
+                  <div className="bg-purple-100 border border-purple-300 text-purple-900 rounded-sm flex justify-between items-center gap-2 px-5 py-1 text-[0.8rem] hover:cursor-pointer animate-pulse hover:animate-none">
                     <div className="flex-1 ">
                       Try clicking an answer to check whether it is right or
                       wrong
@@ -118,7 +120,7 @@ const TestPreprationQuestionItem = ({
                     <LightTooltip title="Close">
                       <div
                         // title="Close"
-                        className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-700 text-white"
+                        className="flex cursor-pointer justify-center items-center h-4 w-4 rounded-full bg-purple-950 text-white"
                         onClick={() =>
                           cookies.set("isQuestionGuideClosed", "true")
                         }
@@ -133,7 +135,7 @@ const TestPreprationQuestionItem = ({
                 <div
                   className={`flex ${
                     pageMode === "stack-page-mode" &&
-                    "border border-dashed border-b-1 border-purple-700 border-t-1 border-r-0 border-l-0"
+                    "border border-dashed border-b-1 border-purple-950 border-t-1 border-r-0 border-l-0"
                   }  justify-center items-center pb-5 pt-3 gap-2  max-sm:flex-col text-gray-700  max-md:flex-wrap md:flex-wrap`}
                 >
                   {questions[questionNo - 1]?.answer.map(
@@ -169,29 +171,32 @@ const TestPreprationQuestionItem = ({
                       </Button>
                       {/* question other navigations  */}
                       {/* for large screens  */}
-                      <div className="flex-1 sm:hidden max-sm:hidden md:flex max-md:flex lg:flex xl:flex 2xl:flex justify-center gap-1 items-center">
-                        <ToggleAnswerExplanationBtn
-                          isAnswerLocked={isAnswerLocked}
-                          handleQuestionNavigationOpen={
-                            handleQuestionNavigationOpen
-                          }
-                          handleAnswerExplanationToggle={
-                            handleAnswerExplanationToggle
-                          }
-                          isAnswerExplanationOpen={isAnswerExplanationOpen}
-                        />
-                        <CommentToggleBtn
-                          handleQuestionNavigationOpen={
-                            handleQuestionNavigationOpen
-                          }
-                          commentLength={commentLength}
-                          loadingComments={loadingComments}
-                          handleCommentToggle={handleCommentToggle}
-                          isCommentSection={isCommentSection}
-                          question={questions[questionNo - 1]}
-                          commentsError={commentsError}
-                        />
-                      </div>
+                      {!isTrackingProgress && (
+                        <div className="flex-1 sm:hidden max-sm:hidden md:flex max-md:flex lg:flex xl:flex 2xl:flex justify-center gap-1 items-center">
+                          <ToggleAnswerExplanationBtn
+                            isAnswerLocked={isAnswerLocked}
+                            handleQuestionNavigationOpen={
+                              handleQuestionNavigationOpen
+                            }
+                            handleAnswerExplanationToggle={
+                              handleAnswerExplanationToggle
+                            }
+                            isAnswerExplanationOpen={isAnswerExplanationOpen}
+                          />
+                          <CommentToggleBtn
+                            handleQuestionNavigationOpen={
+                              handleQuestionNavigationOpen
+                            }
+                            commentLength={commentLength}
+                            loadingComments={loadingComments}
+                            handleCommentToggle={handleCommentToggle}
+                            isCommentSection={isCommentSection}
+                            question={questions[questionNo - 1]}
+                            commentsError={commentsError}
+                          />
+                        </div>
+                      )}
+
                       {/* next button  */}
                       <Button
                         sx={{
@@ -203,7 +208,7 @@ const TestPreprationQuestionItem = ({
                         href={`/mcq/v1/${subject}/${chapter}/Test-Prepration-Mode/${
                           questionNo + 1
                         }`}
-                        className=" bg-purple-900 focus:ring-2 flex justify-center items-center focus:outline-none focus:ring-purple-200 hover:bg-purple-950 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
+                        className=" bg-purple-900 focus:ring-2 flex justify-center items-center focus:outline-none focus:ring-purple-200 hover:bg-purple-900 text-white disabled:text-white disabled:bg-purple-50 gap-1 disabled:cursor-not-allowed py-1"
                         disabled={questionNo === questions.length}
                         // onClick={handleNextQuestion}
                       >
@@ -211,7 +216,7 @@ const TestPreprationQuestionItem = ({
                       </Button>
                     </div>
                     {/* for mobile screens only  */}
-                    <div className="flex-1 border border-purple-600 py-2 border-dashed border-t-1 border-r-0 border-l-0 border-b-0 sm:flex max-sm:flex md:hidden max-md:hidden lg:flex xl:hidden 2xl:hidden justify-between gap-1 items-center">
+                    <div className="flex-1 border border-purple-900 py-2 border-dashed border-t-1 border-r-0 border-l-0 border-b-0 sm:flex max-sm:flex md:hidden max-md:hidden lg:flex xl:hidden 2xl:hidden justify-between gap-1 items-center">
                       <ToggleAnswerExplanationBtn
                         isAnswerLocked={isAnswerLocked}
                         handleQuestionNavigationOpen={
@@ -237,7 +242,7 @@ const TestPreprationQuestionItem = ({
                     {/* {isQuestionNavigationOpen && ( */}
                     <div className="w-full">
                       {isAnswerExplanationOpen && (
-                        <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
+                        <div className="w-full py-3 border border-dashed border-purple-900 border-t-1 border-l-0 border-b-0 border-r-0">
                           <AnswerExplanation
                             question={questions[questionNo - 1]}
                           />
@@ -245,12 +250,12 @@ const TestPreprationQuestionItem = ({
                       )}
                       {isCommentSection && (
                         <>
-                          <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
+                          <div className="w-full py-3 border border-dashed border-purple-900 border-t-1 border-l-0 border-b-0 border-r-0">
                             <AddDiscuss
                               question={questions[questionNo - 1].question}
                             />
                           </div>
-                          <div className="w-full py-3 border border-dashed border-purple-600 border-t-1 border-l-0 border-b-0 border-r-0">
+                          <div className="w-full py-3 border border-dashed border-purple-900 border-t-1 border-l-0 border-b-0 border-r-0">
                             <AllDiscuss
                               setCommentsError={setCommentsError}
                               setLoadingComments={setLoadingComments}

@@ -17,7 +17,7 @@ const QuestionSkeleton = ({ requestedPage }: any) => {
           className={`rounded-md animate-pulse bg-gray-100 py-5 px-5 w-full flex`}
         ></div>
       </div>
-      <hr className="text-purple-800 bg-purple-800 animate-pulse" />
+      <hr className="text-purple-900 bg-purple-900 animate-pulse" />
       {/* answers */}
       <div className="flex justify-center items-center py-5 gap-2 text-gray-700  flex-wrap ">
         <AnswerItemSkeleton />

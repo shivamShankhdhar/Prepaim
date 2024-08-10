@@ -18,7 +18,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
   return (
     <div className="w-full mt-1 flex justify-end pr-5 px-2 items-center ">
-      <div className="flex justify-center  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-800">
+      <div className="flex justify-center  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-900">
         <LightTooltip
           title={`${
             layOutView === "grid"

@@ -35,7 +35,7 @@ const ToggleAnswerExplanationBtn = ({
       }`}
     >
       <Button
-        className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-950"
+        className="bg-purple-200 hover:bg-purple-300 w-[fit-content] border rounded-md flex items-center justify-center gap-2 px-4 py-1 cursor-pointer text-purple-900"
         onClick={() => {
           if (isAnswerLocked) {
             toast.error(

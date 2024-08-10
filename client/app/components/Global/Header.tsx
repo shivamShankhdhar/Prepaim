@@ -175,7 +175,7 @@ const Header = () => {
           //       setLoginModelCurrentOpenComponent("login");
           //       handleOpen();
           //     }}
-          //     className="flex gap-1  border border-purple-300 text-purple-800 hover:bg-purple-900 hover:text-white focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+          //     className="flex gap-1  border border-purple-300 text-purple-900 hover:bg-purple-900 hover:text-white focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
           //   >
           //     Login
           //   </Button>
@@ -186,7 +186,7 @@ const Header = () => {
           //       setLoginModelCurrentOpenComponent("register");
           //       handleOpen();
           //     }}
-          //     className="flex gap-1 bg-purple-900 border border-purple-300 text-white hover:bg-purple-950 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+          //     className="flex gap-1 bg-purple-900 border border-purple-300 text-white hover:bg-purple-900 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
           //   >
           //     Sign Up
           //   </Button>

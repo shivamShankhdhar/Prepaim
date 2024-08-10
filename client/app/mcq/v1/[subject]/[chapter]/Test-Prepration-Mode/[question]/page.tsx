@@ -68,6 +68,7 @@ const QuestionPage = () => {
   const [isAnswerExplanationOpen, setIsAnswerExplanationOpen] = useState(false);
 
   const [openSidebarSlider, setOpenSidebarSlider] = useState(false);
+
   const [openQuestionBoard, setOpenQuestionBoard] = useState(false);
 
   useEffect(() => {
@@ -149,6 +150,12 @@ const QuestionPage = () => {
     }
   }, []);
 
+  // track progress
+  const [isTrackingProgress, setIsTrackingProgress] = useState(false);
+  const handleClickOnTrackProgressBtn = () => {
+    setIsTrackingProgress((prev) => !prev);
+    // alert("yes its working man");
+  };
   return (
     <>
       <div className="flex justify-between h-[92vh] overflow-hidden ">
@@ -205,10 +212,14 @@ const QuestionPage = () => {
               />
             </div>
             {/* page layout toggle button */}
-            <QuestionPageLayoutToggle />
+            <QuestionPageLayoutToggle
+              handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
+              isTrackingProgress={isTrackingProgress}
+            />
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
               <TestPreprationQuestionItem
+                isTrackingProgress={isTrackingProgress}
                 questionNo={questionNo}
                 isAnswerLocked={isAnswerLocked}
                 setIsAnswerLocked={setIsAnswerLocked}

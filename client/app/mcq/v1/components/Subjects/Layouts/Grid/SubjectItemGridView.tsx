@@ -47,12 +47,12 @@ const SubjectItemGridView = ({
         </div>
       </div>
 
-      <div className="text-lg  text-purple-950 font-semibold">{item.name}</div>
+      <div className="text-lg  text-purple-900 font-semibold">{item.name}</div>
       <div className="flex w-[50%] flex-col gap-3 ">
         <LightTooltip title={`Start quizz for ${item.name}`}>
           <Button
             onClick={() => handleNavigateToQuestion(item.name)}
-            className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-950"
+            className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-900 text-white  hover:bg-purple-900"
           >
             {selectedSubject === item.name && searchingChapters && (
               <SimpleLoader clr="white" size={15} />

@@ -11,7 +11,7 @@ const QuestionLevel = ({ level, isText }: any) => {
       )}
 
       {level === "b" && (
-        <div className="bg-purple-800 w-[fit-content] text-purple-50 px-3 py-1/2  rounded-full">
+        <div className="bg-purple-900 w-[fit-content] text-purple-50 px-3 py-1/2  rounded-full">
           medium
         </div>
       )}

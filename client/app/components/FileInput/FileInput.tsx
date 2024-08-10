@@ -78,7 +78,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
           {imageFile !== null && (
             <div
               onClick={handleUpload}
-              className="px-3 py-1 cursor-pointer bg-purple-500 hover:bg-purple-600 disabled:bg-purple-200 text-white rounded-md flex justify-center items-center gap-1"
+              className="px-3 py-1 cursor-pointer bg-purple-900 hover:bg-purple-900 disabled:bg-purple-200 text-white rounded-md flex justify-center items-center gap-1"
             >
               <BsCloudUpload size={18} /> Upload
             </div>

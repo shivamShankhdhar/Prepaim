@@ -45,7 +45,7 @@ const Sidebar = ({ error, requestedPage }: Props) => {
     <div
       className={`min-w-[220px] max-w-[fit-content]  border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 bg-white overflow-y-auto `}
     >
-      <div className="px-2 py-[10px] text-center flex justify-center items-center font-semibold text-purple-950 ">
+      <div className="px-2 py-[10px] text-center flex justify-center items-center font-semibold text-purple-900 ">
         <IoBookOutline size={20} />
         &nbsp;{" "}
         {chapters.length > 1

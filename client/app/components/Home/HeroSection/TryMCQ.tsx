@@ -50,7 +50,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
   // (selectedSubject);
   return (
     <>
-      <div className="w-full  text-gray-700 border border-dashed border-b-1 border-t-0 border-l-0 border-r-0 border-purple-800 py-2 flex justify-center items-center font-semibold text-2xl">
+      <div className="w-full  text-gray-700 border border-dashed border-b-1 border-t-0 border-l-0 border-r-0 border-purple-900 py-2 flex justify-center items-center font-semibold text-2xl">
         Try MCQ&apos;s
       </div>
 
@@ -83,7 +83,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
           <Button
             sx={{ textTransform: "none" }}
             href={`/mcq/v1/subjects`}
-            className="px-4 py-1 bg-purple-900 hover:bg-purple-950 text-white"
+            className="px-4 py-1 bg-purple-900 hover:bg-purple-900 text-white"
           >
             View all Subjects
           </Button>

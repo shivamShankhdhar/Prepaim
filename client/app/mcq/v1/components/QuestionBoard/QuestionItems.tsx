@@ -36,8 +36,8 @@ const QuestionItems = ({ index, item }: any) => {
           : item.level === "b"
           ? `${
               questionNo === index
-                ? "bg-purple-600 text-white hover:bg-purple-900 focus:ring-2 focus:ring-inset focus:ring-white"
-                : "bg-purple-200 text-purple-900 focus:ring-2 focus:ring-white focus:ring-inset hover:bg-purple-600 hover:text-white"
+                ? "bg-purple-900 text-white hover:bg-purple-900 focus:ring-2 focus:ring-inset focus:ring-white"
+                : "bg-purple-200 text-purple-900 focus:ring-2 focus:ring-white focus:ring-inset hover:bg-purple-900 hover:text-white"
             }`
           : `${
               questionNo === index
@@ -51,7 +51,7 @@ const QuestionItems = ({ index, item }: any) => {
           "bg-indigo-600  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-indigo-700") ||
         (questionNo === index &&
           item.level === "b" &&
-          "  bg-purple-600  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-purple-700") ||
+          "  bg-purple-900  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-purple-950") ||
         (questionNo === index &&
           item.level === "c" &&
           "bg-rose-600 rounded-full text-white focus:ring-2 focus:ring-inset focus:ring-white hover:text-white hover:bg-rose-700")
