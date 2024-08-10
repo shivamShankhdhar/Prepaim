@@ -49,10 +49,10 @@ const QuestionPageLayoutToggle = ({
   return (
     <div className="w-full flex justify-end items-center pt-1 gap-2 px-5">
       {/* share buttons shows only on prepration mode */}
-      <StoreProgressToggleBtn
+      {/* <StoreProgressToggleBtn
         handleClick={handleClickOnTrackProgressBtn}
         isTrackingProgress={isTrackingProgress}
-      />
+      /> */}
       <ShareBtn />
 
       <div className="flex  items-center border  bg-white border-purple-900 rounded-[3px] text-purple-900">
