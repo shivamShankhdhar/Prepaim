@@ -211,6 +211,12 @@ const QuestionPage = () => {
                 ).toString()}
               />
             </div>
+            <a href="https://beta.publishers.adsterra.com/referral/juxrnUznMh">
+              <img
+                alt="banner"
+                src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
+              />
+            </a>
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle
               handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
