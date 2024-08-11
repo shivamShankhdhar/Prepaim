@@ -9,33 +9,40 @@ import ChapterSideBarSkeleton from "./ChapterSideBarSkeleton";
 import SidebarItem from "./SidebarItem";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import { usePathname } from "next/navigation";
+import toast from "react-hot-toast";
 interface Props {
   error: String;
   requestedPage: String;
+  loading: boolean;
 }
 
-const Sidebar = ({ error, requestedPage }: Props) => {
+const Sidebar = ({ error, requestedPage, loading }: Props) => {
   const { chapter } = useParams();
   const { subject } = useParams();
   const pathname = usePathname();
   const [chapters, setChapters] = useState(
     [{ name: "" }].filter((i) => i.name !== "")
   );
+  const [loadingChapters, setLoadingChapters] = useState(false);
 
   useEffect(() => {
+    setLoadingChapters(true);
     try {
       axios
         .get(
           `https://api.data.prepaim.com/mcq/getallchaptersbysubject/${subject}`
         )
         .then((response) => {
+          setLoadingChapters(false);
           setChapters(response.data);
         })
         .catch((error) => {
-          error;
+          setLoadingChapters(false);
+          // toast.error("Something went wrong");
         });
     } catch (error: any) {
-      error.message;
+      setLoadingChapters(false);
+      // toast.error("Something went wrong");
     }
   }, []);
 
@@ -43,9 +50,9 @@ const Sidebar = ({ error, requestedPage }: Props) => {
 
   return (
     <div
-      className={`min-w-[220px] max-w-[fit-content]  border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 bg-white overflow-y-auto `}
+      className={`min-w-[220px] max-w-[fit-content] border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 bg-white overflow-y-auto `}
     >
-      <div className="px-2 py-[10px] text-center flex justify-center items-center font-semibold text-purple-900 ">
+      <div className="px-2 py-[10px] text-center border border-dashed border-t-0 border-b-1 border-l-0 border-r-0 border-purple-950 flex justify-center items-center font-semibold text-purple-900 ">
         <IoBookOutline size={20} />
         &nbsp;{" "}
         {chapters.length > 1
@@ -54,7 +61,7 @@ const Sidebar = ({ error, requestedPage }: Props) => {
       </div>
       <div className="flex flex-col gap-0 w-[fit-content] ">
         {Object.values(error).toString().replaceAll(",", "") === "" ? (
-          chapters.length > 0 ? (
+          loadingChapters === false ? (
             chapters
               .filter((i) => i.name !== "")
               .map((item, index) => (
@@ -72,11 +79,14 @@ const Sidebar = ({ error, requestedPage }: Props) => {
             <ChapterSideBarSkeleton />
           )
         ) : (
-          <ErrorMessage
-            isBg={false}
-            isButton={false}
-            text={`Error !! Can't Load Chapters`}
-          />
+          <div className="w-full px-2">
+            {" "}
+            <ErrorMessage
+              isBg={false}
+              isButton={false}
+              text={`Error !! Can't Load Chapters`}
+            />
+          </div>
         )}
       </div>
     </div>

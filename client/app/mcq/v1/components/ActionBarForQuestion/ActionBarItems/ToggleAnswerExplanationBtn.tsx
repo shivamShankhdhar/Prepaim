@@ -28,7 +28,7 @@ const ToggleAnswerExplanationBtn = ({
     <LightTooltip
       title={`${
         isAnswerLocked
-          ? "Answer explanation is locked right now, please click any one option to unlock answer explanation."
+          ? "Answer explanation is locked right now, please click right option to unlock answer explanation."
           : isAnswerExplanationOpen
           ? "Hide Answer"
           : "Show Answer"
@@ -39,7 +39,7 @@ const ToggleAnswerExplanationBtn = ({
         onClick={() => {
           if (isAnswerLocked) {
             toast.error(
-              "Answer explanation is locked right now, please click any one option to unlock answer explanation."
+              "Answer explanation is locked right now, please click right option to unlock answer explanation."
             );
             return;
           }

@@ -48,6 +48,7 @@ interface Props {
   isAnswerLocked: any;
   setIsAnswerLocked: any;
   isTrackingProgress: any;
+  setIsAnswerExplanationOpen: any;
 }
 
 const TestPreprationQuestionItem = ({
@@ -64,6 +65,7 @@ const TestPreprationQuestionItem = ({
   isAnswerExplanationOpen,
   handleAnswerExplanationToggle,
   isTrackingProgress,
+  setIsAnswerExplanationOpen,
 }: Props) => {
   const cookies = useCookies();
 
@@ -142,6 +144,9 @@ const TestPreprationQuestionItem = ({
                     (ans: any, index: number) => {
                       return (
                         <AnswerItem
+                          setIsAnswerExplanationOpen={
+                            setIsAnswerExplanationOpen
+                          }
                           setIsAnswerLocked={setIsAnswerLocked}
                           key={`ket-prop-at-question-answer-item-${index}-${ans}`}
                           questions={questions}
