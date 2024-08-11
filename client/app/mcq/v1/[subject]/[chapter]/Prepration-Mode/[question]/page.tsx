@@ -171,7 +171,11 @@ const QuestionPage = () => {
           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
           id="question_board"
         >
-          <Sidebar requestedPage={"Prepration-Mode"} error={error} />
+          <Sidebar
+            requestedPage={"Prepration-Mode"}
+            error={error}
+            loading={loading}
+          />
         </div>
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           <div className="w-full">
