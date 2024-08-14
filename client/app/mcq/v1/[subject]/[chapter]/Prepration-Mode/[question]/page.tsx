@@ -149,6 +149,11 @@ const QuestionPage = () => {
   return (
     <>
       <div className="flex justify-between h-[92vh] overflow-hidden ">
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+          crossOrigin="anonymous"
+        ></script>
         <SidebarSlider
           uniqueKey="chapters"
           open={openSidebarSlider}
