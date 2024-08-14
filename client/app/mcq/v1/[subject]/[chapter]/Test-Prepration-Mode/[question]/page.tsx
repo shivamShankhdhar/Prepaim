@@ -245,10 +245,10 @@ const QuestionPage = () => {
                   className="adsbygoogle"
                   style={{ display: "block" }}
                   data-ad-client="ca-pub-1113302487630583"
-                  data-ad-slot="6071713317"
+                  data-ad-slot="7957270938"
                   data-ad-format="auto"
                   data-full-width-responsive="true"
-                ></ins>
+                />
               </div>
 
               {/* question*/}
