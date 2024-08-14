@@ -32,7 +32,7 @@ const SubjectPage = () => {
           }}
           data-ad-client="ca-pub-1113302487630583"
           data-ad-slot="7957270938"
-          data-ad-format="rectanle, horizontal"
+          data-ad-format="horizontal"
           data-full-width-responsive="true"
         ></ins>
 

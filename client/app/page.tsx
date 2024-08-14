@@ -35,23 +35,21 @@ export default function Home() {
   return (
     <>
       <div className="flex w-full items-center flex-col mb-3">
-        <div className="w-full"></div>
         {/* HERO SECTION  */}
         <HeroSection />
-        <div className="w-full">
-          <ins
-            className="adsbygoogle"
-            style={{
-              display: "inline-block",
-              width: "100%",
-              height: "100px",
-            }}
-            data-ad-client="ca-pub-1113302487630583"
-            data-ad-slot="7957270938"
-            data-ad-format="rectanle, horizontal"
-            data-full-width-responsive="true"
-          ></ins>
-        </div>
+
+        <ins
+          className="adsbygoogle"
+          style={{
+            display: "inline-block",
+            width: "100%",
+            height: "100px",
+          }}
+          data-ad-client="ca-pub-1113302487630583"
+          data-ad-slot="7957270938"
+          data-ad-format="horizontal"
+          data-full-width-responsive="true"
+        ></ins>
 
         {/* MCQ Questions LIST  */}
         <div className="w-full flex px-2 flex-col">
