@@ -27,6 +27,7 @@ export default function Home() {
   }, [data.apiData, data.isLoading, data.serverError]);
 
   const [errorLoadingSubjects, setErrorLoadingSubjects] = useState("");
+
    useEffect(() => {
      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
    }, []);
@@ -37,15 +38,17 @@ export default function Home() {
          <div className="w-full"></div>
          {/* HERO SECTION  */}
          <HeroSection />
+         <div className="w-full h-[200px] flex justify-center items-center">
+           <ins
+             className="adsbygoogle"
+             style={{ display: "block" }}
+             data-ad-client="ca-pub-1113302487630583"
+             data-ad-slot="7957270938"
+             data-ad-format="auto"
+             data-full-width-responsive="true"
+           ></ins>
+         </div>
 
-         <ins
-           className="adsbygoogle"
-           style={{ display: "block" }}
-           data-ad-format="fluid"
-           data-ad-layout-key="-bw-d+1k-5q+9s"
-           data-ad-client="ca-pub-1113302487630583"
-           data-ad-slot="3637121664"
-         ></ins>
          {/* MCQ Questions LIST  */}
          <div className="w-full flex px-2 flex-col">
            {/* try mcq questions  */}

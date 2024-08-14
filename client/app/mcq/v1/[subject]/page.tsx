@@ -30,7 +30,7 @@ const SubjectPage = () => {
              data-ad-slot="7957270938"
              data-ad-format="auto"
              data-full-width-responsive="true"
-           />
+           ></ins>
          </div>
          {/* all subjects  */}
          <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />

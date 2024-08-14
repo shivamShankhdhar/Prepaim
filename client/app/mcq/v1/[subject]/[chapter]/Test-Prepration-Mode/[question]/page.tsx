@@ -242,15 +242,15 @@ const QuestionPage = () => {
               handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
               isTrackingProgress={isTrackingProgress}
             />
-            <div className="h-10 flex justify-center items-center">
+            <div className="h-[200px] w-full flex justify-center items-center">
               <ins
                 className="adsbygoogle"
                 style={{ display: "block" }}
                 data-ad-client="ca-pub-1113302487630583"
                 data-ad-slot="7957270938"
-                // data-ad-format="auto"
+                data-ad-format="auto"
                 data-full-width-responsive="true"
-              />
+              ></ins>
             </div>
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
