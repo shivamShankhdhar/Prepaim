@@ -36,7 +36,7 @@ const QuestionBoard = ({
   }, [questions, medium, advance]);
 
   return (
-    <div className={`bg-white gap-0 flex-col flex-grow-1  w-[350px]`}>
+    <div className={`bg-white gap-0 flex-col flex-grow-1  w-[350px] h-[92vh]`}>
       <div className="w-full text-gray-500 text-center px-2 py-[10px] border border-purple-300 border-t-0 border-l-0 border-r-0 border-b-1 flex items-center font-bold">
         <div className="w-[fit-content] bg-purple-100 border-purple-300 cursor-pointer text-purple-900 hover:bg-purple-100 p-1 border rounded-md sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
           <IoIosClose size={20} onClick={handleClose} />
