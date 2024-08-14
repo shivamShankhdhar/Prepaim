@@ -142,120 +142,111 @@ const QuestionPage = () => {
     }
   }, []);
 
-  return (
-    <>
-      <div className="flex justify-between h-[92vh] overflow-hidden ">
-        <SidebarSlider
-          uniqueKey="chapters"
-          open={openSidebarSlider}
-          items={chapters}
-          setOpen={setOpenSidebarSlider}
-          itemType="chapters"
-          chaptersLength={chapters.length}
-          requestedPage={"Prepration-Mode"}
-        />
+   useEffect(() => {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+   }, []);
 
-        <SidebarSlider
-          pageView="list-view"
-          uniqueKey="question_board"
-          open={openQuestionBoard}
-          setOpen={setOpenQuestionBoard}
-          itemType="question-board"
-          error={error}
-          questions={questions}
-          questionNo={questionNo - 1}
-          setQuestionNo={setQuestionNo}
-          loading={loading}
-        />
-        <div
-          className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
-          id="question_board"
-        >
-          <Sidebar
-            requestedPage={"Prepration-Mode"}
-            error={error}
-            loading={loading}
-          />
-        </div>
-        <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <div className="w-full">
-            {/* breadcrumb  */}
-            <Actions
-              requestedPage={"Prepration-Page"}
-              setProperty1={setOpenSidebarSlider}
-              setProperty2={setOpenQuestionBoard}
-              subject={subject.toString()}
-              chapter={chapter.toString()}
-              totalquestion={questionsLength.toString()}
-              questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
-            />
-            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-              <Breadcrum
-                subject={subject.toString()}
-                chapter={chapter.toString()}
-                totalquestion={questionsLength.toString()}
-                questionNo={(questions.length === 0
-                  ? 0
-                  : questionNo
-                ).toString()}
-              />
-            </div>
-            {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-     crossOrigin="anonymous"></script> */}
-            {/* <!-- laptop ads --> */}
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="7957270938"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
-            <script>
-              ({`adsbygoogle = window.adsbygoogle || []).push({});`});
-            </script>
-            {/* page layout toggle button */}
-            <QuestionPageLayoutToggle />
-            <script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-              crossOrigin="anonymous"
-            ></script>
-            {/* display afs  */}
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="6071713317"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
-            <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
-            <div className="w-full flex justify-between min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
-              {/* question*/}
-              <PreprationQuestionItem />
-            </div>
-          </div>
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-            crossOrigin="anonymous"
-          ></script>
-          {/* display afs  */}
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-1113302487630583"
-            data-ad-slot="6071713317"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-          <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
-          <Footer />
-        </div>
+   return (
+     <>
+       <div className="flex justify-between h-[92vh] overflow-hidden ">
+         <SidebarSlider
+           uniqueKey="chapters"
+           open={openSidebarSlider}
+           items={chapters}
+           setOpen={setOpenSidebarSlider}
+           itemType="chapters"
+           chaptersLength={chapters.length}
+           requestedPage={"Prepration-Mode"}
+         />
 
-        {/* question board  */}
-        {/* <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+         <SidebarSlider
+           pageView="list-view"
+           uniqueKey="question_board"
+           open={openQuestionBoard}
+           setOpen={setOpenQuestionBoard}
+           itemType="question-board"
+           error={error}
+           questions={questions}
+           questionNo={questionNo - 1}
+           setQuestionNo={setQuestionNo}
+           loading={loading}
+         />
+         <div
+           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
+           id="question_board"
+         >
+           <Sidebar
+             requestedPage={"Prepration-Mode"}
+             error={error}
+             loading={loading}
+           />
+         </div>
+         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
+           <div className="w-full">
+             {/* breadcrumb  */}
+             <Actions
+               requestedPage={"Prepration-Page"}
+               setProperty1={setOpenSidebarSlider}
+               setProperty2={setOpenQuestionBoard}
+               subject={subject.toString()}
+               chapter={chapter.toString()}
+               totalquestion={questionsLength.toString()}
+               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
+             />
+             <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+               <Breadcrum
+                 subject={subject.toString()}
+                 chapter={chapter.toString()}
+                 totalquestion={questionsLength.toString()}
+                 questionNo={(questions.length === 0
+                   ? 0
+                   : questionNo
+                 ).toString()}
+               />
+             </div>
+
+             {/* page layout toggle button */}
+             <QuestionPageLayoutToggle />
+             <div className="w-full">
+               <script
+                 async
+                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+                 crossOrigin="anonymous"
+               ></script>
+               <ins
+                 className="adsbygoogle"
+                 style={{ display: "block" }}
+                 data-ad-client="ca-pub-1113302487630583"
+                 data-ad-slot="7957270938"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"
+               />
+             </div>
+             <div className="w-full flex justify-between min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
+               {/* question*/}
+               <PreprationQuestionItem />
+             </div>
+           </div>
+           <div className="w-full">
+             <script
+               async
+               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+               crossOrigin="anonymous"
+             ></script>
+             <ins
+               className="adsbygoogle"
+               style={{ display: "block" }}
+               data-ad-client="ca-pub-1113302487630583"
+               data-ad-slot="7957270938"
+               data-ad-format="auto"
+               data-full-width-responsive="true"
+             />
+           </div>
+           <Footer />
+         </div>
+
+         {/* question board  */}
+         {/* <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <QuestionBoard
             error={error}
             questions={questions}
@@ -266,9 +257,9 @@ const QuestionPage = () => {
             setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
           />
         </div> */}
-      </div>
-    </>
-  );
+       </div>
+     </>
+   );
 };
 
 export default QuestionPage;

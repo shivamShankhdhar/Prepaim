@@ -278,13 +278,14 @@ const QuestionPage = () => {
               />
             </div>
           </div>
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-            crossOrigin="anonymous"
-          ></script>
+
           {/* display afs  */}
           <div className="w-full">
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+              crossOrigin="anonymous"
+            ></script>
             <ins
               className="adsbygoogle"
               style={{ display: "block" }}
