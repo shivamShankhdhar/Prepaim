@@ -22,7 +22,7 @@ const SubjectPage = () => {
            subject={subject.toString()}
            subjectLength={subjectLengthAfterAllFilters}
          />
-         <div className="w-full">
+         <div className="w-full h-10 flex justify-center items-center">
            <script
              async
              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"

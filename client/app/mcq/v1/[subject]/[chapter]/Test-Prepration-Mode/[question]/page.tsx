@@ -243,7 +243,7 @@ const QuestionPage = () => {
             />
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
-              <div className="">
+              <div className="h-10 flex justify-center items-center">
                 <script
                   async
                   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
@@ -280,7 +280,7 @@ const QuestionPage = () => {
           </div>
 
           {/* display afs  */}
-          <div className="">
+          {/* <div className="">
             <script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
@@ -294,7 +294,7 @@ const QuestionPage = () => {
               data-ad-format="auto"
               data-full-width-responsive="true"
             ></ins>
-          </div>
+          </div> */}
 
           <Footer />
         </div>
