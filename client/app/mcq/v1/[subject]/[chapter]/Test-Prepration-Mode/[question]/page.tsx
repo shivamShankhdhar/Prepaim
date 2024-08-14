@@ -254,8 +254,10 @@ const QuestionPage = () => {
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 />
-                ((window as any).adsbygoogle = (window as any).adsbygoogle ||
-                []).push({});
+                <script>
+                  ((window as any).adsbygoogle = (window as any).adsbygoogle ||
+                  []).push({});
+                </script>
               </div>
 
               {/* question*/}
