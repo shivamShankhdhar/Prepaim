@@ -204,7 +204,7 @@ const QuestionPage = () => {
         </div>
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <AdsenseHorizontalAds />
+          {/* <AdsenseHorizontalAds /> */}
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions
