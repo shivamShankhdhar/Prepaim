@@ -13,32 +13,32 @@ const SubjectPage = () => {
    useEffect(() => {
      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
    }, []);
-   return (
-     <>
-       <div className="flex w-full items-center flex-col">
-         {/* breadcrum */}
+  return (
+    <>
+      <div className="flex w-full items-center flex-col">
+        {/* breadcrum */}
 
-         <Breadcrum
-           subject={subject.toString()}
-           subjectLength={subjectLengthAfterAllFilters}
-         />
-         <div className="w-full h-[200px] ">
-           <ins
-             className="adsbygoogle"
-             style={{ display: "block" }}
-             data-ad-client="ca-pub-1113302487630583"
-             data-ad-slot="7957270938"
-             data-ad-format="auto"
-             data-full-width-responsive="true"
-           ></ins>
-         </div>
-         {/* all subjects  */}
-         <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
+        <Breadcrum
+          subject={subject.toString()}
+          subjectLength={subjectLengthAfterAllFilters}
+        />
+        <div className="w-full h-[100px] ">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="7957270938"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
+        {/* all subjects  */}
+        <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
 
-         <Footer />
-       </div>
-     </>
-   );
+        <Footer />
+      </div>
+    </>
+  );
 };
 
 export default SubjectPage;

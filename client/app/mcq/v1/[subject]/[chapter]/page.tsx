@@ -35,56 +35,56 @@ const ChapterPage = () => {
       setIsLoading(false);
     }
   }, []);
- useEffect(() => {
-   ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
- }, []);
+   useEffect(() => {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+   }, []);
 
- return (
-   <div className="flex flex-col items-center  w-full">
-     <Breadcrum chaptersLength={chapters.length} />
-     <div className="w-full h-[200px]">
-       <ins
-         className="adsbygoogle"
-         style={{ display: "block" }}
-         data-ad-client="ca-pub-1113302487630583"
-         data-ad-slot="7957270938"
-         data-ad-format="auto"
-         data-full-width-responsive="true"
-       ></ins>
-     </div>
-     <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
-       <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
-         {isLoading === true ? (
-           <ChapterItemSkeleton />
-         ) : error === "" ? (
-           chapters.length > 0 ? (
-             chapters.map((data, index) => {
-               return (
-                 <ChapterItem
-                   key={index}
-                   chapterItemLength={chapters.length}
-                   data={data}
-                   index={index}
-                   subject={subject}
-                 />
-               );
-             })
-           ) : (
-             <ErrorMessage
-               text={"No chapters Found"}
-               isBg={false}
-               isButton={false}
-             />
-           )
-         ) : (
-           <ErrorMessage text={error} isButton={true} isBg={false} />
-         )}
+   return (
+     <div className="flex flex-col items-center  w-full">
+       <Breadcrum chaptersLength={chapters.length} />
+       <div className="w-full h-[100px]">
+         <ins
+           className="adsbygoogle"
+           style={{ display: "block" }}
+           data-ad-client="ca-pub-1113302487630583"
+           data-ad-slot="7957270938"
+           data-ad-format="rectangle"
+           data-full-width-responsive="true"
+         ></ins>
        </div>
-     </div>
+       <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
+         <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
+           {isLoading === true ? (
+             <ChapterItemSkeleton />
+           ) : error === "" ? (
+             chapters.length > 0 ? (
+               chapters.map((data, index) => {
+                 return (
+                   <ChapterItem
+                     key={index}
+                     chapterItemLength={chapters.length}
+                     data={data}
+                     index={index}
+                     subject={subject}
+                   />
+                 );
+               })
+             ) : (
+               <ErrorMessage
+                 text={"No chapters Found"}
+                 isBg={false}
+                 isButton={false}
+               />
+             )
+           ) : (
+             <ErrorMessage text={error} isButton={true} isBg={false} />
+           )}
+         </div>
+       </div>
 
-     <Footer />
-   </div>
- );
+       <Footer />
+     </div>
+   );
 };
 
 export default ChapterPage;
