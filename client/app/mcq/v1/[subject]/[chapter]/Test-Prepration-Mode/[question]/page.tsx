@@ -243,8 +243,8 @@ const QuestionPage = () => {
               isTrackingProgress={isTrackingProgress}
             />
 
-            <div className="px-2 w-full min-h-[92vh] max-[fit-content] flex justify-center items-center">
-              <div className="h-[200px]">
+            <div className="px-2 w-full min-h-[92vh] max-[fit-content] ">
+              <div className="h-[100px]">
                 <ins
                   className="adsbygoogle"
                   style={{ display: "block" }}
