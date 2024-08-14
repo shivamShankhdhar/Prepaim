@@ -207,8 +207,9 @@ const QuestionPage = () => {
           />
         </div>
 
-        <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <div className="w-full">
+        <div className="grow flex flex-col h-[92vh] items-center overflow-y-auto mb-12">
+          {/* <AdsenseHorizontalAds /> */}
+          <div className="w-[90%]">
             <ins
               className="adsbygoogle"
               // style={{ display: "block" }}
@@ -223,7 +224,6 @@ const QuestionPage = () => {
               data-full-width-responsive="true"
             ></ins>
           </div>
-          {/* <AdsenseHorizontalAds /> */}
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions
@@ -246,13 +246,6 @@ const QuestionPage = () => {
                 ).toString()}
               />
             </div>
-
-            {/* <a href="https://beta.publishers.adsterra.com/referral/juxrnUznMh">
-              <img
-                alt="banner"
-                src="https://landings-cdn.adsterratech.com/referralBanners/png/728%20x%2090%20px.png"
-              />
-            </a> */}
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle
               handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
@@ -279,24 +272,6 @@ const QuestionPage = () => {
               />
             </div>
           </div>
-
-          {/* display afs  */}
-          {/* <div className="">
-            <script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-              crossOrigin="anonymous"
-            ></script>
-            <ins
-              className="adsbygoogle"
-              style={{ display: "block" }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="6071713317"
-              data-ad-format="auto"
-              data-full-width-responsive="true"
-            ></ins>
-          </div> */}
-
           <Footer />
         </div>
 

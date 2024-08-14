@@ -37,19 +37,20 @@ export default function Home() {
       <div className="flex w-full items-center flex-col mb-3">
         {/* HERO SECTION  */}
         <HeroSection />
-
-        <ins
-          className="adsbygoogle"
-          style={{
-            display: "inline-block",
-            width: "100%",
-            height: "100px",
-          }}
-          data-ad-client="ca-pub-1113302487630583"
-          data-ad-slot="7957270938"
-          data-ad-format="horizontal"
-          data-full-width-responsive="true"
-        ></ins>
+        <div className="w-full mt-2">
+          <ins
+            className="adsbygoogle"
+            style={{
+              display: "inline-block",
+              width: "100%",
+              height: "100px",
+            }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="7957270938"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
 
         {/* MCQ Questions LIST  */}
         <div className="w-full flex px-2 flex-col">
@@ -66,20 +67,7 @@ export default function Home() {
             )}
           </div>
         </div>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block", textAlign: "center" }}
-          data-ad-layout="in-article"
-          data-ad-format="fluid"
-          data-ad-client="ca-pub-1113302487630583"
-          data-ad-slot="2452828664"
-        ></ins>
-        <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+
         <Footer />
       </div>
     </>
