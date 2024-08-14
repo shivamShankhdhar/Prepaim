@@ -170,6 +170,7 @@ const QuestionPage = () => {
   useEffect(() => {
     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
   }, []);
+
   return (
     <>
       <div className="flex justify-between h-[92vh] overflow-hidden ">
