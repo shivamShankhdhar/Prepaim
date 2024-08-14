@@ -22,20 +22,20 @@ const SubjectPage = () => {
           subject={subject.toString()}
           subjectLength={subjectLengthAfterAllFilters}
         />
-
-        <ins
-          className="adsbygoogle"
-          style={{
-            display: "inline-block",
-            width: "100%",
-            height: "100px",
-          }}
-          data-ad-client="ca-pub-1113302487630583"
-          data-ad-slot="7957270938"
-          data-ad-format="horizontal"
-          data-full-width-responsive="true"
-        ></ins>
-
+        <div className=" ">
+          <ins
+            className="adsbygoogle"
+            style={{
+              display: "inline-block",
+              width: "100%",
+              height: "100px",
+            }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="7957270938"
+            data-ad-format="horizontal"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
         {/* all subjects  */}
         <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
 
