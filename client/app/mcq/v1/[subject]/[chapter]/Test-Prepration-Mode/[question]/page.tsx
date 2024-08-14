@@ -247,7 +247,7 @@ const QuestionPage = () => {
               <div className="h-[200px]">
                 <ins
                   className="adsbygoogle"
-                  style={{ display: "flex", height: "100%", width: "100%" }}
+                  style={{ display: "block" }}
                   data-ad-client="ca-pub-1113302487630583"
                   data-ad-slot="7957270938"
                   data-ad-format="auto"
