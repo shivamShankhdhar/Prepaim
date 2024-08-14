@@ -211,20 +211,6 @@ const QuestionPage = () => {
           {/* <AdsenseHorizontalAds /> */}
 
           <div className="w-full">
-            <div className="w-full inline-block justify-center items-center">
-              <ins
-                className="adsbygoogle inline-block w-[100%] h-[100px]"
-                style={{
-                  display: "inline-block",
-                  width: "100%",
-                  height: "100px",
-                }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format=" horizontal"
-                data-full-width-responsive="true"
-              ></ins>
-            </div>
             {/* breadcrumb  */}
             <Actions
               requestedPage={"Test-Prepration-Page"}
@@ -253,6 +239,20 @@ const QuestionPage = () => {
             />
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content] ">
+              <div className="w-full inline-block justify-center items-center">
+                <ins
+                  className="adsbygoogle inline-block w-[100%] h-[100px]"
+                  style={{
+                    display: "inline-block",
+                    width: "100%",
+                    height: "100px",
+                  }}
+                  data-ad-client="ca-pub-1113302487630583"
+                  data-ad-slot="7957270938"
+                  data-ad-format=" horizontal"
+                  data-full-width-responsive="true"
+                ></ins>
+              </div>
               {/* question*/}
               <TestPreprationQuestionItem
                 isTrackingProgress={isTrackingProgress}

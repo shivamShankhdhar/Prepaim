@@ -184,20 +184,6 @@ const QuestionPage = () => {
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           <div className="w-full">
-            <div className="w-full inline-block justify-center items-center">
-              <ins
-                className="adsbygoogle inline-block w-[100%] h-[100px]"
-                style={{
-                  display: "inline-block",
-                  width: "100%",
-                  height: "100px",
-                }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format=" horizontal"
-                data-full-width-responsive="true"
-              ></ins>
-            </div>
             {/* breadcrumb  */}
             <Actions
               requestedPage={"Prepration-Page"}
@@ -222,17 +208,22 @@ const QuestionPage = () => {
 
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
-            <div className="w-full h-10 ">
-              <ins
-                className="adsbygoogle"
-                style={{ display: "block" }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              />
-            </div>
+
             <div className="w-full flex justify-between min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
+              <div className="w-full inline-block justify-center items-center">
+                <ins
+                  className="adsbygoogle inline-block w-[100%] h-[100px]"
+                  style={{
+                    display: "inline-block",
+                    width: "100%",
+                    height: "100px",
+                  }}
+                  data-ad-client="ca-pub-1113302487630583"
+                  data-ad-slot="7957270938"
+                  data-ad-format=" horizontal"
+                  data-full-width-responsive="true"
+                ></ins>
+              </div>
               {/* question*/}
               <PreprationQuestionItem />
             </div>
