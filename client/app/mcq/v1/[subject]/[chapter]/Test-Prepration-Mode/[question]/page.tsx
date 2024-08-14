@@ -261,12 +261,12 @@ const QuestionPage = () => {
               />
             </div>
           </div>
-          <script
+          {/* <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
             crossOrigin="anonymous"
           ></script>
-          {/* display afs  */}
+          {/* display afs  *
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -275,7 +275,8 @@ const QuestionPage = () => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
-          <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+          <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script> */}
+          <AdsenseHorizontalAds />
           <Footer />
         </div>
 
