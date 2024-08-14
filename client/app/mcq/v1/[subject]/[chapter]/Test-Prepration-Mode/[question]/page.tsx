@@ -208,6 +208,21 @@ const QuestionPage = () => {
         </div>
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
+          <div className="w-full">
+            <ins
+              className="adsbygoogle"
+              // style={{ display: "block" }}
+              style={{
+                display: "inline-block",
+                width: "100%",
+                height: "100px",
+              }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
           {/* <AdsenseHorizontalAds /> */}
           <div className="w-full">
             {/* breadcrumb  */}
@@ -231,21 +246,7 @@ const QuestionPage = () => {
                 ).toString()}
               />
             </div>
-            <div className="w-full">
-              <ins
-                className="adsbygoogle"
-                // style={{ display: "block" }}
-                style={{
-                  display: "inline-block",
-                  width: "100%",
-                  height: "100px",
-                }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format="horizontal"
-                data-full-width-responsive="true"
-              ></ins>
-            </div>
+
             {/* <a href="https://beta.publishers.adsterra.com/referral/juxrnUznMh">
               <img
                 alt="banner"
