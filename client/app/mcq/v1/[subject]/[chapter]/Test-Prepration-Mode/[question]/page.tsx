@@ -254,7 +254,8 @@ const QuestionPage = () => {
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 />
-                <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+                ((window as any).adsbygoogle = (window as any).adsbygoogle ||
+                []).push({});
               </div>
 
               {/* question*/}
@@ -293,7 +294,10 @@ const QuestionPage = () => {
             ></ins>
           </div>
 
-          <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+          <script>
+            ((window as any).adsbygoogle = (window as any).adsbygoogle ||
+            []).push({});
+          </script>
           <Footer />
         </div>
 
