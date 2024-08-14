@@ -242,7 +242,7 @@ const QuestionPage = () => {
               handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
               isTrackingProgress={isTrackingProgress}
             />
-            <div className="h-[200px] w-full flex justify-center items-center">
+            <div className="h-[200px] w-full ">
               <ins
                 className="adsbygoogle"
                 style={{ display: "block" }}

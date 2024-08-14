@@ -22,7 +22,7 @@ const SubjectPage = () => {
            subject={subject.toString()}
            subjectLength={subjectLengthAfterAllFilters}
          />
-         <div className="w-full h-10 flex justify-center items-center">
+         <div className="w-full h-[200px] ">
            <ins
              className="adsbygoogle"
              style={{ display: "block" }}
