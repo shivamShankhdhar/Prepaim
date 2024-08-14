@@ -183,7 +183,7 @@ const QuestionPage = () => {
         </div>
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <div className="w-full">
+          <div className="w-full grid content-between">
             <ins
               className="adsbygoogle"
               style={{
@@ -193,10 +193,11 @@ const QuestionPage = () => {
               }}
               data-ad-client="ca-pub-1113302487630583"
               data-ad-slot="7957270938"
-              data-ad-format="rectangle"
+              data-ad-format="horizontal"
               data-full-width-responsive="true"
-            />
+            ></ins>
           </div>
+
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions

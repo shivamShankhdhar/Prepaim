@@ -37,7 +37,7 @@ export default function Home() {
       <div className="flex w-full items-center flex-col mb-3">
         {/* HERO SECTION  */}
         <HeroSection />
-        <div className="w-full mt-2">
+        <div className="w-full mt-2 grid content-between">
           <ins
             className="adsbygoogle"
             style={{

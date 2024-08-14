@@ -209,7 +209,7 @@ const QuestionPage = () => {
 
         <div className="grow flex flex-col h-[92vh] items-center overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
-          <div className="w-[90%]">
+          <div className="w-[90%] grid content-between">
             <ins
               className="adsbygoogle"
               // style={{ display: "block" }}
