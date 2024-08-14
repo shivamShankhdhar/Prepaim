@@ -200,6 +200,20 @@ const QuestionPage = () => {
                 ).toString()}
               />
             </div>
+            {/* <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+     crossOrigin="anonymous"></script> */}
+            {/* <!-- laptop ads --> */}
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>
+              ({`adsbygoogle = window.adsbygoogle || []).push({});`});
+            </script>
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
             <script
