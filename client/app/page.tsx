@@ -27,58 +27,59 @@ export default function Home() {
   }, [data.apiData, data.isLoading, data.serverError]);
 
   const [errorLoadingSubjects, setErrorLoadingSubjects] = useState("");
+   useEffect(() => {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+   }, []);
 
-  return (
-    <>
-      <div className="flex w-full items-center flex-col mb-3">
-        <div className="w-full"></div>
-        {/* HERO SECTION  */}
-        <HeroSection />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-format="fluid"
-          data-ad-layout-key="-bw-d+1k-5q+9s"
-          data-ad-client="ca-pub-1113302487630583"
-          data-ad-slot="3637121664"
-        ></ins>
-        <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
-        {/* MCQ Questions LIST  */}
-        <div className="w-full flex px-2 flex-col">
-          {/* try mcq questions  */}
-          <div className="w-full flex gap-2 flex-wrap rounded-md items-center mt-3 p-2 bg-white ">
-            {errorLoadingSubjects === "" ? (
-              <TryMCQ loading={loadingSubjects} subjects={subjectsFromServer} />
-            ) : (
-              <ErrorMessage
-                text={errorLoadingSubjects}
-                isBg={false}
-                isButton={false}
-              />
-            )}
-          </div>
-        </div>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script>
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block", textAlign: "center" }}
-          data-ad-layout="in-article"
-          data-ad-format="fluid"
-          data-ad-client="ca-pub-1113302487630583"
-          data-ad-slot="2452828664"
-        ></ins>
-        <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
-        <Footer />
-      </div>
-    </>
-  );
+   return (
+     <>
+       <div className="flex w-full items-center flex-col mb-3">
+         <div className="w-full"></div>
+         {/* HERO SECTION  */}
+         <HeroSection />
+
+         <ins
+           className="adsbygoogle"
+           style={{ display: "block" }}
+           data-ad-format="fluid"
+           data-ad-layout-key="-bw-d+1k-5q+9s"
+           data-ad-client="ca-pub-1113302487630583"
+           data-ad-slot="3637121664"
+         ></ins>
+         {/* MCQ Questions LIST  */}
+         <div className="w-full flex px-2 flex-col">
+           {/* try mcq questions  */}
+           <div className="w-full flex gap-2 flex-wrap rounded-md items-center mt-3 p-2 bg-white ">
+             {errorLoadingSubjects === "" ? (
+               <TryMCQ
+                 loading={loadingSubjects}
+                 subjects={subjectsFromServer}
+               />
+             ) : (
+               <ErrorMessage
+                 text={errorLoadingSubjects}
+                 isBg={false}
+                 isButton={false}
+               />
+             )}
+           </div>
+         </div>
+         <script
+           async
+           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+           crossOrigin="anonymous"
+         ></script>
+         <ins
+           className="adsbygoogle"
+           style={{ display: "block", textAlign: "center" }}
+           data-ad-layout="in-article"
+           data-ad-format="fluid"
+           data-ad-client="ca-pub-1113302487630583"
+           data-ad-slot="2452828664"
+         ></ins>
+         <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+         <Footer />
+       </div>
+     </>
+   );
 }

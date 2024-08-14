@@ -244,12 +244,7 @@ const QuestionPage = () => {
             />
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
-              <div className="h-10 flex justify-center items-center">
-                <script
-                  async
-                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-                  crossOrigin="anonymous"
-                ></script>
+              <div className="h-10 ">
                 <ins
                   className="adsbygoogle"
                   style={{ display: "block" }}
