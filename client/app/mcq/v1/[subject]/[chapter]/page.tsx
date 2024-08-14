@@ -42,9 +42,9 @@ const ChapterPage = () => {
    return (
      <div className="flex flex-col items-center  w-full">
        <Breadcrum chaptersLength={chapters.length} />
-       <div className="w-full flex flex-row justify-center items-center">
+       <div className="w-full inline-block justify-center items-center">
          <ins
-           className="adsbygoogle flex w-[100%] h-[100px]"
+           className="adsbygoogle inline-block w-[100%] h-[100px]"
            data-ad-client="ca-pub-1113302487630583"
            data-ad-slot="7957270938"
            data-ad-format=" horizontal"
