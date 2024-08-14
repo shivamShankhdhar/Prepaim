@@ -1,0 +1,21 @@
+import React, { useEffect } from "react";
+
+const HorizontalAds = () => {
+  useEffect(() => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  });
+  return (
+    <div className="w-full">
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-1113302487630583"
+        data-ad-slot="7957270938"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+    </div>
+  );
+};
+
+export default HorizontalAds;
