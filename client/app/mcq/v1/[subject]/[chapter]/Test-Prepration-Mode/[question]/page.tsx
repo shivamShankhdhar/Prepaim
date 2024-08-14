@@ -243,7 +243,7 @@ const QuestionPage = () => {
             />
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
-              <div className="w-full">
+              <div className="">
                 <script
                   async
                   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
@@ -280,7 +280,7 @@ const QuestionPage = () => {
           </div>
 
           {/* display afs  */}
-          <div className="w-full">
+          <div className="">
             <script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
