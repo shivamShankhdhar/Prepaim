@@ -19,6 +19,13 @@ import TestPreprationQuestionItem from "@/app/mcq/v1/components/Question/TestPre
   
 // }
 
+// export async function generateMetadata({ params }: any) {
+//   return {
+//     title: "...",
+//   };
+// }
+
+
 const QuestionPage = () => {
   const router = useRouter();
   const cookies = useCookies();
@@ -230,6 +237,21 @@ const QuestionPage = () => {
               handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
               isTrackingProgress={isTrackingProgress}
             />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+              crossOrigin="anonymous"
+            ></script>
+            {/* display afs  */}
+            <ins
+              className="adsbygoogle"
+              style={{ display: "block" }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="6071713317"
+              data-ad-format="auto"
+              data-full-width-responsive="true"
+            ></ins>
+            <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
               <TestPreprationQuestionItem
@@ -250,7 +272,21 @@ const QuestionPage = () => {
               />
             </div>
           </div>
-
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+            crossOrigin="anonymous"
+          ></script>
+          {/* display afs  */}
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="6071713317"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
           <Footer />
         </div>
 
