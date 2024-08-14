@@ -25,10 +25,14 @@ const SubjectPage = () => {
         <div className="w-full h-[100px] ">
           <ins
             className="adsbygoogle"
-            style={{ display: "block" }}
+            style={{
+              display: "inline-block",
+              width: "100%",
+              height: "100px",
+            }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7957270938"
-            data-ad-format="auto"
+            data-ad-format="rectanle, horizontal"
             data-full-width-responsive="true"
           ></ins>
         </div>
