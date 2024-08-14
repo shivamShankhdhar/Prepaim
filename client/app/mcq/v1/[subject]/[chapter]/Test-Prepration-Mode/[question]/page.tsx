@@ -206,83 +206,87 @@ const QuestionPage = () => {
             loading={loading}
           />
         </div>
-      </div>
-      <div className="grow flex flex-col h-[92vh] items-center overflow-y-auto mb-12">
-        {/* <AdsenseHorizontalAds /> */}
 
-        <div className="w-full">
-          <div className="w-full inline-block justify-center items-center">
-            <ins
-              className="adsbygoogle inline-block w-[100%] h-[100px]"
-              style={{
-                display: "inline-block",
-                width: "100%",
-                height: "100px",
-              }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="7957270938"
-              data-ad-format=" horizontal"
-              data-full-width-responsive="true"
-            ></ins>
-          </div>
-          {/* breadcrumb  */}
-          <Actions
-            requestedPage={"Test-Prepration-Page"}
-            setProperty1={setOpenSidebarSlider}
-            setProperty2={setOpenQuestionBoard}
-            subject={subject.toString()}
-            chapter={chapter.toString()}
-            totalquestion={questionsLength.toString()}
-            questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
-          />
-          <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-            <Breadcrum
+        <div className="grow flex flex-col h-[92vh] items-center overflow-y-auto mb-12">
+          {/* <AdsenseHorizontalAds /> */}
+
+          <div className="w-full">
+            <div className="w-full inline-block justify-center items-center">
+              <ins
+                className="adsbygoogle inline-block w-[100%] h-[100px]"
+                style={{
+                  display: "inline-block",
+                  width: "100%",
+                  height: "100px",
+                }}
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7957270938"
+                data-ad-format=" horizontal"
+                data-full-width-responsive="true"
+              ></ins>
+            </div>
+            {/* breadcrumb  */}
+            <Actions
+              requestedPage={"Test-Prepration-Page"}
+              setProperty1={setOpenSidebarSlider}
+              setProperty2={setOpenQuestionBoard}
               subject={subject.toString()}
               chapter={chapter.toString()}
               totalquestion={questionsLength.toString()}
               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
             />
-          </div>
-          {/* page layout toggle button */}
-          <QuestionPageLayoutToggle
-            handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
-            isTrackingProgress={isTrackingProgress}
-          />
-
-          <div className="px-2 w-full min-h-[92vh] max-[fit-content] ">
-            {/* question*/}
-            <TestPreprationQuestionItem
+            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+              <Breadcrum
+                subject={subject.toString()}
+                chapter={chapter.toString()}
+                totalquestion={questionsLength.toString()}
+                questionNo={(questions.length === 0
+                  ? 0
+                  : questionNo
+                ).toString()}
+              />
+            </div>
+            {/* page layout toggle button */}
+            <QuestionPageLayoutToggle
+              handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
               isTrackingProgress={isTrackingProgress}
-              questionNo={questionNo}
-              isAnswerLocked={isAnswerLocked}
-              setIsAnswerLocked={setIsAnswerLocked}
-              pageMode={"stack-page-mode"}
-              questions={questions}
-              chapter={chapter}
-              error={error}
-              loading={loading}
-              handleCommentToggle={handleCommentToggle}
-              isCommentSection={isCommentSection}
-              isAnswerExplanationOpen={isAnswerExplanationOpen}
-              setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
-              handleAnswerExplanationToggle={handleAnswerExplanationToggle}
             />
-          </div>
-        </div>
-        <Footer />
-      </div>
 
-      {/* question board  */}
-      <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-        <QuestionBoard
-          error={error}
-          questions={questions}
-          questionNo={questionNo - 1}
-          setQuestionNo={setQuestionNo}
-          loading={loading}
-          setIsCommentSection={setIsCommentSection}
-          setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
-        />
+            <div className="px-2 w-full min-h-[92vh] max-[fit-content] ">
+              {/* question*/}
+              <TestPreprationQuestionItem
+                isTrackingProgress={isTrackingProgress}
+                questionNo={questionNo}
+                isAnswerLocked={isAnswerLocked}
+                setIsAnswerLocked={setIsAnswerLocked}
+                pageMode={"stack-page-mode"}
+                questions={questions}
+                chapter={chapter}
+                error={error}
+                loading={loading}
+                handleCommentToggle={handleCommentToggle}
+                isCommentSection={isCommentSection}
+                isAnswerExplanationOpen={isAnswerExplanationOpen}
+                setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
+                handleAnswerExplanationToggle={handleAnswerExplanationToggle}
+              />
+            </div>
+          </div>
+          <Footer />
+        </div>
+
+        {/* question board  */}
+        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+          <QuestionBoard
+            error={error}
+            questions={questions}
+            questionNo={questionNo - 1}
+            setQuestionNo={setQuestionNo}
+            loading={loading}
+            setIsCommentSection={setIsCommentSection}
+            setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
+          />
+        </div>
       </div>
     </>
   );
