@@ -183,9 +183,9 @@ const QuestionPage = () => {
         </div>
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <div className="w-full grid content-between">
+          <div className="w-full inline-block justify-center items-center">
             <ins
-              className="adsbygoogle"
+              className="adsbygoogle inline-block w-[100%] h-[100px]"
               style={{
                 display: "inline-block",
                 width: "100%",
@@ -193,7 +193,7 @@ const QuestionPage = () => {
               }}
               data-ad-client="ca-pub-1113302487630583"
               data-ad-slot="7957270938"
-              data-ad-format="horizontal"
+              data-ad-format=" horizontal"
               data-full-width-responsive="true"
             ></ins>
           </div>

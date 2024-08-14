@@ -45,6 +45,11 @@ const ChapterPage = () => {
        <div className="w-full inline-block justify-center items-center">
          <ins
            className="adsbygoogle inline-block w-[100%] h-[100px]"
+           style={{
+             display: "inline-block",
+             width: "100%",
+             height: "100px",
+           }}
            data-ad-client="ca-pub-1113302487630583"
            data-ad-slot="7957270938"
            data-ad-format=" horizontal"
