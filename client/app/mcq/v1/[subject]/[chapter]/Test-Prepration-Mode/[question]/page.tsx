@@ -231,21 +231,21 @@ const QuestionPage = () => {
                 ).toString()}
               />
             </div>
-            <div className="h-[100px]">
-              <ins
-                className="adsbygoogle"
-                // style={{ display: "block" }}
-                style={{
-                  display: "inline-block",
-                  width: "100%",
-                  height: "100px",
-                }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format="rectangle, horizontal"
-                data-full-width-responsive="true"
-              ></ins>
-            </div>
+
+            <ins
+              className="adsbygoogle"
+              // style={{ display: "block" }}
+              style={{
+                display: "inline-block",
+                width: "100%",
+                height: "100px",
+              }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format="rectangle, horizontal"
+              data-full-width-responsive="true"
+            ></ins>
+
             {/* <a href="https://beta.publishers.adsterra.com/referral/juxrnUznMh">
               <img
                 alt="banner"

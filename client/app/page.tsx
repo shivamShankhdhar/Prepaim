@@ -38,7 +38,7 @@ export default function Home() {
         <div className="w-full"></div>
         {/* HERO SECTION  */}
         <HeroSection />
-        <div className="w-full h-[200px] ">
+        <div className="w-full">
           <ins
             className="adsbygoogle"
             style={{
