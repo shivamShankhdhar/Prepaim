@@ -270,21 +270,22 @@ const QuestionPage = () => {
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
             </div>
+            {/* </div> */}
+            <Footer />
           </div>
-          <Footer />
-        </div>
 
-        {/* question board  */}
-        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-          <QuestionBoard
-            error={error}
-            questions={questions}
-            questionNo={questionNo - 1}
-            setQuestionNo={setQuestionNo}
-            loading={loading}
-            setIsCommentSection={setIsCommentSection}
-            setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
-          />
+          {/* question board  */}
+          <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+            <QuestionBoard
+              error={error}
+              questions={questions}
+              questionNo={questionNo - 1}
+              setQuestionNo={setQuestionNo}
+              loading={loading}
+              setIsCommentSection={setIsCommentSection}
+              setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
+            />
+          </div>
         </div>
       </div>
     </>
