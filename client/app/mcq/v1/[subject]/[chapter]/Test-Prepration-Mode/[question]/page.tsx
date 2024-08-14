@@ -240,9 +240,8 @@ const QuestionPage = () => {
             />
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
-              <div className="w-full">
-                <AdsenseHorizontalAds />
-              </div>
+              <AdsenseHorizontalAds />
+
               {/* question*/}
               <TestPreprationQuestionItem
                 isTrackingProgress={isTrackingProgress}
