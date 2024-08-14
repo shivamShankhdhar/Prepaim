@@ -252,7 +252,7 @@ const QuestionPage = () => {
               data-ad-format="auto"
               data-full-width-responsive="true"
             ></ins>
-            <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({})</script>
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
