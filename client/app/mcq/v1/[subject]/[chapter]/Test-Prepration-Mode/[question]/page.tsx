@@ -242,19 +242,17 @@ const QuestionPage = () => {
               handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
               isTrackingProgress={isTrackingProgress}
             />
-
+            <div className="h-10 flex justify-center items-center">
+              <ins
+                className="adsbygoogle"
+                style={{ display: "block" }}
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7957270938"
+                // data-ad-format="auto"
+                data-full-width-responsive="true"
+              />
+            </div>
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
-              <div className="h-10 ">
-                <ins
-                  className="adsbygoogle"
-                  style={{ display: "block" }}
-                  data-ad-client="ca-pub-1113302487630583"
-                  data-ad-slot="7957270938"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true"
-                />
-              </div>
-
               {/* question*/}
               <TestPreprationQuestionItem
                 isTrackingProgress={isTrackingProgress}

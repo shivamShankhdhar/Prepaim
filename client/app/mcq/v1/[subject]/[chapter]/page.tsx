@@ -42,13 +42,13 @@ const ChapterPage = () => {
  return (
    <div className="flex flex-col items-center  w-full">
      <Breadcrum chaptersLength={chapters.length} />
-     <div className="w-full h-10">
+     <div className="w-full h-10 flex justify-center items-center">
        <ins
          className="adsbygoogle"
          style={{ display: "block" }}
          data-ad-client="ca-pub-1113302487630583"
          data-ad-slot="7957270938"
-         data-ad-format="auto"
+         //  data-ad-format="auto"
          data-full-width-responsive="true"
        />
      </div>
