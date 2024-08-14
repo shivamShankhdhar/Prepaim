@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 
 const AdsenseHorizontalAds = () => {
   useEffect(() => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
   });
   return (
     <div className="w-full">
