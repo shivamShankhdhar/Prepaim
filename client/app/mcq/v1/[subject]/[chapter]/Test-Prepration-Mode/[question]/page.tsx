@@ -173,29 +173,28 @@ const QuestionPage = () => {
 
   return (
     <>
-      <div className="flex justify-between h-[92vh] overflow-hidden ">
-        <SidebarSlider
-          uniqueKey="chapters"
-          open={openSidebarSlider}
-          items={chapters}
-          chaptersLength={chapters.length}
-          setOpen={setOpenSidebarSlider}
-          itemType="chapters"
-          requestedPage={"Test-Prepration-Mode"}
-        />
+      <SidebarSlider
+        uniqueKey="chapters"
+        open={openSidebarSlider}
+        items={chapters}
+        chaptersLength={chapters.length}
+        setOpen={setOpenSidebarSlider}
+        itemType="chapters"
+        requestedPage={"Test-Prepration-Mode"}
+      />
 
-        <SidebarSlider
-          uniqueKey="question_board"
-          open={openQuestionBoard}
-          setOpen={setOpenQuestionBoard}
-          itemType="question-board"
-          error={error}
-          questions={questions}
-          questionNo={questionNo - 1}
-          setQuestionNo={setQuestionNo}
-          loading={loading}
-        />
-
+      <SidebarSlider
+        uniqueKey="question_board"
+        open={openQuestionBoard}
+        setOpen={setOpenQuestionBoard}
+        itemType="question-board"
+        error={error}
+        questions={questions}
+        questionNo={questionNo - 1}
+        setQuestionNo={setQuestionNo}
+        loading={loading}
+      />
+      <div className="flex justify-between h-[92vh] overflow-hidden">
         <div
           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
           id="question_board"
@@ -207,7 +206,7 @@ const QuestionPage = () => {
           />
         </div>
 
-        <div className="grow flex flex-col h-[92vh] items-center overflow-y-auto mb-12">
+        <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
 
           <div className="w-full">
@@ -238,7 +237,7 @@ const QuestionPage = () => {
               isTrackingProgress={isTrackingProgress}
             />
 
-            <div className="px-2 w-full min-h-[92vh] max-[fit-content] ">
+            <div className="px-2 w-full min-h-[92vh] flex-col max-[fit-content] ">
               <div className="w-full inline-block justify-center items-center">
                 <ins
                   className="adsbygoogle inline-block w-[100%] h-[100px]"

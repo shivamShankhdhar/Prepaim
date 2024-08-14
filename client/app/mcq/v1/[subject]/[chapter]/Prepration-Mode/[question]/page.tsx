@@ -209,7 +209,7 @@ const QuestionPage = () => {
             {/* page layout toggle button */}
             <QuestionPageLayoutToggle />
 
-            <div className="w-full flex justify-between min-h-[85vh] max-h-[fit-content] flex-wrap flex-row gap-2">
+            <div className="w-full flex flex-col justify-between min-h-[85vh] max-h-[fit-content] flex-wrap gap-2">
               <div className="w-full inline-block justify-center items-center">
                 <ins
                   className="adsbygoogle inline-block w-[100%] h-[100px]"
