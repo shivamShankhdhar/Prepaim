@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const HorizontalAds = () => {
+const AdsenseHorizontalAds = () => {
   useEffect(() => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   });
@@ -18,4 +18,4 @@ const HorizontalAds = () => {
   );
 };
 
-export default HorizontalAds;
+export default AdsenseHorizontalAds;

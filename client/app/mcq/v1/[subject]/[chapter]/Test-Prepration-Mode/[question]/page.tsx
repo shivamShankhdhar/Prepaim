@@ -14,7 +14,7 @@ import QuestionPageLayoutToggle from "@/app/mcq/v1/components/QuestionPageLayout
 import { useCookies } from "next-client-cookies";
 import toast from "react-hot-toast";;
 import TestPreprationQuestionItem from "@/app/mcq/v1/components/Question/TestPreprationQuestionItem";
-import HorizontalAds from "@/app/components/GoogleAds/horizontalAds";
+import AdsenseHorizontalAds from "@/app/components/GoogleAds/AdsenseHorizontalAds";
 
 // const generateMetadata = () => {
 
@@ -204,7 +204,7 @@ const QuestionPage = () => {
         </div>
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <HorizontalAds />
+          <AdsenseHorizontalAds />
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions
