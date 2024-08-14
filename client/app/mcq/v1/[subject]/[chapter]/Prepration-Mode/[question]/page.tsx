@@ -181,7 +181,7 @@ const QuestionPage = () => {
             loading={loading}
           />
         </div>
-        <div>
+        <div className="w-full">
           <ins
             className="adsbygoogle"
             style={{

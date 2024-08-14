@@ -22,7 +22,7 @@ const SubjectPage = () => {
           subject={subject.toString()}
           subjectLength={subjectLengthAfterAllFilters}
         />
-        <div>
+        <div className="w-full">
           <ins
             className="adsbygoogle"
             style={{
