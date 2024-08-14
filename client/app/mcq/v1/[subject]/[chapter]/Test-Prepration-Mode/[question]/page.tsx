@@ -202,7 +202,19 @@ const QuestionPage = () => {
             loading={loading}
           />
         </div>
-
+        <div className="w-full">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="7957270938"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+          <script>
+            ({`adsbygoogle = window.adsbygoogle || []).push({});`});
+          </script>
+        </div>
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           <div className="w-full">
             {/* breadcrumb  */}
@@ -252,19 +264,6 @@ const QuestionPage = () => {
               data-full-width-responsive="true"
             ></ins>
             <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
-            <div className="w-full">
-              <ins
-                className="adsbygoogle"
-                style={{ display: "block" }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
-              ></ins>
-              <script>
-                ({`adsbygoogle = window.adsbygoogle || []).push({});`});
-              </script>
-            </div>
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               {/* question*/}
