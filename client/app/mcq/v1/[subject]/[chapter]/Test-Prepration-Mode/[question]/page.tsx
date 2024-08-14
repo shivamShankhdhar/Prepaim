@@ -240,10 +240,10 @@ const QuestionPage = () => {
             <div className="px-2 w-full min-h-[92vh] flex-col max-[fit-content] ">
               <div className="w-full inline-block justify-center items-center">
                 <ins
-                  className="adsbygoogle inline-block w-[100%] h-[100px]"
+                  className="adsbygoogle inline-block w-[95%] h-[100px]"
                   style={{
                     display: "inline-block",
-                    width: "100%",
+                    width: "95%",
                     height: "100px",
                   }}
                   data-ad-client="ca-pub-1113302487630583"
@@ -270,22 +270,21 @@ const QuestionPage = () => {
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
             </div>
-            {/* </div> */}
-            <Footer />
           </div>
+          <Footer />
+        </div>
 
-          {/* question board  */}
-          <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-            <QuestionBoard
-              error={error}
-              questions={questions}
-              questionNo={questionNo - 1}
-              setQuestionNo={setQuestionNo}
-              loading={loading}
-              setIsCommentSection={setIsCommentSection}
-              setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
-            />
-          </div>
+        {/* question board  */}
+        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+          <QuestionBoard
+            error={error}
+            questions={questions}
+            questionNo={questionNo - 1}
+            setQuestionNo={setQuestionNo}
+            loading={loading}
+            setIsCommentSection={setIsCommentSection}
+            setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
+          />
         </div>
       </div>
     </>
