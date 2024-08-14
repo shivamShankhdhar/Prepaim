@@ -38,7 +38,7 @@ export default function Home() {
          <div className="w-full"></div>
          {/* HERO SECTION  */}
          <HeroSection />
-         <div className="w-full h-[200px] flex justify-center items-center">
+         <div className="w-full h-[200px] ">
            <ins
              className="adsbygoogle"
              style={{ display: "block" }}
