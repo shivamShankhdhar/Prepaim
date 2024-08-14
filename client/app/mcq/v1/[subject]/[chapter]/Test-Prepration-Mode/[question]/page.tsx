@@ -167,6 +167,9 @@ const QuestionPage = () => {
     setIsTrackingProgress((prev) => !prev);
     // alert("yes its working man");
   };
+  useEffect(() => {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+  }, []);
   return (
     <>
       <div className="flex justify-between h-[92vh] overflow-hidden ">
@@ -254,10 +257,6 @@ const QuestionPage = () => {
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 />
-                <script>
-                  ((window as any).adsbygoogle = (window as any).adsbygoogle ||
-                  []).push({});
-                </script>
               </div>
 
               {/* question*/}
@@ -296,10 +295,6 @@ const QuestionPage = () => {
             ></ins>
           </div>
 
-          <script>
-            ((window as any).adsbygoogle = (window as any).adsbygoogle ||
-            []).push({});
-          </script>
           <Footer />
         </div>
 
