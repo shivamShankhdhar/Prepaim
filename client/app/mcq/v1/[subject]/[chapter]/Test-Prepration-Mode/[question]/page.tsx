@@ -241,6 +241,11 @@ const QuestionPage = () => {
 
             <div className="px-2 w-full min-h-[92vh] max-[fit-content]">
               <div className="w-full">
+                <script
+                  async
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+                  crossOrigin="anonymous"
+                ></script>
                 <ins
                   className="adsbygoogle"
                   style={{ display: "block" }}
@@ -249,6 +254,7 @@ const QuestionPage = () => {
                   data-ad-format="auto"
                   data-full-width-responsive="true"
                 />
+                <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
               </div>
 
               {/* question*/}
@@ -270,11 +276,11 @@ const QuestionPage = () => {
               />
             </div>
           </div>
-          {/* <script
+          <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
             crossOrigin="anonymous"
-          ></script> */}
+          ></script>
           {/* display afs  */}
           <div className="w-full">
             <ins
@@ -287,7 +293,7 @@ const QuestionPage = () => {
             ></ins>
           </div>
 
-          {/* <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script> */}
+          <script>{`adsbygoogle = window.adsbygoogle || []).push({});`}</script>
           <Footer />
         </div>
 
