@@ -214,20 +214,18 @@ const QuestionPage = () => {
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
           <div className="w-[90%] inline-block justify-center items-center">
-            <center>
-              <ins
-                className="adsbygoogle inline-block w-[100%] h-[100px]"
-                style={{
-                  display: "inline-block",
-                  width: "98%",
-                  height: "100px",
-                }}
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7957270938"
-                data-ad-format=" horizontal"
-                data-full-width-responsive="true"
-              ></ins>
-            </center>
+            <ins
+              className="adsbygoogle"
+              style={{
+                display: "inline-block",
+                width: "99%",
+                height: "100px",
+              }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format=" horizontal"
+              data-full-width-responsive="true"
+            ></ins>
           </div>
           <div className="w-full">
             {/* breadcrumb  */}
@@ -277,20 +275,18 @@ const QuestionPage = () => {
               />
             </div>
             <div className="w-[90%] inline-block justify-center items-center">
-              <center>
-                <ins
-                  className="adsbygoogle inline-block w-[95%] h-[100px]"
-                  style={{
-                    display: "inline-block",
-                    width: "98%",
-                    height: "100px",
-                  }}
-                  data-ad-client="ca-pub-1113302487630583"
-                  data-ad-slot="7957270938"
-                  data-ad-format=" horizontal"
-                  data-full-width-responsive="true"
-                ></ins>
-              </center>
+              <ins
+                className="adsbygoogle"
+                style={{
+                  display: "inline-block",
+                  width: "99%",
+                  height: "100px",
+                }}
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7957270938"
+                data-ad-format=" horizontal"
+                data-full-width-responsive="true"
+              ></ins>
             </div>
           </div>
           <Footer />
