@@ -198,15 +198,30 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .filter((item) => item.name !== "")
                   .sort()
                   .map((item, index) => (
-                    <SubjectItemListView
-                      key={`${item._id}-${index}`} //${index}
-                      item={item}
-                      subjectItemLength={subjectsAfterFilter.length}
-                      index={index}
-                      selectedSubject={selectedSubject}
-                      searchingChapters={searchingChapters}
-                      handleNavigateToQuestion={handleNavigateToQuestion}
-                    />
+                    <>
+                      {index % 5 === 0 && (
+                        <div className="w-full block text-center">
+                          <ins
+                            className="adsbygoogle"
+                            style={{ display: "block" }}
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-bw-d+1k-5q+9s"
+                            data-ad-client="ca-pub-1113302487630583"
+                            data-ad-slot="3637121664"
+                          ></ins>
+                        </div>
+                      )}
+
+                      <SubjectItemListView
+                        key={`${item._id}-${index}`} //${index}
+                        item={item}
+                        subjectItemLength={subjectsAfterFilter.length}
+                        index={index}
+                        selectedSubject={selectedSubject}
+                        searchingChapters={searchingChapters}
+                        handleNavigateToQuestion={handleNavigateToQuestion}
+                      />
+                    </>
                   ))
               ) : (
                 <ErrorMessage
@@ -233,15 +248,29 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .filter((item) => item.name !== "")
                   .sort()
                   .map((item, index) => (
-                    <SubjectItemGridView
-                      key={`${item._id}-${index}`} //${index}
-                      item={item}
-                      subjectItemLength={subjectsAfterFilter.length}
-                      index={index}
-                      selectedSubject={selectedSubject}
-                      searchingChapters={searchingChapters}
-                      handleNavigateToQuestion={handleNavigateToQuestion}
-                    />
+                    <>
+                      {index % 5 === 0 && (
+                        <div className="w-full block text-center">
+                          <ins
+                            className="adsbygoogle"
+                            style={{ display: "block" }}
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-bw-d+1k-5q+9s"
+                            data-ad-client="ca-pub-1113302487630583"
+                            data-ad-slot="3637121664"
+                          ></ins>
+                        </div>
+                      )}
+                      <SubjectItemGridView
+                        key={`${item._id}-${index}`} //${index}
+                        item={item}
+                        subjectItemLength={subjectsAfterFilter.length}
+                        index={index}
+                        selectedSubject={selectedSubject}
+                        searchingChapters={searchingChapters}
+                        handleNavigateToQuestion={handleNavigateToQuestion}
+                      />
+                    </>
                   ))
               ) : (
                 <ErrorMessage
