@@ -67,18 +67,21 @@ const TryMCQ = ({ subjects, loading }: any) => {
                 item.name === "C" ||
                 item.name === "React"
             )
-            .map((language: any) => (
+            .map((language: any, index: any) => (
               <>
                 {/* google_ads_start */}
-                <div className="w-[300px] block text-center">
-                  <ins
-                    className="adsbygoogle text-center"
-                    style={{ display: "block" }}
-                    data-ad-format="autorelaxed"
-                    data-ad-client="ca-pub-1113302487630583"
-                    data-ad-slot="7384794981"
-                  ></ins>
-                </div>
+                {index % 5 === 0 && (
+                  <div className="w-[300px] block text-center">
+                    <ins
+                      className="adsbygoogle text-center"
+                      style={{ display: "block" }}
+                      data-ad-format="autorelaxed"
+                      data-ad-client="ca-pub-1113302487630583"
+                      data-ad-slot="7384794981"
+                    ></ins>
+                  </div>
+                )}
+
                 {/* google_ads_end  */}
                 <SubjectItemGridView
                   key={`key-at-subject-grid-view-at-home-page-for-${language._id}`} // ${language._id}
