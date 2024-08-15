@@ -213,7 +213,7 @@ const QuestionPage = () => {
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
-          <div className="w-[95%] inline-block justify-center items-center">
+          <div className="w-[90%] inline-block justify-center items-center">
             <ins
               className="adsbygoogle inline-block w-[95%] h-[100px]"
               style={{
@@ -274,7 +274,7 @@ const QuestionPage = () => {
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
             </div>
-            <div className="w-[95%] inline-block justify-center items-center">
+            <div className="w-[90%] inline-block justify-center items-center">
               <ins
                 className="adsbygoogle inline-block w-[95%] h-[100px]"
                 style={{
