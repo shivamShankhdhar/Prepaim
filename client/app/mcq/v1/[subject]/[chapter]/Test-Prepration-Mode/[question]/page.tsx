@@ -218,7 +218,7 @@ const QuestionPage = () => {
               className="adsbygoogle inline-block w-[100%] h-[100px]"
               style={{
                 display: "inline-block",
-                width: "100%",
+                width: "98%",
                 height: "100px",
               }}
               data-ad-client="ca-pub-1113302487630583"
@@ -279,7 +279,7 @@ const QuestionPage = () => {
                 className="adsbygoogle inline-block w-[95%] h-[100px]"
                 style={{
                   display: "inline-block",
-                  width: "100%",
+                  width: "98%",
                   height: "100px",
                 }}
                 data-ad-client="ca-pub-1113302487630583"
