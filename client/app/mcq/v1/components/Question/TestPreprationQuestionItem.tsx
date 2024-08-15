@@ -176,7 +176,7 @@ const TestPreprationQuestionItem = ({
                       </Button>
                       {/* question other navigations  */}
                       {/* for large screens  */}
-                      {!isTrackingProgress && (
+                      {/* {!isTrackingProgress && (
                         <div className="flex-1 sm:hidden max-sm:hidden md:flex max-md:flex lg:flex xl:flex 2xl:flex justify-center gap-1 items-center">
                           <ToggleAnswerExplanationBtn
                             isAnswerLocked={isAnswerLocked}
@@ -200,7 +200,7 @@ const TestPreprationQuestionItem = ({
                             commentsError={commentsError}
                           />
                         </div>
-                      )}
+                      )} */}
 
                       {/* next button  */}
                       <Button
@@ -221,7 +221,7 @@ const TestPreprationQuestionItem = ({
                       </Button>
                     </div>
                     {/* for mobile screens only  */}
-                    <div className="flex-1 border border-purple-900 py-2 border-dashed border-t-1 border-r-0 border-l-0 border-b-0 sm:flex max-sm:flex md:hidden max-md:hidden lg:flex xl:hidden 2xl:hidden justify-between gap-1 items-center">
+                    {/* <div className="flex-1 border border-purple-900 py-2 border-dashed border-t-1 border-r-0 border-l-0 border-b-0 sm:flex max-sm:flex md:hidden max-md:hidden lg:flex xl:hidden 2xl:hidden justify-between gap-1 items-center">
                       <ToggleAnswerExplanationBtn
                         isAnswerLocked={isAnswerLocked}
                         handleQuestionNavigationOpen={
@@ -243,7 +243,7 @@ const TestPreprationQuestionItem = ({
                         question={questions[questionNo - 1]}
                         commentsError={commentsError}
                       />
-                    </div>
+                    </div> */}
                     {/* {isQuestionNavigationOpen && ( */}
                     <div className="w-full">
                       {isAnswerExplanationOpen && (
@@ -253,7 +253,7 @@ const TestPreprationQuestionItem = ({
                           />
                         </div>
                       )}
-                      {isCommentSection && (
+                      {/* {isCommentSection && (
                         <>
                           <div className="w-full py-3 border border-dashed border-purple-900 border-t-1 border-l-0 border-b-0 border-r-0">
                             <AddDiscuss
@@ -269,7 +269,7 @@ const TestPreprationQuestionItem = ({
                             />
                           </div>
                         </>
-                      )}
+                      )} */}
                     </div>
                     {/* )} */}
                   </div>

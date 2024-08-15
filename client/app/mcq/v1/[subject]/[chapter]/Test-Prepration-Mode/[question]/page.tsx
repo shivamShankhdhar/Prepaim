@@ -213,7 +213,20 @@ const QuestionPage = () => {
 
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
-
+          <div className="w-[95%] inline-block justify-center items-center">
+            <ins
+              className="adsbygoogle inline-block w-[95%] h-[100px]"
+              style={{
+                display: "inline-block",
+                width: "95%",
+                height: "100px",
+              }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format=" horizontal"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
           <div className="w-full">
             {/* breadcrumb  */}
             <Actions
@@ -243,20 +256,6 @@ const QuestionPage = () => {
             />
 
             <div className="px-2 w-full min-h-[92vh] flex-col max-[fit-content] ">
-              <div className="w-full inline-block justify-center items-center">
-                <ins
-                  className="adsbygoogle inline-block w-[95%] h-[100px]"
-                  style={{
-                    display: "inline-block",
-                    width: "95%",
-                    height: "100px",
-                  }}
-                  data-ad-client="ca-pub-1113302487630583"
-                  data-ad-slot="7957270938"
-                  data-ad-format=" horizontal"
-                  data-full-width-responsive="true"
-                ></ins>
-              </div>
               {/* question*/}
               <TestPreprationQuestionItem
                 isTrackingProgress={isTrackingProgress}
@@ -274,6 +273,20 @@ const QuestionPage = () => {
                 setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
+            </div>
+            <div className="w-[95%] inline-block justify-center items-center">
+              <ins
+                className="adsbygoogle inline-block w-[95%] h-[100px]"
+                style={{
+                  display: "inline-block",
+                  width: "95%",
+                  height: "100px",
+                }}
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7957270938"
+                data-ad-format=" horizontal"
+                data-full-width-responsive="true"
+              ></ins>
             </div>
           </div>
           <Footer />
