@@ -42,11 +42,11 @@ const ChapterPage = () => {
   return (
     <div className="w-full flex gap-1 justify-between">
       {/* left side of the screen */}
-      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
-        <div className="w-full block  text-center">
+      <div className="w-[100px] h-[92vh] ">
+        <div className="w-full block text-center">
           <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
+            className="adsbygoogle sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block"
+            // style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="8366472653"
             data-ad-format="vertical"
@@ -107,11 +107,11 @@ const ChapterPage = () => {
         </div>
       </div>
       {/* right side of the screen */}
-      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
+      <div className="w-[100px] h-[92vh] ">
         <div className="w-full block justify-center items-center text-center">
           <ins
-            className="adsbygoogle "
-            style={{ display: "block" }}
+            className="adsbygoogle sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block"
+            // style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="4170306842"
             data-ad-format="vertical"
