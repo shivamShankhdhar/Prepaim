@@ -44,14 +44,14 @@ const ChapterPage = () => {
       {/* left side of the screen */}
       <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
         <div className="w-full block text-center">
-          <ins
+          {/* <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="8366472653"
             data-ad-format="auto"
             data-full-width-responsive="true"
-          ></ins>
+          ></ins> */}
         </div>
       </div>
       {/* mid side of the screen */}
@@ -109,14 +109,14 @@ const ChapterPage = () => {
       {/* right side of the screen */}
       <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
         <div className="w-full block text-center">
-          <ins
+          {/* <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="4170306842"
             data-ad-format="auto"
             data-full-width-responsive="true"
-          ></ins>
+          ></ins> */}
         </div>
       </div>
       <Footer />
