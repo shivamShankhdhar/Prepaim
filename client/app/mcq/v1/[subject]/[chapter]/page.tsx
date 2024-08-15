@@ -44,26 +44,21 @@ const ChapterPage = () => {
       {/* left side of the screen */}
       <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
         <div className="w-full block text-center">
-          {/* <ins
+          <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="8366472653"
             data-ad-format="auto"
             data-full-width-responsive="true"
-          ></ins> */}
+          ></ins>
         </div>
       </div>
       {/* mid side of the screen */}
       <div className="flex flex-col items-center flex-1 w-full">
-        {/* <script
-         async
-         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-         crossOrigin="anonymous"
-       ></script> */}
         <Breadcrum chaptersLength={chapters.length} />
         <div className="w-full inline-block  text-center">
-          {/* <ins
+          <ins
             className="adsbygoogle text-center"
             style={{
               display: "inline-block",
@@ -74,7 +69,7 @@ const ChapterPage = () => {
             data-ad-slot="7957270938"
             data-ad-format="horizontal"
             data-full-width-responsive="true"
-          ></ins> */}
+          ></ins>
         </div>
         <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
           <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
@@ -109,17 +104,22 @@ const ChapterPage = () => {
       {/* right side of the screen */}
       <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
         <div className="w-full block text-center">
-          {/* <ins
+          <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="4170306842"
             data-ad-format="auto"
             data-full-width-responsive="true"
-          ></ins> */}
+          ></ins>
         </div>
       </div>
       <Footer />
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+        crossOrigin="anonymous"
+      ></script>
     </div>
   );
 };
