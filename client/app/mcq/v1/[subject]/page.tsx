@@ -16,18 +16,9 @@ const SubjectPage = () => {
   return (
     <>
       <div className="flex w-full items-center flex-col">
-        {/* <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script> */}
         {/* breadcrum */}
 
-        <Breadcrum
-          subject={subject.toString()}
-          subjectLength={subjectLengthAfterAllFilters}
-        />
-        <div className="w-full inline-block justify-center items-center text-center">
+        <div className="w-full inline-block justify-center items-center text-center mt-2">
           <ins
             className="adsbygoogle text-center"
             style={{
@@ -37,10 +28,16 @@ const SubjectPage = () => {
             }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7957270938"
-            data-ad-format=" horizontal"
+            data-ad-format="horizontal"
             data-full-width-responsive="true"
           ></ins>
         </div>
+
+        <Breadcrum
+          subject={subject.toString()}
+          subjectLength={subjectLengthAfterAllFilters}
+        />
+
         {/* all subjects  */}
         <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
 

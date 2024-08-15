@@ -204,8 +204,8 @@ const SubjectList = ({ setSubjectLength }: any) => {
                           <ins
                             className="adsbygoogle"
                             style={{ display: "block" }}
-                            data-ad-format="fluid"
-                            data-ad-layout-key="-bw-d+1k-5q+9s"
+                            data-ad-format="auto"
+                            // data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
                           ></ins>
@@ -254,8 +254,8 @@ const SubjectList = ({ setSubjectLength }: any) => {
                           <ins
                             className="adsbygoogle"
                             style={{ display: "block" }}
-                            data-ad-format="fluid"
-                            data-ad-layout-key="-bw-d+1k-5q+9s"
+                            data-ad-format="auto"
+                            // data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
                           ></ins>
