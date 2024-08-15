@@ -268,17 +268,15 @@ const QuestionPage = () => {
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
             </div>
-            <div className="w-[90%] inline-block justify-center items-center">
+            <div className="w-[90%]">
               <ins
                 className="adsbygoogle"
                 style={{
-                  display: "inline-block",
-                  width: "99%",
-                  height: "100px",
+                  display: "block",
                 }}
                 data-ad-client="ca-pub-1113302487630583"
                 data-ad-slot="7384794981"
-                data-ad-format="horizontal"
+                data-ad-format="auto"
                 data-full-width-responsive="true"
               ></ins>
             </div>
