@@ -91,7 +91,6 @@ const ChapterPage = () => {
            )}
          </div>
        </div>
-
        <Footer />
      </div>
    );

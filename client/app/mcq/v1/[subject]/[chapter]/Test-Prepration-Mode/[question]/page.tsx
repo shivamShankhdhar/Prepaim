@@ -268,7 +268,7 @@ const QuestionPage = () => {
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
             </div>
-            <div className="w-[90%]">
+            <div className="w-full block text-center">
               <ins
                 className="adsbygoogle text-center"
                 style={{ display: "block" }}
