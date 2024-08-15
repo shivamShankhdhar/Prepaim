@@ -39,61 +39,89 @@ const ChapterPage = () => {
      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
    }, []);
 
-   return (
-     <div className="flex flex-col items-center  w-full">
-       <script
-         async
-         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-         crossOrigin="anonymous"
-       ></script>
-       <Breadcrum chaptersLength={chapters.length} />
-       <div className="w-full inline-block justify-center items-center text-center">
-         <ins
-           className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
-           style={{
-             display: "inline-block",
-             width: "100%",
-             height: "100px",
-           }}
-           data-ad-client="ca-pub-1113302487630583"
-           data-ad-slot="7957270938"
-           data-ad-format=" horizontal"
-           data-full-width-responsive="true"
-         ></ins>
-       </div>
-       <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
-         <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
-           {isLoading === true ? (
-             <ChapterItemSkeleton />
-           ) : error === "" ? (
-             chapters.length > 0 ? (
-               chapters.map((data, index) => {
-                 return (
-                   <ChapterItem
-                     key={index}
-                     chapterItemLength={chapters.length}
-                     data={data}
-                     index={index}
-                     subject={subject}
-                   />
-                 );
-               })
-             ) : (
-               <ErrorMessage
-                 text={"No chapters Found"}
-                 isBg={false}
-                 isButton={false}
-               />
-             )
-           ) : (
-             <ErrorMessage text={error} isButton={true} isBg={false} />
-           )}
-         </div>
-       </div>
+  return (
+    <>
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+        crossOrigin="anonymous"
+      ></script>
 
-       <Footer />
-     </div>
-   );
+      <div className="w-full flex">
+        {/* left side of the screen */}
+        <div className="block">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="4170306842"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
+
+        <div className="flex flex-col items-center w-full">
+          <div className="w-full inline-block justify-center items-center text-center">
+            <ins
+              className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+              style={{
+                display: "inline-block",
+                width: "100%",
+                height: "100px",
+              }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format=" horizontal"
+              data-full-width-responsive="true"
+            ></ins>
+          </div>
+          <Breadcrum chaptersLength={chapters.length} />
+          <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
+            <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
+              {isLoading === true ? (
+                <ChapterItemSkeleton />
+              ) : error === "" ? (
+                chapters.length > 0 ? (
+                  chapters.map((data, index) => {
+                    return (
+                      <ChapterItem
+                        key={index}
+                        chapterItemLength={chapters.length}
+                        data={data}
+                        index={index}
+                        subject={subject}
+                      />
+                    );
+                  })
+                ) : (
+                  <ErrorMessage
+                    text={"No chapters Found"}
+                    isBg={false}
+                    isButton={false}
+                  />
+                )
+              ) : (
+                <ErrorMessage text={error} isButton={true} isBg={false} />
+              )}
+            </div>
+          </div>
+        </div>
+        {/* right of the screen */}
+        <div className="block">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="8366472653"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
 };
 
 export default ChapterPage;
