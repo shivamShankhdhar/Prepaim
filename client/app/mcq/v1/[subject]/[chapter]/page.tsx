@@ -47,9 +47,9 @@ const ChapterPage = () => {
          crossOrigin="anonymous"
        ></script> */}
        <Breadcrum chaptersLength={chapters.length} />
-       <div className="w-full inline-block justify-center items-center">
+       <div className="w-full inline-block justify-center items-center text-center">
          <ins
-           className="adsbygoogle inline-block w-[100%] h-[100px]"
+           className="adsbygoogle text-center"
            style={{
              display: "inline-block",
              width: "100%",

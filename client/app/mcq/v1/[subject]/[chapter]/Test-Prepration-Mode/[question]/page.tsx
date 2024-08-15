@@ -207,9 +207,9 @@ const QuestionPage = () => {
         </div>
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
-          <div className="w-[90%] inline-block justify-center items-center">
+          <div className="w-[90%] inline-block justify-center items-center text-center">
             <ins
-              className="adsbygoogle"
+              className="adsbygoogle text-center"
               style={{
                 display: "inline-block",
                 width: "99%",
@@ -270,7 +270,7 @@ const QuestionPage = () => {
             </div>
             <div className="w-[90%]">
               <ins
-                className="adsbygoogle"
+                className="adsbygoogle text-center"
                 style={{ display: "block" }}
                 data-ad-format="autorelaxed"
                 data-ad-client="ca-pub-1113302487630583"
