@@ -42,8 +42,8 @@ const ChapterPage = () => {
   return (
     <div className="w-full flex gap-1 justify-between">
       {/* left side of the screen */}
-      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-        <div className="w-full block justify-center items-center text-center">
+      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:block xl:block 2xl:block">
+        <div className="w-full block  text-center">
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -107,7 +107,7 @@ const ChapterPage = () => {
         </div>
       </div>
       {/* right side of the screen */}
-      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:block xl:block 2xl:block">
         <div className="w-full block justify-center items-center text-center">
           <ins
             className="adsbygoogle "
