@@ -204,7 +204,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                         <div className="w-[300px] block text-center ">
                           <ins
                             className="adsbygoogle text-center"
-                            style={{ display: "block" }}
+                            style={{ display: "block", width: "300px" }}
                             data-ad-format="rectangle"
                             data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
@@ -254,7 +254,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                         <div className="w-[300px] block text-center ">
                           <ins
                             className="adsbygoogle text-center"
-                            style={{ display: "block" }}
+                            style={{ display: "block", width: "300px" }}
                             data-ad-format="rectangle"
                             data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
