@@ -206,7 +206,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                             className="adsbygoogle text-center"
                             style={{ display: "block", width: "300px" }}
                             data-ad-format="rectangle"
-                            data-ad-layout-key="-bw-d+1k-5q+9s"
+                            // data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
                           ></ins>
@@ -256,7 +256,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                             className="adsbygoogle text-center"
                             style={{ display: "block", width: "300px" }}
                             data-ad-format="rectangle"
-                            data-ad-layout-key="-bw-d+1k-5q+9s"
+                            // data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
                           ></ins>
