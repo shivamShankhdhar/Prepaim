@@ -43,16 +43,7 @@ const ChapterPage = () => {
     <div className="w-full flex gap-1 justify-between">
       {/* left side of the screen */}
       <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
-        <div className="w-full block text-center">
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-1113302487630583"
-            data-ad-slot="8366472653"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-        </div>
+        <div className="w-full block text-center"></div>
       </div>
       {/* mid side of the screen */}
       <div className="flex flex-col items-center flex-1 w-full">
@@ -103,23 +94,9 @@ const ChapterPage = () => {
       </div>
       {/* right side of the screen */}
       <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block">
-        <div className="w-full block text-center">
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="ca-pub-1113302487630583"
-            data-ad-slot="4170306842"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
-        </div>
+        <div className="w-full block text-center"></div>
       </div>
       <Footer />
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-        crossOrigin="anonymous"
-      ></script>
     </div>
   );
 };
