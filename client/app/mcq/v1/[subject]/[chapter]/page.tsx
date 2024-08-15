@@ -63,7 +63,7 @@ const ChapterPage = () => {
        ></script> */}
         <Breadcrum chaptersLength={chapters.length} />
         <div className="w-full inline-block  text-center">
-          <ins
+          {/* <ins
             className="adsbygoogle text-center"
             style={{
               display: "inline-block",
@@ -74,7 +74,7 @@ const ChapterPage = () => {
             data-ad-slot="7957270938"
             data-ad-format="horizontal"
             data-full-width-responsive="true"
-          ></ins>
+          ></ins> */}
         </div>
         <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
           <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
