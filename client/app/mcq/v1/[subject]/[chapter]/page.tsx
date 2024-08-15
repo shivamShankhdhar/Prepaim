@@ -45,8 +45,8 @@ const ChapterPage = () => {
       <div className="w-[100px] h-[92vh] ">
         <div className="w-full block text-center">
           <ins
-            className="adsbygoogle sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block"
-            // style={{ display: "block" }}
+            className="adsbygoogle "
+            style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="8366472653"
             data-ad-format="vertical"
@@ -110,8 +110,8 @@ const ChapterPage = () => {
       <div className="w-[100px] h-[92vh] ">
         <div className="w-full block justify-center items-center text-center">
           <ins
-            className="adsbygoogle sm:hidden max-sm:hidden md:hidden max-md:hidden lg:block xl:block 2xl:block"
-            // style={{ display: "block" }}
+            className="adsbygoogle "
+            style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="4170306842"
             data-ad-format="vertical"
