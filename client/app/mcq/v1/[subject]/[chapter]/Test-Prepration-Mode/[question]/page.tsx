@@ -271,13 +271,10 @@ const QuestionPage = () => {
             <div className="w-[90%]">
               <ins
                 className="adsbygoogle"
-                style={{
-                  display: "block",
-                }}
+                style={{ display: "block" }}
+                data-ad-format="autorelaxed"
                 data-ad-client="ca-pub-1113302487630583"
                 data-ad-slot="7384794981"
-                data-ad-format="auto"
-                data-full-width-responsive="true"
               ></ins>
             </div>
           </div>
