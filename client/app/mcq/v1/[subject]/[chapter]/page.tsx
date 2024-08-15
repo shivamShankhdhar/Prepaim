@@ -46,7 +46,6 @@ const ChapterPage = () => {
          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
          crossOrigin="anonymous"
        ></script>
-       <Breadcrum chaptersLength={chapters.length} />
        <div className="w-full inline-block justify-center items-center text-center">
          <ins
            className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
@@ -61,6 +60,8 @@ const ChapterPage = () => {
            data-full-width-responsive="true"
          ></ins>
        </div>
+       <Breadcrum chaptersLength={chapters.length} />
+
        <div className="w-full px-2 min-h-[92vh] max-[fit-content]">
          <div className="w-full gap-1/2 bg-white px-5 py-0 flex flex-col mt-1 rounded-md border">
            {isLoading === true ? (
