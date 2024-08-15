@@ -173,11 +173,6 @@ const QuestionPage = () => {
 
   return (
     <>
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-        crossOrigin="anonymous"
-      ></script>
       <SidebarSlider
         uniqueKey="chapters"
         open={openSidebarSlider}
@@ -210,7 +205,6 @@ const QuestionPage = () => {
             loading={loading}
           />
         </div>
-
         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
           <div className="w-[90%] inline-block justify-center items-center">

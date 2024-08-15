@@ -41,11 +41,11 @@ const ChapterPage = () => {
 
    return (
      <div className="flex flex-col items-center  w-full">
-       <script
+       {/* <script
          async
          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
          crossOrigin="anonymous"
-       ></script>
+       ></script> */}
        <Breadcrum chaptersLength={chapters.length} />
        <div className="w-full inline-block justify-center items-center">
          <ins
