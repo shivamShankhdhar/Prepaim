@@ -250,7 +250,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .map((item, index) => (
                     <>
                       {index % 5 === 0 && (
-                        <div className="w-full block text-center bg-black">
+                        <div className="w-[250px] block text-center bg-black">
                           <ins
                             className="adsbygoogle text-center"
                             style={{ display: "block" }}

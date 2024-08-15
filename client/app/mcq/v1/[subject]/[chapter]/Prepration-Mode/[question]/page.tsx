@@ -234,6 +234,17 @@ const QuestionPage = () => {
             </div>
             {/* </div> */}
 
+            {/* google_ads_start */}
+            <div className="w-full block text-center">
+              <ins
+                className="adsbygoogle text-center"
+                style={{ display: "block" }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7384794981"
+              ></ins>
+            </div>
+            {/* google_ads_end  */}
             <Footer />
           </div>
 
