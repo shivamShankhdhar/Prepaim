@@ -42,14 +42,14 @@ const ChapterPage = () => {
   return (
     <div className="w-full flex gap-1 justify-between">
       {/* left side of the screen */}
-      <div className="w-[100px] h-[92vh] ">
-        <div className="w-full block text-center">
+      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        <div className="w-full inline-block justify-center items-center text-center">
           <ins
-            className="adsbygoogle "
+            className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="8366472653"
-            data-ad-format="vertical"
+            data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
         </div>
@@ -107,14 +107,14 @@ const ChapterPage = () => {
         </div>
       </div>
       {/* right side of the screen */}
-      <div className="w-[100px] h-[92vh] ">
+      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
         <div className="w-full block justify-center items-center text-center">
           <ins
             className="adsbygoogle "
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="4170306842"
-            data-ad-format="vertical"
+            data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
         </div>
