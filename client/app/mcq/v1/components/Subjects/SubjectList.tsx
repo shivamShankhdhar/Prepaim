@@ -200,12 +200,12 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .map((item, index) => (
                     <>
                       {index % 5 === 0 && (
-                        <div className="w-full block text-center">
+                        <div className="w-full block text-center bg-black">
                           <ins
-                            className="adsbygoogle"
+                            className="adsbygoogle text-center"
                             style={{ display: "block" }}
-                            data-ad-format="auto"
-                            // data-ad-layout-key="-bw-d+1k-5q+9s"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
                           ></ins>
@@ -250,12 +250,12 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .map((item, index) => (
                     <>
                       {index % 5 === 0 && (
-                        <div className="w-full block text-center">
+                        <div className="w-full block text-center bg-black">
                           <ins
-                            className="adsbygoogle"
+                            className="adsbygoogle text-center"
                             style={{ display: "block" }}
-                            data-ad-format="auto"
-                            // data-ad-layout-key="-bw-d+1k-5q+9s"
+                            data-ad-format="fluid"
+                            data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
                           ></ins>
