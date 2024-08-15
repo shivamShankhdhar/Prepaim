@@ -32,8 +32,6 @@ const SubjectList = ({ setSubjectLength }: any) => {
 
   const [filterBySubjectName, setFilterBySubjectName] = useState("");
 
-
-
   useEffect(() => {
     try {
       axios
@@ -162,7 +160,10 @@ const SubjectList = ({ setSubjectLength }: any) => {
     setSelectedSubjectForQuiz(subject);
     // alert(subject)
   };
-  // dropdowns
+
+  useEffect(() => {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+  }, []); // dropdowns
   return (
     <div className="flex w-full flex-col py-2 min-h-[92vh] max-h-[fit-content] px-3 items-center">
       {/* navigations for grid and list */}

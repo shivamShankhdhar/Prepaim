@@ -47,6 +47,10 @@ const TryMCQ = ({ subjects, loading }: any) => {
       }
     }
   }, [selectedSubject]);
+
+  useEffect(() => {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+  }, []);
   // (selectedSubject);
   return (
     <>
