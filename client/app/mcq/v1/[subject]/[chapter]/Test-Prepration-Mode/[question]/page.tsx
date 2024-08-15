@@ -215,10 +215,10 @@ const QuestionPage = () => {
           {/* <AdsenseHorizontalAds /> */}
           <div className="w-[90%] inline-block justify-center items-center">
             <ins
-              className="adsbygoogle inline-block w-[95%] h-[100px]"
+              className="adsbygoogle inline-block w-[100%] h-[100px]"
               style={{
                 display: "inline-block",
-                width: "95%",
+                width: "100%",
                 height: "100px",
               }}
               data-ad-client="ca-pub-1113302487630583"
@@ -279,7 +279,7 @@ const QuestionPage = () => {
                 className="adsbygoogle inline-block w-[95%] h-[100px]"
                 style={{
                   display: "inline-block",
-                  width: "95%",
+                  width: "100%",
                   height: "100px",
                 }}
                 data-ad-client="ca-pub-1113302487630583"
