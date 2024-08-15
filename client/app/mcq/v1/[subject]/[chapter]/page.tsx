@@ -40,26 +40,22 @@ const ChapterPage = () => {
    }, []);
 
   return (
-    <div className="w-full flex justify-between">
+    <div className="w-full flex gap-1 justify-between">
       {/* left side of the screen */}
-      <div className="w-[100px] h-[92vh]">
+      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
         <div className="w-full inline-block justify-center items-center text-center">
           <ins
-            className="adsbygoogle text-center"
-            style={{
-              display: "inline-block",
-              width: "100%",
-              height: "100px",
-            }}
+            className="adsbygoogle"
+            style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
-            data-ad-slot="7957270938"
-            data-ad-format="veritical"
+            data-ad-slot="8366472653"
+            data-ad-format="vertical"
             data-full-width-responsive="true"
           ></ins>
         </div>
       </div>
       {/* mid side of the screen */}
-      <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col items-center flex-1 w-full">
         {/* <script
          async
          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
@@ -109,25 +105,20 @@ const ChapterPage = () => {
             )}
           </div>
         </div>
-        {/* right side of the screen */}
-        <div className="w-[100px] h-[92vh]">
-          <div className="w-full inline-block justify-center items-center text-center">
-            <ins
-              className="adsbygoogle text-center"
-              style={{
-                display: "inline-block",
-                width: "100%",
-                height: "100px",
-              }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="7957270938"
-              data-ad-format="veritical"
-              data-full-width-responsive="true"
-            ></ins>
-          </div>
+      </div>
+      {/* right side of the screen */}
+      <div className="w-[100px] h-[92vh] sm:hidden max-sm:hidde md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        <div className="w-full inline-block justify-center items-center text-center">
+          <ins
+            className="adsbygoogle "
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="4170306842"
+            data-ad-format="vertical"
+            data-full-width-responsive="true"
+          ></ins>
         </div>
       </div>
-
       <Footer />
     </div>
   );
