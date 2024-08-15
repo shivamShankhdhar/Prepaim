@@ -42,9 +42,9 @@ export default function Home() {
         ></script>
         {/* HERO SECTION  */}
         <HeroSection />
-        <div className="w-full mt-2 inline-block justify-center items-center">
+        <div className="w-full mt-2 inline-block justify-center items-center text-center">
           <ins
-            className="adsbygoogle"
+            className="adsbygoogle text-center"
             style={{
               display: "inline-block",
               width: "100%",
