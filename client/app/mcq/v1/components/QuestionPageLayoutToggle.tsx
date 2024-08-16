@@ -47,7 +47,7 @@ const QuestionPageLayoutToggle = ({
   //   }
   // }, [PageLayoutView]);
   return (
-    <div className="w-full flex justify-end items-center pt-1 gap-2 px-5">
+    <div className="w-full flex justify-end items-center pt-1 gap-2 px-5 pb-1 bg-white">
       {/* share buttons shows only on prepration mode */}
       {/* <StoreProgressToggleBtn
         handleClick={handleClickOnTrackProgressBtn}
