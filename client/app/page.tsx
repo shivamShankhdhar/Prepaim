@@ -72,7 +72,7 @@ export default function Home() {
             )}
           </div>
         </div>
-        <div className="w-full text-center">
+        <div className="w-full text-center mt-2">
           <ins
             className="adsbygoogle text-center"
             style={{ display: "block" }}
