@@ -274,7 +274,7 @@ const QuestionPage = () => {
                 style={{ display: "block" }}
                 data-ad-format="auto"
                 data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7384794981"
+                data-ad-slot="8159724561"
               ></ins>
             </div>
           </div>
