@@ -267,7 +267,7 @@ const QuestionPage = () => {
                 setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
-              <div className="w-full block text-center mt-2 bg-red-500">
+              <div className="w-full block text-center mt-2 ">
                 <ins
                   className="adsbygoogle text-center"
                   style={{ display: "block" }}
