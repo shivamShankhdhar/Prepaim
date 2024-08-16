@@ -270,7 +270,7 @@ const QuestionPage = () => {
               <div className="w-full block text-center mt-2 ">
                 <ins
                   className="adsbygoogle text-center"
-                  style={{ display: "block" }}
+                  style={{ display: "block", width: "100%" }}
                   data-ad-format="auto"
                   data-ad-client="ca-pub-1113302487630583"
                   data-ad-slot="8159724561"
