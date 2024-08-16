@@ -15,6 +15,7 @@ import { useCookies } from "next-client-cookies";
 import toast from "react-hot-toast";;
 import TestPreprationQuestionItem from "@/app/mcq/v1/components/Question/TestPreprationQuestionItem";
 import AdsenseHorizontalAds from "@/app/components/GoogleAds/AdsenseHorizontalAds";
+import ShareBtn from "@/app/components/Global/ShareBtn";
 
 // const generateMetadata = () => {
 
@@ -233,21 +234,29 @@ const QuestionPage = () => {
               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
             />
             <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-              <Breadcrum
-                subject={subject.toString()}
-                chapter={chapter.toString()}
-                totalquestion={questionsLength.toString()}
-                questionNo={(questions.length === 0
-                  ? 0
-                  : questionNo
-                ).toString()}
-              />
+              <div className="flex-1">
+                <Breadcrum
+                  subject={subject.toString()}
+                  chapter={chapter.toString()}
+                  totalquestion={questionsLength.toString()}
+                  questionNo={(questions.length === 0
+                    ? 0
+                    : questionNo
+                  ).toString()}
+                />
+              </div>
+              <div className="flex gap-1">
+                {/* <ShareBtn /> */}
+                <QuestionPageLayoutToggle />
+              </div>
             </div>
             {/* page layout toggle button */}
-            <QuestionPageLayoutToggle
-              handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
-              isTrackingProgress={isTrackingProgress}
-            />
+            <div className="w-full sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
+              <QuestionPageLayoutToggle
+                handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
+                isTrackingProgress={isTrackingProgress}
+              />
+            </div>
 
             <div className="px-2 w-full min-h-[92vh] flex-col max-[fit-content] ">
               {/* question*/}
