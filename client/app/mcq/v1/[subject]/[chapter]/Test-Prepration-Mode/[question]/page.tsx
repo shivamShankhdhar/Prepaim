@@ -233,7 +233,7 @@ const QuestionPage = () => {
               totalquestion={questionsLength.toString()}
               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
             />
-            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex bg-white">
               <div className="flex-1">
                 <Breadcrum
                   subject={subject.toString()}
