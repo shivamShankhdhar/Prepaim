@@ -194,7 +194,7 @@ const QuestionPage = () => {
         setQuestionNo={setQuestionNo}
         loading={loading}
       />
-      <div className="flex justify-between h-[92vh] overflow-hidden">
+      <div className="flex justify-between h-[92vh] overflow-hidden sticky top-0">
         <div
           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
           id="question_board"
