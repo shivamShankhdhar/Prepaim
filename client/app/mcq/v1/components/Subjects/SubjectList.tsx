@@ -201,11 +201,11 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .map((item, index) => (
                     <>
                       {index % 5 === 0 && (
-                        <div className="w-[300px] block text-center ">
+                        <div className="w-[300px] block text-center">
                           <ins
                             className="adsbygoogle text-center"
                             style={{ display: "block", width: "300px" }}
-                            data-ad-format="rectangle"
+                            data-ad-format="auto"
                             // data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"
@@ -255,7 +255,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                           <ins
                             className="adsbygoogle text-center"
                             style={{ display: "block", width: "300px" }}
-                            data-ad-format="rectangle"
+                            data-ad-format="auto"
                             // data-ad-layout-key="-bw-d+1k-5q+9s"
                             data-ad-client="ca-pub-1113302487630583"
                             data-ad-slot="3637121664"

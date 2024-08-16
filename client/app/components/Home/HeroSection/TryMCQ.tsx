@@ -79,7 +79,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
                     <ins
                       className="adsbygoogle text-center"
                       style={{ display: "block", width: "300px" }}
-                      data-ad-format="rectangle"
+                      data-ad-format="auto"
                       data-ad-client="ca-pub-1113302487630583"
                       data-ad-slot="7384794981"
                     ></ins>

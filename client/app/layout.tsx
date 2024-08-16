@@ -77,11 +77,6 @@ export default function RootLayout({
         </CookiesProvider>
         <Toaster position="top-center"></Toaster>
         <GoogleAnalytics gaId="G-QYJHFSJGRC" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script>
       </body>
     </html>
   );
