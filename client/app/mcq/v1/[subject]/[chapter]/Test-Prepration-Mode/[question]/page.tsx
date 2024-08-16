@@ -205,7 +205,7 @@ const QuestionPage = () => {
             loading={loading}
           />
         </div>
-        <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
+        <div className="grow flex flex-1 flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
           <div className="w-full inline-block justify-center items-center text-center mt-2">
             <ins
