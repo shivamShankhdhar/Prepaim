@@ -148,7 +148,7 @@ const QuestionPage = () => {
 
   return (
     <>
-      <div className="flex justify-between h-[92vh] overflow-hidden ">
+      <div className="flex justify-between h-[92vh] overflow-hidden fixed">
         {/* <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
@@ -199,20 +199,27 @@ const QuestionPage = () => {
               totalquestion={questionsLength.toString()}
               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
             />
-            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-              <Breadcrum
-                subject={subject.toString()}
-                chapter={chapter.toString()}
-                totalquestion={questionsLength.toString()}
-                questionNo={(questions.length === 0
-                  ? 0
-                  : questionNo
-                ).toString()}
-              />
+            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex bg-white">
+              <div className="flex-1">
+                <Breadcrum
+                  subject={subject.toString()}
+                  chapter={chapter.toString()}
+                  totalquestion={questionsLength.toString()}
+                  questionNo={(questions.length === 0
+                    ? 0
+                    : questionNo
+                  ).toString()}
+                />
+              </div>
+              <div className="flex gap-1">
+                <QuestionPageLayoutToggle />
+              </div>
             </div>
 
             {/* page layout toggle button */}
-            <QuestionPageLayoutToggle />
+            <div className="w-full sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden bg-white">
+              <QuestionPageLayoutToggle />
+            </div>
 
             <div className="w-full flex flex-col justify-between min-h-[85vh] max-h-[fit-content] flex-wrap gap-2">
               <div className="w-full inline-block justify-center items-center">
