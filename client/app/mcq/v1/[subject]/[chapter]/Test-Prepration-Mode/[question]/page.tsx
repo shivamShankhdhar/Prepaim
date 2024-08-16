@@ -290,7 +290,7 @@ const QuestionPage = () => {
         </div>
 
         {/* question board  */}
-        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex h-[92vh]">
+        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden w-[fit-content] lg:flex xl:flex 2xl:flex h-[92vh]">
           <QuestionBoard
             error={error}
             questions={questions}
