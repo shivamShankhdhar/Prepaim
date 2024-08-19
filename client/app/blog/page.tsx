@@ -785,6 +785,20 @@ const Blog = () => {
                 setProperty={setPage}
                 page={page}
               />
+              <div className="w-full bg-white h-[80px] text-center">
+                <ins
+                  className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+                  style={{
+                    display: "inline-block",
+                    width: "100%",
+                    height: "100px",
+                  }}
+                  data-ad-client="ca-pub-1113302487630583"
+                  data-ad-slot="7957270938"
+                  data-ad-format="horizontal"
+                  data-full-width-responsive="true"
+                ></ins>
+              </div>
             </div>
             {/* right section  */}
             <div className="w-[300px] sm:hidden max-sm:hidden p-3 flex gap-1 flex-col md:hidden rounded-md border max-md:hidden lg:flex xl:flex 2xl:flex h-[fit-content] sticky top-0">
@@ -808,6 +822,15 @@ const Blog = () => {
                   handleCategoryClick={handleCategoryClick}
                   text="Read by Category"
                 />
+                <div className="w-full">
+                  <ins
+                    className="adsbygoogle inline-block text-center w-[100%] h-[100%]"
+                    data-ad-layout="in-article"
+                    data-ad-format="fluid"
+                    data-ad-client="ca-pub-1113302487630583"
+                    data-ad-slot="8194517617"
+                  ></ins>
+                </div>
               </div>
             </div>
             {/* right ads sectioin  */}
