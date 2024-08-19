@@ -4,8 +4,8 @@ import React, { useEffect, useState } from "react";
 const AnswerExplanation = ({ question, loading }: any) => {
   const rightAnswerOptionSuffix = ["A", "B", "C", "D"];
   return (
-    <div className="flex flex-col px-5 py-1 max-h-auto min-h-[50px] rounded-md border border-purple-300 bg-white w-full text-purple-900">
-      {/* <div className="border flex border-dotted gap-1 py-1 border-purple-900 border-t-0 border-b-1 border-r-0 border-l-0 text-gray-600">
+    <div className="flex flex-col px-5 py-1 max-h-auto min-h-[50px] rounded-md border border-indigo-300 bg-white w-full text-indigo-800">
+      {/* <div className="border flex border-dotted gap-1 py-1 border-indigo-800 border-t-0 border-b-1 border-r-0 border-l-0 text-gray-600">
             Answer
           </div> */}
       <div className="w-full flex flex-wrap">

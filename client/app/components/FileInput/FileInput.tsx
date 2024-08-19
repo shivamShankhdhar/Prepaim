@@ -64,7 +64,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
   };
 
   return (
-    <div className="px-2 w-full py-2 border gap-3 rounded-md focus:outline-purple-100 flex flex-col justify-between items-center">
+    <div className="px-2 w-full py-2 border gap-3 rounded-md focus:outline-indigo-100 flex flex-col justify-between items-center">
       <div className="w-full flex justify-between items-center">
         <div className="flex-1">
           <input
@@ -78,7 +78,7 @@ const FileInput = ({ setImageURLFromServer }: any) => {
           {imageFile !== null && (
             <div
               onClick={handleUpload}
-              className="px-3 py-1 cursor-pointer bg-purple-900 hover:bg-purple-900 disabled:bg-purple-200 text-white rounded-md flex justify-center items-center gap-1"
+              className="px-3 py-1 cursor-pointer bg-indigo-800 hover:bg-indigo-900 disabled:bg-indigo-200 text-white rounded-md flex justify-center items-center gap-1"
             >
               <BsCloudUpload size={18} /> Upload
             </div>

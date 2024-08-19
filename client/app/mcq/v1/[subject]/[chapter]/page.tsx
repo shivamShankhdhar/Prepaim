@@ -35,8 +35,13 @@ const ChapterPage = () => {
       setIsLoading(false);
     }
   }, []);
+   
    useEffect(() => {
-     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+     if (process.env.RUN_ENVIRONMENT === "PRODUCTION") {
+       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+         {}
+       );
+     }
    }, []);
 
    return (
@@ -101,11 +106,13 @@ const ChapterPage = () => {
          ></ins>
        </div>
 
-       <script
-         async
-         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-         crossOrigin="anonymous"
-       ></script>
+       {process.env.RUN_ENVIRONMENT === "PRODUCTION" && (
+         <script
+           async
+           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+           crossOrigin="anonymous"
+         ></script>
+       )}
 
        <Footer />
      </div>

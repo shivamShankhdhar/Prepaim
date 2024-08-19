@@ -30,14 +30,14 @@ const QuestionItems = ({ index, item }: any) => {
         item.level === "a"
           ? `${
               questionNo === index
-                ? "bg-indigo-600 focus:ring-2 focus:ring-inset focus:ring-white text-white hover:bg-indigo-700"
-                : "bg-indigo-100 focus:ring-2 focus:ring-inset focus:ring-white text-indigo-800 hover:bg-indigo-700 hover:text-white"
+                ? "bg-indigo-600 focus:ring-2 focus:ring-inset focus:ring-white text-white hover:bg-indigo-900"
+                : "bg-indigo-100 focus:ring-2 focus:ring-inset focus:ring-white text-indigo-900 hover:bg-indigo-900 hover:text-white"
             }`
           : item.level === "b"
           ? `${
               questionNo === index
-                ? "bg-purple-900 text-white hover:bg-purple-900 focus:ring-2 focus:ring-inset focus:ring-white"
-                : "bg-purple-200 text-purple-900 focus:ring-2 focus:ring-white focus:ring-inset hover:bg-purple-900 hover:text-white"
+                ? "bg-[#F49D1A] text-white hover:bg-yellow-500 focus:ring-2 focus:ring-inset focus:ring-white"
+                : "bg-yellow-200 text-yellow-600 focus:ring-2 focus:ring-white focus:ring-inset hover:bg-yellow-600 hover:text-white"
             }`
           : `${
               questionNo === index
@@ -48,10 +48,10 @@ const QuestionItems = ({ index, item }: any) => {
         // on active item
         (questionNo === index &&
           item.level === "a" &&
-          "bg-indigo-600  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-indigo-700") ||
+          "bg-indigo-600  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-indigo-900") ||
         (questionNo === index &&
           item.level === "b" &&
-          "  bg-purple-900  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-purple-950") ||
+          "  bg-indigo-900  rounded-full focus:ring-2 focus:ring-inset focus:ring-white text-white hover:text-white hover:bg-indigo-900") ||
         (questionNo === index &&
           item.level === "c" &&
           "bg-rose-600 rounded-full text-white focus:ring-2 focus:ring-inset focus:ring-white hover:text-white hover:bg-rose-700")

@@ -168,152 +168,164 @@ const QuestionPage = () => {
     setIsTrackingProgress((prev) => !prev);
     // alert("yes its working man");
   };
-  useEffect(() => {
-    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-  }, []);
+  
+  
+   useEffect(() => {
+     if (process.env.RUN_ENVIRONMENT === "PRODUCTION") {
+       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+         {}
+       );
+     }
+   }, []);
 
-  return (
-    <>
-      <SidebarSlider
-        uniqueKey="chapters"
-        open={openSidebarSlider}
-        items={chapters}
-        chaptersLength={chapters.length}
-        setOpen={setOpenSidebarSlider}
-        itemType="chapters"
-        requestedPage={"Test-Prepration-Mode"}
-      />
+   useEffect(() => {
+     document.title = `${questions[questionNo].question} | Question`;
+   }, [questionNo]);
 
-      <SidebarSlider
-        uniqueKey="question_board"
-        open={openQuestionBoard}
-        setOpen={setOpenQuestionBoard}
-        itemType="question-board"
-        error={error}
-        questions={questions}
-        questionNo={questionNo - 1}
-        setQuestionNo={setQuestionNo}
-        loading={loading}
-      />
-      <div className="flex justify-between h-[92vh] overflow-hidden fixed">
-        <div
-          className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
-          id="question_board"
-        >
-          <Sidebar
-            requestedPage={"Test-Prepration-Mode"}
-            error={error}
-            loading={loading}
-          />
-        </div>
-        <div className="grow flex flex-1 flex-col h-[92vh] overflow-y-auto mb-12">
-          {/* <AdsenseHorizontalAds /> */}
-          <div className="w-full inline-block justify-center items-center text-center">
-            <ins
-              className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
-              style={{
-                display: "inline-block",
-                width: "100%",
-                height: "100px",
-              }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="7957270938"
-              data-ad-format="horizontal"
-              data-full-width-responsive="true"
-            ></ins>
-          </div>
-          <div className="w-full">
-            {/* breadcrumb  */}
-            <Actions
-              requestedPage={"Test-Prepration-Page"}
-              setProperty1={setOpenSidebarSlider}
-              setProperty2={setOpenQuestionBoard}
-              subject={subject.toString()}
-              chapter={chapter.toString()}
-              totalquestion={questionsLength.toString()}
-              questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
-            />
-            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex bg-white">
-              <div className="flex-1">
-                <Breadcrum
-                  subject={subject.toString()}
-                  chapter={chapter.toString()}
-                  totalquestion={questionsLength.toString()}
-                  questionNo={(questions.length === 0
-                    ? 0
-                    : questionNo
-                  ).toString()}
-                />
-              </div>
-              <div className="flex gap-1">
-                {/* <ShareBtn /> */}
-                <QuestionPageLayoutToggle />
-              </div>
-            </div>
-            {/* page layout toggle button */}
-            <div className="w-full sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
-              <QuestionPageLayoutToggle
-                handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
-                isTrackingProgress={isTrackingProgress}
-              />
-            </div>
+   return (
+     <>
+       <SidebarSlider
+         uniqueKey="chapters"
+         open={openSidebarSlider}
+         items={chapters}
+         chaptersLength={chapters.length}
+         setOpen={setOpenSidebarSlider}
+         itemType="chapters"
+         requestedPage={"Test-Prepration-Mode"}
+       />
 
-            <div className="px-2 w-full min-h-[92vh] flex-col max-[fit-content] ">
-              {/* question*/}
-              <TestPreprationQuestionItem
-                isTrackingProgress={isTrackingProgress}
-                questionNo={questionNo}
-                isAnswerLocked={isAnswerLocked}
-                setIsAnswerLocked={setIsAnswerLocked}
-                pageMode={"stack-page-mode"}
-                questions={questions}
-                chapter={chapter}
-                error={error}
-                loading={loading}
-                handleCommentToggle={handleCommentToggle}
-                isCommentSection={isCommentSection}
-                isAnswerExplanationOpen={isAnswerExplanationOpen}
-                setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
-                handleAnswerExplanationToggle={handleAnswerExplanationToggle}
-              />
-              <div className="w-full block text-center mt-2 ">
-                <ins
-                  className="adsbygoogle text-center"
-                  style={{ display: "block", width: "100%" }}
-                  data-ad-format="auto"
-                  data-ad-client="ca-pub-1113302487630583"
-                  data-ad-slot="8159724561"
-                ></ins>
-              </div>
-            </div>
-          </div>
+       <SidebarSlider
+         uniqueKey="question_board"
+         open={openQuestionBoard}
+         setOpen={setOpenQuestionBoard}
+         itemType="question-board"
+         error={error}
+         questions={questions}
+         questionNo={questionNo - 1}
+         setQuestionNo={setQuestionNo}
+         loading={loading}
+       />
+       <div className="flex justify-between h-[92vh] overflow-hidden fixed">
+         <div
+           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
+           id="question_board"
+         >
+           <Sidebar
+             requestedPage={"Test-Prepration-Mode"}
+             error={error}
+             loading={loading}
+           />
+         </div>
+         <div className="grow flex flex-1 flex-col h-[92vh] overflow-y-auto mb-12">
+           {/* <AdsenseHorizontalAds /> */}
+           <div className="w-full inline-block justify-center items-center text-center">
+             <ins
+               className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+               style={{
+                 display: "inline-block",
+                 width: "100%",
+                 height: "100px",
+               }}
+               data-ad-client="ca-pub-1113302487630583"
+               data-ad-slot="7957270938"
+               data-ad-format="horizontal"
+               data-full-width-responsive="true"
+             ></ins>
+           </div>
+           <div className="w-full">
+             {/* breadcrumb  */}
+             <Actions
+               requestedPage={"Test-Prepration-Page"}
+               setProperty1={setOpenSidebarSlider}
+               setProperty2={setOpenQuestionBoard}
+               subject={subject.toString()}
+               chapter={chapter.toString()}
+               totalquestion={questionsLength.toString()}
+               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
+             />
+             <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex bg-white">
+               <div className="flex-1">
+                 <Breadcrum
+                   subject={subject.toString()}
+                   chapter={chapter.toString()}
+                   totalquestion={questionsLength.toString()}
+                   questionNo={(questions.length === 0
+                     ? 0
+                     : questionNo
+                   ).toString()}
+                 />
+               </div>
+               <div className="flex gap-1">
+                 {/* <ShareBtn /> */}
+                 <QuestionPageLayoutToggle />
+               </div>
+             </div>
+             {/* page layout toggle button */}
+             <div className="w-full sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
+               <QuestionPageLayoutToggle
+                 handleClickOnTrackProgressBtn={handleClickOnTrackProgressBtn}
+                 isTrackingProgress={isTrackingProgress}
+               />
+             </div>
 
-          {/* google_ads_start */}
+             <div className="px-2 w-full min-h-[92vh] flex-col max-[fit-content] ">
+               {/* question*/}
+               <TestPreprationQuestionItem
+                 isTrackingProgress={isTrackingProgress}
+                 questionNo={questionNo}
+                 isAnswerLocked={isAnswerLocked}
+                 setIsAnswerLocked={setIsAnswerLocked}
+                 pageMode={"stack-page-mode"}
+                 questions={questions}
+                 chapter={chapter}
+                 error={error}
+                 loading={loading}
+                 handleCommentToggle={handleCommentToggle}
+                 isCommentSection={isCommentSection}
+                 isAnswerExplanationOpen={isAnswerExplanationOpen}
+                 setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
+                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
+               />
+               <div className="w-full block text-center mt-2 ">
+                 <ins
+                   className="adsbygoogle text-center"
+                   style={{ display: "block", width: "100%" }}
+                   data-ad-format="auto"
+                   data-ad-client="ca-pub-1113302487630583"
+                   data-ad-slot="8159724561"
+                 ></ins>
+               </div>
+             </div>
+           </div>
 
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-            crossOrigin="anonymous"
-          ></script>
-          {/* google_ads_end  */}
-          <Footer />
-        </div>
+           {/* google_ads_start */}
 
-        {/* question board  */}
-        <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden w-[fit-content] lg:flex xl:flex 2xl:flex h-[92vh]">
-          <QuestionBoard
-            error={error}
-            questions={questions}
-            questionNo={questionNo - 1}
-            setQuestionNo={setQuestionNo}
-            loading={loading}
-            setIsCommentSection={setIsCommentSection}
-            setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
-          />
-        </div>
-      </div>
-    </>
-  );
+           {process.env.RUN_ENVIRONMENT === "PRODUCTION" && (
+             <script
+               async
+               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+               crossOrigin="anonymous"
+             ></script>
+           )}
+           {/* google_ads_end  */}
+           <Footer />
+         </div>
+
+         {/* question board  */}
+         <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden w-[fit-content] lg:flex xl:flex 2xl:flex h-[92vh]">
+           <QuestionBoard
+             error={error}
+             questions={questions}
+             questionNo={questionNo - 1}
+             setQuestionNo={setQuestionNo}
+             loading={loading}
+             setIsCommentSection={setIsCommentSection}
+             setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
+           />
+         </div>
+       </div>
+     </>
+   );
 };
 
 export default QuestionPage;

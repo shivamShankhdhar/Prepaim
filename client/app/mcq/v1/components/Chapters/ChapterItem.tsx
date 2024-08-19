@@ -53,7 +53,7 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
             >
               <Button
                 sx={{ textTransform: "none" }}
-                className="text-white focus:ring-4 focus:outline-none focus:ring-white bg-purple-900 py-1 hover:bg-purple-900 gap-2"
+                className="text-white focus:ring-4 focus:outline-none focus:ring-white bg-indigo-800 py-1 hover:bg-indigo-900 gap-2"
                 href={`/mcq/v1/${data.subject.replaceAll(
                   " ",
                   "-"

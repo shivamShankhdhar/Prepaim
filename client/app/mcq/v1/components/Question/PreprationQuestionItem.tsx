@@ -116,7 +116,7 @@ const PreprationQuestionItem = () => {
                       />
                     </div>
                     {/* question heading  */}
-                    <div className="w-full text-lg flex justify-start font-semibold text-purple-900 items-center py-3">
+                    <div className="w-full text-lg flex justify-start font-semibold text-indigo-800 items-center py-3">
                       Q&nbsp;{questionNo + 1}. {question.question}
                     </div>
 
@@ -160,7 +160,7 @@ const PreprationQuestionItem = () => {
                     )} */}
                       {clickedId === question._id ? (
                         <Button
-                          className="bg-purple-200 flex text-sm  focus:ring-3 focus:ring-purple-300 hover:bg-purple-300 gap-1 border border-purple-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-purple-900 rounded-sm"
+                          className="bg-indigo-200 flex text-sm  focus:ring-3 focus:ring-indigo-300 hover:bg-indigo-300 gap-1 border border-indigo-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-indigo-800 rounded-sm"
                           onClick={() => {
                             setClickedId("");
                           }}
@@ -171,7 +171,7 @@ const PreprationQuestionItem = () => {
                         </Button>
                       ) : (
                         <Button
-                          className="bg-purple-200 flex text-sm focus:ring-3 focus:ring-purple-300 hover:bg-purple-300 gap-1 border border-purple-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-purple-900 rounded-sm"
+                          className="bg-indigo-200 flex text-sm focus:ring-3 focus:ring-indigo-300 hover:bg-indigo-300 gap-1 border border-indigo-400 cursor-pointer w-[fit-content] justify-start items-center px-3 py-1 text-indigo-800 rounded-sm"
                           onClick={() => {
                             setClickedId(question._id);
                           }}

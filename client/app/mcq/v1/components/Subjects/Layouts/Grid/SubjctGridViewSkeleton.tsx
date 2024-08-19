@@ -8,7 +8,7 @@ const SubjctGridViewSkeleton = () => {
         return (
           <div
             key={`key-for-gridlayout-skeleton-${item}`}
-            className="flex sm:w-full max-sm:w-full md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px]  border border-purple-400 rounded-md  flex-col gap-2 shadow-lg px-3 py-3  justify-center items-center"
+            className="flex sm:w-full max-sm:w-full md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px]  border border-indigo-400 rounded-md  flex-col gap-2 shadow-lg px-3 py-3  justify-center items-center"
           >
             <div className="bg-gray-100 text-gray-400 flex w-[200px] h-[200px] animate-pulse rounded-full border-gray-200 justify-center items-center">
               <FaRegImage size={100} />

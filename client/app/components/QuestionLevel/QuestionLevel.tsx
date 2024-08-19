@@ -5,13 +5,13 @@ const QuestionLevel = ({ level, isText }: any) => {
     <div className="flex gap-1 py-1 border border-dashed border-b-1 border-t-0 border-r-0 border-l-0 text-[12px] items-center">
       {isText && <div className="font-semibold w-[fit-content]">Level :</div>}
       {level === "a" && (
-        <div className="bg-indigo-500 w-[fit-content] text-purple-50 px-3 rounded-full">
+        <div className="bg-indigo-500 w-[fit-content] text-indigo-50 px-3 rounded-full">
           basic
         </div>
       )}
 
       {level === "b" && (
-        <div className="bg-purple-900 w-[fit-content] text-purple-50 px-3 py-1/2  rounded-full">
+        <div className="bg-yellow-500 w-[fit-content] text-yellow-50 px-3 py-1/2  rounded-full">
           medium
         </div>
       )}

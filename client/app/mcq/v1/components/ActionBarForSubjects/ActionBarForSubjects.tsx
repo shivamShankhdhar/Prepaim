@@ -38,7 +38,7 @@ const ActionBarForSubjects = ({
           {/* <div className="sans-serif w-[fit-content]">Search Subject :</div> */}
           <Button
             sx={{ textTransform: "none" }}
-            className="px-2 focus:ring-2 focus:ring-purple-900 hover:bg-purple-900 hover:text-white  focus:outline-none bg-purple-200 text-purple-900  cursor-pointer py-1 rounded-sm"
+            className="px-2 focus:ring-2 focus:ring-indigo-800 hover:bg-indigo-900 hover:text-white  focus:outline-none bg-indigo-200 text-indigo-800  cursor-pointer py-1 rounded-sm"
             onClick={() => setSubjectBySearch("")}
           >
             RESET

@@ -111,7 +111,7 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
         <Button
           // variant="contained"
           sx={{ textTransform: "none" }}
-          className="justify-center focus:ring-4 focus:outline-none focus:ring-purple-300 outline-none gap-2 w-[fit-content] flex items-center bg-purple-900 text-white px-3 py-1 hover:bg-purple-900 rounded-sm"
+          className="justify-center focus:ring-4 focus:outline-none focus:ring-indigo-300 outline-none gap-2 w-[fit-content] flex items-center bg-indigo-800 text-white px-3 py-1 hover:bg-indigo-900 rounded-sm"
           type="submit"
         >
           {isSigningUp && <SimpleLoader size={15} clr={"white"} />}
@@ -123,7 +123,7 @@ const SignUpComponent = ({ isRequestingFromModel, setProperty }: any) => {
           <div className="flex justify-center items-center w-[fit-content]">
             Already have an account ?{" "}
             <div
-              className="text-purple-900 bg-purple-200 rounded-full px-5 py-1 text-sm hover:bg-purple-300  focus:ring-3 focus:ring-purple-300 ml-2 cursor-pointer"
+              className="text-indigo-800 bg-indigo-200 rounded-full px-5 py-1 text-sm hover:bg-indigo-300  focus:ring-3 focus:ring-indigo-300 ml-2 cursor-pointer"
               onClick={() => setProperty("login")}
             >
               Login now

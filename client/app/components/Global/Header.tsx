@@ -60,7 +60,7 @@ const Header = () => {
     useState("");
 
   return (
-    <div className="flex sticky top-0 justify-between border-purple-300 border-[2px] border-l-0 border-t-0 border-r-0 bg-white h-[50px] items-center px-2 py-3 border-b z-50">
+    <div className="flex sticky top-0 justify-between bg-white h-[50px] items-center px-2 py-3 border-b z-50">
       {/* login modal  */}
       <Modal
         open={open}
@@ -76,7 +76,7 @@ const Header = () => {
               <div
                 // sx={{ border: 1 }}
                 onClick={handleClose}
-                className="flex focus:ring-4 focus:outline-none focus:ring-purple-300 cursor-pointer bg-purple-100 py-1 px-1 text-purple-900 rounded-sm  border border-purple-300"
+                className="flex focus:ring-4 focus:outline-none focus:ring-indigo-300 cursor-pointer bg-indigo-100 py-1 px-1 text-indigo-800 rounded-sm  border border-indigo-300"
               >
                 <IoCloseOutline size={15} />
               </div>
@@ -132,7 +132,7 @@ const Header = () => {
                 alt={loged_in_user_first_name}
                 src={user_profile_image || "/assets/user_profile_fake.png"}
                 sx={{ width: 30, height: 30 }}
-                className="cursor-pointer ring-3 ring-purple-300"
+                className="cursor-pointer ring-3 ring-indigo-300"
               />
             </div>
 
@@ -175,7 +175,7 @@ const Header = () => {
           //       setLoginModelCurrentOpenComponent("login");
           //       handleOpen();
           //     }}
-          //     className="flex gap-1  border border-purple-300 text-purple-900 hover:bg-purple-900 hover:text-white focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+          //     className="flex gap-1  border border-indigo-300 text-indigo-800 hover:bg-indigo-900 hover:text-white focus:ring-2 focus:outline-none focus:ring-indigo-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
           //   >
           //     Login
           //   </Button>
@@ -186,7 +186,7 @@ const Header = () => {
           //       setLoginModelCurrentOpenComponent("register");
           //       handleOpen();
           //     }}
-          //     className="flex gap-1 bg-purple-900 border border-purple-300 text-white hover:bg-purple-900 focus:ring-2 focus:outline-none focus:ring-purple-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
+          //     className="flex gap-1 bg-indigo-800 border border-indigo-300 text-white hover:bg-indigo-900 focus:ring-2 focus:outline-none focus:ring-indigo-300 font-medium rounded-sm text-sm px-2 py-1 text-center"
           //   >
           //     Sign Up
           //   </Button>

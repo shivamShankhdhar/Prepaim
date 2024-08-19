@@ -5,7 +5,7 @@ import QuestionItems from "./QuestionItems";
 import QuestionBoardSkeleton from "./QuestionBoardSkeleton";
 import ErrorMessage from "@/app/components/Global/ErrorMessage";
 import { IoIosClose } from "react-icons/io";
-// import { purple } from '@mui/material/colors'
+// import { indigo } from '@mui/material/colors'
 
 
 
@@ -37,8 +37,8 @@ const QuestionBoard = ({
 
   return (
     <div className={`bg-white gap-0 flex-col flex-grow-1  w-[350px] h-[92vh]`}>
-      <div className="w-full text-gray-500 text-center px-2 py-[10px] border border-purple-300 border-t-0 border-l-0 border-r-0 border-b-1 flex items-center font-bold">
-        <div className="w-[fit-content] bg-purple-100 border-purple-300 cursor-pointer text-purple-900 hover:bg-purple-100 p-1 border rounded-md sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
+      <div className="w-full text-gray-500 text-center px-2 py-[10px] border border-indigo-300 border-t-0 border-l-0 border-r-0 border-b-1 flex items-center font-bold">
+        <div className="w-[fit-content] bg-indigo-100 border-indigo-300 cursor-pointer text-indigo-800 hover:bg-indigo-100 p-1 border rounded-md sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden">
           <IoIosClose size={20} onClick={handleClose} />
         </div>
         <div className="flex-1 justify-center items-center flex">
@@ -47,7 +47,7 @@ const QuestionBoard = ({
         </div>
       </div>
       <div className="pb-5 mt-2 sm:h-[90vh] max-sm:h-[90vh] md:h-[90vh] max-md:h-[90vh] lg:h-[86vh] xl:h-[86vh] 2xl:h-[86vh] overflow-y-auto px-2">
-        <div className="w-full flex flex-row gap-2 rounded-md shadow-lg hover:shadow-xl border border-purple-300 px-5 flex-wrap py-5">
+        <div className="w-full flex flex-row gap-2 rounded-md shadow-lg hover:shadow-xl border border-indigo-300 px-5 flex-wrap py-5">
           {Object.values(error).toString().replaceAll(",", "") === "" ? (
             !loading ? (
               questions.length > 0 ? (

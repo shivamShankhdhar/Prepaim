@@ -11,7 +11,7 @@ html {
 	scroll-behavior: smooth;
 }
 body {
-	@apply bg-purple-100;
+	@apply bg-indigo-100;
 	font-family:"Teko",sans-serif;
 	font-optical-sizing:auto;
 	min-height:100%;

@@ -50,9 +50,9 @@ const Sidebar = ({ error, requestedPage, loading }: Props) => {
 
   return (
     <div
-      className={`w-[280px] border border-l-0  border-t-0  border-b-0 border-r-1 border-purple-300 mt-0 max-h-[92vh] bg-white overflow-y-auto`}
+      className={`w-[280px] border border-l-0  border-t-0  border-b-0 border-r-1 border-indigo-300 mt-0 max-h-[92vh] bg-white overflow-y-auto`}
     >
-      <div className="px-2 py-[10px] text-center border border-dashed border-t-0 border-b-1 border-l-0 border-r-0 border-purple-950 flex justify-center items-center font-semibold text-purple-900 ">
+      <div className="px-2 py-[10px] text-center border border-dashed border-t-0 border-b-1 border-l-0 border-r-0 border-indigo-900 flex justify-center items-center font-semibold text-indigo-900 ">
         <IoBookOutline size={20} />
         &nbsp;{" "}
         {chapters.length > 1

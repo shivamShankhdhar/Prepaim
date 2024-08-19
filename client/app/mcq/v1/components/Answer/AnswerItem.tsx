@@ -49,7 +49,7 @@ const AnswerItem = ({
   const items = ["A", "B", "C", "D"];
   return (
     <div
-      className={`border border-purple-300 gap-2 self-stretch rounded-sm hover:shadow-md shadow-purple-900  cursor-pointer py-2 px-2 sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] flex`}
+      className={`border border-indigo-300 gap-2 self-stretch rounded-sm hover:shadow-md shadow-indigo-800  cursor-pointer py-2 px-2 sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] flex`}
       onClick={() =>
         handleAnserClicked(
           `id-at-answeritem-for-click-event-${questions[

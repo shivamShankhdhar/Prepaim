@@ -98,6 +98,10 @@ export default async function sitemap() {
       lastModified: new Date().toISOString(),
     },
     {
+      url: `${baseURL}/blog`,
+      lastModified: new Date().toISOString(),
+    },
+    {
       url: `${baseURL}/about`,
       lastModified: new Date().toISOString(),
     },

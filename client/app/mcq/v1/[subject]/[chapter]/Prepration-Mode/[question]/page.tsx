@@ -143,125 +143,131 @@ const QuestionPage = () => {
   }, []);
 
    useEffect(() => {
-     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+     if (process.env.RUN_ENVIRONMENT === "PRODUCTION") {
+       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
+         {}
+       );
+     }
    }, []);
 
-  return (
-    <>
-      <div className="flex justify-between h-[92vh] overflow-hidden fixed">
-        {/* <script
+   return (
+     <>
+       <div className="flex justify-between h-[92vh] overflow-hidden fixed">
+         {/* <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
           crossOrigin="anonymous"
         ></script> */}
-        <SidebarSlider
-          uniqueKey="chapters"
-          open={openSidebarSlider}
-          items={chapters}
-          setOpen={setOpenSidebarSlider}
-          itemType="chapters"
-          chaptersLength={chapters.length}
-          requestedPage={"Prepration-Mode"}
-        />
+         <SidebarSlider
+           uniqueKey="chapters"
+           open={openSidebarSlider}
+           items={chapters}
+           setOpen={setOpenSidebarSlider}
+           itemType="chapters"
+           chaptersLength={chapters.length}
+           requestedPage={"Prepration-Mode"}
+         />
 
-        <SidebarSlider
-          pageView="list-view"
-          uniqueKey="question_board"
-          open={openQuestionBoard}
-          setOpen={setOpenQuestionBoard}
-          itemType="question-board"
-          error={error}
-          questions={questions}
-          questionNo={questionNo - 1}
-          setQuestionNo={setQuestionNo}
-          loading={loading}
-        />
-        <div
-          className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
-          id="question_board"
-        >
-          <Sidebar
-            requestedPage={"Prepration-Mode"}
-            error={error}
-            loading={loading}
-          />
-        </div>
+         <SidebarSlider
+           pageView="list-view"
+           uniqueKey="question_board"
+           open={openQuestionBoard}
+           setOpen={setOpenQuestionBoard}
+           itemType="question-board"
+           error={error}
+           questions={questions}
+           questionNo={questionNo - 1}
+           setQuestionNo={setQuestionNo}
+           loading={loading}
+         />
+         <div
+           className="sm:hidden max-sm:hidden md:hidden max-md:hidden sticky top-[-40px] lg:flex xl:flex 2xl:flex"
+           id="question_board"
+         >
+           <Sidebar
+             requestedPage={"Prepration-Mode"}
+             error={error}
+             loading={loading}
+           />
+         </div>
 
-        <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
-          <div className="w-full inline-block justify-center items-center">
-            <ins
-              className="adsbygoogle inline-block w-[100%] h-[100px]"
-              style={{
-                display: "inline-block",
-                width: "100%",
-                height: "100px",
-              }}
-              data-ad-client="ca-pub-1113302487630583"
-              data-ad-slot="7957270938"
-              data-ad-format=" horizontal"
-              data-full-width-responsive="true"
-            ></ins>
-          </div>
-          <div className="w-full">
-            {/* breadcrumb  */}
-            <Actions
-              requestedPage={"Prepration-Page"}
-              setProperty1={setOpenSidebarSlider}
-              setProperty2={setOpenQuestionBoard}
-              subject={subject.toString()}
-              chapter={chapter.toString()}
-              totalquestion={questionsLength.toString()}
-              questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
-            />
-            <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex bg-white">
-              <div className="flex-1">
-                <Breadcrum
-                  subject={subject.toString()}
-                  chapter={chapter.toString()}
-                  totalquestion={questionsLength.toString()}
-                  questionNo={(questions.length === 0
-                    ? 0
-                    : questionNo
-                  ).toString()}
-                />
-              </div>
-              <div className="flex gap-1">
-                <QuestionPageLayoutToggle />
-              </div>
-            </div>
+         <div className="grow flex flex-col h-[92vh] overflow-y-auto mb-12">
+           <div className="w-full inline-block justify-center items-center">
+             <ins
+               className="adsbygoogle inline-block w-[100%] h-[100px]"
+               style={{
+                 display: "inline-block",
+                 width: "100%",
+                 height: "100px",
+               }}
+               data-ad-client="ca-pub-1113302487630583"
+               data-ad-slot="7957270938"
+               data-ad-format=" horizontal"
+               data-full-width-responsive="true"
+             ></ins>
+           </div>
+           <div className="w-full">
+             {/* breadcrumb  */}
+             <Actions
+               requestedPage={"Prepration-Page"}
+               setProperty1={setOpenSidebarSlider}
+               setProperty2={setOpenQuestionBoard}
+               subject={subject.toString()}
+               chapter={chapter.toString()}
+               totalquestion={questionsLength.toString()}
+               questionNo={(questions.length === 0 ? 0 : questionNo).toString()}
+             />
+             <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex bg-white">
+               <div className="flex-1">
+                 <Breadcrum
+                   subject={subject.toString()}
+                   chapter={chapter.toString()}
+                   totalquestion={questionsLength.toString()}
+                   questionNo={(questions.length === 0
+                     ? 0
+                     : questionNo
+                   ).toString()}
+                 />
+               </div>
+               <div className="flex gap-1">
+                 <QuestionPageLayoutToggle />
+               </div>
+             </div>
 
-            {/* page layout toggle button */}
-            <div className="w-full sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden bg-white">
-              <QuestionPageLayoutToggle />
-            </div>
+             {/* page layout toggle button */}
+             <div className="w-full sm:flex max-sm:flex md:flex max-md:flex lg:hidden xl:hidden 2xl:hidden bg-white">
+               <QuestionPageLayoutToggle />
+             </div>
 
-            <div className="w-full flex flex-col justify-between min-h-[85vh] max-h-[fit-content] flex-wrap gap-2">
-              {/* question*/}
-              <PreprationQuestionItem />
-            </div>
-            {/* </div> */}
+             <div className="w-full flex flex-col justify-between min-h-[85vh] max-h-[fit-content] flex-wrap gap-2">
+               {/* question*/}
+               <PreprationQuestionItem />
+             </div>
+             {/* </div> */}
 
-            {/* google_ads_start */}
-            <div className="w-full block text-center mt-2">
-              <ins
-                className="adsbygoogle text-center"
-                style={{ display: "block" }}
-                data-ad-format="auto"
-                data-ad-client="ca-pub-1113302487630583"
-                data-ad-slot="7384794981"
-              ></ins>
-            </div>
-            {/* google_ads_end  */}
-            <script
-              async
-              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-              crossOrigin="anonymous"
-            ></script>
-            <Footer />
-          </div>
+             {/* google_ads_start */}
+             <div className="w-full block text-center mt-2">
+               <ins
+                 className="adsbygoogle text-center"
+                 style={{ display: "block" }}
+                 data-ad-format="auto"
+                 data-ad-client="ca-pub-1113302487630583"
+                 data-ad-slot="7384794981"
+               ></ins>
+             </div>
+             {/* google_ads_end  */}
+             {process.env.RUN_ENVIRONMENT === "PRODUCTION" && (
+               <script
+                 async
+                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+                 crossOrigin="anonymous"
+               ></script>
+             )}
+             <Footer />
+           </div>
 
-          {/* question board  */}
-          {/* <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+           {/* question board  */}
+           {/* <div className="sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <QuestionBoard
             error={error}
             questions={questions}
@@ -272,10 +278,10 @@ const QuestionPage = () => {
             setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
           />
         </div> */}
-        </div>
-      </div>
-    </>
-  );
+         </div>
+       </div>
+     </>
+   );
 };
 
 export default QuestionPage;

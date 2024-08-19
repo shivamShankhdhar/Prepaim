@@ -13,12 +13,12 @@ const SidebarItem = ({
   const { chapter } = useParams();
   return (
     <div
-      className={`flex border flex-row border-dashed justify-start border-purple-900 border-t-0 border-l-0 ${
+      className={`flex border flex-row border-dashed justify-start border-indigo-800 border-t-0 border-l-0 ${
         index < totalLengthOfChapters - 1 ? "border-b-1" : "border-b-0"
       } border-r-0 items-center gap-2 w-full px-2 py-2  ${
         String(item.name.replaceAll(" ", "-")) === chapter
-          ? " bg-purple-900 border-l-1 border-l-white text-white hover:bg-purple-900 "
-          : "border-purple-300 hover:bg-purple-200 text-gray-800"
+          ? " bg-indigo-800 border-l-1 border-l-white text-white hover:bg-indigo-900 "
+          : "border-indigo-300 hover:bg-indigo-200 text-gray-800"
       }`}
     >
       <Link

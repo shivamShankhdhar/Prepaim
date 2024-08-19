@@ -22,7 +22,7 @@ const ContactUsForm = () => {
       <div className="w-full flex justify-center items-center py-5 px-10 h-[90vh] bg-white rounded-md">
         <div className="sm:w-full max-sm:w-full md:w-[80%] max-md:w-[80%] lg:w-[50%] xl:w-[50%] 2xl:w-[50%] border rounded-md bg-white">
           <form className="w-full flex flex-col items-center gap-2 px-2 py-3">
-            <div className="w-full text-purple-900 text-2xl font-semibold">
+            <div className="w-full text-indigo-900 text-2xl font-semibold">
               Contact Us
             </div>
             <input
@@ -37,7 +37,7 @@ const ContactUsForm = () => {
               onChange={(e) => setUserContactQuery(e.target.value)}
             />
             <button
-              className="py-1 px-3 rounded-md justify-center items-center flex gap-1 w-[fit-content] bg-purple-950 hover:bg-purple-900 text-white border"
+              className="py-1 px-3 rounded-md justify-center items-center flex gap-1 w-[fit-content] bg-indigo-900 hover:bg-indigo-900 text-white border"
               type="submit"
               onClick={handleSubmit}
             >
