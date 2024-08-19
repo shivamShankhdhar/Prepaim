@@ -702,7 +702,7 @@ const Blog = () => {
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
-        <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        {/* <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -711,7 +711,7 @@ const Blog = () => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
-        </div>
+        </div> */}
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
           {/* featured post */}
