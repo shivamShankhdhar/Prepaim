@@ -688,6 +688,13 @@ const Blog = () => {
     setCategory("");
     setPage(1);
   };
+
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+  
   return (
     <div className="w-full h-[92vh]  flex fixed">
       <script
