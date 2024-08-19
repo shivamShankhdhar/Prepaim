@@ -179,7 +179,7 @@ const QuestionPage = () => {
    }, []);
 
   useEffect(() => {
-    if (loading === false) {
+    if (!loading) {
       document.title = `${questions[questionNo]?.question} | Question`;
     }
   }, [questionNo]);
