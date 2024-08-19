@@ -182,7 +182,7 @@ const QuestionPage = () => {
     if (!loading) {
       document.title = `${questions[questionNo]?.question} | Question`;
     }
-  }, [questionNo]);
+  }, [loading, questionNo, questions]);
 
   console.log(process.env.RUN_ENVIRONMENT);
    return (
