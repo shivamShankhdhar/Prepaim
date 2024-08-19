@@ -696,7 +696,7 @@ const Blog = () => {
   }, []);
   
   return (
-    <div className="w-full h-[92vh] flex fixed overflow-y-auto">
+    <div className="w-full h-[92vh] flex fixed">
       {/* adsense ads div */}
 
       {/* blog page content  */}
