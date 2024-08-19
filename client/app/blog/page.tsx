@@ -758,11 +758,17 @@ const Blog = () => {
             </div>
             {/* right section  */}
             <div className="w-[300px] sm:hidden max-sm:hidden p-3 flex gap-1 flex-col md:hidden rounded-md border max-md:hidden lg:flex xl:flex 2xl:flex h-[fit-content] sticky top-0">
-              <h2 className="text-md">What's hot ?</h2>
+              <h2 className="text-md">What&apos;`s hot ?</h2>
               <div className="w-full text-2xl">Most Popular</div>
               <div className="w-full flex gap-1 flex-col">
                 {posts.slice(0, 10).map((post) => {
-                  return <ShortcutPostItem post={post} isImage={true} />;
+                  return (
+                    <ShortcutPostItem
+                      key={post.title}
+                      post={post}
+                      isImage={true}
+                    />
+                  );
                 })}
               </div>
               <div className="w-full">
