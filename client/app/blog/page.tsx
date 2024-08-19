@@ -826,7 +826,7 @@ const Blog = () => {
                   <ins
                     className="adsbygoogle inline-block text-center w-[300px] h-[300px]"
                     data-ad-layout="in-article"
-                    data-ad-format="fluid"
+                    data-ad-format="rectangle"
                     data-ad-client="ca-pub-1113302487630583"
                     data-ad-slot="8194517617"
                   ></ins>
