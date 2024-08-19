@@ -171,20 +171,20 @@ const QuestionPage = () => {
   
   
    useEffect(() => {
-     if (process.env.RUN_ENVIRONMENT === "PRODUCTION") {
+     if (process.env.RUN_ENVIRONMENT! === "PRODUCTION") {
        ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
          {}
        );
      }
    }, []);
 
-  useEffect(() => {
-    if (!loading) {
-      document.title = `${questions[questionNo]?.question} | Question`;
-    }
-  }, [loading, questionNo, questions]);
+   useEffect(() => {
+     if (!loading) {
+       document.title = `${questions[questionNo]?.question} | Question`;
+     }
+   }, [loading, questionNo, questions]);
 
-  console.log(process.env.RUN_ENVIRONMENT);
+   console.log(process.env.RUN_ENVIRONMENT!);
    return (
      <>
        <SidebarSlider
@@ -303,7 +303,7 @@ const QuestionPage = () => {
 
            {/* google_ads_start */}
 
-           {process.env.RUN_ENVIRONMENT === "PRODUCTION" && (
+           {process.env.RUN_ENVIRONMENT! === "PRODUCTION" && (
              <script
                async
                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
