@@ -5,7 +5,7 @@ const Featured = () => {
     <div className="w-full py-1 flex flex-col">
       <h1 className="text-[2.5rem]">
         <span className="font-semibold">Hello, Welcome to our Blog</span>,
-        Discover stories and creative ideas.
+        Discover Technologies and creative ideas.
       </h1>
       <PostItem
         title="this is the title that we have for this post."
