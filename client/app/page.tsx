@@ -34,6 +34,7 @@ export default function Home() {
         );
       }
     }, []);
+  console.log(process.env.NEXT_PUBLIC_RUN_ENVIRONMENT);
     return (
       <>
         <div className="flex w-full items-center flex-col mb-3">
