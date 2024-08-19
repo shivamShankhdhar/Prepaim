@@ -53,7 +53,7 @@ const Pagination = ({ items, setProperty, page }: Props) => {
             }
             onClick={() => setProperty(Number(page) + 1)}
             sx={{ textTransform: "none" }}
-            className="bg-indigo-800 px-2 flex disabled:bg-indigo-300 disabled:text-white gap-1 hover:bg-indigo-900 text-white"
+            className="bg-purple-800 px-2 flex disabled:bg-purple-300 disabled:text-white gap-1 hover:bg-purple-900 text-white"
           >
             <Link
               href={"/blog/#posts-container"}

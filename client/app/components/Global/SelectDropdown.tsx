@@ -34,9 +34,9 @@ const SelectDropdown = ({
       classNames={{
         control: (state) =>
           state.isFocused
-            ? "border-2 border-indigo-400 hover:border-indigo-400 ring-0"
+            ? "border-2 border-purple-400 hover:border-purple-400 ring-0"
             : "border-2 border-gray-200 hover:border-gray-200 ring-0",
-        // state.isClicked ? "border-2 border-indigo-400" : "border-2 border-gray-200",
+        // state.isClicked ? "border-2 border-purple-400" : "border-2 border-gray-200",
       }}
       closeMenuOnSelect={true}
       classNamePrefix="select"

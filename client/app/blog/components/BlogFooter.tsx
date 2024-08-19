@@ -674,13 +674,13 @@ const BlogFooter = ({ category }: any) => {
   return (
     <>
       {filteredPosts.length > 0 && (
-        <div className="w-full p-5 border border-indigo-50 rounded-md gap-2 flex flex-col">
+        <div className="w-full p-5 border border-purple-50 rounded-md gap-2 flex flex-col">
           <div className="w-full text-2xl">
             Related Posts ({filteredPosts.length}){" "}
             {category !== "" && (
               <span className="text-sm">
                 Showing Results for &nbsp;-&nbsp;
-                <span className="text-indigo-900 bg-indigo-100 px-2 rounded-md">
+                <span className="text-purple-900 bg-purple-100 px-2 rounded-md">
                   {category}
                 </span>
               </span>

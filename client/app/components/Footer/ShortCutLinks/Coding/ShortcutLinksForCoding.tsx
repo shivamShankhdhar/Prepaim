@@ -34,7 +34,7 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
   return (
     <div className="flex-1 px-1 flex flex-col">
       <>
-        <div className="w-full text-2xl font-semibold text-indigo-800 ">
+        <div className="w-full text-2xl font-semibold text-purple-800 ">
           Try Coding
         </div>
         <div className="py-3">
@@ -46,7 +46,7 @@ const ShortcutLinksForCoding = ({ allSubjects }: any) => {
                 allCodingQuestions?.slice(0, 10)?.map((item, index) => (
                   <li
                     key={item._id}
-                    className="hover:text-indigo-800 flex gap-1"
+                    className="hover:text-purple-800 flex gap-1"
                   >
                     <MdKeyboardDoubleArrowRight size={20} />
                     <Link

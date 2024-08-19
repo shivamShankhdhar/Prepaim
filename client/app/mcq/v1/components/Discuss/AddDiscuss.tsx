@@ -59,14 +59,14 @@ const AddDiscuss = ({ question }: any) => {
         <input
           type="text"
           placeholder="Enter your name (required)"
-          className="w-full px-3 py-1 rounded-md outline-0 border border-indigo-200 text-gray-600 "
+          className="w-full px-3 py-1 rounded-md outline-0 border border-purple-200 text-gray-600 "
           onChange={(e: any) => setUserNameForComment(e.target.value)}
         />
         <div className="w-full">
           <textarea
             rows={3}
             id="comment-box"
-            className="w-full px-3 py-1 rounded-md outline-0 border text-gray-600 border-indigo-200 max-h-auto min-h-[50px]"
+            className="w-full px-3 py-1 rounded-md outline-0 border text-gray-600 border-purple-200 max-h-auto min-h-[50px]"
             placeholder="write a comment (required)"
             onChange={(e: any) => {
               setCommentFromUser(e.target.value);
@@ -75,7 +75,7 @@ const AddDiscuss = ({ question }: any) => {
         </div>
         <div className="w-full flex flex-row justify-center items-center ">
           <Button
-            className="bg-indigo-800 text-white flex rounded-sm justify-center items-center py-1 w-[fit-content] cursor-pointer hover:bg-indigo-900 px-3 gap-2"
+            className="bg-purple-800 text-white flex rounded-sm justify-center items-center py-1 w-[fit-content] cursor-pointer hover:bg-purple-900 px-3 gap-2"
             onClick={handleCommentSubmit}
           >
             {isPostingComment && <SimpleLoader size={15} cls="text-white" />}

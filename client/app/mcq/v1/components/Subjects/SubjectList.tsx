@@ -185,7 +185,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
       <div
         className={`w-full flex ${
           layOutView === "list" ? "flex-col" : "flex-row flex-wrap"
-        } px-2 border py-3 gap-2 bg-white border-indigo-200 mt-1 rounded-md justify-center`}
+        } px-2 border py-3 gap-2 bg-white border-purple-200 mt-1 rounded-md justify-center`}
       >
         {layOutView === "list" ? (
           // list view

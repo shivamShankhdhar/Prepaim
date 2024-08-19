@@ -7,7 +7,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
   return (
     <Link
       href={`/blog/${post.title.replaceAll(" ", "-")}`}
-      className="w-full flex gap-1 border border-indigo-50 hover:bg-indigo-50 p-2 rounded-md"
+      className="w-full flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md"
     >
       {isImage !== false && (
         <div className="h-[50px] w-[50px]">
@@ -23,11 +23,11 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
 
       <div className="flex flex-col">
         <div className="w-full flex gap-2 justify-center items-center">
-          <div className="w-[fit-content] flex justify-center items-center bg-indigo-200 text-indigo-900 h-[15px] text-[11px] uppercase rounded-md px-2">
+          <div className="w-[fit-content] flex justify-center items-center bg-purple-200 text-purple-900 h-[15px] text-[11px] uppercase rounded-md px-2">
             username
           </div>
           <div className="flex justify-center items-center">-</div>
-          <div className="w-[fit-content]  text-indigo-900 h-[auto] text-[11px] uppercase rounded-md">
+          <div className="w-[fit-content]  text-purple-900 h-[auto] text-[11px] uppercase rounded-md">
             {post.category}
           </div>
         </div>

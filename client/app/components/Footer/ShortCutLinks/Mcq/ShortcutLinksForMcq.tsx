@@ -25,7 +25,7 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   // (allMcqQuestions);
   return (
     <div className="flex-1 px-1 flex flex-col">
-      <div className="w-full text-2xl font-semibold text-indigo-800 ">
+      <div className="w-full text-2xl font-semibold text-purple-800 ">
         Try MCQ
       </div>
       <div className="py-3">
@@ -37,7 +37,7 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
               allMcqQuestions?.slice(0, 10)?.map((item, index) => (
                 <li
                   key={item._id}
-                  className="hover:text-indigo-800 flex justify-between items-center flex-row gap-1"
+                  className="hover:text-purple-800 flex justify-between items-center flex-row gap-1"
                 >
                   <p>
                     <MdKeyboardDoubleArrowRight size={20} />

@@ -26,7 +26,7 @@ const SubjectItemGridView = ({
 }: any) => {
   return (
     <div
-      className={`sm:w-[80%] max-sm:w-[80%] md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex flex-col shadow-xl h-[fit-content] hover:shadow-2xl border border-indigo-200 bg-white justify-center py-5 px-2 items-center rounded-md gap-2`}
+      className={`sm:w-[80%] max-sm:w-[80%] md:w-[300px] lg:w-[300px] xl:w-[300px] 2xl:w-[300px] flex flex-col shadow-xl h-[fit-content] hover:shadow-2xl border border-purple-200 bg-white justify-center py-5 px-2 items-center rounded-md gap-2`}
     >
       <div className="w-full flex gap-2 overflow-hidden justify-center items-center flex-col">
         <div className="flex justify-center m-5 items-center rounded-full  h-[150px] w-[150px] ">
@@ -47,12 +47,12 @@ const SubjectItemGridView = ({
         </div>
       </div>
 
-      <div className="text-lg  text-indigo-800 font-semibold">{item.name}</div>
+      <div className="text-lg  text-purple-800 font-semibold">{item.name}</div>
       <div className="flex w-[50%] flex-col gap-3 ">
         <LightTooltip title={`Start quizz for ${item.name}`}>
           <Button
             onClick={() => handleNavigateToQuestion(item.name)}
-            className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-indigo-300 justify-center items-center gap-2 cursor-pointer px-2 bg-indigo-800 text-white  hover:bg-indigo-900"
+            className="py-1 flex-1 flex rounded-sm focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-2 cursor-pointer px-2 bg-purple-800 text-white  hover:bg-purple-900"
           >
             {selectedSubject === item.name && searchingChapters && (
               <SimpleLoader clr="white" size={15} />

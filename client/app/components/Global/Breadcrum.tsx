@@ -39,14 +39,14 @@ const Breadcrum = (props: Props) => {
   const lastItemOfPathname = splitedPath[splitedPath.length - 1];
 
   // common class for all active items in breadcrumb
-  const commonClassForActiveElements = `flex justify-center items-center text-sm py-0  px-2 bg-indigo-100 hover:bg-indigo-100 hover:text-indigo-800 hover:cursor-text border border-indigo-300 rounded-full text-indigo-800`;
+  const commonClassForActiveElements = `flex justify-center items-center text-sm py-0  px-2 bg-purple-100 hover:bg-purple-100 hover:text-purple-800 hover:cursor-text border border-purple-300 rounded-full text-purple-800`;
 
   // render
   return (
     <div className="w-full flex-wrap sticky top-0 flex flex-row justify-center text-[15px] items-center ">
       <div className="flex w-full text-sm flex-wrap bg-white  text-gray-600 px-3 py-[12px] items-center justify-start ">
         <Link href={"/"}>
-          <LightTooltip className="text-indigo-800" title="click to go to Home">
+          <LightTooltip className="text-purple-800" title="click to go to Home">
             <div>Home</div>
           </LightTooltip>
         </Link>

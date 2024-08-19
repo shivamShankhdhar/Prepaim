@@ -93,7 +93,7 @@ const TryProgrammingQustions = ({ subjects }: any) => {
                 setSelectedSubject(subject.name);
                 setIsLoadingQuestionFromServer(true);
               }}
-              className="flex justify-center cursor-pointer border-indigo-300 items-center py-3 border rounded-md bg-indigo-100 hover:bg-indigo-200"
+              className="flex justify-center cursor-pointer border-purple-300 items-center py-3 border rounded-md bg-purple-100 hover:bg-purple-200"
             >
               {isLoadingQuestionFromServer ? (
                 selectedSubject === subject.name ? (
@@ -109,7 +109,7 @@ const TryProgrammingQustions = ({ subjects }: any) => {
                     </div>
 
                     <div className="w-[80px] flex justify-center items-center h-[100px] rounded-md absolute bg-white/50 backdrop:blur ">
-                      <SimpleLoader clr={"indigo"} />
+                      <SimpleLoader clr={"purple"} />
                     </div>
                   </>
                 ) : (

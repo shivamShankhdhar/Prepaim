@@ -20,18 +20,18 @@ const BlogCategory = ({
   ];
 
   const colorClass = [
-    "bg-indigo-200 border-indigo-400",
+    "bg-purple-200 border-purple-400",
     "bg-yellow-200 border-yellow-400",
     "bg-green-200 border-green-400",
     "bg-purple-200 border-purple-400",
     "bg-pink-200 border-pink-400",
 
     "bg-red-200 border-red-400",
-    "bg-blue-200 border-blue-400",
+    "bg-purple-200 border-purple-400",
   ];
   return (
-    <div className="w-full flex flex-col gap-2 flex-wrap mt-2 border border-dashed border-indigo-900 p-3 rounded-md">
-      <h1 className="text-2xl border border-dashed border-indigo-900 border-t-0 border-l-0 border-r-0 border-b-1 py-1">
+    <div className="w-full flex flex-col gap-2 flex-wrap mt-2 border border-dashed border-purple-900 p-3 rounded-md">
+      <h1 className="text-2xl border border-dashed border-purple-900 border-t-0 border-l-0 border-r-0 border-b-1 py-1">
         {text}
       </h1>
       <div className="w-full flex gap-2 flex-wrap">

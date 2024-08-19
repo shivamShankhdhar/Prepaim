@@ -4,7 +4,7 @@ import React from "react";
 const PrivacyPolicy = () => {
   return (
     <div className="w-full px-3 py-3 ">
-      <div className="text-indigo-800 py-5 px-10 min-h-[90vh] max-h-[fit-content] bg-white rounded-md">
+      <div className="text-purple-800 py-5 px-10 min-h-[90vh] max-h-[fit-content] bg-white rounded-md">
         <h1 className="text-3xl font-semibold">Privacy Policy</h1>
         <p>Last updated: July 19, 2024</p>
         <p>

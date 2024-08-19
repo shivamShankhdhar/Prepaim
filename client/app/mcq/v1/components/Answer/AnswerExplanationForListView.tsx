@@ -28,8 +28,8 @@ const AnswerExplanationForListView = ({
   return (
     <>
       {isAnswerExplanationOpen && (
-        <div className="flex flex-col px-5 py-1 max-h-auto min-h-[50px] rounded-md border border-indigo-200 bg-white text-indigo-800 w-full">
-          {/* <div className="border flex border-dotted gap-1 py-1 border-indigo-800 border-t-0 border-b-1 border-r-0 border-l-0 text-gray-600">
+        <div className="flex flex-col px-5 py-1 max-h-auto min-h-[50px] rounded-md border border-purple-200 bg-white text-purple-800 w-full">
+          {/* <div className="border flex border-dotted gap-1 py-1 border-purple-800 border-t-0 border-b-1 border-r-0 border-l-0 text-gray-600">
             Answer
           </div> */}
           <div className="w-full">
@@ -64,7 +64,7 @@ const AnswerExplanationForListView = ({
                   return (
                     <div
                       key={`${explanation}-${index}`}
-                      className="border flex flex-wrap border-dotted py-1 border-indigo-800 border-t-1 border-b-0 border-r-0 border-l-0 "
+                      className="border flex flex-wrap border-dotted py-1 border-purple-800 border-t-1 border-b-0 border-r-0 border-l-0 "
                     >
                       <div className="font-semibold">Explanation :</div>
                       <div className="min-w-[fit-content] max-w-full">

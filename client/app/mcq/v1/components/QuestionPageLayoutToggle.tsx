@@ -55,7 +55,7 @@ const QuestionPageLayoutToggle = ({
       /> */}
       <ShareBtn />
 
-      <div className="flex  items-center border  bg-white border-indigo-800 rounded-[3px] text-indigo-800">
+      <div className="flex  items-center border  bg-white border-purple-800 rounded-[3px] text-purple-800">
         <LightTooltip
           title={`${
             PageLayoutView === "test-mode"
@@ -66,8 +66,8 @@ const QuestionPageLayoutToggle = ({
           <div
             className={`flex justify-center  ${
               PageLayoutView === "test-mode"
-                ? "text-white bg-indigo-800 font-semibold"
-                : "text-indigo-800"
+                ? "text-white bg-purple-800 font-semibold"
+                : "text-purple-800"
             } items-center px-3 py-1 cursor-pointer  `}
             // onClick={() => setPageLayoutView("test-mode")}
           >
@@ -91,8 +91,8 @@ const QuestionPageLayoutToggle = ({
           <div
             className={`flex justify-center  ${
               PageLayoutView === "prepration-mode"
-                ? "text-white bg-indigo-800 font-semibold"
-                : "text-indigo-800"
+                ? "text-white bg-purple-800 font-semibold"
+                : "text-purple-800"
             } items-center px-3 py-1 cursor-pointer`}
             // onClick={() => setPageLayoutView("prepration-mode")}
           >

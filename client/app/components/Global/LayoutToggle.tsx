@@ -18,7 +18,7 @@ const LightTooltip = styled(({ className, ...props }: TooltipProps) => (
 const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
   return (
     <div className="w-full mt-1 flex justify-end pr-5 px-2 items-center ">
-      <div className="flex justify-center  items-center py-2 border bg-white border-indigo-300 rounded-md text-indigo-800">
+      <div className="flex justify-center  items-center py-2 border bg-white border-purple-300 rounded-md text-purple-800">
         <LightTooltip
           title={`${
             layOutView === "grid"
@@ -29,9 +29,9 @@ const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
           <div
             className={`flex justify-center  ${
               layOutView === "grid"
-                ? "text-indigo font-semibold"
-                : "text-indigo-300"
-            } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-indigo-300`}
+                ? "text-purple font-semibold"
+                : "text-purple-300"
+            } items-center px-4 cursor-pointer  border-2 border-t-0 border-r-1 border-l-0 border-b-0 border-purple-300`}
             onClick={() => {
               setLayoutView("grid");
               toast.success("Changed to Grid View.");
@@ -50,8 +50,8 @@ const LayoutToggle = ({ layOutView, setLayoutView }: any = {}) => {
           <div
             className={`flex justify-center  ${
               layOutView === "list"
-                ? "text-indigo font-semibold"
-                : "text-indigo-300"
+                ? "text-purple font-semibold"
+                : "text-purple-300"
             } items-center px-4 cursor-pointer  `}
             onClick={() => {
               setLayoutView("list");

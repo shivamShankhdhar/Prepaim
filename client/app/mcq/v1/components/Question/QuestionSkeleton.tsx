@@ -5,7 +5,7 @@ import AnswerItemSkeleton from "../Answer/AnswerItemSkeleton";
 const QuestionSkeleton = ({ requestedPage }: any) => {
   return (
     <div
-      className={` bg-white mt-2 shadow-md rounded-md border border-indigo-200 mx-auto mt- px-5 items-center ${
+      className={` bg-white mt-2 shadow-md rounded-md border border-purple-200 mx-auto mt- px-5 items-center ${
         requestedPage !== "Test-Prepration-Page"
           ? "sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[49%] 2xl:w-[49%] xl:w-[49%] gap-2"
           : "w-full"
@@ -17,7 +17,7 @@ const QuestionSkeleton = ({ requestedPage }: any) => {
           className={`rounded-md animate-pulse bg-gray-100 py-5 px-5 w-full flex`}
         ></div>
       </div>
-      <hr className="text-indigo-800 bg-indigo-800 animate-pulse" />
+      <hr className="text-purple-800 bg-purple-800 animate-pulse" />
       {/* answers */}
       <div className="flex justify-center items-center py-5 gap-2 text-gray-700  flex-wrap ">
         <AnswerItemSkeleton />

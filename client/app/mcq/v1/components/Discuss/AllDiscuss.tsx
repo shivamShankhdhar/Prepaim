@@ -57,7 +57,7 @@ const AllDiscuss = ({
         <div className="flex justify-center items-center flex-col gap-3">
           <ErrorMessage text={error} isButton={false} isBg={false} />{" "}
           <Button
-            className="bg-indigo-900 text-white hover:bg-indigo-900 py-1"
+            className="bg-purple-900 text-white hover:bg-purple-900 py-1"
             onClick={handleReloadComment}
           >
             <SlReload size={18} />
