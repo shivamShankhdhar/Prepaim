@@ -28,17 +28,17 @@ export default function Home() {
   const [errorLoadingSubjects, setErrorLoadingSubjects] = useState("");
 
     useEffect(() => {
-      if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+      if (process.env.RUN_ENVIRONMENT == "PRODUCTION") {
         ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
           {}
         );
       }
     }, []);
-  console.log(process.env.NEXT_PUBLIC_RUN_ENVIRONMENT);
+    console.log(process.env.RUN_ENVIRONMENT!);
     return (
       <>
         <div className="flex w-full items-center flex-col mb-3">
-          {process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION" && (
+          {process.env.RUN_ENVIRONMENT == "PRODUCTION" && (
             <script
               async
               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
