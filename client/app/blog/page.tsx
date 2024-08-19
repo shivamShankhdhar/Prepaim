@@ -703,7 +703,7 @@ const Blog = () => {
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-          {/* <ins
+          <ins
             className="adsbygoogle inline-block text-center w-[90px] h-[100%]"
             style={{
               display: "inline-block",
@@ -712,9 +712,9 @@ const Blog = () => {
             }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7957270938"
-            data-ad-format="rectangle,vertical"
+            data-ad-format="horizontal"
             data-full-width-responsive="true"
-          ></ins> */}
+          ></ins>
         </div>
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
