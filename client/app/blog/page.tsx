@@ -741,7 +741,7 @@ const Blog = () => {
           </div>
           {/* ads unit here  */}
           {/* blog content */}
-          <div className="w-full flex-1 px-2 flex mt-5 min-h-[60vh] max-h-[fit-content]">
+          <div className="w-full flex-1 px-2 flex mt-5 min-h-[60vh] max-h-[fit-content] overflow-y-auto">
             {/* recent posts section  */}
             <div className="flex flex-1 flex-col px-2">
               <h1 className="text-2xl">
@@ -750,7 +750,7 @@ const Blog = () => {
                   : `Post (${filteredPosts.length})`}
               </h1>
               {/* blog details  */}
-              <div className=" flex-1 flex-wrap gap-5 h-[fit-content]">
+              <div className="flex-1 flex-wrap gap-5 h-[fit-content]">
                 {filteredPosts.length > 0 ? (
                   filteredPosts
                     .slice(page * 10 - 10, page * 10)
