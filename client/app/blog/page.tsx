@@ -702,7 +702,7 @@ const Blog = () => {
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <ins
-            className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+            className="adsbygoogle inline-block text-center w-[90px] h-[100%]"
             style={{
               display: "inline-block",
               width: "100px",
@@ -809,7 +809,18 @@ const Blog = () => {
             </div>
             {/* right ads sectioin  */}
             <div className="h-full sticky top-0 bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-              adsense ads here
+              <ins
+                className="adsbygoogle inline-block text-center w-[90px] h-[100%]"
+                style={{
+                  display: "inline-block",
+                  width: "100px",
+                  height: "100%",
+                }}
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7957270938"
+                data-ad-format="vertical"
+                data-full-width-responsive="true"
+              ></ins>
             </div>
           </div>
           {/* multiplex ads unit here  */}
