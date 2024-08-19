@@ -690,20 +690,47 @@ const Blog = () => {
   };
   return (
     <div className="w-full h-[92vh]  flex fixed">
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+        crossOrigin="anonymous"
+      ></script>
       {/* adsense ads div */}
 
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-          adsense ads here
+          <ins
+            className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+            style={{
+              display: "inline-block",
+              width: "100px",
+              height: "100%",
+            }}
+            data-ad-client="ca-pub-1113302487630583"
+            data-ad-slot="7957270938"
+            data-ad-format="vertical"
+            data-full-width-responsive="true"
+          ></ins>
         </div>
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
           {/* featured post */}
           <Featured />
           <div className="w-full bg-white h-[80px] text-center">
-            adsense ads here
+            <ins
+              className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+              style={{
+                display: "inline-block",
+                width: "100%",
+                height: "100px",
+              }}
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7957270938"
+              data-ad-format="horizontal"
+              data-full-width-responsive="true"
+            ></ins>
           </div>
           {/* blog categories  */}
           <div className="w-full" id="posts-container">

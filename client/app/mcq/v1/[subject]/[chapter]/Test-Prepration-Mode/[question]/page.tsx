@@ -171,11 +171,9 @@ const QuestionPage = () => {
   
   
    useEffect(() => {
-     if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
-       ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push(
-         {}
-       );
-     }
+     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+     //  }
    }, []);
 
    useEffect(() => {
