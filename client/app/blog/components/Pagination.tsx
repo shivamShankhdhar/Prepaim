@@ -38,6 +38,7 @@ const Pagination = ({ items, setProperty, page }: Props) => {
               (_, paginationItem: any) => {
                 return (
                   <PaginationItem
+                    key={`key-for-pagination-item-${paginationItem}`}
                     paginationItem={paginationItem}
                     page={page}
                     setProperty={setProperty}
