@@ -704,15 +704,11 @@ const Blog = () => {
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <ins
-            className="adsbygoogle inline-block text-center w-[90px] h-[100%]"
-            style={{
-              display: "inline-block",
-              width: "100px",
-              height: "100%",
-            }}
+            className="adsbygoogle"
+            style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
-            data-ad-slot="7957270938"
-            data-ad-format="horizontal"
+            data-ad-slot="7783819032"
+            data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
         </div>
