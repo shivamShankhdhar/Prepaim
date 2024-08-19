@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import HeroSection from "./components/Home/HeroSection/HeroSection";
 import Footer from "./components/Footer/Footer";
 import ErrorMessage from "./components/Global/ErrorMessage";
-
 import useFetch from "./hooks/fetch.hook";
 import TryMCQ from "./components/Home/HeroSection/TryMCQ";
 

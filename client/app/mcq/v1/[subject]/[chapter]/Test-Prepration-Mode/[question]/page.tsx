@@ -178,10 +178,13 @@ const QuestionPage = () => {
      }
    }, []);
 
-   useEffect(() => {
-     document.title = `${questions[questionNo].question} | Question`;
-   }, [questionNo]);
+  useEffect(() => {
+    if (loading === false) {
+      document.title = `${questions[questionNo]?.question} | Question`;
+    }
+  }, [questionNo]);
 
+  console.log(process.env.RUN_ENVIRONMENT);
    return (
      <>
        <SidebarSlider
