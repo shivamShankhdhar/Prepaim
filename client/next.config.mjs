@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  env: {
-    NEXT_PUBLIC_RUN_ENVIRONMENT: "PRODUCTION",
-  },
+  // env: {
+  //   RUN_ENVIRONMENT: "PRODUCTION",
+  // },
   images: {
     remotePatterns: [
       {
