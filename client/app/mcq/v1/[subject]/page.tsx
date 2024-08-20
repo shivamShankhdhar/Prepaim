@@ -10,11 +10,11 @@ const SubjectPage = () => {
     useState(0);
 
   const { subject } = useParams();
-  useEffect(() => {
-    // if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
-    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-    // }
-  }, []);
+  // useEffect(() => {
+  //   // if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+  //   ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+  //   // }
+  // }, []);
 
   return (
     <>
