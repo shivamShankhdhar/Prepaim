@@ -147,18 +147,6 @@ const QuestionPage = () => {
      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
      //  }
    }, []);
-  
-   useEffect(() => {
-     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
-     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-     //  }
-   }, []);
-
-   useEffect(() => {
-     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
-     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-     //  }
-   }, []);
 
    return (
      <>
@@ -212,7 +200,7 @@ const QuestionPage = () => {
                }}
                data-ad-client="ca-pub-1113302487630583"
                data-ad-slot="7957270938"
-               data-ad-format=" horizontal"
+               data-ad-format="horizontal"
                data-full-width-responsive="true"
              ></ins>
            </div>
@@ -256,7 +244,7 @@ const QuestionPage = () => {
              {/* </div> */}
 
              {/* google_ads_start */}
-             <div className="w-full block text-center mt-2">
+             {/* <div className="w-full block text-center mt-2">
                <ins
                  className="adsbygoogle text-center"
                  style={{ display: "block" }}
@@ -264,15 +252,15 @@ const QuestionPage = () => {
                  data-ad-client="ca-pub-1113302487630583"
                  data-ad-slot="7384794981"
                ></ins>
-             </div>
+             </div> */}
              {/* google_ads_end  */}
-             {process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION" && (
-               <script
-                 async
-                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-                 crossOrigin="anonymous"
-               ></script>
-             )}
+
+             <script
+               async
+               src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+               crossOrigin="anonymous"
+             ></script>
+             {/* )} */}
              <Footer />
            </div>
 

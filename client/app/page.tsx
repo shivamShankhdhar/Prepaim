@@ -15,9 +15,7 @@ export default function Home() {
   );
 
   const [loadingSubjects, setLoadingSubjects] = useState(true);
-
   const { data } = useFetch("/mcq/getallsubjects");
-
   useEffect(() => {
     if (data.apiData !== undefined) {
       setSubjectsFromServer(data.apiData);
@@ -36,7 +34,6 @@ export default function Home() {
   return (
     <>
       <div className="flex w-full items-center flex-col mb-3">
-        {/* {process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION" && ( */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
