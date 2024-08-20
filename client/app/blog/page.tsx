@@ -709,11 +709,6 @@ const Blog = () => {
 
    return (
      <div className="w-full h-[92vh] flex">
-       <script
-         async
-         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-         crossOrigin="anonymous"
-       ></script>
        {/* adsense ads div */}
 
        {/* blog page content  */}
@@ -866,6 +861,11 @@ const Blog = () => {
            <BlogFooter category={category} />
          </div>
        </div>
+       <script
+         async
+         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
+         crossOrigin="anonymous"
+       ></script>
      </div>
    );
 };
