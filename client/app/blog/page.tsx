@@ -705,7 +705,7 @@ const Blog = () => {
       {/* adsense ads div */}
 
       {/* blog page content  */}
-      <div className="flex flex-1 overflow-y-auto">
+      <div className="flex flex-1 overflow-y-auto sm:w-[100%] max-sm:w-[100%] md:w-[80%] max-md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] m-auto">
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           {/* <ins
@@ -721,7 +721,7 @@ const Blog = () => {
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
           {/* featured post */}
           <Featured />
-          <div className="w-full bg-white h-[80px] text-center">
+          {/* <div className="w-full bg-white h-[80px] text-center">
             <ins
               className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
               style={{
@@ -734,7 +734,7 @@ const Blog = () => {
               data-ad-format="horizontal"
               data-full-width-responsive="true"
             ></ins>
-          </div>
+          </div> */}
           {/* blog categories  */}
           <div className="w-full" id="posts-container">
             <BlogCategory
@@ -785,7 +785,7 @@ const Blog = () => {
                 setProperty={setPage}
                 page={page}
               />
-              <div className="w-full bg-white h-[80px] text-center">
+              {/* <div className="w-full bg-white h-[80px] text-center">
                 <ins
                   className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
                   style={{
@@ -798,7 +798,7 @@ const Blog = () => {
                   data-ad-format="horizontal"
                   data-full-width-responsive="true"
                 ></ins>
-              </div>
+              </div> */}
             </div>
             {/* right section  */}
             <div className="w-[300px] sm:hidden max-sm:hidden p-3 flex gap-1 flex-col md:hidden rounded-md border max-md:hidden lg:flex xl:flex 2xl:flex h-[fit-content] sticky top-0">
@@ -834,7 +834,7 @@ const Blog = () => {
               </div>
             </div>
             {/* right ads sectioin  */}
-            <div className="h-full sticky top-0 bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+            {/* <div className="h-full sticky top-0 bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
               <ins
                 className="adsbygoogle inline-block text-center w-[90px] h-[100%]"
                 style={{
@@ -847,7 +847,7 @@ const Blog = () => {
                 data-ad-format="vertical"
                 data-full-width-responsive="true"
               ></ins>
-            </div>
+            </div> */}
           </div>
           {/* multiplex ads unit here  */}
           <div className="w-full h-[fit-content] mt-5">multiplex ads</div>
