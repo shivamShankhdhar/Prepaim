@@ -51,12 +51,7 @@ const BlogPost = () => {
             {/* post description */}
             <div className="w-full bg-white h-[80px] text-center">
               <ins
-                className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
-                style={{
-                  display: "inline-block",
-                  width: "100%",
-                  height: "100px",
-                }}
+                className="adsbygoogle inline-block text-center w-full h-[100px]"
                 data-ad-client="ca-pub-1113302487630583"
                 data-ad-slot="7957270938"
                 data-ad-format="horizontal"
