@@ -32,12 +32,6 @@ export default function Home() {
   return (
     <>
       <div className="flex w-full items-center flex-col mb-3">
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script>
-
         {/* HERO SECTION  */}
         <HeroSection />
         <div className="w-full mt-2 inline-block justify-center items-center text-center">

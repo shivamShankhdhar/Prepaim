@@ -50,15 +50,6 @@ const SubjectPage = () => {
             data-ad-slot="7384794981"
           ></ins>
         </div> */}
-
-        {process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION" && (
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-            crossOrigin="anonymous"
-          ></script>
-        )}
-
         <Footer />
       </div>
     </>

@@ -50,11 +50,7 @@ const ChapterPage = () => {
 
   return (
     <div className="flex flex-col items-center  w-full">
-      <script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-        crossOrigin="anonymous"
-      ></script>
+     
       <div className="w-full inline-block justify-center items-center text-center mt-2">
         <ins
           className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
@@ -108,15 +104,6 @@ const ChapterPage = () => {
           data-ad-slot="7384794981"
         ></ins>
       </div>
-
-      {process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION" && (
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script>
-      )}
-
       <Footer />
     </div>
   );

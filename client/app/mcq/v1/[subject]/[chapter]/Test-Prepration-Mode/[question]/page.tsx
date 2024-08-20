@@ -303,14 +303,6 @@ const QuestionPage = () => {
               </div>
             </div>
           </div>
-
-          {/* google_ads_start */}
-          <script
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-            crossOrigin="anonymous"
-          ></script>
-          {/* google_ads_end  */}
           <Footer />
         </div>
 
