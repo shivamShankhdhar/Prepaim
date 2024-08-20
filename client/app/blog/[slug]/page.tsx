@@ -21,15 +21,15 @@ const BlogPost = () => {
     //  }
   }, []);
   return (
-    <div className="w-full flex fixed overflow-y-auto">
+    <div className="w-full flex  overflow-y-auto">
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
-        <div className="h-full bg-white w-[120px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        <div className="bg-white w-[120px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           adsense ads here
         </div>
         {/* main content section */}
-        <div className="h-full bg-white overflow-y-auto flex-1 flex-col">
+        <div className="bg-white flex-1 flex-col">
           {/* blog content */}
           <div className="w-full flex-1 px-2 min-h-[100vh] max-h-[fit-content] overflow-y-auto mt-5">
             {/* post title  */}
