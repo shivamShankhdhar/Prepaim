@@ -837,11 +837,6 @@ const Blog = () => {
                  <div className="w-[300px] h-[300px] mt-2">
                    <ins
                      className="adsbygoogle inline-block w-[280px] h-[300px]"
-                     style={{
-                       display: "inline-block",
-                       width: "100%",
-                       height: "300px",
-                     }}
                      data-ad-layout="in-article"
                      // data-ad-format="rectangle"
                      data-ad-client="ca-pub-1113302487630583"
