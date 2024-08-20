@@ -19,8 +19,6 @@ const SubjectPage = () => {
   return (
     <>
       <div className="flex w-full items-center flex-col">
-        {/* breadcrum */}
-
         <div className="w-full inline-block justify-center items-center text-center mt-2">
           <ins
             className="adsbygoogle text-center"

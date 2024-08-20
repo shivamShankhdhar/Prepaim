@@ -143,7 +143,6 @@ const QuestionPage = () => {
   }, []);
 
    useEffect(() => {
-     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
      ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
      //  }
    }, []);
@@ -151,11 +150,6 @@ const QuestionPage = () => {
    return (
      <>
        <div className="flex justify-between h-[92vh] overflow-hidden fixed">
-         {/* <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1113302487630583"
-          crossOrigin="anonymous"
-        ></script> */}
          <SidebarSlider
            uniqueKey="chapters"
            open={openSidebarSlider}
@@ -242,18 +236,6 @@ const QuestionPage = () => {
                <PreprationQuestionItem />
              </div>
              {/* </div> */}
-
-             {/* google_ads_start */}
-             {/* <div className="w-full block text-center mt-2">
-               <ins
-                 className="adsbygoogle text-center"
-                 style={{ display: "block" }}
-                 data-ad-format="auto"
-                 data-ad-client="ca-pub-1113302487630583"
-                 data-ad-slot="7384794981"
-               ></ins>
-             </div> */}
-             {/* google_ads_end  */}
 
              <script
                async
