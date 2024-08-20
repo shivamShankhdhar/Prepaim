@@ -31,7 +31,7 @@ const BlogPost = () => {
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col">
           {/* blog content */}
-          <div className="w-full flex-1 px-2 min-h-[100vh] max-h-[fit-content] mt-5">
+          <div className="w-full flex-1 px-2 min-h-[100vh] max-h-[fit-content] overflow-y-auto mt-5">
             {/* post title  */}
             <div className="w-full text-3xl font-semibold">
               {slug.toString().replaceAll("-", " ").charAt(0).toUpperCase() +
