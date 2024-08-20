@@ -34,7 +34,24 @@ export default function Home() {
       );
       // }
     }, []);
-    console.log(process.env.NEXT_PUBLIC_RUN_ENVIRONMENT!);
+  
+   useEffect(() => {
+     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+     //  }
+   }, []);
+
+   useEffect(() => {
+     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+     //  }
+   }, []);
+
+   useEffect(() => {
+     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+     //  }
+   }, []);
     return (
       <>
         <div className="flex w-full items-center flex-col mb-3">
