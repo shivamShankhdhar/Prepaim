@@ -746,7 +746,7 @@ const Blog = () => {
           </div>
           {/* ads unit here  */}
           {/* blog content */}
-          <div className="w-full flex-1 px-2 flex mt-5 min-h-[60vh] max-h-[fit-content] overflow-y-auto">
+          <div className="w-full flex-1 px-2 flex mt-5 min-h-[60vh] max-h-[fit-content]">
             {/* recent posts section  */}
             <div className="flex flex-1 flex-col px-2">
               <h1 className="text-2xl">
