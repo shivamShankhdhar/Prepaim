@@ -713,12 +713,6 @@ const Blog = () => {
      //  }
    }, []);
 
-   useEffect(() => {
-     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
-     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-     //  }
-   }, []);
-
   return (
     <div className="w-full h-[92vh] flex">
       <script
@@ -731,7 +725,7 @@ const Blog = () => {
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto sm:w-[100%] max-sm:w-[100%] md:w-[80%] max-md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] m-auto">
         {/* adsense ads unit left  */}
-        <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        {/* <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <ins
             className="adsbygoogle"
             style={{ display: "block" }}
@@ -740,7 +734,7 @@ const Blog = () => {
             data-ad-format="auto"
             data-full-width-responsive="true"
           ></ins>
-        </div>
+        </div> */}
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
           {/* featured post */}
