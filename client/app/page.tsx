@@ -25,9 +25,9 @@ export default function Home() {
 
   const [errorLoadingSubjects, setErrorLoadingSubjects] = useState("");
 
-  useEffect(() => {
-    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-  }, []);
+  // useEffect(() => {
+  //   ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+  // }, []);
 
   return (
     <>
