@@ -797,7 +797,7 @@ const Blog = () => {
                  setProperty={setPage}
                  page={page}
                />
-               <div className="w-full bg-white h-[80px] text-center">
+               <div className="w-full bg-white h-[80px] text-center mt-2">
                  <ins
                    className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
                    style={{
@@ -834,11 +834,15 @@ const Blog = () => {
                    handleCategoryClick={handleCategoryClick}
                    text="Read by Category"
                  />
-                 <div className="w-[250px] mt-2 h-[300px] ">
+                 <div className="w-[300px] mt-2 h-[300px] ">
                    <ins
-                     className="adsbygoogle inline-block text-center w-[250px] h-[300px]"
+                     className="adsbygoogle inline-block text-center w-[300px] h-[300px]"
                      data-ad-layout="in-article"
                      // data-ad-format="rectangle"
+                     style={{
+                       width: "300px",
+                       height: "300px",
+                     }}
                      data-ad-client="ca-pub-1113302487630583"
                      data-ad-slot="8194517617"
                    ></ins>
