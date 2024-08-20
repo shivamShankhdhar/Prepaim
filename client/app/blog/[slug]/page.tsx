@@ -21,7 +21,7 @@ const BlogPost = () => {
     //  }
   }, []);
   return (
-    <div className="w-full h-[92vh]  flex fixed">
+    <div className="w-full flex fixed overflow-y-auto">
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
