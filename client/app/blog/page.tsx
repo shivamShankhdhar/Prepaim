@@ -721,7 +721,7 @@ const Blog = () => {
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
           {/* featured post */}
           <Featured />
-          {/* <div className="w-full bg-white h-[80px] text-center">
+          <div className="w-full bg-white h-[80px] text-center">
             <ins
               className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
               style={{
@@ -734,7 +734,7 @@ const Blog = () => {
               data-ad-format="horizontal"
               data-full-width-responsive="true"
             ></ins>
-          </div> */}
+          </div>
           {/* blog categories  */}
           <div className="w-full" id="posts-container">
             <BlogCategory
