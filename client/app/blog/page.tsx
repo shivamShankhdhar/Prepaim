@@ -834,9 +834,9 @@ const Blog = () => {
                    handleCategoryClick={handleCategoryClick}
                    text="Read by Category"
                  />
-                 <div className="w-[300px] mt-2 h-[300px] ">
+                 <div className="w-[300px] h-[300px] mt-2">
                    <ins
-                     className="adsbygoogle inline-block text-center w-[100%] h-[300px]"
+                     className="adsbygoogle inline-block text-center w-[280px] h-[300px]"
                      data-ad-layout="in-article"
                      // data-ad-format="rectangle"
 
