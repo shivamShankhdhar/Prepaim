@@ -701,6 +701,30 @@ const Blog = () => {
      //  }
    }, []);
   
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+
   return (
     <div className="w-full h-[92vh] flex">
       <script
@@ -714,14 +738,14 @@ const Blog = () => {
       <div className="flex flex-1 overflow-y-auto sm:w-[100%] max-sm:w-[100%] md:w-[80%] max-md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] m-auto">
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-          {/* <ins
+          <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7783819032"
             data-ad-format="auto"
             data-full-width-responsive="true"
-          ></ins> */}
+          ></ins>
         </div>
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
@@ -791,7 +815,7 @@ const Blog = () => {
                 setProperty={setPage}
                 page={page}
               />
-              {/* <div className="w-full bg-white h-[80px] text-center">
+              <div className="w-full bg-white h-[80px] text-center">
                 <ins
                   className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
                   style={{
@@ -804,7 +828,7 @@ const Blog = () => {
                   data-ad-format="horizontal"
                   data-full-width-responsive="true"
                 ></ins>
-              </div> */}
+              </div>
             </div>
             {/* right section  */}
             <div className="w-[300px] sm:hidden max-sm:hidden p-3 flex gap-1 flex-col md:hidden rounded-md border max-md:hidden lg:flex xl:flex 2xl:flex h-[fit-content] sticky top-0">
@@ -828,9 +852,9 @@ const Blog = () => {
                   handleCategoryClick={handleCategoryClick}
                   text="Read by Category"
                 />
-                <div className="w-full h-[300px]">
+                <div className="w-[250px] mt-2 h-[300px] ">
                   <ins
-                    className="adsbygoogle inline-block text-center w-[300px] h-[300px]"
+                    className="adsbygoogle inline-block text-center w-[250px] h-[300px]"
                     data-ad-layout="in-article"
                     // data-ad-format="rectangle"
                     data-ad-client="ca-pub-1113302487630583"
@@ -840,7 +864,7 @@ const Blog = () => {
               </div>
             </div>
             {/* right ads sectioin  */}
-            {/* <div className="h-full sticky top-0 bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+            <div className="h-full sticky top-0 bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
               <ins
                 className="adsbygoogle inline-block text-center w-[90px] h-[100%]"
                 style={{
@@ -853,7 +877,7 @@ const Blog = () => {
                 data-ad-format="vertical"
                 data-full-width-responsive="true"
               ></ins>
-            </div> */}
+            </div>
           </div>
           {/* multiplex ads unit here  */}
           <div className="w-full h-[fit-content] mt-5">multiplex ads</div>
