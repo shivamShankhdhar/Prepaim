@@ -49,7 +49,20 @@ const BlogPost = () => {
               />
             </div>
             {/* post description */}
-            <div className="w-full bg-white h-[80px]">adsense ads here</div>
+            <div className="w-full bg-white h-[80px] text-center">
+              <ins
+                className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+                style={{
+                  display: "inline-block",
+                  width: "100%",
+                  height: "100px",
+                }}
+                data-ad-client="ca-pub-1113302487630583"
+                data-ad-slot="7957270938"
+                data-ad-format="horizontal"
+                data-full-width-responsive="true"
+              ></ins>
+            </div>
             <div className="w-full">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
               mollitia deleniti aperiam tempora, similique dignissimos sequi ab

@@ -708,14 +708,14 @@ const Blog = () => {
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
         <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
-          <ins
+          {/* <ins
             className="adsbygoogle"
             style={{ display: "block" }}
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7783819032"
             data-ad-format="auto"
             data-full-width-responsive="true"
-          ></ins>
+          ></ins> */}
         </div>
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
