@@ -43,7 +43,7 @@ const SubjectPage = () => {
 
         {/* all subjects  */}
         <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
-        <div className="w-full block text-center mt-2">
+        {/* <div className="w-full block text-center mt-2">
           <ins
             className="adsbygoogle text-center"
             style={{ display: "block" }}
@@ -51,7 +51,7 @@ const SubjectPage = () => {
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7384794981"
           ></ins>
-        </div>
+        </div> */}
 
         {process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION" && (
           <script
