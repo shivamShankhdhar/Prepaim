@@ -34,7 +34,8 @@ export default function Home() {
       <div className="flex w-full items-center flex-col mb-3">
         {/* HERO SECTION  */}
         <HeroSection />
-        <div className="w-full mt-2 inline-block justify-center items-center text-center">
+        <div className="w-full mt-2 inline-block text-center">
+          <div className="w-full text-center text-sm block">ADVERTISEMENT</div>
           <ins
             className="adsbygoogle text-center"
             style={{

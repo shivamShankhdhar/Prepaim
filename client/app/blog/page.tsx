@@ -728,7 +728,10 @@ const Blog = () => {
          <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
            {/* featured post */}
            <Featured />
-           <div className="w-full bg-white h-[80px] text-center">
+           <div className="w-full bg-white h-[80px] text-center block">
+             <div className="w-full text-center text-sm block">
+               ADVERTISEMENT
+             </div>
              <ins
                className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
                style={{
@@ -792,7 +795,10 @@ const Blog = () => {
                  setProperty={setPage}
                  page={page}
                />
-               <div className="w-full bg-white h-[90px] text-center mt-2">
+               <div className="w-full bg-white h-[80px] text-center block">
+                 <div className="w-full text-center text-sm block">
+                   ADVERTISEMENT
+                 </div>
                  <ins
                    className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
                    style={{
@@ -829,7 +835,11 @@ const Blog = () => {
                    handleCategoryClick={handleCategoryClick}
                    text="Read by Category"
                  />
-                 <div className="w-[300px] h-[300px] mt-2">
+                 <div className="w-[300px] h-[300px] mt-2 block">
+                   <div className="w-full text-center text-sm block">
+                     ADVERTISEMENT
+                   </div>
+
                    <ins
                      className="adsbygoogle inline-block w-[280px] h-[300px]"
                      data-ad-layout="in-article"

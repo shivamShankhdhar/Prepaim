@@ -49,7 +49,10 @@ const BlogPost = () => {
               />
             </div>
             {/* post description */}
-            <div className="w-full bg-white h-[80px] text-center">
+            <div className="w-full bg-white h-[80px] text-center block">
+              <div className="w-full text-center text-sm block">
+                ADVERTISEMENT
+              </div>
               <ins
                 className="adsbygoogle inline-block text-center w-full h-[100px]"
                 data-ad-client="ca-pub-1113302487630583"

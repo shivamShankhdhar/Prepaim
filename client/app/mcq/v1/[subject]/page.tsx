@@ -19,7 +19,8 @@ const SubjectPage = () => {
   return (
     <>
       <div className="flex w-full items-center flex-col">
-        <div className="w-full inline-block justify-center items-center text-center mt-2">
+        <div className="w-full inline-block text-center mt-2">
+          <div className="w-full text-center text-sm block">ADVERTISEMENT</div>
           <ins
             className="adsbygoogle text-center"
             style={{

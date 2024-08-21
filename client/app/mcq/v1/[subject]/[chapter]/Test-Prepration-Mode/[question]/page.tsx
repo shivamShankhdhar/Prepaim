@@ -224,7 +224,10 @@ const QuestionPage = () => {
         </div>
         <div className="grow flex flex-1 flex-col h-[92vh] overflow-y-auto mb-12">
           {/* <AdsenseHorizontalAds /> */}
-          <div className="w-full inline-block justify-center items-center text-center">
+          <div className="w-full inline-block text-center mt-2">
+            <div className="w-full text-center text-sm block">
+              ADVERTISEMENT
+            </div>
             <ins
               className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
               style={{
@@ -292,7 +295,10 @@ const QuestionPage = () => {
                 setIsAnswerExplanationOpen={setIsAnswerExplanationOpen}
                 handleAnswerExplanationToggle={handleAnswerExplanationToggle}
               />
-              <div className="w-full block text-center mt-2 ">
+              <div className="w-full inline-block text-center mt-2">
+                <div className="w-full text-center text-sm block">
+                  ADVERTISEMENT
+                </div>
                 <ins
                   className="adsbygoogle text-center"
                   style={{ display: "block", width: "100%" }}
