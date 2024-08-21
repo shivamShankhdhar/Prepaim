@@ -25,9 +25,9 @@ const BlogPost = () => {
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
-        <div className="bg-white w-[120px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
+        {/* <div className="bg-white w-[120px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           adsense ads here
-        </div>
+        </div> */}
         {/* main content section */}
         <div className="bg-white flex-1 flex-col">
           {/* blog content */}

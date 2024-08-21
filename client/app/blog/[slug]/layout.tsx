@@ -1,3 +1,5 @@
+import Header from "@/app/components/Global/Header";
+
 export const metadata = {
   title: "Blog  Post| Prepaim.com",
   description:
@@ -8,5 +10,10 @@ export default function BlogDetailsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="w-[80%] m-auto">{children}</div>;
+  return (
+    <div className="w-[80%] m-auto flex flex-col">
+      <Header />
+      {children}
+    </div>
+  );
 }
