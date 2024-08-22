@@ -64,9 +64,9 @@ const AnswerItem = ({
     >
       <div className="w-[fit-content]">{`${answerPrefix}${items[index]}`}.</div>
       <div className="py-0 flex-1">{answer}</div>
-      <div className="w-[fit-content] flex justify-center items-center">
+      <div className="flex justify-center items-center w-[20px]">
         {index === 0 && showEmojy0 && (
-          <div className="flex justify-center items-center w-[20px]">
+          <div className="flex justify-center items-center ">
             {isTrue === true ? (
               <FcCheckmark />
             ) : (
@@ -75,7 +75,7 @@ const AnswerItem = ({
           </div>
         )}
         {index === 1 && showEmojy1 && (
-          <div className="flex justify-center items-center w-[20px]">
+          <div className="flex justify-center items-center">
             {isTrue === true ? (
               <FcCheckmark />
             ) : (
@@ -84,7 +84,7 @@ const AnswerItem = ({
           </div>
         )}
         {index === 2 && showEmojy2 && (
-          <div className="flex justify-center items-center w-[20px]">
+          <div className="flex justify-center items-center">
             {isTrue === true ? (
               <FcCheckmark />
             ) : (
@@ -93,7 +93,7 @@ const AnswerItem = ({
           </div>
         )}
         {index === 3 && showEmojy3 && (
-          <div className="flex justify-center items-center w-[20px]">
+          <div className="flex justify-center items-center">
             {isTrue === true ? (
               <FcCheckmark />
             ) : (
