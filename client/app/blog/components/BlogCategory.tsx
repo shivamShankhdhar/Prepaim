@@ -60,11 +60,11 @@ const BlogCategory = ({
             ></Image> */}
             <div
               className="flex-1 flex justify-center items-center text-sm"
-              onClick={() => handleCategoryClick(category.name.toString())}
+              onClick={() => handleCategoryClick(category.name)}
             >
               <Link href="/blog/#posts-container">{category.name}</Link>
             </div>
-            {category === cat && (
+            {category.name === cat && (
               <div
                 className=" flex justify-center items-center"
                 onClick={RemoveCategory}
