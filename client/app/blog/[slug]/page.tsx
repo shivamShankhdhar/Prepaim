@@ -52,9 +52,16 @@ const BlogPost = () => {
     //  }
   }, []);
 
-  useEffect(() => {}, []);
+  
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+
+  // useEffect(() => {}, []);
   return (
-    <div className="w-full flex  overflow-y-auto">
+    <div className=" flex  overflow-y-auto m-auto w-[80%]">
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
