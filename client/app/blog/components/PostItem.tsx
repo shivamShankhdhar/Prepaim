@@ -40,7 +40,7 @@ const PostItem = ({
         <Button
           sx={{ textTransform: "none" }}
           href={`/blog/${title.toString().replace(/\s+/g, "-")}`}
-          className="py-1 text-sm px-2 bg-purple-800 hover:bg-purple-900 text-white w-[fit-content] "
+          className="py-1 text-sm px-2 bg-purple-800 hover:bg-purple-900 text-white w-[fit-content]"
         >
           Read More
         </Button>
