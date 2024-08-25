@@ -25,7 +25,7 @@ const PostItem = ({
         <div className="w-full flex items-center gap-1">
           {/* date */}
           <div className="w-[fit-content]">
-            <FormatedDate date={new Date()} isTime={false} />
+            <FormatedDate date={date_added} />
           </div>
           <div>-</div>
           {/* category  */}
