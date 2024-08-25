@@ -11,7 +11,6 @@ interface Props {
   page: any;
 }
 const Pagination = ({ items, setProperty, page }: Props) => {
-  console.log(page);
   return (
     <>
       {items.length > 0 && (

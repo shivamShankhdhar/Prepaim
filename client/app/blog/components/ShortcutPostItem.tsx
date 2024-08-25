@@ -34,7 +34,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
 
         <div className="w-full">{post.title}</div>
         <div className="w-[fit-content] h-[12px] text-[11px] uppercase rounded-md">
-          <FormatedDate date={post.date_added} />
+          {/* <FormatedDate date={post.date_added} /> */}
           {/* {post.date_added} */}
         </div>
       </div>
