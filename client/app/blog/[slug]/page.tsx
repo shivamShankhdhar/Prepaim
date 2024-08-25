@@ -4,10 +4,38 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import BlogFooter from "../components/BlogFooter";
 import Image from "next/image";
+import axios from "axios";
+import FormatedDate from "@/app/components/Global/FormatedDate";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const [postCategory, setPostCategory] = useState("");
+  const [post, setPost] = useState(
+    [
+      {
+        title: "",
+        image: "",
+        description: "",
+        category: "",
+        date_added: new Date(),
+      },
+    ].filter((item) => item.title != "")
+  );
+
+  useEffect(() => {
+    axios
+      .get(
+        `https://api.data.admin-panel.prepaim.com/blog/getBlogByTitle/${slug.toString()}`
+      )
+      .then((res) => {
+        setPost(res.data);
+      });
+  }, [slug]);
+  useEffect(() => {
+    if (post[0].category !== "") {
+      setPostCategory(post[0].category);
+    }
+  }, [post]);
 
   useEffect(() => {
     if (slug) {
@@ -20,6 +48,8 @@ const BlogPost = () => {
     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
     //  }
   }, []);
+
+  useEffect(() => {}, []);
   return (
     <div className="w-full flex  overflow-y-auto">
       {/* blog page content  */}
@@ -37,11 +67,18 @@ const BlogPost = () => {
               {slug.toString().replaceAll("-", " ").charAt(0).toUpperCase() +
                 slug.toString().replaceAll("-", " ").slice(1)}
             </div>
-            <div className="w-full text-sm">Extra information about post</div>
+            <div className="w-full text-sm">
+              <div className="w-[fit-content] bg-purple-200 px-2">
+                {post[0].category}
+              </div>
+              <div className="w-[fit-content]">
+                <FormatedDate date={post[0].date_added} />
+              </div>
+            </div>
             {/* post image  */}
             <div className="w-full h-[200px] rounded-md bg-gray-100 mt-3 mb-3 px-2 relative">
               <Image
-                src="/assets/blog/subjectbg.jpg"
+                src={post[0].image}
                 alt={`${slug.toString().replaceAll("-", " ")}`}
                 layout="fill"
                 objectFit="cover"
@@ -61,20 +98,7 @@ const BlogPost = () => {
                 data-full-width-responsive="true"
               ></ins>
             </div>
-            <div className="w-full">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-              mollitia deleniti aperiam tempora, similique dignissimos sequi ab
-              perferendis quia obcaecati soluta magni laboriosam. Nesciunt neque
-              quam dolores error sint, labore porro vero, totam ut delectus
-              laudantium adipisci optio. Qui voluptas minus enim officiis
-              dolorum iusto architecto commodi harum error quibusdam veritatis
-              fuga, voluptates dolor modi exercitationem omnis ab. Expedita nemo
-              necessitatibus tempora, harum cupiditate ex esse consectetur iusto
-              quibusdam magni laboriosam nisi, qui natus perferendis veritatis?
-              Provident, id corporis eos in et optio quisquam eligendi aperiam
-              excepturi dolorum odit, aliquid esse est. Molestias expedita vitae
-              soluta odio totam, enim repellat.
-            </div>
+            <div className="w-full">{post[0].description}</div>
           </div>
           {/* <div className="w-full">
             here are comments and add comment section
