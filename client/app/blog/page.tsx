@@ -15,7 +15,7 @@ const Blog = () => {
     {
       title: "",
       description: "",
-      // date_added: "",
+      date_added: new Date(),
       image: "",
       category: "",
       added_by: "",
@@ -25,7 +25,7 @@ const Blog = () => {
     {
       title: "",
       description: "",
-      // date_added: "",
+      date_added: new Date(),
       image: "",
       category: "",
     },
