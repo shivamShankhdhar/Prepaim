@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import { Button } from "@mui/material";
-import FormatedDate from "@/app/components/Global/FormatedDate";
+// const { htmlToText } = require("html-to-text");
+// import { convert } from "html-to-text";
 
 const PostItem = ({
   title,
@@ -10,6 +10,7 @@ const PostItem = ({
   date_added,
   category,
 }: any) => {
+  const { convert } = require("html-to-text");
   return (
     <div className="w-full flex flex-row flex-wrap mt-3">
       <div className="flex sm:w-full max-sm:w-full aspect-16/9 md:w-full max-md:w-full lg:w-[350px] mb-2 xl:w-[350px] 2xl:w-[350px]">
@@ -34,7 +35,7 @@ const PostItem = ({
           </div>
         </div>
         <h1 className="text-2xl">{title}</h1>
-        <div>{description.slice(0, 150).html()}...</div>
+        <div>{convert(description.slice(0, 150), { wordwrap: 130 })}...</div>
         <Button
           sx={{ textTransform: "none" }}
           href={`/blog/${title.toString().replace(/\s+/g, "-")}`}

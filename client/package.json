@@ -24,6 +24,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
+    "html-to-text": "^9.0.5",
     "material-ui-popup-state": "^5.1.2",
     "next-client-cookies": "^1.1.1",
     "react": "^18.3.1",
