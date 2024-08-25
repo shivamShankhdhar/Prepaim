@@ -62,7 +62,7 @@ const BlogPost = () => {
 
   // useEffect(() => {}, []);
   return (
-    <div className=" flex  overflow-y-auto m-auto w-[80%]">
+    <div className=" flex  overflow-y-auto w-full px-[10px]">
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
