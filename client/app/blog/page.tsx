@@ -16,8 +16,8 @@ const Blog = () => {
       {
         title: "",
         description: "",
-        date_added: Date.now(),
-        imageUrl: "",
+        date_added: "",
+        image: "",
         category: "",
         added_by: "",
       },
@@ -28,8 +28,8 @@ const Blog = () => {
       {
         title: "",
         description: "",
-        date_added: 0,
-        imageUrl: "",
+        date_added: "",
+        image: "",
         category: "",
       },
     ].filter((item) => item.title !== "")
@@ -139,14 +139,14 @@ const Blog = () => {
             {/* recent posts section  */}
             <div className="flex flex-1 flex-col px-2">
               <h1 className="text-2xl">
-                {filteredPosts.length > 0
+                {posts.length > 0
                   ? `Posts (${filteredPosts.length})`
                   : `Post (${filteredPosts.length})`}
               </h1>
               {/* blog details  */}
               <div className="flex-1 flex-wrap gap-5 h-[fit-content]">
-                {filteredPosts.length > 0 ? (
-                  filteredPosts
+                {posts.length > 0 ? (
+                  posts
                     .slice(page * 10 - 10, page * 10)
                     .map((post: any, index: any) => (
                       <PostItem
