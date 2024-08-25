@@ -32,8 +32,9 @@ const BlogPost = () => {
         setPost(res.data);
       });
   }, [slug]);
+
   useEffect(() => {
-    if (post[0].category !== "") {
+    if (post.length > 0 && post[0].category !== "") {
       setPostCategory(post[0].category);
     }
   }, [post]);
