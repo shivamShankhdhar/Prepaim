@@ -6,6 +6,7 @@ import BlogFooter from "../components/BlogFooter";
 import Image from "next/image";
 import axios from "axios";
 import FormatedDate from "@/app/components/Global/FormatedDate";
+import { Markup } from "interweave";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -26,10 +27,7 @@ const BlogPost = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${slug
-          .toString()
-          .replaceAll("-", " ")
-          .replaceAll("%20", " ")}`
+        `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${slug}`
       )
       .then((res) => {
         setPost(res.data);
@@ -72,8 +70,8 @@ const BlogPost = () => {
               {slug.toString().replaceAll("-", " ").charAt(0).toUpperCase() +
                 slug.toString().replaceAll("-", " ").slice(1)}
             </div>
-            <div className="w-full text-sm">
-              <div className="w-[fit-content] bg-purple-200 px-2">
+            <div className="w-full text-sm flex gap-2">
+              <div className="w-[fit-content] rounded-md bg-purple-200 px-2">
                 {post.length > 0 && post[0].category}
               </div>
               <div className="w-[fit-content]">
@@ -81,7 +79,7 @@ const BlogPost = () => {
               </div>
             </div>
             {/* post image  */}
-            <div className="w-full h-[200px] rounded-md bg-gray-100 mt-3 mb-3 px-2 relative">
+            {/* <div className="w-full h-[200px] rounded-md bg-gray-100 mt-3 mb-3 px-2 relative">
               {post.length > 0 && (
                 <Image
                   src={post[0].image}
@@ -91,7 +89,7 @@ const BlogPost = () => {
                   className="relative rounded-md"
                 />
               )}
-            </div>
+            </div> */}
             {/* post description */}
             <div className="w-full bg-white h-[80px] text-center block">
               <div className="w-full text-center text-sm block">
@@ -106,7 +104,7 @@ const BlogPost = () => {
               ></ins>
             </div>
             <div className="w-full">
-              {post.length > 0 && post[0].description}
+              {post.length > 0 && <Markup content={post[0].description} />}
             </div>
           </div>
           {/* <div className="w-full">
