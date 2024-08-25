@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@mui/material";
+import FormatedDate from "@/app/components/Global/FormatedDate";
 // const { htmlToText } = require("html-to-text");
 // import { convert } from "html-to-text";
 
@@ -26,7 +27,7 @@ const PostItem = ({
         <div className="w-full flex items-center gap-1">
           {/* date */}
           <div className="w-[fit-content]">
-            {/* <FormatedDate date={date_added} /> */}
+            <FormatedDate date={date_added} />
           </div>
           <div>-</div>
           {/* category  */}
