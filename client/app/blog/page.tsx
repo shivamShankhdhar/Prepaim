@@ -139,21 +139,21 @@ const Blog = () => {
             {/* recent posts section  */}
             <div className="flex flex-1 flex-col px-2">
               <h1 className="text-2xl">
-                {posts.length > 0
+                {filteredPosts.length > 0
                   ? `Posts (${filteredPosts.length})`
                   : `Post (${filteredPosts.length})`}
               </h1>
               {/* blog details  */}
               <div className="flex-1 flex-wrap gap-5 h-[fit-content]">
-                {posts.length > 0 ? (
-                  posts
+                {filteredPosts.length > 0 ? (
+                  filteredPosts
                     .slice(page * 10 - 10, page * 10)
                     .map((post: any, index: any) => (
                       <PostItem
                         key={post.title}
                         title={post.title}
                         description={post.description}
-                        imageUrl={post.imageUrl}
+                        imageUrl={post.image}
                         category={post.category}
                         date_added={post.date_added}
                       />

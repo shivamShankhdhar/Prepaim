@@ -34,7 +34,7 @@ const PostItem = ({
           </div>
         </div>
         <h1 className="text-2xl">{title}</h1>
-        <p>{description.slice(0, 150)}...</p>
+        <div>{description.slice(0, 150)}...</div>
         <Button
           sx={{ textTransform: "none" }}
           href={`/blog/${title.toString().replace(/\s+/g, "-")}`}
