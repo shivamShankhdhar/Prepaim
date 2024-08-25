@@ -11,29 +11,25 @@ import axios from "axios";
 const Blog = () => {
   const [category, setCategory] = useState("");
   const [page, setPage] = useState(1);
-  const [posts, setPosts] = useState(
-    [
-      {
-        title: "",
-        description: "",
-        // date_added: "",
-        image: "",
-        category: "",
-        added_by: "",
-      },
-    ].filter((item) => item.title !== "")
-  );
-  const [filteredPosts, setFilteredPosts] = useState(
-    [
-      {
-        title: "",
-        description: "",
-        // date_added: "",
-        image: "",
-        category: "",
-      },
-    ].filter((item) => item.title !== "")
-  );
+  const [posts, setPosts] = useState([
+    {
+      title: "",
+      description: "",
+      // date_added: "",
+      image: "",
+      category: "",
+      added_by: "",
+    },
+  ]);
+  const [filteredPosts, setFilteredPosts] = useState([
+    {
+      title: "",
+      description: "",
+      // date_added: "",
+      image: "",
+      category: "",
+    },
+  ]);
   useEffect(() => {
     if (category !== "") {
       setFilteredPosts(
@@ -140,14 +136,16 @@ const Blog = () => {
             {/* recent posts section  */}
             <div className="flex flex-1 flex-col px-2">
               <h1 className="text-2xl">
-                {filteredPosts.length > 0
+                {filteredPosts.filter((item) => item.title !== "").length > 0
                   ? `Posts (${filteredPosts.length})`
                   : `Post (${filteredPosts.length})`}
               </h1>
               {/* blog details  */}
               <div className="flex-1 flex-wrap gap-5 h-[fit-content]">
-                {filteredPosts.length > 0 ? (
+                {filteredPosts.filter((item) => item.title !== "").length >
+                0 ? (
                   filteredPosts
+                    .filter((item) => item.title !== "")
                     .slice(page * 10 - 10, page * 10)
                     .map((post: any, index: any) => (
                       <PostItem
@@ -171,7 +169,7 @@ const Blog = () => {
               </div>
               {/* pagination section */}
               <Pagination
-                items={filteredPosts}
+                items={filteredPosts.filter((item) => item.title !== "")}
                 setProperty={setPage}
                 page={page}
               />
