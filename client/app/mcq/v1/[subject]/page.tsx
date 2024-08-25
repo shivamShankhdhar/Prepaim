@@ -10,11 +10,11 @@ const SubjectPage = () => {
     useState(0);
 
   const { subject } = useParams();
-  // useEffect(() => {
-  //   // if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
-  //   ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
-  //   // }
-  // }, []);
+  useEffect(() => {
+    // if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    // }
+  }, []);
 
   return (
     <>
@@ -42,7 +42,8 @@ const SubjectPage = () => {
 
         {/* all subjects  */}
         <SubjectList setSubjectLength={stSubjectLengthAfterAllFilters} />
-        {/* <div className="w-full block text-center mt-2">
+        <div className="w-full inline-block text-center mt-2">
+          <div className="w-full text-center text-sm block">ADVERTISEMENT</div>
           <ins
             className="adsbygoogle text-center"
             style={{ display: "block" }}
@@ -50,7 +51,7 @@ const SubjectPage = () => {
             data-ad-client="ca-pub-1113302487630583"
             data-ad-slot="7384794981"
           ></ins>
-        </div> */}
+        </div>
         <Footer />
       </div>
     </>

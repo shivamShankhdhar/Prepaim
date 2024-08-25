@@ -164,6 +164,17 @@ const SubjectList = ({ setSubjectLength }: any) => {
   useEffect(() => {
     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
   }, []); // dropdowns
+
+   subjectsAfterFilter
+     .filter((item) => item.name !== "")
+     .sort()
+     .map((item, index) => {
+       index % 5 === 0 &&
+         useEffect(() => {
+           ((window as any).adsbygoogle =
+             (window as any).adsbygoogle || []).push({});
+         }, []);
+     });
   return (
     <div className="flex w-full flex-col py-2 min-h-[92vh] max-h-[fit-content] px-3 items-center">
       {/* navigations for grid and list */}

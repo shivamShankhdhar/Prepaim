@@ -52,7 +52,12 @@ const BlogPost = () => {
     //  }
   }, []);
 
-  
+  useEffect(() => {
+    //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
+    ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
+    //  }
+  }, []);
+
   useEffect(() => {
     //  if (process.env.NEXT_PUBLIC_RUN_ENVIRONMENT == "PRODUCTION") {
     ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({});
@@ -119,7 +124,18 @@ const BlogPost = () => {
           </div> */}
 
           <BlogFooter category={postCategory} />
-          <div className="w-full h-[auto]">adsense multiplex ads here</div>
+          <div className="w-full inline-block text-center mt-2">
+            <div className="w-full text-center text-sm block">
+              ADVERTISEMENT
+            </div>
+            <ins
+              className="adsbygoogle text-center"
+              style={{ display: "block" }}
+              data-ad-format="auto"
+              data-ad-client="ca-pub-1113302487630583"
+              data-ad-slot="7384794981"
+            ></ins>
+          </div>
         </div>
         {/* right ads sectioin  */}
       </div>
