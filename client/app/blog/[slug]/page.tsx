@@ -28,7 +28,8 @@ const BlogPost = () => {
       .get(
         `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${slug
           .toString()
-          .replace("-", " ")}`
+          .replaceAll("-", " ")
+          .replaceAll("%20", " ")}`
       )
       .then((res) => {
         setPost(res.data);
