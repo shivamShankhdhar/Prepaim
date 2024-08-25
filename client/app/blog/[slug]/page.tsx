@@ -74,7 +74,7 @@ const BlogPost = () => {
           {/* blog content */}
           <div className="w-full flex-1 px-2 min-h-[100vh] max-h-[fit-content] overflow-y-auto mt-5">
             {/* post title  */}
-            <div className="w-full text-[25px] font-semibold">
+            <div className="w-full text-[35px] font-semibold">
               {slug.toString().replaceAll("-", " ").charAt(0).toUpperCase() +
                 slug.toString().replaceAll("-", " ").slice(1)}
             </div>
