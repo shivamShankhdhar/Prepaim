@@ -154,7 +154,7 @@ const Blog = () => {
                         description={post.description}
                         imageUrl={post.image}
                         category={post.category}
-                        date_added={post.date_added}
+                        // date_added={post.date_added}
                       />
                     ))
                 ) : (
