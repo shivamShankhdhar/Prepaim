@@ -1,23 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { GrFormClose } from "react-icons/gr";
 import Link from "next/link";
+import axios from "axios";
 const BlogCategory = ({
   text,
   handleCategoryClick,
   RemoveCategory,
   cat,
 }: any) => {
-  const catagories = [
-    "Web Development",
-    "Machine Learning",
-    "Artificial Intelligence",
-    "Data Science",
-    "Data Structures",
-    "Algorithms",
-    "Competitive Programming",
-  ];
+  const [catagories, setCategories] = useState(
+    [
+      {
+        name: "",
+      },
+    ].filter((item) => item.name !== "")
+  );
 
   const colorClass = [
     "bg-purple-200 border-purple-400",
@@ -29,6 +28,15 @@ const BlogCategory = ({
     "bg-red-200 border-red-400",
     "bg-purple-200 border-purple-400",
   ];
+
+  useEffect(() => {
+    axios
+      .get("https://api.data.admin-panel.prepaim.com/blog/getBlogCategories")
+      .then((res) => {
+        setCategories(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="w-full flex flex-col gap-2 flex-wrap mt-2 border border-dashed border-purple-900 p-3 rounded-md">
       <h1 className="text-2xl border border-dashed border-purple-900 border-t-0 border-l-0 border-r-0 border-b-1 py-1">
@@ -37,7 +45,7 @@ const BlogCategory = ({
       <div className="w-full flex gap-2 flex-wrap">
         {catagories.map((category: any, index: any) => (
           <div
-            key={`category-divs-key-${index}-${category}`}
+            key={`category-divs-key-${index}-${category.name}`}
             className={cn(
               `w-[fit-content] px-2 flex gap-1 py-1 rounded-md cursor-pointer justify-center border`,
               colorClass[index]
@@ -52,9 +60,9 @@ const BlogCategory = ({
             ></Image> */}
             <div
               className="flex-1 flex justify-center items-center text-sm"
-              onClick={() => handleCategoryClick(category)}
+              onClick={() => handleCategoryClick(category.name)}
             >
-              <Link href="/blog/#posts-container">{category}</Link>
+              <Link href="/blog/#posts-container">{category.name}</Link>
             </div>
             {category === cat && (
               <div
