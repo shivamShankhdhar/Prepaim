@@ -54,6 +54,7 @@ const Blog = () => {
         });
     } catch (error) {}
   }, []);
+
   const handleCategoryClick = (category: any) => {
     setPage(1);
     setCategory(category);
