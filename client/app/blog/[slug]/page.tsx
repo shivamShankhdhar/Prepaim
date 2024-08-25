@@ -71,21 +71,23 @@ const BlogPost = () => {
             </div>
             <div className="w-full text-sm">
               <div className="w-[fit-content] bg-purple-200 px-2">
-                {post[0].category}
+                {post.length > 0 && post[0].category}
               </div>
               <div className="w-[fit-content]">
-                <FormatedDate date={post[0].date_added} />
+                <FormatedDate date={post.length > 0 && post[0].date_added} />
               </div>
             </div>
             {/* post image  */}
             <div className="w-full h-[200px] rounded-md bg-gray-100 mt-3 mb-3 px-2 relative">
-              <Image
-                src={post[0].image}
-                alt={`${slug.toString().replaceAll("-", " ")}`}
-                layout="fill"
-                objectFit="cover"
-                className="relative rounded-md"
-              />
+              {post.length > 0 && (
+                <Image
+                  src={post[0].image}
+                  alt={`${slug.toString().replaceAll("-", " ")}`}
+                  layout="fill"
+                  objectFit="cover"
+                  className="relative rounded-md"
+                />
+              )}
             </div>
             {/* post description */}
             <div className="w-full bg-white h-[80px] text-center block">
@@ -100,7 +102,9 @@ const BlogPost = () => {
                 data-full-width-responsive="true"
               ></ins>
             </div>
-            <div className="w-full">{post[0].description}</div>
+            <div className="w-full">
+              {post.length > 0 && post[0].description}
+            </div>
           </div>
           {/* <div className="w-full">
             here are comments and add comment section
