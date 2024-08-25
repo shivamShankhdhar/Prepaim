@@ -62,7 +62,7 @@ const BlogPost = () => {
 
   // useEffect(() => {}, []);
   return (
-    <div className=" flex  overflow-y-auto w-full px-[10px]">
+    <div className=" flex  bg-white overflow-y-auto w-full px-[10px]">
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
@@ -70,7 +70,7 @@ const BlogPost = () => {
           adsense ads here
         </div> */}
         {/* main content section */}
-        <div className="bg-white flex-1 flex-col">
+        <div className=" flex-1 flex-col">
           {/* blog content */}
           <div className="w-full flex-1 px-2 min-h-[100vh] max-h-[fit-content] overflow-y-auto mt-5">
             {/* post title  */}
