@@ -16,7 +16,7 @@ const Blog = () => {
       {
         title: "",
         description: "",
-        date_added: "",
+        // date_added: "",
         image: "",
         category: "",
         added_by: "",
@@ -86,6 +86,7 @@ const Blog = () => {
     //  }
   }, []);
 
+  console.log(posts);
   return (
     <div className="w-full h-[92vh] flex">
       {/* adsense ads div */}
