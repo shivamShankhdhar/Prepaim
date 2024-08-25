@@ -44,7 +44,7 @@ const Blog = () => {
     } else {
       setFilteredPosts(posts);
     }
-  }, [category, page]);
+  }, [posts, category, page]);
 
   useEffect(() => {
     try {
