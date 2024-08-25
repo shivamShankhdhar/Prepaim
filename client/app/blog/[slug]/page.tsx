@@ -9,6 +9,7 @@ import FormatedDate from "@/app/components/Global/FormatedDate";
 
 const BlogPost = () => {
   const { slug } = useParams();
+  const title = slug?.toString().replaceAll("-", " ");
   const [postCategory, setPostCategory] = useState("");
   const [post, setPost] = useState(
     [
@@ -25,9 +26,7 @@ const BlogPost = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${slug
-          .toString()
-          .replaceAll("-", " ")}`
+        `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${title}`
       )
       .then((res) => {
         setPost(res.data);
