@@ -26,7 +26,9 @@ const BlogPost = () => {
   useEffect(() => {
     axios
       .get(
-        `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${slug}`
+        `https://api.data.admin-panel.prepaim.com/blog/getBlogPostByTitle/${slug
+          .toString()
+          .replaceAll("-", " ")}`
       )
       .then((res) => {
         setPost(res.data);
