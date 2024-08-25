@@ -4,7 +4,7 @@ import { format } from "date-fns";
 const FormatedDate = ({ date, cls, isTime }: any) => {
   return (
     <div className={`${cls || "text-[11px]"}`}>
-      {format(new Date(date), "eee, MMM dd, yyyy / hh:mm a")}
+      {format(new Date(date.toString()), "eee, MMM dd, yyyy / hh:mm a")}
     </div>
   );
 };
