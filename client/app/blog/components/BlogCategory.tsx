@@ -60,7 +60,7 @@ const BlogCategory = ({
             ></Image> */}
             <div
               className="flex-1 flex justify-center items-center text-sm"
-              onClick={() => handleCategoryClick(category.name)}
+              onClick={() => handleCategoryClick(category.name.toString())}
             >
               <Link href="/blog/#posts-container">{category.name}</Link>
             </div>
