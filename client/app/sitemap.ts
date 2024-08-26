@@ -43,7 +43,7 @@ const allChapters = async () => {
 }
 
 const allPosts = async () => {
-  const posts = await axios.get("https://api.data.admin-panel.prepaim.com/blog/getBlogPost");
+  const posts = await axios.get("https://api.data.admin-panel.prepaim.com/blog/getBlogPosts");
   return posts.data
 }
 export default async function sitemap() {
@@ -113,7 +113,16 @@ export default async function sitemap() {
       url: `${baseURL}/blog`,
       lastModified: new Date().toISOString(),
     },
+   
     {
+      url: `${baseURL}/mcq/v1/subjects`,
+      lastModified: new Date().toISOString(),
+    },
+    ...allChaptersForSpecificSubject,
+    ...allPostsURL,
+    ...urlSetTestPreprationMode,
+    ...urlSetPreprationMode,
+     {
       url: `${baseURL}/about`,
       lastModified: new Date().toISOString(),
     },
@@ -129,13 +138,5 @@ export default async function sitemap() {
       url: `${baseURL}/terms-of-services`,
       lastModified: new Date().toISOString(),
     },
-    {
-      url: `${baseURL}/mcq/v1/subjects`,
-      lastModified: new Date().toISOString(),
-    },
-    ...allChaptersForSpecificSubject,
-    ...allPostsURL,
-    ...urlSetTestPreprationMode,
-    ...urlSetPreprationMode
   ];
 }
