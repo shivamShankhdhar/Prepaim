@@ -8,6 +8,7 @@ import ShortcutPostItem from "./components/ShortcutPostItem";
 import ErrorMessage from "../components/Global/ErrorMessage";
 import BlogFooter from "./components/BlogFooter";
 import axios from "axios";
+import PostItemSkeleton from "./components/Skeleton/PostItemSkeleton";
 
 const Blog = () => {
   const [category, setCategory] = useState("");
@@ -157,7 +158,7 @@ const Blog = () => {
               {/* blog details  */}
               <div className="flex-1 flex-wrap gap-5 h-[fit-content]">
                 {loading ? (
-                  "loading..."
+                  <PostItemSkeleton />
                 ) : filteredPosts.filter((item) => item.title !== "").length >
                   0 ? (
                   filteredPosts
