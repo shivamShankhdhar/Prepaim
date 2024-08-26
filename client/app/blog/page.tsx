@@ -281,7 +281,9 @@ const Blog = () => {
               data-ad-slot="7384794981"
             ></ins>
           </div>
-          <BlogFooter category={category} />
+          <div className="w-full">
+            <BlogFooter category={category} />
+          </div>
         </div>
       </div>
       <script
