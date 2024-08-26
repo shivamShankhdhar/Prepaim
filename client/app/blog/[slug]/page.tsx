@@ -119,7 +119,7 @@ const BlogPost = () => {
             <div className="w-full flex flex-col gap-2 ">
               {post.length > 0 && <Markup content={post[0].description} />}
             </div>
-            <div className="w-full flex gap-2 bg-purple-200 py-3 mt-2 mb-3">
+            <div className="w-full flex gap-2 bg-purple-200 py-3 mt-2 mb-3 px-5">
               <ShareBtn />
             </div>
           </div>
