@@ -113,16 +113,7 @@ export default async function sitemap() {
       url: `${baseURL}/blog`,
       lastModified: new Date().toISOString(),
     },
-   
     {
-      url: `${baseURL}/mcq/v1/subjects`,
-      lastModified: new Date().toISOString(),
-    },
-    ...allChaptersForSpecificSubject,
-    ...allPostsURL,
-    ...urlSetTestPreprationMode,
-    ...urlSetPreprationMode,
-     {
       url: `${baseURL}/about`,
       lastModified: new Date().toISOString(),
     },
@@ -138,5 +129,13 @@ export default async function sitemap() {
       url: `${baseURL}/terms-of-services`,
       lastModified: new Date().toISOString(),
     },
+    {
+      url: `${baseURL}/mcq/v1/subjects`,
+      lastModified: new Date().toISOString(),
+    },
+    ...allChaptersForSpecificSubject,
+    ...allPostsURL,
+    ...urlSetTestPreprationMode,
+    ...urlSetPreprationMode
   ];
 }
