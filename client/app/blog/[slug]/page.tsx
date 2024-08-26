@@ -9,6 +9,7 @@ import FormatedDate from "@/app/components/Global/FormatedDate";
 import { Markup } from "interweave";
 
 import { RxSlash } from "react-icons/rx";
+import ShareBtn from "@/app/components/Global/ShareBtn";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -88,6 +89,7 @@ const BlogPost = () => {
               <div className="w-[fit-content]">
                 <FormatedDate date={post.length > 0 && post[0].date_added} />
               </div>
+              <ShareBtn />
             </div>
             {/* post image  */}
             {/* <div className="w-full h-[200px] rounded-md bg-gray-100 mt-3 mb-3 px-2 relative">
