@@ -80,7 +80,7 @@ const BlogPost = () => {
               <div className="w-[fit-content] rounded-md text-purple-950">
                 {post.length > 0 && post[0].category}
               </div>
-              <div className="flex justify-center items-center">/</div>
+              <div className="flex justify-center items-center text-sm">/</div>
               <div className="w-[fit-content]">
                 <FormatedDate date={post.length > 0 && post[0].date_added} />
               </div>
