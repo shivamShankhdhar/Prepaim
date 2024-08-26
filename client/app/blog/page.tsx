@@ -158,7 +158,8 @@ const Blog = () => {
               {/* blog details  */}
               <div className="flex-1 flex-wrap gap-5 h-[fit-content]">
                 {loading ? (
-                  <PostItemSkeleton />
+                  // <PostItemSkeleton />
+                  "Loading..."
                 ) : filteredPosts.filter((item) => item.title !== "").length >
                   0 ? (
                   filteredPosts
