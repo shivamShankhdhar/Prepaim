@@ -203,7 +203,7 @@ const Blog = () => {
                   ADVERTISEMENT
                 </div>
                 <ins
-                  className="adsbygoogle block text-center w-[100%] h-[100px]"
+                  className="adsbygoogle block text-center w-[98%] h-[100px]"
                   style={{
                     display: "block",
                     width: "100%",
@@ -269,7 +269,7 @@ const Blog = () => {
             </div> */}
           </div>
           {/* multiplex ads unit here  */}
-          <div className="w-full inline-block text-center mt-2">
+          <div className="w-[98%] inline-block text-center mt-2">
             <div className="w-full text-center text-sm block">
               ADVERTISEMENT
             </div>

@@ -132,7 +132,7 @@ const BlogPost = () => {
               dontIncludePostTitle={post.length > 0 && post[0].title}
             />
           </div>
-          <div className="w-full block text-center mt-2">
+          <div className="w-[98%] block text-center mt-2">
             <div className="w-full text-center text-sm block">
               ADVERTISEMENT
             </div>
