@@ -98,7 +98,7 @@ const BlogPost = () => {
               )}
             </div> */}
             {/* post description */}
-            <div className="w-full bg-white h-[80px] text-center block">
+            <div className="w-[98%] bg-white h-[80px] text-center block">
               <div className="w-full text-center text-sm block">
                 ADVERTISEMENT
               </div>
