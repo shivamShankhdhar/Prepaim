@@ -6,6 +6,9 @@ const FooterLinks = () => {
     <div className="w-full flex justify-center min-w-[fit-content] items-center">
       <ul className="flex flex-wrap gap-1 justify-center items-center text-sm">
         <li className="flex cursor-pointer  justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100">
+          <Link href="/blog">Blog</Link>
+        </li>
+        <li className="flex cursor-pointer  justify-center items-center px-2 py-1 rounded-md hover:bg-purple-100">
           <Link target="_blank" href="/about">
             About us
           </Link>
