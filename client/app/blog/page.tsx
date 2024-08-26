@@ -99,7 +99,7 @@ const Blog = () => {
 
   console.log(posts);
   return (
-    <div className="w-full h-[92vh] flex">
+    <div className="w-full h-[92vh] flex fixed">
       {/* adsense ads div */}
 
       {/* blog page content  */}
