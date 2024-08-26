@@ -124,9 +124,9 @@ const Blog = () => {
               ADVERTISEMENT
             </div>
             <ins
-              className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+              className="adsbygoogle block text-center w-[100%] h-[100px]"
               style={{
-                display: "inline-block",
+                display: "block",
                 width: "100%",
                 height: "100px",
               }}
@@ -200,9 +200,9 @@ const Blog = () => {
                   ADVERTISEMENT
                 </div>
                 <ins
-                  className="adsbygoogle inline-block text-center w-[100%] h-[100px]"
+                  className="adsbygoogle block text-center w-[100%] h-[100px]"
                   style={{
-                    display: "inline-block",
+                    display: "block",
                     width: "100%",
                     height: "100px",
                   }}
@@ -215,7 +215,7 @@ const Blog = () => {
             </div>
             {/* right section  */}
             <div className="w-[300px] sm:hidden max-sm:hidden p-3 flex gap-1 flex-col md:hidden rounded-md border max-md:hidden lg:flex xl:flex 2xl:flex h-[fit-content] sticky top-0">
-              <h2 className="text-md">What&apos;`s hot ?</h2>
+              <h2 className="text-md">What&apos;s hot ?</h2>
               <div className="w-full text-2xl">Most Popular</div>
               <div className="w-full flex gap-1 flex-col">
                 {posts.slice(0, 10).map((post) => {
@@ -239,9 +239,8 @@ const Blog = () => {
                   <div className="w-full text-center text-sm block">
                     ADVERTISEMENT
                   </div>
-
                   <ins
-                    className="adsbygoogle inline-block w-[280px] h-[300px]"
+                    className="adsbygoogle block w-[280px] h-[300px]"
                     data-ad-layout="in-article"
                     // data-ad-format="rectangle"
                     data-ad-client="ca-pub-1113302487630583"
