@@ -59,7 +59,7 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
                     )}/${item.chapter?.replaceAll(
                       " ",
                       "-"
-                    )}/Test-Prepration-Mode/1`}
+                    )}/Test-Prepration-Mode/${index + 1}`}
                   >
                     {item.question}
                   </Link>
