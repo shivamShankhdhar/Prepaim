@@ -217,7 +217,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                   .sort()
                   .map((item, index) => (
                     <>
-                      {index % 5 === 0 && (
+                      {/* {index % 5 === 0 && (
                         <div className="w-[300px] block text-center">
                           <ins
                             className="adsbygoogle text-center"
@@ -228,7 +228,7 @@ const SubjectList = ({ setSubjectLength }: any) => {
                             data-ad-slot="3637121664"
                           ></ins>
                         </div>
-                      )}
+                      )} */}
 
                       <SubjectItemListView
                         key={`${item._id}-${index}`} //${index}
