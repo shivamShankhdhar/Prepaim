@@ -110,6 +110,7 @@ const BlogPost = () => {
               </div>
               <ins
                 className="adsbygoogle block text-center w-full h-[100px]"
+                style={{ display: "block", width: "98%" }}
                 data-ad-client="ca-pub-1113302487630583"
                 data-ad-slot="7957270938"
                 data-ad-format="horizontal"
@@ -138,7 +139,7 @@ const BlogPost = () => {
             </div>
             <ins
               className="adsbygoogle text-center"
-              style={{ display: "block" }}
+              style={{ display: "block", width: "98%" }}
               data-ad-format="auto"
               data-ad-client="ca-pub-1113302487630583"
               data-ad-slot="7384794981"

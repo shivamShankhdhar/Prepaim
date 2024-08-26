@@ -130,7 +130,7 @@ const Blog = () => {
               className="adsbygoogle block text-center w-[100%] h-[100px]"
               style={{
                 display: "block",
-                width: "100%",
+                width: "980%",
                 height: "100px",
               }}
               data-ad-client="ca-pub-1113302487630583"
@@ -206,7 +206,7 @@ const Blog = () => {
                   className="adsbygoogle block text-center w-[98%] h-[100px]"
                   style={{
                     display: "block",
-                    width: "100%",
+                    width: "98%",
                     height: "100px",
                   }}
                   data-ad-client="ca-pub-1113302487630583"
@@ -275,7 +275,7 @@ const Blog = () => {
             </div>
             <ins
               className="adsbygoogle text-center"
-              style={{ display: "block" }}
+              style={{ display: "block", width: "98%" }}
               data-ad-format="auto"
               data-ad-client="ca-pub-1113302487630583"
               data-ad-slot="7384794981"
