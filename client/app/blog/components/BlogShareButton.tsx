@@ -43,11 +43,11 @@ const BlogShareButton = ({ cls }: Props) => {
   return (
     <LightTooltip title={`Share this question`}>
       <Button
-        sx={{ border: 1 }}
-        className={`w-[fit-content] rounded-[3px] px-2 flex gap-2 py-1 justify-center cursor-pointer items-center border  ${
+        // sx={{ border: 1 }}
+        className={`w-[fit-content] rounded-full flex gap-2 py-2 px-2 justify-center cursor-pointer items-center border  ${
           linkCopied
-            ? " bg-green-200 text-green-950  border-green-950 hover:bg-green-300 "
-            : " bg-white  hover:bg-purple-200 border-purple-800 text-purple-800"
+            ? " bg-green-200 text-green-950  hover:bg-green-300"
+            : " bg-gray-200  hover:bg-gray-300 text-purple-800"
         }`}
         onClick={() => handleShare()}
       >
