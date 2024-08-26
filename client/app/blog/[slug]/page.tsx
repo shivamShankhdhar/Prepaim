@@ -98,12 +98,12 @@ const BlogPost = () => {
               )}
             </div> */}
             {/* post description */}
-            <div className="w-full bg-white h-[80px] text-center inline-block">
-              <div className="w-full text-center text-sm inline-block">
+            <div className="w-full bg-white h-[80px] text-center block">
+              <div className="w-full text-center text-sm block">
                 ADVERTISEMENT
               </div>
               <ins
-                className="adsbygoogle inline-block text-center w-full h-[100px]"
+                className="adsbygoogle block text-center w-full h-[100px]"
                 data-ad-client="ca-pub-1113302487630583"
                 data-ad-slot="7957270938"
                 data-ad-format="horizontal"
@@ -119,7 +119,7 @@ const BlogPost = () => {
           </div> */}
 
           <BlogFooter category={postCategory} />
-          <div className="w-full inline-block text-center mt-2">
+          <div className="w-full block text-center mt-2">
             <div className="w-full text-center text-sm block">
               ADVERTISEMENT
             </div>
