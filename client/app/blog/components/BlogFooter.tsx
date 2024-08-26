@@ -70,11 +70,13 @@ const BlogFooter = ({ category, dontIncludePostTitle }: any) => {
             )}
           </div>
           <div className="w-full flex gap-2 flex-row flex-wrap">
-            {filteredPosts.map((post: any) => {
-              return (
-                <ShortcutPostItem key={post.id} post={post} isImage={true} />
-              );
-            })}
+            {filteredPosts
+              .filter((item) => item.title !== dontIncludePostTitle)
+              .map((post: any) => {
+                return (
+                  <ShortcutPostItem key={post.id} post={post} isImage={true} />
+                );
+              })}
           </div>
         </div>
       )}
