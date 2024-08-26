@@ -122,7 +122,7 @@ const Blog = () => {
             <Featured post={posts.filter((item) => item.title !== "")[0]} />
           )}
 
-          {/*<div className="w-full bg-white h-[80px] text-center block">
+          <div className="w-full bg-white h-[80px] text-center block">
             <div className="w-full text-center text-sm block">
               ADVERTISEMENT
             </div>
@@ -139,7 +139,7 @@ const Blog = () => {
               data-full-width-responsive="true"
             ></ins>
           </div>
-          {/* blog categories  */}
+          {/* blog categories */}
           <div className="w-full" id="posts-container">
             <BlogCategory
               cat={category}
