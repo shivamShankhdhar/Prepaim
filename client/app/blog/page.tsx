@@ -127,10 +127,10 @@ const Blog = () => {
               ADVERTISEMENT
             </div>
             <ins
-              className="adsbygoogle block text-center w-[100%] h-[100px]"
+              className="adsbygoogle block text-center w-[98%] h-[100px]"
               style={{
                 display: "block",
-                width: "980%",
+                width: "98%",
                 height: "100px",
               }}
               data-ad-client="ca-pub-1113302487630583"
