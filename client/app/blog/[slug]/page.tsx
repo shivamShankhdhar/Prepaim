@@ -126,8 +126,9 @@ const BlogPost = () => {
           {/* <div className="w-full">
             here are comments and add comment section
           </div> */}
-
-          <BlogFooter category={postCategory} />
+          <div className="w-full">
+            <BlogFooter category={postCategory} />
+          </div>
           <div className="w-full block text-center mt-2">
             <div className="w-full text-center text-sm block">
               ADVERTISEMENT
