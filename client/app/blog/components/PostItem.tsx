@@ -13,7 +13,7 @@ const PostItem = ({
 }: any) => {
   const { convert } = require("html-to-text");
   return (
-    <div className="w-full flex flex-row flex-wrap mt-3 border rounded-md">
+    <div className="w-full flex flex-row flex-wrap mt-3 border rounded-md p-3">
       <div className="flex sm:w-full max-sm:w-full aspect-16/9 md:w-full max-md:w-full lg:w-[350px] mb-2 xl:w-[350px] 2xl:w-[350px]">
         <img
           src={imageUrl}
