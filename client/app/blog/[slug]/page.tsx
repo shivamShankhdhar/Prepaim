@@ -65,13 +65,13 @@ const BlogPost = () => {
   return (
     <div className="w-[100%] flex flex-col fixed bg-white overflow-y-auto h-[92vh] sm:px-[10px] max-sm:px-[10px] md:px-[10px] max-md:px-[10px] lg:px-[100px] xl:px-[100px] 2xl:px-[100px]">
       {/* blog page content  */}
-      <div className="flex flex-1 text-[20px]">
+      <div className="flex flex-1 text-[20px] pb-10">
         {/* adsense ads unit left  */}
         {/* <div className="bg-white w-[120px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           adsense ads here
         </div> */}
         {/* main content section */}
-        <div className=" flex-1 flex-col">
+        <div className=" flex-1 flex-col pb-5">
           {/* blog content */}
           <div className="w-full flex-1 px-2 mt-5">
             {/* post title  */}
