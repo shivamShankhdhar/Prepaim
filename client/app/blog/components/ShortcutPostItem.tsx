@@ -7,7 +7,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
   return (
     <>
       {isImage !== false && (
-        <div className="h-[50px] w-[50px]">
+        <div className="h-[50px] w-[50px] flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md">
           <img
             src={post.image}
             width={100}
@@ -19,7 +19,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
       )}
 
       <div className="flex flex-col">
-        <div className="w-full flex gap-2 justify-center items-center">
+        <div className="w-full flex gap-2 justify-center">
           {/* <div className="w-[fit-content] flex justify-center items-center bg-purple-200 text-purple-900 h-[15px] text-[11px] uppercase rounded-md px-2">
             username
           </div>
@@ -29,10 +29,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
           </div>
         </div>
         <div className="w-full">
-          <Link
-            href={`/blog/${post.title.replaceAll(" ", "-")}`}
-            className="w-full flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md"
-          >
+          <Link href={`/blog/${post.title.replaceAll(" ", "-")}`}>
             {post.title}
           </Link>
         </div>
