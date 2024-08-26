@@ -118,7 +118,10 @@ const Blog = () => {
         {/* main content section */}
         <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
           {/* featured post */}
-          <Featured post={posts.filter((item) => item.title !== "")[0]} />
+          {posts.filter((item) => item.title !== "").length > 0 && (
+            <Featured post={posts.filter((item) => item.title !== "")[0]} />
+          )}
+
           {/*<div className="w-full bg-white h-[80px] text-center block">
             <div className="w-full text-center text-sm block">
               ADVERTISEMENT
