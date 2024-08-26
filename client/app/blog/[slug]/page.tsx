@@ -3,10 +3,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import BlogFooter from "../components/BlogFooter";
-import Image from "next/image";
+
 import axios from "axios";
 import FormatedDate from "@/app/components/Global/FormatedDate";
 import { Markup } from "interweave";
+
+import { RxSlash } from "react-icons/rx";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -80,7 +82,9 @@ const BlogPost = () => {
               <div className="w-[fit-content] rounded-md text-purple-950">
                 {post.length > 0 && post[0].category}
               </div>
-              <div className="flex justify-center items-center text-sm">/</div>
+              <div className="flex justify-center items-center text-sm">
+                <RxSlash size={10} />
+              </div>
               <div className="w-[fit-content]">
                 <FormatedDate date={post.length > 0 && post[0].date_added} />
               </div>
