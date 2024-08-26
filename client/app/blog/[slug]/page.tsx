@@ -127,7 +127,10 @@ const BlogPost = () => {
             here are comments and add comment section
           </div> */}
           <div className="w-full">
-            <BlogFooter category={postCategory} />
+            <BlogFooter
+              category={postCategory}
+              dontIncludePostTitle={post.length > 0 && post[0].title}
+            />
           </div>
           <div className="w-full block text-center mt-2">
             <div className="w-full text-center text-sm block">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ShortcutPostItem from "./ShortcutPostItem";
 import axios from "axios";
 
-const BlogFooter = ({ category }: any) => {
+const BlogFooter = ({ category, dontIncludePostTitle }: any) => {
   const [posts, setPosts] = useState([
     {
       title: "",
@@ -49,10 +49,17 @@ const BlogFooter = ({ category }: any) => {
 
   return (
     <>
-      {filteredPosts.length > 0 && (
+      {filteredPosts.filter((item) => item.title !== dontIncludePostTitle)
+        .length > 0 && (
         <div className="w-full p-5 border border-purple-50 rounded-md gap-2 flex flex-col">
           <div className="w-full text-2xl flex flex-row flex-wrap items-center">
-            Related Posts ({filteredPosts.length})
+            Related Posts (
+            {
+              filteredPosts.filter(
+                (item) => item.title !== dontIncludePostTitle
+              ).length
+            }
+            )
             {category !== "" && (
               <span className="text-sm">
                 Showing Results for &nbsp;-&nbsp;
