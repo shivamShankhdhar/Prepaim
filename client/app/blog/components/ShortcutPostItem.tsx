@@ -5,9 +5,9 @@ import Image from "next/image";
 
 const ShortcutPostItem = ({ post, isImage }: any) => {
   return (
-    <>
+    <div className="flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md">
       {isImage !== false && (
-        <div className="h-[50px] w-[50px] flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md">
+        <div className="h-[50px] w-[50px] ">
           <img
             src={post.image}
             width={100}
@@ -38,7 +38,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
           {/* {post.date_added} */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

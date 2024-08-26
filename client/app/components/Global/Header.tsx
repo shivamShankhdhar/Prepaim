@@ -115,7 +115,12 @@ const Header = () => {
           />
         </Link>
       </div>
-
+      <Button
+        href="/blog"
+        className="flex-1 bg-purple-800 text-white hover:bg-purple-900 focus:ring-1 focus:ring-purple-200"
+      >
+        Blog
+      </Button>
       <div className="flex gap-1 justify-end items-center">
         {token !== undefined &&
         token !== "" &&
