@@ -89,7 +89,7 @@ const BlogPost = () => {
               <div className="w-[fit-content]">
                 <FormatedDate date={post.length > 0 && post[0].date_added} />
               </div>
-              <ShareBtn />
+              {/* <ShareBtn /> */}
             </div>
             {/* post image  */}
             {/* <div className="w-full h-[200px] rounded-md bg-gray-100 mt-3 mb-3 px-2 relative">
@@ -116,8 +116,11 @@ const BlogPost = () => {
                 data-full-width-responsive="true"
               ></ins>
             </div>
-            <div className="w-full mb-10">
+            <div className="w-full flex flex-col gap-2 mb-10">
               {post.length > 0 && <Markup content={post[0].description} />}
+            </div>
+            <div className="w-full flex gap-2 bg-purple-200">
+              <ShareBtn />
             </div>
           </div>
           {/* <div className="w-full">
