@@ -116,7 +116,7 @@ const Blog = () => {
           ></ins>
         </div> */}
         {/* main content section */}
-        <div className="overflow-y-auto flex-1 px-5">
+        <div className="flex flex-col w-full">
           {/* featured post */}
           {posts.filter((item) => item.title !== "").length > 0 && (
             <Featured post={posts.filter((item) => item.title !== "")[0]} />
