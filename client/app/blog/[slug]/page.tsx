@@ -114,7 +114,7 @@ const BlogPost = () => {
                 data-full-width-responsive="true"
               ></ins>
             </div>
-            <div className="w-full">
+            <div className="w-full mb-10">
               {post.length > 0 && <Markup content={post[0].description} />}
             </div>
           </div>
