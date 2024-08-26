@@ -5,10 +5,7 @@ import Image from "next/image";
 
 const ShortcutPostItem = ({ post, isImage }: any) => {
   return (
-    <Link
-      href={`/blog/${post.title.replaceAll(" ", "-")}`}
-      className="w-full flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md"
-    >
+    <>
       {isImage !== false && (
         <div className="h-[50px] w-[50px]">
           <img
@@ -31,13 +28,20 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
             {post.category}
           </div>
         </div>
-        <div className="w-full">{post.title}</div>
+        <div className="w-full">
+          <Link
+            href={`/blog/${post.title.replaceAll(" ", "-")}`}
+            className="w-full flex gap-1 border border-purple-50 hover:bg-purple-50 p-2 rounded-md"
+          >
+            {post.title}
+          </Link>
+        </div>
         <div className="w-[fit-content] h-[12px] text-[11px] uppercase rounded-md">
           <FormatedDate date={post.date_added} />
           {/* {post.date_added} */}
         </div>
       </div>
-    </Link>
+    </>
   );
 };
 
