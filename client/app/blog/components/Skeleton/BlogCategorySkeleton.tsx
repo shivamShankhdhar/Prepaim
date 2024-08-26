@@ -7,7 +7,7 @@ const BlogCategorySkeleton = () => {
       {items.map((item) => (
         <div
           key={`key-for-blog-category-skeleton-${item}`}
-          className="w-[200px] py-2 rounded-md bg-gray-100 animate-pulse"
+          className="w-[200px] py-3 rounded-md bg-purple-200 animate-pulse"
         ></div>
       ))}
     </div>
