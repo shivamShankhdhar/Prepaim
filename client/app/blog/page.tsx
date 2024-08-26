@@ -176,11 +176,15 @@ const Blog = () => {
                  )}
                </div>
                {/* pagination section */}
-               <Pagination
-                 items={filteredPosts.filter((item) => item.title !== "")}
-                 setProperty={setPage}
-                 page={page}
-               />
+               {filteredPosts.filter((item) => item.title !== "").length >
+                 10 && (
+                 <Pagination
+                   items={filteredPosts.filter((item) => item.title !== "")}
+                   setProperty={setPage}
+                   page={page}
+                 />
+               )}
+
                <div className="w-full bg-white h-[80px] text-center block">
                  <div className="w-full text-center text-sm block">
                    ADVERTISEMENT
