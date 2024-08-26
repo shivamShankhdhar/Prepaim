@@ -11,6 +11,7 @@ import { Markup } from "interweave";
 const BlogPost = () => {
   const { slug } = useParams();
   const title = slug?.toString().replaceAll("-", " ");
+  const [loading, setLoading] = useState(true);
   const [postCategory, setPostCategory] = useState("");
   const [post, setPost] = useState(
     [
@@ -58,11 +59,9 @@ const BlogPost = () => {
     //  }
   }, []);
 
-
-
   // useEffect(() => {}, []);
   return (
-    <div className=" flex  bg-white overflow-y-auto w-full px-[10px]">
+    <div className=" flex  bg-white overflow-y-auto w-full px-[100px]">
       {/* blog page content  */}
       <div className="flex flex-1 overflow-y-auto">
         {/* adsense ads unit left  */}
@@ -75,8 +74,7 @@ const BlogPost = () => {
           <div className="w-full flex-1 px-2 min-h-[100vh] max-h-[fit-content] overflow-y-auto mt-5">
             {/* post title  */}
             <div className="w-full text-[45px] font-semibold">
-              {slug.toString().replaceAll("-", " ").charAt(0).toUpperCase() +
-                slug.toString().replaceAll("-", " ").slice(1)}
+              {post.length > 0 && post[0].title}
             </div>
             <div className="w-full text-sm flex gap-2">
               <div className="w-[fit-content] rounded-md bg-purple-200 px-2">
