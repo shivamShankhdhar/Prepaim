@@ -9,7 +9,7 @@ import FormatedDate from "@/app/components/Global/FormatedDate";
 import { Markup } from "interweave";
 
 import { RxSlash } from "react-icons/rx";
-import ShareBtn from "@/app/components/Global/ShareBtn";
+import BlogShareButton from "../components/BlogShareButton";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -120,7 +120,7 @@ const BlogPost = () => {
               {post.length > 0 && <Markup content={post[0].description} />}
             </div>
             <div className="w-full flex gap-2 bg-purple-200 py-3 mt-2 mb-3 px-5">
-              <ShareBtn />
+              <BlogShareButton />
             </div>
           </div>
           {/* <div className="w-full">
