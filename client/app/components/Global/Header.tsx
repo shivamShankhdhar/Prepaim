@@ -98,7 +98,7 @@ const Header = () => {
         </div>
       </Modal>
 
-      <div className="flex-1">
+      <div className="w-[fit-content]">
         <Link href={"/"}>
           <Image
             priority={true}
@@ -117,7 +117,7 @@ const Header = () => {
       </div>
       <Button
         href="/blog"
-        className="flex-1 bg-purple-800 text-white hover:bg-purple-900 focus:ring-1 focus:ring-purple-200"
+        className="w-[fit-content] bg-purple-800 text-white hover:bg-purple-900 focus:ring-1 focus:ring-purple-200"
       >
         Blog
       </Button>

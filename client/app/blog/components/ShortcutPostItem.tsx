@@ -19,12 +19,12 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
       )}
 
       <div className="flex flex-col">
-        <div className="w-full flex gap-2 justify-center">
+        <div className="w-full flex gap-2">
           {/* <div className="w-[fit-content] flex justify-center items-center bg-purple-200 text-purple-900 h-[15px] text-[11px] uppercase rounded-md px-2">
             username
           </div>
           <div className="flex justify-center items-center">-</div> */}
-          <div className="w-[fit-content]  text-purple-900 h-[auto] text-[11px] uppercase rounded-md">
+          <div className="w-[fit-content] text-purple-900 h-[auto] text-[11px] uppercase rounded-md">
             {post.category}
           </div>
         </div>
