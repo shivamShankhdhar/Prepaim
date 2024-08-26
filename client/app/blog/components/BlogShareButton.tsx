@@ -41,7 +41,7 @@ const BlogShareButton = ({ cls }: Props) => {
   };
 
   return (
-    <LightTooltip title={`Share this question`}>
+    <LightTooltip title={`Share this post`}>
       <Button
         // sx={{ border: 1 }}
         className={`rounded-full flex h-8 w-8 px-0 py-0 justify-center cursor-pointer items-center aspect-square ${
