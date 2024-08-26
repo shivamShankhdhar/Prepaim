@@ -103,7 +103,7 @@ const Blog = () => {
       {/* adsense ads div */}
 
       {/* blog page content  */}
-      <div className="flex flex-1 w-full sm:px-5 max-sm:px-5 md:px-5 max-md:px-5 lg:px-[100px] xl:px-[100px] 2xl:px-[100px]">
+      <div className="flex bg-white  flex-1 w-full sm:px-5 max-sm:px-5 md:px-5 max-md:px-5 lg:px-[100px] xl:px-[100px] 2xl:px-[100px]">
         {/* adsense ads unit left  */}
         {/* <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <ins
@@ -116,7 +116,7 @@ const Blog = () => {
           ></ins>
         </div> */}
         {/* main content section */}
-        <div className="bg-white overflow-y-auto flex-1 px-5">
+        <div className="overflow-y-auto flex-1 px-5">
           {/* featured post */}
           {posts.filter((item) => item.title !== "").length > 0 && (
             <Featured post={posts.filter((item) => item.title !== "")[0]} />
