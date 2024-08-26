@@ -119,7 +119,7 @@ const Header = () => {
       <div className="flex gap-1 justify-end items-center">
         <Button
           href="/blog"
-          className="w-[fit-content] bg-purple-800 text-white hover:bg-purple-900 focus:ring-1 focus:ring-purple-200"
+          className="w-[fit-content] py-1 bg-purple-800 text-white hover:bg-purple-900 focus:ring-1 focus:ring-purple-200"
         >
           Blog
         </Button>
