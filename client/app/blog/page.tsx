@@ -103,7 +103,7 @@ const Blog = () => {
       {/* adsense ads div */}
 
       {/* blog page content  */}
-      <div className="flex flex-1 overflow-y-auto sm:w-[100%] max-sm:w-[100%] md:w-[80%] max-md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] m-auto">
+      <div className="flex flex-1 w-full sm:px-5 max-sm:px-5 md:px-5 max-md:px-5 lg:px-[100px] xl:px-[100px] 2xl:px-[100px]">
         {/* adsense ads unit left  */}
         {/* <div className="h-full bg-white w-[90px] sm:hidden max-sm:hidden md:hidden max-md:hidden lg:flex xl:flex 2xl:flex">
           <ins
