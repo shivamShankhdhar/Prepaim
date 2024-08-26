@@ -69,7 +69,7 @@ const BlogFooter = ({ category, dontIncludePostTitle }: any) => {
               </span>
             )}
           </div>
-          <div className="w-full flex gap-2 flex-col">
+          <div className="w-full flex gap-2 flex-col my-3">
             {filteredPosts
               .filter((item) => item.title !== dontIncludePostTitle)
               .map((post: any) => {
