@@ -4,7 +4,9 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import ShortCutLinksForMcqSkeleton from "./ShortCutLinksForMcqSkeleton";
+import { useParams } from "next/navigation";
 const ShortcutLinksForMcq = ({ allSubjects }: any) => {
+  const { subject } = useParams();
   // fetch all questions from db
   const { data } = useFetch("/mcq/getallquestions");
   const [allMcqQuestions, setAllMcqQuestions] = useState(
@@ -17,7 +19,13 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   useEffect(() => {
     if (data.apiData !== undefined && data.isLoading === false) {
       // (data.apiData);
-      setAllMcqQuestions(data.apiData);
+      if (subject !== undefined)
+        setAllMcqQuestions(
+          data.apiData.filter((item: any) => item.subject === subject)
+        );
+      else {
+        setAllMcqQuestions(data.apiData);
+      }
       setLoading(data.isLoading);
       if (data.serverError !== null) setLoadingError(data.serverError);
     }
