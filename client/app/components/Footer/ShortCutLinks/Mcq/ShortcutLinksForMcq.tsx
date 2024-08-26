@@ -32,43 +32,47 @@ const ShortcutLinksForMcq = ({ allSubjects }: any) => {
   }, [data]);
   // (allMcqQuestions);
   return (
-    <div className="flex-1 px-1 flex flex-col">
-      <div className="w-full text-2xl font-semibold text-purple-800 ">
-        Try MCQ
-      </div>
-      <div className="py-3">
-        {loading === true ? (
-          <ShortCutLinksForMcqSkeleton />
-        ) : (
-          <ul className="w-full py-2">
-            {allMcqQuestions.length > 0 &&
-              allMcqQuestions?.slice(0, 10)?.map((item, index) => (
-                <li
-                  key={item._id}
-                  className="hover:text-purple-800 flex justify-between items-center flex-row gap-1"
-                >
-                  <p>
-                    <MdKeyboardDoubleArrowRight size={20} />
-                  </p>
-
-                  <Link
-                    className="flex flex-1 gap-1"
-                    href={`/mcq/v1/${item.subject?.replaceAll(
-                      " ",
-                      "-"
-                    )}/${item.chapter?.replaceAll(
-                      " ",
-                      "-"
-                    )}/Test-Prepration-Mode/${index + 1}`}
-                  >
-                    {item.question}
-                  </Link>
-                </li>
-              ))}
-          </ul>
+    <>
+      <div className="flex-1 px-1 flex flex-col">
+        {loading === false && allMcqQuestions.length > 0 && (
+          <div className="w-full text-2xl font-semibold text-purple-800 ">
+            Try MCQ
+          </div>
         )}
+        <div className="py-3">
+          {loading === true ? (
+            <ShortCutLinksForMcqSkeleton />
+          ) : (
+            <ul className="w-full py-2">
+              {allMcqQuestions.length > 0 &&
+                allMcqQuestions?.slice(0, 10)?.map((item, index) => (
+                  <li
+                    key={item._id}
+                    className="hover:text-purple-800 flex justify-between items-center flex-row gap-1"
+                  >
+                    <p>
+                      <MdKeyboardDoubleArrowRight size={20} />
+                    </p>
+
+                    <Link
+                      className="flex flex-1 gap-1"
+                      href={`/mcq/v1/${item.subject?.replaceAll(
+                        " ",
+                        "-"
+                      )}/${item.chapter?.replaceAll(
+                        " ",
+                        "-"
+                      )}/Test-Prepration-Mode/${index + 1}`}
+                    >
+                      {item.question}
+                    </Link>
+                  </li>
+                ))}
+            </ul>
+          )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
