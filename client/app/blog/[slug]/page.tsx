@@ -79,7 +79,7 @@ const BlogPost = () => {
             <div className="w-full text-[45px] font-semibold">
               {post.length > 0 && post[0].title}
             </div>
-            <div className="w-full text-sm flex gap-2">
+            <div className="w-full text-sm flex gap-1">
               <div className="w-[fit-content] rounded-md text-purple-950">
                 {post.length > 0 && post[0].category}
               </div>
@@ -116,10 +116,10 @@ const BlogPost = () => {
                 data-full-width-responsive="true"
               ></ins>
             </div>
-            <div className="w-full flex flex-col gap-2 mb-10">
+            <div className="w-full flex flex-col gap-2 ">
               {post.length > 0 && <Markup content={post[0].description} />}
             </div>
-            <div className="w-full flex gap-2 bg-purple-200 py-3">
+            <div className="w-full flex gap-2 bg-purple-200 py-3 mt-2 mb-3">
               <ShareBtn />
             </div>
           </div>
