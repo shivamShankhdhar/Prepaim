@@ -51,7 +51,7 @@ const BlogFooter = ({ category }: any) => {
     <>
       {filteredPosts.length > 0 && (
         <div className="w-full p-5 border border-purple-50 rounded-md gap-2 flex flex-col">
-          <div className="w-full text-2xl">
+          <div className="w-full text-2xl flex">
             Related Posts ({filteredPosts.length}){" "}
             {category !== "" && (
               <span className="text-sm">

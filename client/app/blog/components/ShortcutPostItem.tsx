@@ -11,7 +11,7 @@ const ShortcutPostItem = ({ post, isImage }: any) => {
     >
       {isImage !== false && (
         <div className="h-[50px] w-[50px]">
-          <Image
+          <img
             src={post.image}
             width={100}
             height={100}
