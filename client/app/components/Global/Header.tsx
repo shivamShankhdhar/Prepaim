@@ -120,7 +120,7 @@ const Header = () => {
         <Button
           sx={{ textTransform: "none" }}
           href="/blog"
-          className="w-[fit-content] py-0 rounded-full bg-purple-800 text-white hover:bg-purple-900 focus:ring-1 focus:ring-purple-200"
+          className="w-[fit-content] py-0 rounded-full bg-purple-500 text-white hover:bg-purple-600 focus:ring-1 focus:ring-purple-200"
         >
           Blog
         </Button>
