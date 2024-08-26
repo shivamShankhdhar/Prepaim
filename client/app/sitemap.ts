@@ -42,13 +42,18 @@ const allChapters = async () => {
   return chapters.data
 }
 
-
+const allPosts = async () => {
+  const posts = await axios.get("https://api.data.admin-panel.prepaim.com/blog/getBlogPost");
+  return posts.data
+}
 export default async function sitemap() {
   const allSubjectsFromApi = await allSubjects();
 
   const allQuestionsFromApi = await allQuestions();
   
   const allChaptersFromApi = await allChapters()
+
+  const allPostsFromServer = await allPosts()
 
   const allChaptersForSpecificSubject = allSubjectsFromApi.map(
     (subject: any) => {
@@ -91,6 +96,13 @@ export default async function sitemap() {
 
   // questionUrlsPreprationUrls()
   // questionUrls()
+
+  const allPostsURL = allPostsFromServer.map((post: any) => {
+    return {
+      url: `${baseURL}/blog/${post.title.replaceAll(" ", "-")}`,
+      lastModified: post.date_added,
+    }
+  })
   
   return [
     {
@@ -122,6 +134,7 @@ export default async function sitemap() {
       lastModified: new Date().toISOString(),
     },
     ...allChaptersForSpecificSubject,
+    ...allPostsURL,
     ...urlSetTestPreprationMode,
     ...urlSetPreprationMode
   ];
