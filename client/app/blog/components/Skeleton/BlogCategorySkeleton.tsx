@@ -5,7 +5,10 @@ const BlogCategorySkeleton = () => {
   return (
     <div className="w-full flex gap-2">
       {items.map((item) => (
-        <div className="w-[200px] py-2 rounded-md bg-gray-100 animate-pulse"></div>
+        <div
+          key={`key-for-blog-category-skeleton-${item}`}
+          className="w-[200px] py-2 rounded-md bg-gray-100 animate-pulse"
+        ></div>
       ))}
     </div>
   );
