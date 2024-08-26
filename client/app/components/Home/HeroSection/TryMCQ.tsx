@@ -74,7 +74,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
             .map((language: any, index: any) => (
               <>
                 {/* google_ads_start */}
-                {index % 5 === 0 && (
+                {/* {index % 5 === 0 && (
                   <div className="w-[300px] block text-center">
                     <ins
                       className="adsbygoogle text-center"
@@ -84,7 +84,7 @@ const TryMCQ = ({ subjects, loading }: any) => {
                       data-ad-slot="7384794981"
                     ></ins>
                   </div>
-                )}
+                )} */}
 
                 {/* google_ads_end  */}
                 <SubjectItemGridView
