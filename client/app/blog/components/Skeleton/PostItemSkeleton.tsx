@@ -13,7 +13,7 @@ const PostItemSkeleton = () => {
             <CiImageOn size={300} />
           </div>
 
-          <div className="flex-1 h-[300px] flex flex-col gap-1">
+          <div className="w-full h-[300px] flex flex-col gap-1">
             <div className="flex w-full bg-purple-200 animate-pulse py-6"></div>
             <div className="flex w-full bg-purple-200 animate-pulse py-10"></div>
             <div className="flex w-full bg-purple-200 animate-pulse py-6 ">
