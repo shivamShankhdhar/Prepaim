@@ -99,7 +99,7 @@ const Blog = () => {
 
   console.log(posts);
   return (
-    <div className="w-full h-[92vh] text-gray-600 flex flex-col fixed overflow-y-auto">
+    <div className="w-full h-[92vh] text-gray-700 flex flex-col fixed overflow-y-auto">
       {/* adsense ads div */}
 
       {/* blog page content  */}
@@ -116,7 +116,7 @@ const Blog = () => {
           ></ins>
         </div> */}
         {/* main content section */}
-        <div className="h-full bg-white overflow-y-auto flex-1 flex-col px-5">
+        <div className="bg-white overflow-y-auto flex-1 px-5">
           {/* featured post */}
           {posts.filter((item) => item.title !== "").length > 0 && (
             <Featured post={posts.filter((item) => item.title !== "")[0]} />
