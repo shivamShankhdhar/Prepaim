@@ -7,6 +7,7 @@ const Featured = ({ post }: any) => {
         <span className="font-semibold">Hello, Welcome to our Blog</span>,
         Discover Technologies and creative ideas.
       </h1>
+      <div className="w-full text-xl">Post of the day</div>
       <PostItem
         title={post.title}
         description={post.description}
