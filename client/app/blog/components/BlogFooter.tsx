@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ShortcutPostItem from "./ShortcutPostItem";
 import axios from "axios";
+import FooterLinks from "@/app/components/Footer/FooterItems/FooterLinks";
 
 const BlogFooter = ({ category, dontIncludePostTitle }: any) => {
   const [posts, setPosts] = useState([
