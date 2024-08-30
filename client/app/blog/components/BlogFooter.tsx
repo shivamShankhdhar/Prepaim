@@ -81,7 +81,7 @@ const BlogFooter = ({ category, dontIncludePostTitle }: any) => {
           </div>
         </div>
       )}
-      <div className="w-full flex flex-wrap">
+      <div className="w-full flex flex-wrap py-5">
         <FooterLinks />
       </div>
     </>
