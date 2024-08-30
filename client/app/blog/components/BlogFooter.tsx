@@ -80,6 +80,9 @@ const BlogFooter = ({ category, dontIncludePostTitle }: any) => {
           </div>
         </div>
       )}
+      <div className="w-full flex flex-wrap">
+        <FooterLinks />
+      </div>
     </>
   );
 };
