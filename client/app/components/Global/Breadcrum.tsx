@@ -69,7 +69,9 @@ const Breadcrum = (props: Props) => {
               <Link href={`/mcq/v1/subjects`}>
                 <LightTooltip title="Click to see all subjects">
                   <div>
-                    {subject && subject.toString().replaceAll("-", " ")}
+                    {subject && subject.toString() === "CPP"
+                      ? "C++"
+                      : subject.toString().replaceAll("-", " ")}
                   </div>
                 </LightTooltip>
               </Link>
@@ -95,7 +97,12 @@ const Breadcrum = (props: Props) => {
               <Link href={`/mcq/v1/${subject}/chapters`}>
                 <LightTooltip title={`Click to see all chapters of ${subject}`}>
                   <div>
-                    {chapter && chapter.toString().replaceAll("-", " ")}
+                    {chapter && chapter.toString().includes("CPP")
+                      ? chapter
+                          .toString()
+                          .replaceAll("CPP", "C++")
+                          .replaceAll("-", " ")
+                      : chapter.toString().replaceAll("-", " ")}
                   </div>
                 </LightTooltip>
               </Link>

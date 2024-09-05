@@ -43,7 +43,11 @@ const ChapterItem = ({ data, index, chapterItemLength }: any) => {
                   "-"
                 )}/${data.name.replaceAll(" ", "-")}/Test-Prepration-Mode/1`}
               >
-                <div>{data.name}</div>
+                <div>
+                  {data.name.includes("CPP")
+                    ? data.name.replace("CPP", "C++")
+                    : data.name}
+                </div>
               </Button>
             </LightTooltip>
           </div>

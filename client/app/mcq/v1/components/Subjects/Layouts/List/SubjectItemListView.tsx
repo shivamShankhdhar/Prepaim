@@ -37,19 +37,22 @@ const SubjectItemListView = ({
         <div className="px-3 flex-none font-semibold flex items-center justify-center ">
           {index + 1}.
         </div>
-        <div className="flex-1 py-1">{item.name}</div>
+        <div className="flex-1 py-1">
+          {item.name === "CPP" ? "C++" : item.name}
+        </div>
       </div>
       <div className="flex-none flex justify-center gap-1 items-center">
         <div className="flex justify-between items-center gap-3 ">
           <LightTooltip title="Start Quizz">
             <Button
+              sx={{ textTransform: "none" }}
               onClick={() => handleNavigateToQuestion(item.name)}
               className="py-1 flex rounded-md focus:ring-4 focus:outline-none focus:ring-purple-300 justify-center items-center gap-1 cursor-pointer px-2 bg-purple-800 text-white  hover:bg-purple-900"
             >
               {selectedSubject === item.name && searchingChapters && (
                 <SimpleLoader clr="white" size={15} />
               )}
-              quizz
+              Quizz
             </Button>
           </LightTooltip>
           <LightTooltip title="Explore all chapters">
