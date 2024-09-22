@@ -12,7 +12,6 @@ const PostItemSkeleton = () => {
           <div className="sm:w-full max-sm:w-full md:w-full max-md:w-full lg:w-[300px] xl:w-[300px] h-[300px] animate-pulse">
             <CiImageOn size={300} />
           </div>
-
           <div className="w-full h-[300px] flex flex-col gap-1">
             <div className="flex w-full bg-purple-200 animate-pulse py-6"></div>
             <div className="flex w-full bg-purple-200 animate-pulse py-10"></div>
@@ -25,5 +24,4 @@ const PostItemSkeleton = () => {
     </div>
   );
 };
-
 export default PostItemSkeleton;
